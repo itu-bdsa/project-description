@@ -75,5 +75,10 @@ Maxime Kauta
 Of course, as described by R. Martin, you try to keep your application as simple as possible to solve the task.
 Remember that as good agile software engineers, you develop your project in a test-driven manner, i.e., start writing unit tests before implementing your solution.
 
+Next to the code, create a directory called `docs` in the root of your repository.
+In it  use markdown documents to describe your project.
+For the first week, provide a list of functional requirements that you extract from the description above.
+When necessary, create describe interactions with your `GitInsight` application via use cases.
+
 You have to develop your `GitInsight` application in a public GitHub repository (on github.com).
 Before Friday 28/10 10:00, you have to send a pull-request to the file [./PROJECT_GROUPS.md](./PROJECT_GROUPS.md) in which you add the link to your repository.
