@@ -6,7 +6,7 @@ Inform us about your group by modifying this file and by sending a pull request 
 
 |  No. | Group Name   | Members (ITU ID)                               |
 |------|--------------|------------------------------------------------|
-|    1 | `<group_name>` | `<aaaa>`, `<bbbb>`, `<cccc>`, `<dddd>`, `<eeee>`, `<ffff>` |
+|    1 | `SMB`        | `<dadh>`, `<vime>`, `<laup>`, `<maxt>`, `<rasni>` |
 |    2 | `<group_name>` | `<aaaa>`, `<bbbb>`, `<cccc>`, `<dddd>`, `<eeee>`, `<ffff>` |
 |    3 | `<group_name>` | `<aaaa>`, `<bbbb>`, `<cccc>`, `<dddd>`, `<eeee>`, `<ffff>` |
 |    5 | `<group_name>` | `<aaaa>`, `<bbbb>`, `<cccc>`, `<dddd>`, `<eeee>`, `<ffff>` |
