@@ -7,7 +7,7 @@ Inform us about your group by modifying this file and by sending a pull request 
 |------|--------------|------------------------------------------------|
 |    1 | `Zero`       | `emno`, `amdh`, `mbia`, `ehel`, `hast`, `Rafa` |
 |    2 | `The fighting mongooses` | `jacg`, `tbav`, `tcla`, `aldy`     |
-|    3 | `<group_name>` | `<aaaa>`, `<bbbb>`, `<cccc>`, `<dddd>`, `<eeee>`, `<ffff>` |
+|    3 | `Cat Squish Gang` | `ahad`, `base`, `jwni`, `nlje`, `skas`, `weny` |
 |    5 | `<group_name>` | `<aaaa>`, `<bbbb>`, `<cccc>`, `<dddd>`, `<eeee>`, `<ffff>` |
 |    6 | `<group_name>` | `<aaaa>`, `<bbbb>`, `<cccc>`, `<dddd>`, `<eeee>`, `<ffff>` |
 |    7 | `<group_name>` | `<aaaa>`, `<bbbb>`, `<cccc>`, `<dddd>`, `<eeee>`, `<ffff>` |
