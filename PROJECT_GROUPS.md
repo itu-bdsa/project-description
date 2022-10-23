@@ -7,8 +7,8 @@ Inform us about your group by modifying this file and by sending a pull request 
 |  No. | Group Name   | Members (ITU ID)                               |
 |------|--------------|------------------------------------------------|
 |    1 | `<group_name>` | `<aaaa>`, `<bbbb>`, `<cccc>`, `<dddd>`, `<eeee>`, `<ffff>` |
-|    2 | `<Cat Squish Gang>` | `<ahad>`, `<base>`, `<jwni>`, `<nlje>`, `<skas>`, `<weny>` |
-|    3 | `<group_name>` | `<aaaa>`, `<bbbb>`, `<cccc>`, `<dddd>`, `<eeee>`, `<ffff>` |
+|    2 | `<group_name>` | `<aaaa>`, `<bbbb>`, `<cccc>`, `<dddd>`, `<eeee>`, `<ffff>` |
+|    3 | `<Cat Squish Gang>` | `<ahad>`, `<base>`, `<jwni>`, `<nlje>`, `<skas>`, `<weny>` |
 |    5 | `<group_name>` | `<aaaa>`, `<bbbb>`, `<cccc>`, `<dddd>`, `<eeee>`, `<ffff>` |
 |    6 | `<group_name>` | `<aaaa>`, `<bbbb>`, `<cccc>`, `<dddd>`, `<eeee>`, `<ffff>` |
 |    7 | `<group_name>` | `<aaaa>`, `<bbbb>`, `<cccc>`, `<dddd>`, `<eeee>`, `<ffff>` |
