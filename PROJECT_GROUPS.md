@@ -3,11 +3,10 @@
 During fall break, form groups with six members each in the table below.
 Inform us about your group by modifying this file and by sending a pull request to it.
 
-
 |  No. | Group Name   | Members (ITU ID)                               |
 |------|--------------|------------------------------------------------|
-|    1 | `Zero` | `emno`, `amdh`, `mbia`, `ehel`, `hast`, `Rafa` |
-|    2 | `<group_name>` | `<aaaa>`, `<bbbb>`, `<cccc>`, `<dddd>`, `<eeee>`, `<ffff>` |
+|    1 | `Zero`       | `emno`, `amdh`, `mbia`, `ehel`, `hast`, `Rafa` |
+|    2 | `The fighting mongooses` | `jacg`, `tbav`, `tcla`, `aldy`     |
 |    3 | `<group_name>` | `<aaaa>`, `<bbbb>`, `<cccc>`, `<dddd>`, `<eeee>`, `<ffff>` |
 |    5 | `<group_name>` | `<aaaa>`, `<bbbb>`, `<cccc>`, `<dddd>`, `<eeee>`, `<ffff>` |
 |    6 | `<group_name>` | `<aaaa>`, `<bbbb>`, `<cccc>`, `<dddd>`, `<eeee>`, `<ffff>` |
