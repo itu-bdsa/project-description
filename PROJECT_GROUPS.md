@@ -28,4 +28,4 @@ Inform us about your group by modifying this file and by sending a pull request 
 |   21 | `<group_name>` | `<aaaa>`, `<bbbb>`, `<cccc>`, `<dddd>`, `<eeee>`, `<ffff>` |
 |   22 | `<group_name>` | `<aaaa>`, `<bbbb>`, `<cccc>`, `<dddd>`, `<eeee>`, `<ffff>` |
 |   23 | `<group_name>` | `<aaaa>`, `<bbbb>`, `<cccc>`, `<dddd>`, `<eeee>`, `<ffff>` |
-|   24 | `<group_name>` | `<aaaa>`, `<bbbb>`, `<cccc>`, `<dddd>`, `<eeee>`, `<ffff>` |
+|   24 | `<group_name>` | `<pekp>`, `<okre>`, `<cccc>`, `<dddd>`, `<eeee>`, `<ffff>` |
