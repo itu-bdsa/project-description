@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/selmabernild/Desktop/GitInsight/GitInsight.Tests/GitInsight.Tests.csproj": {}
+    "/Users/claralyngeraa/Desktop/ITU/3.Semester/BDSA/project-description/GitInsight.Tests/GitInsight.Tests.csproj": {}
   },
   "projects": {
-    "/Users/selmabernild/Desktop/GitInsight/GitInsight.Tests/GitInsight.Tests.csproj": {
+    "/Users/claralyngeraa/Desktop/ITU/3.Semester/BDSA/project-description/GitInsight.Tests/GitInsight.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/selmabernild/Desktop/GitInsight/GitInsight.Tests/GitInsight.Tests.csproj",
+        "projectUniqueName": "/Users/claralyngeraa/Desktop/ITU/3.Semester/BDSA/project-description/GitInsight.Tests/GitInsight.Tests.csproj",
         "projectName": "GitInsight.Tests",
-        "projectPath": "/Users/selmabernild/Desktop/GitInsight/GitInsight.Tests/GitInsight.Tests.csproj",
-        "packagesPath": "/Users/selmabernild/.nuget/packages/",
-        "outputPath": "/Users/selmabernild/Desktop/GitInsight/GitInsight.Tests/obj/",
+        "projectPath": "/Users/claralyngeraa/Desktop/ITU/3.Semester/BDSA/project-description/GitInsight.Tests/GitInsight.Tests.csproj",
+        "packagesPath": "/Users/claralyngeraa/.nuget/packages/",
+        "outputPath": "/Users/claralyngeraa/Desktop/ITU/3.Semester/BDSA/project-description/GitInsight.Tests/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/selmabernild/.nuget/NuGet/NuGet.Config"
+          "/Users/claralyngeraa/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -26,8 +26,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "/Users/selmabernild/Desktop/GitInsight/GitInsight/GitInsight.csproj": {
-                "projectPath": "/Users/selmabernild/Desktop/GitInsight/GitInsight/GitInsight.csproj"
+              "/Users/claralyngeraa/Desktop/ITU/3.Semester/BDSA/project-description/GitInsight/GitInsight.csproj": {
+                "projectPath": "/Users/claralyngeraa/Desktop/ITU/3.Semester/BDSA/project-description/GitInsight/GitInsight.csproj"
               }
             }
           }
@@ -83,17 +83,17 @@
         }
       }
     },
-    "/Users/selmabernild/Desktop/GitInsight/GitInsight/GitInsight.csproj": {
+    "/Users/claralyngeraa/Desktop/ITU/3.Semester/BDSA/project-description/GitInsight/GitInsight.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/selmabernild/Desktop/GitInsight/GitInsight/GitInsight.csproj",
+        "projectUniqueName": "/Users/claralyngeraa/Desktop/ITU/3.Semester/BDSA/project-description/GitInsight/GitInsight.csproj",
         "projectName": "GitInsight",
-        "projectPath": "/Users/selmabernild/Desktop/GitInsight/GitInsight/GitInsight.csproj",
-        "packagesPath": "/Users/selmabernild/.nuget/packages/",
-        "outputPath": "/Users/selmabernild/Desktop/GitInsight/GitInsight/obj/",
+        "projectPath": "/Users/claralyngeraa/Desktop/ITU/3.Semester/BDSA/project-description/GitInsight/GitInsight.csproj",
+        "packagesPath": "/Users/claralyngeraa/.nuget/packages/",
+        "outputPath": "/Users/claralyngeraa/Desktop/ITU/3.Semester/BDSA/project-description/GitInsight/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/selmabernild/.nuget/NuGet/NuGet.Config"
+          "/Users/claralyngeraa/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -116,6 +116,16 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "FluentAssertions": {
+              "target": "Package",
+              "version": "[6.8.0, )"
+            },
+            "LibGit2Sharp": {
+              "target": "Package",
+              "version": "[0.26.2, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
