@@ -14,20 +14,15 @@ public class CommitTests: IDisposable{
         //creates a repository object from the path above
         repo = new Repository(path);
 
+        //Creates 3 commits to the same date
+        Signature sig1 = new Signature("Person1", "person1@itu.dk", new DateTimeOffset(new DateTime(2022,10,25)));
+        Signature sig2 = new Signature("Person2", "person2@itu.dk", new DateTimeOffset(new DateTime(2022,10,25)));
+        Signature sig3 = new Signature("Person3", "person2@itu.dk", new DateTimeOffset(new DateTime(2022,10,25)));
 
-        Signature person1 = new Signature("Person1", "person1@itu.dk", new DateTimeOffset(new DateTime(2022,10,25)));
-        Signature person3 = new Signature("Person3", "person2@itu.dk", new DateTimeOffset(new DateTime(2022,10,25)));
-        Signature person2 = new Signature("Person2", "person2@itu.dk", new DateTimeOffset(new DateTime(2022,10,25)));
-
-        Signature person12 = new Signature("Person1", "person1@itu.dk", new DateTimeOffset(new DateTime(2022,11,05)));
-        Signature person123 = new Signature("Person1", "person1@itu.dk", new DateTimeOffset(new DateTime(2022,11,05)));
-
-        Signature person31 = new Signature("Person3", "person2@itu.dk", new DateTimeOffset(new DateTime(2022,11,02)));
-        Signature person32 = new Signature("Person3", "person2@itu.dk", new DateTimeOffset(new DateTime(2022,11,03)));
-       
-        //creates a repository object from the path above
-        repo.Commit("Inital commit", new Signature("Monica Hardt", "monha@itu.dk", new System.DateTimeOffset()),new Signature("Monica Hardt", "monha@itu.dk", new System.DateTimeOffset()), new CommitOptions() {AllowEmptyCommit = true});
-
+        repo.Commit("Inital commit", sig1, sig1, new CommitOptions() {AllowEmptyCommit = true});
+        repo.Commit("Inital commit", sig2, sig2, new CommitOptions() {AllowEmptyCommit = true});
+        repo.Commit("Inital commit", sig3, sig3, new CommitOptions() {AllowEmptyCommit = true});
+        
         Console.WriteLine(repo.Commits.First().Message);
     }
 
@@ -39,22 +34,54 @@ public class CommitTests: IDisposable{
          }
 
 
-    // [Fact]
-    public void correct_frequence_in_frequence_mode()
+    [Fact]
+    public void frequence_in_frequencemode_should_return_dictionary_number_of_commits_per_day()
      {
          // Arrange
         var expected = new Dictionary<int,DateTimeOffset>{};
         expected.Add(3,new DateTimeOffset(new DateTime(2022,10,25)));
-        expected.Add(2,new DateTimeOffset(new DateTime(2022,11,05)));
-        expected.Add(1,new DateTimeOffset(new DateTime(2022,11,02)));
-        expected.Add(1,new DateTimeOffset(new DateTime(2022,11,03)));
 
         // Act
-        var actual = Frequence.getFrequence(); //et kald the vores metode her
+        var actual = Insight.getFrequence(); //call to our method here should return dictionary mapping an integer to a DateTimeOffSet
 
         // Assert
         Assert.Equal(expected, actual);  
      }
 
+     
+     //CAN THIS BE DONE PRETTIER?
+    [Fact]
+    public void frequency_in_authormode_commits_should_return_dictionary_commits_per_author_per_day()
+        {
+        //Arrange
+        //adding more commmits to the repo with different dates
+        Signature sig4 = new Signature("Person1", "person1@itu.dk", new DateTimeOffset(new DateTime(2022,11,04)));
+        Signature sig5 = new Signature("Person2", "person1@itu.dk", new DateTimeOffset(new DateTime(2022,11,03)));
+        Signature sig6 = new Signature("Person3", "person1@itu.dk", new DateTimeOffset(new DateTime(2022,11,02)));
+       
+        var person1Dic = new Dictionary<int,DateTimeOffset>{};
+        person1Dic.Add(1,new DateTimeOffset(new DateTime(2022,10,25)));
+        person1Dic.Add(1,new DateTimeOffset(new DateTime(2022,11,04)));
+
+        var person2Dic = new Dictionary<int,DateTimeOffset>{};
+        person2Dic.Add(1,new DateTimeOffset(new DateTime(2022,10,25)));
+        person2Dic.Add(1,new DateTimeOffset(new DateTime(2022,11,03)));
+
+        var person3Dic = new Dictionary<int,DateTimeOffset>{};
+        person2Dic.Add(1,new DateTimeOffset(new DateTime(2022,10,25)));
+        person2Dic.Add(1,new DateTimeOffset(new DateTime(2022,11,02)));
+        
+
+        var expectedListOfDictionaries = new List<Dictionary<int,DateTimeOffset>>{};
+        expectedListOfDictionaries.Add(person1Dic);
+        expectedListOfDictionaries.Add(person2Dic);
+        expectedListOfDictionaries.Add(person3Dic);
+
+        // Act
+        var actual = Insight.getFrequenceAuthorMode(); //call to our method here should return dictionary mapping an integer to a DateTimeOffSet
+
+        // Assert
+        Assert.Equal(expectedListOfDictionaries, actual);  
+        }
    
 }
