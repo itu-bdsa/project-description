@@ -19,7 +19,7 @@ Inform us about your group by modifying this file and by sending a pull request 
 |   12 | `Grupp1` | `unla`, `mesv`, `laku`, `phla`, `raoo`, `bemi` |
 |   13 | `Bogos` | `mreh`, `paab`, `shho`, `oska`, `nsel`, `clwj` |
 |   14 | `Storskov Inc.` | `jklo`, `jakst`, `malsc`, `biha`, `kmsa`, `phimo` |
-|   15 | `Bad Decisions, Suggestions Accepted` | `clly`, `selb`, `monha`, `pekp`, `okre |
+|   15 | `Bad Decisions, Suggestions Accepted` | `clly`, `selb`, `monha`, `pekp`, `okre` |
 |   16 | `<group_name>` | `<aaaa>`, `<bbbb>`, `<cccc>`, `<dddd>`, `<eeee>`, `<ffff>` |
 |   17 | `<group_name>` | `<aaaa>`, `<bbbb>`, `<cccc>`, `<dddd>`, `<eeee>`, `<ffff>` |
 |   18 | `<group_name>` | `<aaaa>`, `<bbbb>`, `<cccc>`, `<dddd>`, `<eeee>`, `<ffff>` |
