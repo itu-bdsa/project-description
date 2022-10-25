@@ -11,8 +11,8 @@ Inform us about your group by modifying this file and by sending a pull request 
 |    4 | `Y+1F921`    | `aguh`, `mroa`, `oljh`, `ssbo`, `rakt`, `wihe` |
 |    5 | `SMB`        | `dadh`, `vime`, `laup`, `maxt`, `rasni` , `mbln`       |
 |    6 | `NEWgIT`     | `atro`, `chbl`, `fefa`, `frepe`, `luha`, `mgan`|
-|    7 | `Bravo` | `asjo`, `frhc`, `siar`, `behv`, `erja`, `tbru` |
-|    8 | `<group_name>` | `<aaaa>`, `<bbbb>`, `<cccc>`, `<dddd>`, `<eeee>`, `<ffff>` |
+|    7 | `Gruppe 7`   | `avia`, `aarv`, `luel`, `mlth`, `mwha`         |
+|    8 | `Bravo` | `asjo`, `frhc`, `siar`, `behv`, `erja`, `tbru` |
 |    9 | `<group_name>` | `<aaaa>`, `<bbbb>`, `<cccc>`, `<dddd>`, `<eeee>`, `<ffff>` |
 |   10 | `<group_name>` | `<aaaa>`, `<bbbb>`, `<cccc>`, `<dddd>`, `<eeee>`, `<ffff>` |
 |   11 | `<group_name>` | `<aaaa>`, `<bbbb>`, `<cccc>`, `<dddd>`, `<eeee>`, `<ffff>` |
