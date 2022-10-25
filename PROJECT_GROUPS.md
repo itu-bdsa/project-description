@@ -12,7 +12,7 @@ Inform us about your group by modifying this file and by sending a pull request 
 |    5 | `SMB`        | `dadh`, `vime`, `laup`, `maxt`, `rasni` , `mbln`       |
 |    6 | `NEWgIT`     | `atro`, `chbl`, `fefa`, `frepe`, `luha`, `mgan`|
 |    7 | `Bravo` | `asjo`, `frhc`, `siar`, `behv`, `erja`, `tbru` |
-|    8 | `<group_name>` | `<aaaa>`, `<bbbb>`, `<cccc>`, `<dddd>`, `<eeee>`, `<ffff>` |
+|    8 | `Bogos` | `mreh`, `paab`, `shho`, `oska`, `nsel`, `clwj` |
 |    9 | `<group_name>` | `<aaaa>`, `<bbbb>`, `<cccc>`, `<dddd>`, `<eeee>`, `<ffff>` |
 |   10 | `<group_name>` | `<aaaa>`, `<bbbb>`, `<cccc>`, `<dddd>`, `<eeee>`, `<ffff>` |
 |   11 | `<group_name>` | `<aaaa>`, `<bbbb>`, `<cccc>`, `<dddd>`, `<eeee>`, `<ffff>` |
