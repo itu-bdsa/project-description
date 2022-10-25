@@ -1,0 +1,15 @@
+/Users/benjaminmillant/Desktop/ITU/3. sem/bdsa/project/BDSA-project/code/GitInsight/bin/Debug/net6.0/GitInsight
+/Users/benjaminmillant/Desktop/ITU/3. sem/bdsa/project/BDSA-project/code/GitInsight/bin/Debug/net6.0/GitInsight.deps.json
+/Users/benjaminmillant/Desktop/ITU/3. sem/bdsa/project/BDSA-project/code/GitInsight/bin/Debug/net6.0/GitInsight.runtimeconfig.json
+/Users/benjaminmillant/Desktop/ITU/3. sem/bdsa/project/BDSA-project/code/GitInsight/bin/Debug/net6.0/GitInsight.dll
+/Users/benjaminmillant/Desktop/ITU/3. sem/bdsa/project/BDSA-project/code/GitInsight/bin/Debug/net6.0/GitInsight.pdb
+/Users/benjaminmillant/Desktop/ITU/3. sem/bdsa/project/BDSA-project/code/GitInsight/obj/Debug/net6.0/GitInsight.csproj.AssemblyReference.cache
+/Users/benjaminmillant/Desktop/ITU/3. sem/bdsa/project/BDSA-project/code/GitInsight/obj/Debug/net6.0/GitInsight.GeneratedMSBuildEditorConfig.editorconfig
+/Users/benjaminmillant/Desktop/ITU/3. sem/bdsa/project/BDSA-project/code/GitInsight/obj/Debug/net6.0/GitInsight.AssemblyInfoInputs.cache
+/Users/benjaminmillant/Desktop/ITU/3. sem/bdsa/project/BDSA-project/code/GitInsight/obj/Debug/net6.0/GitInsight.AssemblyInfo.cs
+/Users/benjaminmillant/Desktop/ITU/3. sem/bdsa/project/BDSA-project/code/GitInsight/obj/Debug/net6.0/GitInsight.csproj.CoreCompileInputs.cache
+/Users/benjaminmillant/Desktop/ITU/3. sem/bdsa/project/BDSA-project/code/GitInsight/obj/Debug/net6.0/GitInsight.dll
+/Users/benjaminmillant/Desktop/ITU/3. sem/bdsa/project/BDSA-project/code/GitInsight/obj/Debug/net6.0/refint/GitInsight.dll
+/Users/benjaminmillant/Desktop/ITU/3. sem/bdsa/project/BDSA-project/code/GitInsight/obj/Debug/net6.0/GitInsight.pdb
+/Users/benjaminmillant/Desktop/ITU/3. sem/bdsa/project/BDSA-project/code/GitInsight/obj/Debug/net6.0/GitInsight.genruntimeconfig.cache
+/Users/benjaminmillant/Desktop/ITU/3. sem/bdsa/project/BDSA-project/code/GitInsight/obj/Debug/net6.0/ref/GitInsight.dll
