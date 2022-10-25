@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "UozCSJ+hhE+nS/56nfcFbAoO9e/h4Cnw4aERgBudpmGMq1/POAknJIqUBnY3Py0HvQctkPZ6t7SjWoT2aJipmA==",
+  "success": true,
+  "projectFilePath": "/Users/selmabernild/Desktop/GitInsight/GitInsight/GitInsight.csproj",
+  "expectedPackageFiles": [
+    "/Users/selmabernild/.nuget/packages/libgit2sharp/0.26.2/libgit2sharp.0.26.2.nupkg.sha512",
+    "/Users/selmabernild/.nuget/packages/libgit2sharp.nativebinaries/2.0.306/libgit2sharp.nativebinaries.2.0.306.nupkg.sha512"
+  ],
+  "logs": []
+}
