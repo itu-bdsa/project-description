@@ -8,9 +8,3 @@ using LibGit2Sharp;
         //creates a repository object from the path above
         repo.Commit("Inital commit", new Signature("Monica Hardt", "monha@itu.dk", new System.DateTimeOffset()),new Signature("Monica Hardt", "monha@itu.dk", new System.DateTimeOffset()), new CommitOptions() {AllowEmptyCommit = true});
         Console.WriteLine(repo.Commits.First().Message);
-
-
-  public object getFrequence()
-    {
-        throw new NotImplementedException();
-    }
