@@ -13,7 +13,7 @@ Inform us about your group by modifying this file and by sending a pull request 
 |    6 | `NEWgIT`     | `atro`, `chbl`, `fefa`, `frepe`, `luha`, `mgan`|
 |    7 | `Gruppe 7`   | `avia`, `aarv`, `luel`, `mlth`, `mwha`         |
 |    8 | `Bravo` | `asjo`, `frhc`, `siar`, `behv`, `erja`, `tbru` |
-|    9 | `<group_name>` | `<aaaa>`, `<bbbb>`, `<cccc>`, `<dddd>`, `<eeee>`, `<ffff>` |
+|    9 | `FS` | `adrka`, `lanr`, `mhvl`, `midf`, `siol` |
 |   10 | `<group_name>` | `<aaaa>`, `<bbbb>`, `<cccc>`, `<dddd>`, `<eeee>`, `<ffff>` |
 |   11 | `<group_name>` | `<aaaa>`, `<bbbb>`, `<cccc>`, `<dddd>`, `<eeee>`, `<ffff>` |
 |   12 | `<group_name>` | `<aaaa>`, `<bbbb>`, `<cccc>`, `<dddd>`, `<eeee>`, `<ffff>` |
