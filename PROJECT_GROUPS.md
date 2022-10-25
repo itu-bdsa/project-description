@@ -17,9 +17,9 @@ Inform us about your group by modifying this file and by sending a pull request 
 |   10 | `The Bear Minimum` | `jouj`, `mhsi`, `tuho`, `hcan`, `kbej` |
 |   11 | `Ape in space enterprise` | `sibh`, `frgm`, `brml`, `kmey`, `otja`|
 |   12 | `Grupp1` | `unla`, `mesv`, `laku`, `phla`, `raoo`, `bemi` |
-|   13 | `<group_name>` | `<aaaa>`, `<bbbb>`, `<cccc>`, `<dddd>`, `<eeee>`, `<ffff>` |
+|   13 | `Bogos` | `mreh`, `paab`, `shho`, `oska`, `nsel`, `clwj` |
 |   14 | `Storskov Inc.` | `jklo`, `jakst`, `malsc`, `biha`, `kmsa`, `phimo` |
-|   15 | `<group_name>` | `<aaaa>`, `<bbbb>`, `<cccc>`, `<dddd>`, `<eeee>`, `<ffff>` |
+|   15 | `Bad Decisions, Suggestions Accepted` | `clly`, `selb`, `monha`, `pekp`, `okre |
 |   16 | `<group_name>` | `<aaaa>`, `<bbbb>`, `<cccc>`, `<dddd>`, `<eeee>`, `<ffff>` |
 |   17 | `<group_name>` | `<aaaa>`, `<bbbb>`, `<cccc>`, `<dddd>`, `<eeee>`, `<ffff>` |
 |   18 | `<group_name>` | `<aaaa>`, `<bbbb>`, `<cccc>`, `<dddd>`, `<eeee>`, `<ffff>` |
@@ -28,4 +28,4 @@ Inform us about your group by modifying this file and by sending a pull request 
 |   21 | `<group_name>` | `<aaaa>`, `<bbbb>`, `<cccc>`, `<dddd>`, `<eeee>`, `<ffff>` |
 |   22 | `<group_name>` | `<aaaa>`, `<bbbb>`, `<cccc>`, `<dddd>`, `<eeee>`, `<ffff>` |
 |   23 | `<group_name>` | `<aaaa>`, `<bbbb>`, `<cccc>`, `<dddd>`, `<eeee>`, `<ffff>` |
-|   24 | `Bad Decisions, Suggestions Accepted` | `clly`, `selb`, `monha`, `pekp`, `okre |
+|   24 | `<group_name>` | `<aaaa>`, `<bbbb>`, `<cccc>`, `<dddd>`, `<eeee>`, `<ffff>` |
