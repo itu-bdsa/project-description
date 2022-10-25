@@ -20,7 +20,7 @@ Inform us about your group by modifying this file and by sending a pull request 
 |   13 | `Bogos` | `mreh`, `paab`, `shho`, `oska`, `nsel`, `clwj` |
 |   14 | `Storskov Inc.` | `jklo`, `jakst`, `malsc`, `biha`, `kmsa`, `phimo` |
 |   15 | `Bad Decisions, Suggestions Accepted` | `clly`, `selb`, `monha`, `pekp`, `okre` |
-|   16 | `<InsertProfessionalGroupname>` | `<bath>`, `<bhag>`, `<memr`, `<nicha>`, `<olfw>` |
+|   16 | `InsertProfessionalGroupname` | `bath`, `bhag`, `memr`, `nicha`, `olfw` |
 |   17 | `<group_name>` | `<aaaa>`, `<bbbb>`, `<cccc>`, `<dddd>`, `<eeee>`, `<ffff>` |
 |   18 | `<group_name>` | `<aaaa>`, `<bbbb>`, `<cccc>`, `<dddd>`, `<eeee>`, `<ffff>` |
 |   19 | `<group_name>` | `<aaaa>`, `<bbbb>`, `<cccc>`, `<dddd>`, `<eeee>`, `<ffff>` |
