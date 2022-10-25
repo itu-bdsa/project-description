@@ -9,7 +9,7 @@ Inform us about your group by modifying this file and by sending a pull request 
 |    2 | `The fighting mongooses` | `jacg`, `tbav`, `tcla`, `aldy`     |
 |    3 | `Cat Squish Gang` | `ahad`, `base`, `jwni`, `nlje`, `skas`, `weny` |
 |    4 | `Y+1F921`    | `aguh`, `mroa`, `oljh`, `ssbo`, `rakt`, `wihe` |
-|    5 | `SMB`        | `dadh`, `vime`, `laup`, `maxt`, `rasni` , `mbln`       |
+|    5 | `SMB`        | `dadh`, `vime`, `laup`, `maxt`, `rasni`        |
 |    6 | `<group_name>` | `<aaaa>`, `<bbbb>`, `<cccc>`, `<dddd>`, `<eeee>`, `<ffff>` |
 |    7 | `<group_name>` | `<aaaa>`, `<bbbb>`, `<cccc>`, `<dddd>`, `<eeee>`, `<ffff>` |
 |    8 | `<group_name>` | `<aaaa>`, `<bbbb>`, `<cccc>`, `<dddd>`, `<eeee>`, `<ffff>` |
@@ -28,4 +28,4 @@ Inform us about your group by modifying this file and by sending a pull request 
 |   21 | `<group_name>` | `<aaaa>`, `<bbbb>`, `<cccc>`, `<dddd>`, `<eeee>`, `<ffff>` |
 |   22 | `<group_name>` | `<aaaa>`, `<bbbb>`, `<cccc>`, `<dddd>`, `<eeee>`, `<ffff>` |
 |   23 | `<group_name>` | `<aaaa>`, `<bbbb>`, `<cccc>`, `<dddd>`, `<eeee>`, `<ffff>` |
-|   24 | `<group_name>` | `<aaaa>`, `<bbbb>`, `<cccc>`, `<dddd>`, `<eeee>`, `<ffff>` |
+|   24 | `Bad Decisions, Suggestions Accepted` | `clly`, `selb`, `monha`, `pekp`, `okre |
