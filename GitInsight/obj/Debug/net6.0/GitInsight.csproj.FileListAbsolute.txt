@@ -1,0 +1,15 @@
+C:\Users\Bruger\Desktop\BDSA Projekt\BDSA_PROJECT\GitInsight\bin\Debug\net6.0\GitInsight.exe
+C:\Users\Bruger\Desktop\BDSA Projekt\BDSA_PROJECT\GitInsight\bin\Debug\net6.0\GitInsight.deps.json
+C:\Users\Bruger\Desktop\BDSA Projekt\BDSA_PROJECT\GitInsight\bin\Debug\net6.0\GitInsight.runtimeconfig.json
+C:\Users\Bruger\Desktop\BDSA Projekt\BDSA_PROJECT\GitInsight\bin\Debug\net6.0\GitInsight.dll
+C:\Users\Bruger\Desktop\BDSA Projekt\BDSA_PROJECT\GitInsight\bin\Debug\net6.0\GitInsight.pdb
+C:\Users\Bruger\Desktop\BDSA Projekt\BDSA_PROJECT\GitInsight\obj\Debug\net6.0\GitInsight.csproj.AssemblyReference.cache
+C:\Users\Bruger\Desktop\BDSA Projekt\BDSA_PROJECT\GitInsight\obj\Debug\net6.0\GitInsight.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Bruger\Desktop\BDSA Projekt\BDSA_PROJECT\GitInsight\obj\Debug\net6.0\GitInsight.AssemblyInfoInputs.cache
+C:\Users\Bruger\Desktop\BDSA Projekt\BDSA_PROJECT\GitInsight\obj\Debug\net6.0\GitInsight.AssemblyInfo.cs
+C:\Users\Bruger\Desktop\BDSA Projekt\BDSA_PROJECT\GitInsight\obj\Debug\net6.0\GitInsight.csproj.CoreCompileInputs.cache
+C:\Users\Bruger\Desktop\BDSA Projekt\BDSA_PROJECT\GitInsight\obj\Debug\net6.0\GitInsight.dll
+C:\Users\Bruger\Desktop\BDSA Projekt\BDSA_PROJECT\GitInsight\obj\Debug\net6.0\refint\GitInsight.dll
+C:\Users\Bruger\Desktop\BDSA Projekt\BDSA_PROJECT\GitInsight\obj\Debug\net6.0\GitInsight.pdb
+C:\Users\Bruger\Desktop\BDSA Projekt\BDSA_PROJECT\GitInsight\obj\Debug\net6.0\GitInsight.genruntimeconfig.cache
+C:\Users\Bruger\Desktop\BDSA Projekt\BDSA_PROJECT\GitInsight\obj\Debug\net6.0\ref\GitInsight.dll
