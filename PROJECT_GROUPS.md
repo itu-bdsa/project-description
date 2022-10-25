@@ -5,7 +5,7 @@ Inform us about your group by modifying this file and by sending a pull request 
 
 |  No. | Group Name   | Members (ITU ID)                               |
 |------|--------------|------------------------------------------------|
-|    1 | `Zero`       | `emno`, `amdh`, `mbia`, `ehel`, `hast`, `Rafa` |
+|    1 | `Zero`       | `emno`, `amdh`, `mbia`, `ehel`, `hast`, `Rafa` |github.com/mikkel080/BDSA-GitInsight|
 |    2 | `The fighting mongooses` | `jacg`, `tbav`, `tcla`, `aldy`     |
 |    3 | `Cat Squish Gang` | `ahad`, `base`, `jwni`, `nlje`, `skas`, `weny` |
 |    4 | `Y+1F921`    | `aguh`, `mroa`, `oljh`, `ssbo`, `rakt`, `wihe` |
