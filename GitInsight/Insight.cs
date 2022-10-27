@@ -9,6 +9,18 @@ public static void main (string[] args){
     //in the terminal we want to check if agrs[0] is either something like -f or -a given this information to the user. 
     //if it input is -f run in frequency mode
     //if the input is -a run in author mode
+    string input = Console.ReadLine()!;
+    if(input.Equals("-a"))
+    {
+        foreach(Dictionary<int,DateTimeOffset> dic in getFrequenceAuthorMode())
+        Console.WriteLine(dic);
+    } else if (input.Equals("-f"))
+    {
+        foreach(var number in getFrequence().Keys)
+        {
+            Console.WriteLine(number + " " +  getFrequence()[number]);
+        }
+    }
     
 }
 
