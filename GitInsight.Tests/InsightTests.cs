@@ -3,11 +3,11 @@ namespace GitInsight.Tests;
 using LibGit2Sharp;
 using GitInsight;
 
-public class CommitTests: IDisposable{
+public class InsightTests: IDisposable{
 
     private Repository repo;
 
-    public CommitTests(){
+    public InsightTests(){
         //creates repository through libGit2Sharp
         var path = Repository.Init(".");
 
@@ -33,16 +33,15 @@ public class CommitTests: IDisposable{
             Directory.Delete("./.git",true);
          }
 
-
     [Fact]
     public void frequence_in_frequencemode_should_return_dictionary_number_of_commits_per_day()
      {
          // Arrange
-        var expected = new Dictionary<int,DateTimeOffset>{};
-        expected.Add(3,new DateTimeOffset(new DateTime(2022,10,25)));
+        var expected = new Dictionary<DateTimeOffset,int>{};
+        expected.Add(new DateTimeOffset(new DateTime(2022,10,25)),3);
 
         // Act
-        var actual = Insight.getFrequence(); //call to our method here should return dictionary mapping an integer to a DateTimeOffSet
+        var actual = Insight.getFrequence(repo); //call to our method here should return dictionary mapping an integer to a DateTimeOffSet
 
         // Assert
         Assert.Equal(expected, actual);  
@@ -78,10 +77,30 @@ public class CommitTests: IDisposable{
         expectedListOfDictionaries.Add(person3Dic);
 
         // Act
-        var actual = Insight.getFrequenceAuthorMode(); //call to our method here should return dictionary mapping an integer to a DateTimeOffSet
+        var actual = Insight.getFrequenceAuthorMode(repo); //call to our method here should return dictionary mapping an integer to a DateTimeOffSet
 
         // Assert
         Assert.Equal(expectedListOfDictionaries, actual);  
+        }
+
+        [Fact]
+        public void frequency_in_authormode_with_invalid_author()
+        {
+            // Given
+        
+            // When
+        
+            // Then
+        }
+
+         [Fact]
+        public void printing_prints_seperate_lines_with_correct_information()
+        {
+            // Given
+        
+            // When
+        
+            // Then
         }
    
 }
