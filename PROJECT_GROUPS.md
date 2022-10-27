@@ -7,7 +7,7 @@ Inform us about your group by modifying this file and by sending a pull request 
 |------|--------------|------------------------------------------------|
 |    1 | `Zero`       | `emno`, `amdh`, `mbia`, `ehel`, `hast`, `Rafa` |
 |    2 | `The fighting mongooses` | `jacg`, `tbav`, `tcla`, `aldy`     |
-|    3 | `Cat Squish Gang` | `ahad`, `base`, `jwni`, `nlje`, `skas`, `weny` |
+|    3 | `Cat Squish Gang` | `ahad`, `base`, `jwni`, `nlje`, `skas`, `weny` | Github: https://github.com/AdamHadouTemsamani/project-description 
 |    4 | `Y+1F921`    | `aguh`, `mroa`, `oljh`, `ssbo`, `rakt`, `wihe` |
 |    5 | `SMB`        | `dadh`, `vime`, `laup`, `maxt`, `rasni` , `mbln`       |
 |    6 | `NEWgIT`     | `atro`, `chbl`, `fefa`, `frepe`, `luha`, `mgan`|
