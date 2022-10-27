@@ -25,6 +25,8 @@ Find five other group members and register your group by sending a pull-request 
 Also, assign your group a name.
 Remember, such a name has to be appropriate in a professional setting.
 
+Please send in the message to the pull-request the IDs of your group members too so that TAs can more easily resolve merge conflicts.
+
 
 ## Week One (Week 43)
 
@@ -74,6 +76,8 @@ Maxime Kauta
 
 Of course, as described by R. Martin, you try to keep your application as simple as possible to solve the task.
 Remember that as good agile software engineers, you develop your project in a test-driven manner, i.e., start writing unit tests before implementing your solution.
+
+Create one or more GitHub Action workflows that run your unit tests and that build your `GitInsight` application on every push to the main branch or on any pull-request that is merged into the main branch.
 
 Next to the code, create a directory called `docs` in the root of your repository.
 In it  use markdown documents to describe your project.

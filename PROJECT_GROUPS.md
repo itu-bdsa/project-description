@@ -3,25 +3,25 @@
 During fall break, form groups with six members each in the table below.
 Inform us about your group by modifying this file and by sending a pull request to it.
 
-
 |  No. | Group Name   | Members (ITU ID)                               |
 |------|--------------|------------------------------------------------|
-|    1 | `<group_name>` | `<aaaa>`, `<bbbb>`, `<cccc>`, `<dddd>`, `<eeee>`, `<ffff>` |
-|    2 | `<group_name>` | `<aaaa>`, `<bbbb>`, `<cccc>`, `<dddd>`, `<eeee>`, `<ffff>` |
-|    3 | `<group_name>` | `<aaaa>`, `<bbbb>`, `<cccc>`, `<dddd>`, `<eeee>`, `<ffff>` |
-|    5 | `<group_name>` | `<aaaa>`, `<bbbb>`, `<cccc>`, `<dddd>`, `<eeee>`, `<ffff>` |
-|    6 | `<group_name>` | `<aaaa>`, `<bbbb>`, `<cccc>`, `<dddd>`, `<eeee>`, `<ffff>` |
-|    7 | `<group_name>` | `<aaaa>`, `<bbbb>`, `<cccc>`, `<dddd>`, `<eeee>`, `<ffff>` |
-|    8 | `<group_name>` | `<aaaa>`, `<bbbb>`, `<cccc>`, `<dddd>`, `<eeee>`, `<ffff>` |
-|    9 | `<group_name>` | `<aaaa>`, `<bbbb>`, `<cccc>`, `<dddd>`, `<eeee>`, `<ffff>` |
-|   10 | `<group_name>` | `<aaaa>`, `<bbbb>`, `<cccc>`, `<dddd>`, `<eeee>`, `<ffff>` |
-|   11 | `<group_name>` | `<aaaa>`, `<bbbb>`, `<cccc>`, `<dddd>`, `<eeee>`, `<ffff>` |
-|   12 | `<group_name>` | `<aaaa>`, `<bbbb>`, `<cccc>`, `<dddd>`, `<eeee>`, `<ffff>` |
-|   13 | `<group_name>` | `<aaaa>`, `<bbbb>`, `<cccc>`, `<dddd>`, `<eeee>`, `<ffff>` |
-|   14 | `<group_name>` | `<aaaa>`, `<bbbb>`, `<cccc>`, `<dddd>`, `<eeee>`, `<ffff>` |
-|   15 | `<group_name>` | `<aaaa>`, `<bbbb>`, `<cccc>`, `<dddd>`, `<eeee>`, `<ffff>` |
-|   16 | `<group_name>` | `<aaaa>`, `<bbbb>`, `<cccc>`, `<dddd>`, `<eeee>`, `<ffff>` |
-|   17 | `<group_name>` | `<aaaa>`, `<bbbb>`, `<cccc>`, `<dddd>`, `<eeee>`, `<ffff>` |
+|    1 | `Zero`       | `emno`, `amdh`, `mbia`, `ehel`, `hast`, `Rafa` |
+|    2 | `The fighting mongooses` | `jacg`, `tbav`, `tcla`, `aldy`     |
+|    3 | `Cat Squish Gang` | `ahad`, `base`, `jwni`, `nlje`, `skas`, `weny` |
+|    4 | `U+1F921`    | `aguh`, `mroa`, `oljh`, `ssbo`, `rakt`, `wihe` | https://github.com/WilliamHeidemann/GitInsight
+|    5 | `SMB`        | `dadh`, `vime`, `laup`, `maxt`, `rasni` , `mbln`       |
+|    6 | `NEWgIT`     | `atro`, `chbl`, `fefa`, `frepe`, `luha`, `mgan`|
+|    7 | `Gruppe 7`   | `avia`, `aarv`, `luel`, `mlth`, `mwha`         |
+|    8 | `Bravo` | `asjo`, `frhc`, `siar`, `behv`, `erja`, `tbru` |
+|    9 | `FS` | `adrka`, `lanr`, `mhvl`, `midf`, `siol` |
+|   10 | `The Bear Minimum` | `jouj`, `mhsi`, `tuho`, `hcan`, `kbej` |
+|   11 | `Ape in space enterprise` | `sibh`, `frgm`, `brml`, `kmey`, `otja`|
+|   12 | `Grupp1` | `unla`, `mesv`, `laku`, `phla`, `raoo`, `bemi` |
+|   13 | `Bogos` | `mreh`, `paab`, `shho`, `oska`, `nsel`, `clwj` |
+|   14 | `Storskov Inc.` | `jklo`, `jakst`, `malsc`, `biha`, `kmsa`, `phimo` |
+|   15 | `Bad Decisions, Suggestions Accepted` | `clly`, `selb`, `monha`, `pekp`, `okre` |
+|   16 | `InsertProfessionalGroupname` | `bath`, `bhag`, `memr`, `nicha`, `olfw` |
+|   17 | `404 group not found` | `lawu`, `nkar`, `tosp`, `stmp`, `vist`, `aing` |
 |   18 | `<group_name>` | `<aaaa>`, `<bbbb>`, `<cccc>`, `<dddd>`, `<eeee>`, `<ffff>` |
 |   19 | `<group_name>` | `<aaaa>`, `<bbbb>`, `<cccc>`, `<dddd>`, `<eeee>`, `<ffff>` |
 |   20 | `<group_name>` | `<aaaa>`, `<bbbb>`, `<cccc>`, `<dddd>`, `<eeee>`, `<ffff>` |
