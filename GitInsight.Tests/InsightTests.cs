@@ -18,12 +18,14 @@ public class InsightTests: IDisposable{
         Signature sig1 = new Signature("Person1", "person1@itu.dk", new DateTimeOffset(new DateTime(2022,10,25)));
         Signature sig2 = new Signature("Person2", "person2@itu.dk", new DateTimeOffset(new DateTime(2022,10,25)));
         Signature sig3 = new Signature("Person3", "person2@itu.dk", new DateTimeOffset(new DateTime(2022,10,25)));
+        Signature sig4 = new Signature("Person3", "person2@itu.dk", new DateTimeOffset(new DateTime(2022,11,25)));
 
         repo.Commit("Inital commit", sig1, sig1, new CommitOptions() {AllowEmptyCommit = true});
-        repo.Commit("Inital commit", sig2, sig2, new CommitOptions() {AllowEmptyCommit = true});
-        repo.Commit("Inital commit", sig3, sig3, new CommitOptions() {AllowEmptyCommit = true});
+        repo.Commit("Inital commit1", sig2, sig2, new CommitOptions() {AllowEmptyCommit = true});
+        repo.Commit("Inital commit2", sig3, sig3, new CommitOptions() {AllowEmptyCommit = true});
+        repo.Commit("Inital commit3", sig4, sig4, new CommitOptions() {AllowEmptyCommit = true});
         
-        Console.WriteLine(repo.Commits.First().Message);
+        //Console.WriteLine(repo.Commits.First().Message);
     }
 
     public void Dispose(){
@@ -37,8 +39,9 @@ public class InsightTests: IDisposable{
     public void frequence_in_frequencemode_should_return_dictionary_number_of_commits_per_day()
      {
          // Arrange
-        var expected = new Dictionary<DateTimeOffset,int>{};
-        expected.Add(new DateTimeOffset(new DateTime(2022,10,25)),3);
+        var expected = new Dictionary<string,int>{};
+        expected.Add("25/10/2022",3);
+        expected.Add("25/11/2022",1);
 
         // Act
         var actual = Insight.getFrequence(repo); //call to our method here should return dictionary mapping an integer to a DateTimeOffSet
@@ -54,43 +57,37 @@ public class InsightTests: IDisposable{
         {
         //Arrange
         //adding more commmits to the repo with different dates
-        Signature sig4 = new Signature("Person1", "person1@itu.dk", new DateTimeOffset(new DateTime(2022,11,04)));
-        Signature sig5 = new Signature("Person2", "person1@itu.dk", new DateTimeOffset(new DateTime(2022,11,03)));
-        Signature sig6 = new Signature("Person3", "person1@itu.dk", new DateTimeOffset(new DateTime(2022,11,02)));
+        Signature sig5 = new Signature("Person1", "person1@itu.dk", new DateTimeOffset(new DateTime(2022,11,04)));
+        Signature sig6 = new Signature("Person2", "person1@itu.dk", new DateTimeOffset(new DateTime(2022,11,03)));
+        Signature sig7 = new Signature("Person3", "person1@itu.dk", new DateTimeOffset(new DateTime(2022,11,02)));
+
+        repo.Commit("Inital commit", sig5, sig5, new CommitOptions() {AllowEmptyCommit = true});
+        repo.Commit("Inital commit1", sig6, sig6, new CommitOptions() {AllowEmptyCommit = true});
+        repo.Commit("Inital commit2", sig7, sig7, new CommitOptions() {AllowEmptyCommit = true});
        
-        var person1Dic = new Dictionary<int,DateTimeOffset>{};
-        person1Dic.Add(1,new DateTimeOffset(new DateTime(2022,10,25)));
-        person1Dic.Add(1,new DateTimeOffset(new DateTime(2022,11,04)));
+        Dictionary<string,int> person1Dic = new Dictionary<string,int>{};
+        person1Dic.Add("25/10/2022",1);
+        person1Dic.Add("04/11/2022",1);
 
-        var person2Dic = new Dictionary<int,DateTimeOffset>{};
-        person2Dic.Add(1,new DateTimeOffset(new DateTime(2022,10,25)));
-        person2Dic.Add(1,new DateTimeOffset(new DateTime(2022,11,03)));
+        Dictionary<string,int> person2Dic = new Dictionary<string,int>{};
+        person2Dic.Add("25/10/2022",1);
+        person2Dic.Add("03/11/2022",1);
 
-        var person3Dic = new Dictionary<int,DateTimeOffset>{};
-        person2Dic.Add(1,new DateTimeOffset(new DateTime(2022,10,25)));
-        person2Dic.Add(1,new DateTimeOffset(new DateTime(2022,11,02)));
-        
+        Dictionary<string,int> person3Dic = new Dictionary<string,int>{};
+        person3Dic.Add("25/11/2022",1);
+        person3Dic.Add("25/10/2022",1);
+        person3Dic.Add("02/11/2022",1);
 
-        var expectedListOfDictionaries = new List<Dictionary<int,DateTimeOffset>>{};
-        expectedListOfDictionaries.Add(person1Dic);
-        expectedListOfDictionaries.Add(person2Dic);
-        expectedListOfDictionaries.Add(person3Dic);
+        var expectedDictionaryOfDictionaries = new Dictionary<string,Dictionary<string,int>>{};
+        expectedDictionaryOfDictionaries.Add(sig7.Name,person3Dic);
+        expectedDictionaryOfDictionaries.Add(sig5.Name,person1Dic);
+        expectedDictionaryOfDictionaries.Add(sig6.Name,person2Dic);
 
         // Act
         var actual = Insight.getFrequenceAuthorMode(repo); //call to our method here should return dictionary mapping an integer to a DateTimeOffSet
 
         // Assert
-        Assert.Equal(expectedListOfDictionaries, actual);  
-        }
-
-        [Fact]
-        public void frequency_in_authormode_with_invalid_author()
-        {
-            // Given
-        
-            // When
-        
-            // Then
+        Assert.Equal(expectedDictionaryOfDictionaries, actual);  
         }
 
          [Fact]
