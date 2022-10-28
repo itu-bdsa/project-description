@@ -12,7 +12,7 @@ public class GitInsight{
     }
 
     public static void commitFrequencyMode(){
-        var repoPath = @"C:\Users\annem\Desktop\BDSA_PROJECT\GitInsight.Tests\assignment-05";
+        var repoPath = @"C:\Users\eik\Desktop\BDSA_PROJECT\GitInsight.Tests\assignment-05";
         var fileOffset = @"C:\Users\annem\Desktop\BDSA_PROJECT\GitInsight.Tests\assignment-05\GildedRose\obj\project.assets.json";
         var fileOffsetFwdSlash = fileOffset.Replace("\\", "/");
         using (var repo = new Repository(repoPath))
