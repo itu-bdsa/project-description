@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "vOBTdgnLaEh05avwJMc5HkyiVVr88EcnPRYNPcQ8e6bY4mjZHCWrMtEaE4f3JGTHENaERMohueOrNt8jPrrLOQ==",
+  "dgSpecHash": "oNiiKeipvc4tK9+rWn8lQlmciGS5EG3pA7MQtUuoynnS4GsHT8IZUEroVPXj3C+4/8Rj1vy5bVj/mqEunVl4qg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\annem\\Desktop\\BDSA_PROJECT\\GitInsight\\GitInsight.csproj",
+  "projectFilePath": "C:\\Users\\Bruger\\Desktop\\BDSA Projekt\\BDSA_PROJECT\\GitInsight\\GitInsight.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\annem\\.nuget\\packages\\libgit2sharp\\0.26.2\\libgit2sharp.0.26.2.nupkg.sha512",
-    "C:\\Users\\annem\\.nuget\\packages\\libgit2sharp.nativebinaries\\2.0.306\\libgit2sharp.nativebinaries.2.0.306.nupkg.sha512"
+    "C:\\Users\\Bruger\\.nuget\\packages\\libgit2sharp\\0.26.2\\libgit2sharp.0.26.2.nupkg.sha512",
+    "C:\\Users\\Bruger\\.nuget\\packages\\libgit2sharp.nativebinaries\\2.0.306\\libgit2sharp.nativebinaries.2.0.306.nupkg.sha512"
   ],
   "logs": []
 }
