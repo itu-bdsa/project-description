@@ -1,6 +1,7 @@
 ﻿namespace GitInsight;
 using static Mode;
 
+
 class Program
 {
     private static Mode _mode;
@@ -9,12 +10,14 @@ class Program
     static void Main(string[] args)
     {
         RunProg();
+        
     }
-
+    
 
     static void RunProg()
     {
-        while (true)
+        var isRunning = true;
+        while (isRunning)
         {
             var input = Console.ReadLine();
             switch (input)
@@ -23,7 +26,7 @@ class Program
                     _mode = AUTHOR;
                     break;
                 case "frequency":
-                    // setMode(frequency);
+                    _mode = FREQUENCY;
                     break;
                 case "print":
                     // check isLoaded?
@@ -38,13 +41,25 @@ class Program
                     Console.WriteLine("'author' to switch to AUTHOR mode.");
                     Console.WriteLine("'frequency' to switch to FREQUENCY mode.");
                     Console.WriteLine("'print' to print repository details.");
+                    Console.WriteLine("'exit' to exit program");
                     break;
-
+                case "exit":
+                        isRunning = false;
+                    break;
                 default:
                     Console.WriteLine("Command doesn't exist. Type 'help' for commandlist");
                     break;
             }
-
+        }
+    }
+// \Users\thekure23\Library\CloudStorage\OneDrive-ITU\courseDocuments\03sem\analysisDesignSoftArch\project\BDSA-project
+    public static void Data()
+    {
+        using (var repo = new Repository(@"D:\source\LibGit2Sharp"))
+        {
+            Commit commit = repo.Head.Tip;
+            Console.WriteLine("Author: {0}", commit.Author.Name);
+            Console.WriteLine("Message: {0}", commit.MessageShort);
         }
     }
 
@@ -52,11 +67,12 @@ class Program
     {
         if (_mode == FREQUENCY)
         {
-            Console.WriteLine("HELLO WORLD");
+            Console.WriteLine("Frequency:");
         }
         else if (_mode == AUTHOR)
         {
-            Console.WriteLine("HELLO ITU");
+            Console.WriteLine("Author: ");
+            Data();
         }
         else
         {

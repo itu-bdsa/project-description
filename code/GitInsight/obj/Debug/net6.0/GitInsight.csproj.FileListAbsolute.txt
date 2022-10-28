@@ -29,3 +29,34 @@
 /Users/benjaminmillant/Desktop/ITU/3. sem/bdsa/project/BDSA-project/code/GitInsight/bin/Debug/net6.0/runtimes/win-x86/native/git2-106a5f2.dll
 /Users/benjaminmillant/Desktop/ITU/3. sem/bdsa/project/BDSA-project/code/GitInsight/bin/Debug/net6.0/runtimes/win-x86/native/git2-106a5f2.pdb
 /Users/benjaminmillant/Desktop/ITU/3. sem/bdsa/project/BDSA-project/code/GitInsight/obj/Debug/net6.0/GitInsight.csproj.CopyComplete
+/Users/thekure23/Library/CloudStorage/OneDrive-ITU/courseDocuments/03sem/analysisDesignSoftArch/project/BDSA-project/code/GitInsight/obj/Debug/net6.0/GitInsight.csproj.AssemblyReference.cache
+/Users/thekure23/Library/CloudStorage/OneDrive-ITU/courseDocuments/03sem/analysisDesignSoftArch/project/BDSA-project/code/GitInsight/obj/Debug/net6.0/GitInsight.GeneratedMSBuildEditorConfig.editorconfig
+/Users/thekure23/Library/CloudStorage/OneDrive-ITU/courseDocuments/03sem/analysisDesignSoftArch/project/BDSA-project/code/GitInsight/obj/Debug/net6.0/GitInsight.AssemblyInfoInputs.cache
+/Users/thekure23/Library/CloudStorage/OneDrive-ITU/courseDocuments/03sem/analysisDesignSoftArch/project/BDSA-project/code/GitInsight/obj/Debug/net6.0/GitInsight.AssemblyInfo.cs
+/Users/thekure23/Library/CloudStorage/OneDrive-ITU/courseDocuments/03sem/analysisDesignSoftArch/project/BDSA-project/code/GitInsight/obj/Debug/net6.0/GitInsight.csproj.CoreCompileInputs.cache
+/Users/thekure23/Library/CloudStorage/OneDrive-ITU/courseDocuments/03sem/analysisDesignSoftArch/project/BDSA-project/code/GitInsight/obj/Debug/net6.0/GitInsight.dll
+/Users/thekure23/Library/CloudStorage/OneDrive-ITU/courseDocuments/03sem/analysisDesignSoftArch/project/BDSA-project/code/GitInsight/obj/Debug/net6.0/refint/GitInsight.dll
+/Users/thekure23/Library/CloudStorage/OneDrive-ITU/courseDocuments/03sem/analysisDesignSoftArch/project/BDSA-project/code/GitInsight/obj/Debug/net6.0/GitInsight.pdb
+/Users/thekure23/Library/CloudStorage/OneDrive-ITU/courseDocuments/03sem/analysisDesignSoftArch/project/BDSA-project/code/GitInsight/bin/Debug/net6.0/GitInsight
+/Users/thekure23/Library/CloudStorage/OneDrive-ITU/courseDocuments/03sem/analysisDesignSoftArch/project/BDSA-project/code/GitInsight/bin/Debug/net6.0/GitInsight.deps.json
+/Users/thekure23/Library/CloudStorage/OneDrive-ITU/courseDocuments/03sem/analysisDesignSoftArch/project/BDSA-project/code/GitInsight/bin/Debug/net6.0/GitInsight.runtimeconfig.json
+/Users/thekure23/Library/CloudStorage/OneDrive-ITU/courseDocuments/03sem/analysisDesignSoftArch/project/BDSA-project/code/GitInsight/bin/Debug/net6.0/GitInsight.dll
+/Users/thekure23/Library/CloudStorage/OneDrive-ITU/courseDocuments/03sem/analysisDesignSoftArch/project/BDSA-project/code/GitInsight/bin/Debug/net6.0/GitInsight.pdb
+/Users/thekure23/Library/CloudStorage/OneDrive-ITU/courseDocuments/03sem/analysisDesignSoftArch/project/BDSA-project/code/GitInsight/bin/Debug/net6.0/LibGit2Sharp.dll
+/Users/thekure23/Library/CloudStorage/OneDrive-ITU/courseDocuments/03sem/analysisDesignSoftArch/project/BDSA-project/code/GitInsight/bin/Debug/net6.0/runtimes/alpine-x64/native/libgit2-106a5f2.so
+/Users/thekure23/Library/CloudStorage/OneDrive-ITU/courseDocuments/03sem/analysisDesignSoftArch/project/BDSA-project/code/GitInsight/bin/Debug/net6.0/runtimes/alpine.3.9-x64/native/libgit2-106a5f2.so
+/Users/thekure23/Library/CloudStorage/OneDrive-ITU/courseDocuments/03sem/analysisDesignSoftArch/project/BDSA-project/code/GitInsight/bin/Debug/net6.0/runtimes/debian-arm64/native/libgit2-106a5f2.so
+/Users/thekure23/Library/CloudStorage/OneDrive-ITU/courseDocuments/03sem/analysisDesignSoftArch/project/BDSA-project/code/GitInsight/bin/Debug/net6.0/runtimes/debian.9-x64/native/libgit2-106a5f2.so
+/Users/thekure23/Library/CloudStorage/OneDrive-ITU/courseDocuments/03sem/analysisDesignSoftArch/project/BDSA-project/code/GitInsight/bin/Debug/net6.0/runtimes/fedora-x64/native/libgit2-106a5f2.so
+/Users/thekure23/Library/CloudStorage/OneDrive-ITU/courseDocuments/03sem/analysisDesignSoftArch/project/BDSA-project/code/GitInsight/bin/Debug/net6.0/runtimes/linux-x64/native/libgit2-106a5f2.so
+/Users/thekure23/Library/CloudStorage/OneDrive-ITU/courseDocuments/03sem/analysisDesignSoftArch/project/BDSA-project/code/GitInsight/bin/Debug/net6.0/runtimes/osx/native/libgit2-106a5f2.dylib
+/Users/thekure23/Library/CloudStorage/OneDrive-ITU/courseDocuments/03sem/analysisDesignSoftArch/project/BDSA-project/code/GitInsight/bin/Debug/net6.0/runtimes/rhel-x64/native/libgit2-106a5f2.so
+/Users/thekure23/Library/CloudStorage/OneDrive-ITU/courseDocuments/03sem/analysisDesignSoftArch/project/BDSA-project/code/GitInsight/bin/Debug/net6.0/runtimes/ubuntu.16.04-arm64/native/libgit2-106a5f2.so
+/Users/thekure23/Library/CloudStorage/OneDrive-ITU/courseDocuments/03sem/analysisDesignSoftArch/project/BDSA-project/code/GitInsight/bin/Debug/net6.0/runtimes/ubuntu.18.04-x64/native/libgit2-106a5f2.so
+/Users/thekure23/Library/CloudStorage/OneDrive-ITU/courseDocuments/03sem/analysisDesignSoftArch/project/BDSA-project/code/GitInsight/bin/Debug/net6.0/runtimes/win-x64/native/git2-106a5f2.dll
+/Users/thekure23/Library/CloudStorage/OneDrive-ITU/courseDocuments/03sem/analysisDesignSoftArch/project/BDSA-project/code/GitInsight/bin/Debug/net6.0/runtimes/win-x64/native/git2-106a5f2.pdb
+/Users/thekure23/Library/CloudStorage/OneDrive-ITU/courseDocuments/03sem/analysisDesignSoftArch/project/BDSA-project/code/GitInsight/bin/Debug/net6.0/runtimes/win-x86/native/git2-106a5f2.dll
+/Users/thekure23/Library/CloudStorage/OneDrive-ITU/courseDocuments/03sem/analysisDesignSoftArch/project/BDSA-project/code/GitInsight/bin/Debug/net6.0/runtimes/win-x86/native/git2-106a5f2.pdb
+/Users/thekure23/Library/CloudStorage/OneDrive-ITU/courseDocuments/03sem/analysisDesignSoftArch/project/BDSA-project/code/GitInsight/obj/Debug/net6.0/GitInsight.csproj.CopyComplete
+/Users/thekure23/Library/CloudStorage/OneDrive-ITU/courseDocuments/03sem/analysisDesignSoftArch/project/BDSA-project/code/GitInsight/obj/Debug/net6.0/GitInsight.genruntimeconfig.cache
+/Users/thekure23/Library/CloudStorage/OneDrive-ITU/courseDocuments/03sem/analysisDesignSoftArch/project/BDSA-project/code/GitInsight/obj/Debug/net6.0/ref/GitInsight.dll
