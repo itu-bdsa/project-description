@@ -10,7 +10,7 @@ Inform us about your group by modifying this file and by sending a pull request 
 |    3 | `Cat Squish Gang`                     | `ahad`, `base`, `jwni`, `nlje`, `skas`, `weny`    | https://github.com/AdamHadouTemsamani/project-description |
 |    4 | `U+1F921`                             | `aguh`, `mroa`, `oljh`, `ssbo`, `rakt`, `wihe`    | https://github.com/WilliamHeidemann/GitInsight |
 |    5 | `SMB`                                 | `dadh`, `vime`, `laup`, `maxt`, `rasni` , `mbln`  |  |
-|    6 | `NEWgIT`                              | `atro`, `chbl`, `fefa`, `frepe`, `luha`, `mgan`   |  |
+|    6 | `NEWgIT`                              | `atro`, `chbl`, `fefa`, `frepe`, `luha`, `mgan`   | https://github.com/duckth/bdsa-project-newgit |
 |    7 | `Gruppe 7`                            | `avia`, `aarv`, `luel`, `mlth`, `mwha`            |  |
 |    8 | `Bravo`                               | `asjo`, `frhc`, `siar`, `behv`, `erja`, `tbru`    |  |
 |    9 | `FS`                                  | `adrka`, `lanr`, `mhvl`, `midf`, `siol`           |  |
