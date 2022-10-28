@@ -18,8 +18,17 @@ public class GitInsight{
         using (var repo = new Repository(repoPath))
         {
             var loges = repo.Commits.ToList();
-            Console.WriteLine(loges.Count);
-            
+    Console.WriteLine(loges.Count);
+            for (int i = 0; i < loges.Count; i++)
+            {
+        
+            string[] uwu = loges[i].Author.ToString().Split(" ");
+            Console.WriteLine(uwu[0]);
+            string[] owo = loges[i].Author.When.ToString().Split(" ");
+            Console.WriteLine(owo[0]);
+            }
+
+
             var dates = loges.GroupBy(x => x.Author.When.Date).Count();//.SelectMany(x=>x).ToList();
             Console.WriteLine(dates);
             /*foreach (var date in dates){
