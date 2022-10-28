@@ -6,7 +6,7 @@ Inform us about your group by modifying this file and by sending a pull request 
 |  No. | Group Name   | Members (ITU ID)                               |
 |------|--------------|------------------------------------------------|
 |    1 | `Zero`       | `emno`, `amdh`, `mbia`, `ehel`, `hast`, `Rafa` |
-|    2 | `The fighting mongooses` | `jacg`, `tbav`, `tcla`, `aldy`     |
+|    2 | `The fighting mongooses` | `jacg`, `tbav`, `tcla`, `aldy`     | https://github.com/Grumlebob/GitInsight.git
 |    3 | `Cat Squish Gang` | `ahad`, `base`, `jwni`, `nlje`, `skas`, `weny` |
 |    4 | `U+1F921`    | `aguh`, `mroa`, `oljh`, `ssbo`, `rakt`, `wihe` | https://github.com/WilliamHeidemann/GitInsight
 |    5 | `SMB`        | `dadh`, `vime`, `laup`, `maxt`, `rasni` , `mbln`       |
