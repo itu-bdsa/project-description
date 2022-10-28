@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "741SNT7qxwmEeiHf5VRaDJGbLxDquSF2PUZ682T+PARfLtz/gUvcz6PJQzTUhCl/3GDajZBTd082lYsU6aGl+Q==",
+  "dgSpecHash": "mfnFMcJE2wPVPVxutEBvvGF2Ges6G2wMqa0uUN81oTZbz3tGLz530JIE2StnffR1Bn2HhKyKp4MqMxpLhu2qsg==",
   "success": true,
-  "projectFilePath": "/Users/thekure23/Library/CloudStorage/OneDrive-ITU/courseDocuments/03sem/analysisDesignSoftArch/project/BDSA-project/code/GitInsight/GitInsight.csproj",
+  "projectFilePath": "C:\\code\\bdsa\\BDSA-project\\code\\GitInsight\\GitInsight.csproj",
   "expectedPackageFiles": [
-    "/Users/thekure23/.nuget/packages/libgit2sharp/0.26.2/libgit2sharp.0.26.2.nupkg.sha512",
-    "/Users/thekure23/.nuget/packages/libgit2sharp.nativebinaries/2.0.306/libgit2sharp.nativebinaries.2.0.306.nupkg.sha512"
+    "C:\\Users\\pl\\.nuget\\packages\\libgit2sharp\\0.26.2\\libgit2sharp.0.26.2.nupkg.sha512",
+    "C:\\Users\\pl\\.nuget\\packages\\libgit2sharp.nativebinaries\\2.0.306\\libgit2sharp.nativebinaries.2.0.306.nupkg.sha512"
   ],
   "logs": []
 }
