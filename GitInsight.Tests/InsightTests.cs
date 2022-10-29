@@ -40,8 +40,8 @@ public class InsightTests: IDisposable{
      {
          // Arrange
         var expected = new Dictionary<string,int>{};
-        expected.Add("25/10/2022",3);
-        expected.Add("25/11/2022",1);
+        expected.Add("25.11.2022",1);
+        expected.Add("25.10.2022",3);
 
         // Act
         var actual = Insight.getFrequence(repo); //call to our method here should return dictionary mapping an integer to a DateTimeOffSet
@@ -66,17 +66,17 @@ public class InsightTests: IDisposable{
         repo.Commit("Inital commit2", sig7, sig7, new CommitOptions() {AllowEmptyCommit = true});
        
         Dictionary<string,int> person1Dic = new Dictionary<string,int>{};
-        person1Dic.Add("25/10/2022",1);
-        person1Dic.Add("04/11/2022",1);
+        person1Dic.Add("25.10.2022",1);
+        person1Dic.Add("04.11.2022",1);
 
         Dictionary<string,int> person2Dic = new Dictionary<string,int>{};
-        person2Dic.Add("25/10/2022",1);
-        person2Dic.Add("03/11/2022",1);
+        person2Dic.Add("25.10.2022",1);
+        person2Dic.Add("03.11.2022",1);
 
         Dictionary<string,int> person3Dic = new Dictionary<string,int>{};
-        person3Dic.Add("25/11/2022",1);
-        person3Dic.Add("25/10/2022",1);
-        person3Dic.Add("02/11/2022",1);
+        person3Dic.Add("25.11.2022",1);
+        person3Dic.Add("25.10.2022",1);
+        person3Dic.Add("02.11.2022",1);
 
         var expectedDictionaryOfDictionaries = new Dictionary<string,Dictionary<string,int>>{};
         expectedDictionaryOfDictionaries.Add(sig7.Name,person3Dic);
