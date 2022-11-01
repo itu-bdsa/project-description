@@ -14,7 +14,7 @@ Inform us about your group by modifying this file and by sending a pull request 
 |    7 | `Gruppe 7`                            | `avia`, `aarv`, `luel`, `mlth`, `mwha`            |  |
 |    8 | `Bravo`                               | `asjo`, `frhc`, `siar`, `behv`, `erja`, `tbru`    |  |
 |    9 | `FS`                                  | `adrka`, `lanr`, `mhvl`, `midf`, `siol`           |  |
-|   10 | `The Bear Minimum`                    | `jouj`, `mhsi`, `tuho`, `hcan`, `kbej`            |  |
+|   10 | `The Bear Minimum`                    | `jouj`, `mhsi`, `tuho`, `hcan`, `kbej`            | https://github.com/Tyyrid/BDSA-Project-TheBearMinimum |
 |   11 | `Ape in space enterprise`             | `sibh`, `frgm`, `brml`, `kmey`, `otja`            | https://github.com/frmo24042/GitInsight |
 |   12 | `Grupp1`                              | `unla`, `mesv`, `laku`, `phla`, `raoo`, `bemi`    | https://github.com/bemillant/BDSA-project |
 |   13 | `Bogos`                               | `mreh`, `paab`, `shho`, `oska`, `nsel`, `clwj`    |  |
