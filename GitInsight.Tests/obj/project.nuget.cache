@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "VSBgBQbkxodOkyXehQ/yav+px31wlmv1G/PjKkXvrtkYljWxOMHDc56vxNVQejJpZUWgAHa0rmCbAm53fNieDA==",
+  "dgSpecHash": "l8CEGmiF7dQ6DvqnTbhUqc3SKt7YGpYqIE+w58WhkQGcO2mwPqoksfzzNFTNf0Ye8Uszz8kpgiI0N67m7VzaTw==",
   "success": true,
-  "projectFilePath": "c:\\Users\\eikbo\\Skrivebord\\BDSA\\BDSA_PROJECT\\GitInsight.Tests\\GitInsight.Tests.csproj",
+  "projectFilePath": "C:\\Users\\eikbo\\Skrivebord\\BDSA\\BDSA_PROJECT\\GitInsight.Tests\\GitInsight.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\eikbo\\.nuget\\packages\\coverlet.collector\\3.1.2\\coverlet.collector.3.1.2.nupkg.sha512",
     "C:\\Users\\eikbo\\.nuget\\packages\\libgit2sharp\\0.26.2\\libgit2sharp.0.26.2.nupkg.sha512",

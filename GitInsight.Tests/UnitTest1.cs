@@ -18,8 +18,6 @@ public class UnitTest1
     {
         //Arrange
         var repoPath = @"C:\Users\eikbo\Skrivebord\BDSA\BDSA_PROJECT\TestGithubStorage\assignment-05";
-        var fileOffset = @"YouTube\subscriptions\subscriptions.json";
-        var fileOffsetFwdSlash = fileOffset.Replace("\\", "/");
         var counter = 0;
 
 
