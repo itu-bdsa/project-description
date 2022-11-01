@@ -24,7 +24,7 @@ Inform us about your group by modifying this file and by sending a pull request 
 |   17 | `404 group not found`                 | `lawu`, `nkar`, `tosp`, `stmp`, `vist`, `aing`    |  |
 |   18 | `lars`                                | `labp`, `asly`, `emtj`, `mbjn`, `hecn`, `dlha`    | https://github.com/lauritsbrok/CSharpProject |
 |   19 | `JTG`                                 | `json`, `tokj`, `gues`,                           | https://github.com/tkjelds/GitInsight  |
-|   20 | `<group_name>`                        | `<aaaa>`, `<bbbb>`, `<cccc>`, `<dddd>`, `<eeee>`, `<ffff>` |  |
+|   20 | `gruppen`                             | `rogy`, `frai`, `lufr`, `mfjo`                    | https://github.com/luczito/BDSA-projekt.git |
 |   21 | `<group_name>`                        | `<aaaa>`, `<bbbb>`, `<cccc>`, `<dddd>`, `<eeee>`, `<ffff>` |  |
 |   22 | `<group_name>`                        | `<aaaa>`, `<bbbb>`, `<cccc>`, `<dddd>`, `<eeee>`, `<ffff>` |  |
 |   23 | `<group_name>`                        | `<aaaa>`, `<bbbb>`, `<cccc>`, `<dddd>`, `<eeee>`, `<ffff>` |  |
