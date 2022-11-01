@@ -18,7 +18,7 @@ Inform us about your group by modifying this file and by sending a pull request 
 |   11 | `Ape in space enterprise`             | `sibh`, `frgm`, `brml`, `kmey`, `otja`            | https://github.com/frmo24042/GitInsight |
 |   12 | `Grupp1`                              | `unla`, `mesv`, `laku`, `phla`, `raoo`, `bemi`    | https://github.com/bemillant/BDSA-project |
 |   13 | `Bogos`                               | `mreh`, `paab`, `shho`, `oska`, `nsel`, `clwj`    |  |
-|   14 | `Storskov Inc.`                       | `jklo`, `jakst`, `malsc`, `biha`, `kmsa`, `phimo` |  |
+|   14 | `Storskov Inc.`                       | `jklo`, `jakst`, `malsc`, `biha`, `kmsa`, `phimo` | https://github.com/MegetSkuffet/BDSA-project
 |   15 | `Bad Decisions, Suggestions Accepted` | `clly`, `selb`, `monha`, `pekp`, `okre`           |  |
 |   16 | `InsertProfessionalGroupname`         | `bath`, `bhag`, `memr`, `nicha`, `olfw`, `adjr`   |  |
 |   17 | `404 group not found`                 | `lawu`, `nkar`, `tosp`, `stmp`, `vist`, `aing`    |  |
