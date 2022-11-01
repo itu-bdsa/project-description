@@ -11,7 +11,7 @@
           "GitInsight": "1.0.0",
           "Microsoft.NET.Test.Sdk": "17.1.0",
           "coverlet.collector": "3.1.2",
-          "xunit": "2.4.1",
+          "xunit": "2.4.2",
           "xunit.runner.visualstudio": "2.4.3"
         },
         "runtime": {
@@ -19,6 +19,76 @@
         }
       },
       "coverlet.collector/3.1.2": {},
+      "LibGit2Sharp/0.27.0-preview-0182": {
+        "dependencies": {
+          "LibGit2Sharp.NativeBinaries": "2.0.315-alpha.0.9"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/LibGit2Sharp.dll": {
+            "assemblyVersion": "0.27.0.0",
+            "fileVersion": "0.27.0.0"
+          }
+        }
+      },
+      "LibGit2Sharp.NativeBinaries/2.0.315-alpha.0.9": {
+        "runtimeTargets": {
+          "runtimes/linux-arm/native/libgit2-b7bad55.so": {
+            "rid": "linux-arm",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-arm64/native/libgit2-b7bad55.so": {
+            "rid": "linux-arm64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-musl-arm/native/libgit2-b7bad55.so": {
+            "rid": "linux-musl-arm",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-musl-arm64/native/libgit2-b7bad55.so": {
+            "rid": "linux-musl-arm64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-musl-x64/native/libgit2-b7bad55.so": {
+            "rid": "linux-musl-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-x64/native/libgit2-b7bad55.so": {
+            "rid": "linux-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/osx-arm64/native/libgit2-b7bad55.dylib": {
+            "rid": "osx-arm64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/osx-x64/native/libgit2-b7bad55.dylib": {
+            "rid": "osx-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-arm64/native/git2-b7bad55.dll": {
+            "rid": "win-arm64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-x64/native/git2-b7bad55.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-x86/native/git2-b7bad55.dll": {
+            "rid": "win-x86",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
       "Microsoft.CodeCoverage/17.1.0": {
         "runtime": {
           "lib/netcoreapp1.0/Microsoft.VisualStudio.CodeCoverage.Shim.dll": {
@@ -1032,11 +1102,11 @@
           "System.Xml.ReaderWriter": "4.3.0"
         }
       },
-      "xunit/2.4.1": {
+      "xunit/2.4.2": {
         "dependencies": {
-          "xunit.analyzers": "0.10.0",
-          "xunit.assert": "2.4.1",
-          "xunit.core": "2.4.1"
+          "xunit.analyzers": "1.0.0",
+          "xunit.assert": "2.4.2",
+          "xunit.core": "2.4.2"
         }
       },
       "xunit.abstractions/2.0.3": {
@@ -1047,50 +1117,53 @@
           }
         }
       },
-      "xunit.analyzers/0.10.0": {},
-      "xunit.assert/2.4.1": {
+      "xunit.analyzers/1.0.0": {},
+      "xunit.assert/2.4.2": {
         "dependencies": {
           "NETStandard.Library": "1.6.1"
         },
         "runtime": {
           "lib/netstandard1.1/xunit.assert.dll": {
-            "assemblyVersion": "2.4.1.0",
-            "fileVersion": "2.4.1.0"
+            "assemblyVersion": "2.4.2.0",
+            "fileVersion": "2.4.2.0"
           }
         }
       },
-      "xunit.core/2.4.1": {
+      "xunit.core/2.4.2": {
         "dependencies": {
-          "xunit.extensibility.core": "2.4.1",
-          "xunit.extensibility.execution": "2.4.1"
+          "xunit.extensibility.core": "2.4.2",
+          "xunit.extensibility.execution": "2.4.2"
         }
       },
-      "xunit.extensibility.core/2.4.1": {
+      "xunit.extensibility.core/2.4.2": {
         "dependencies": {
           "NETStandard.Library": "1.6.1",
           "xunit.abstractions": "2.0.3"
         },
         "runtime": {
           "lib/netstandard1.1/xunit.core.dll": {
-            "assemblyVersion": "2.4.1.0",
-            "fileVersion": "2.4.1.0"
+            "assemblyVersion": "2.4.2.0",
+            "fileVersion": "2.4.2.0"
           }
         }
       },
-      "xunit.extensibility.execution/2.4.1": {
+      "xunit.extensibility.execution/2.4.2": {
         "dependencies": {
           "NETStandard.Library": "1.6.1",
-          "xunit.extensibility.core": "2.4.1"
+          "xunit.extensibility.core": "2.4.2"
         },
         "runtime": {
           "lib/netstandard1.1/xunit.execution.dotnet.dll": {
-            "assemblyVersion": "2.4.1.0",
-            "fileVersion": "2.4.1.0"
+            "assemblyVersion": "2.4.2.0",
+            "fileVersion": "2.4.2.0"
           }
         }
       },
       "xunit.runner.visualstudio/2.4.3": {},
       "GitInsight/1.0.0": {
+        "dependencies": {
+          "LibGit2Sharp": "0.27.0-preview-0182"
+        },
         "runtime": {
           "GitInsight.dll": {}
         }
@@ -1109,6 +1182,20 @@
       "sha512": "sha512-wuLDIDKD5XMt0A7lE31JPenT7QQwZPFkP5rRpdJeblyXZ9MGLI8rYjvm5fvAKln+2/X+4IxxQDxBtwdrqKNLZw==",
       "path": "coverlet.collector/3.1.2",
       "hashPath": "coverlet.collector.3.1.2.nupkg.sha512"
+    },
+    "LibGit2Sharp/0.27.0-preview-0182": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-YgSFGX7q+KwzkjiD04sZ6Zr8GVrG4o7dHUwM9eDsliT350HxX83smtJc8kyMBiBLyjX4X3qB7aIs2KJL3Uh1og==",
+      "path": "libgit2sharp/0.27.0-preview-0182",
+      "hashPath": "libgit2sharp.0.27.0-preview-0182.nupkg.sha512"
+    },
+    "LibGit2Sharp.NativeBinaries/2.0.315-alpha.0.9": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Cl9E9ZRZm2ma5k/gD/9+f5WAh/9ayhENos/jLkSmPmzkuKl8qkTaLHA9j70qEZ1RSRceDlIwbfSYzVD5JaxHzg==",
+      "path": "libgit2sharp.nativebinaries/2.0.315-alpha.0.9",
+      "hashPath": "libgit2sharp.nativebinaries.2.0.315-alpha.0.9.nupkg.sha512"
     },
     "Microsoft.CodeCoverage/17.1.0": {
       "type": "package",
@@ -1691,12 +1778,12 @@
       "path": "system.xml.xdocument/4.3.0",
       "hashPath": "system.xml.xdocument.4.3.0.nupkg.sha512"
     },
-    "xunit/2.4.1": {
+    "xunit/2.4.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-XNR3Yz9QTtec16O0aKcO6+baVNpXmOnPUxDkCY97J+8krUYxPvXT1szYYEUdKk4sB8GOI2YbAjRIOm8ZnXRfzQ==",
-      "path": "xunit/2.4.1",
-      "hashPath": "xunit.2.4.1.nupkg.sha512"
+      "sha512": "sha512-6Mj73Ont3zj2CJuoykVJfE0ZmRwn7C+pTuRP8c4bnaaTFjwNG6tGe0prJ1yIbMe9AHrpDys63ctWacSsFJWK/w==",
+      "path": "xunit/2.4.2",
+      "hashPath": "xunit.2.4.2.nupkg.sha512"
     },
     "xunit.abstractions/2.0.3": {
       "type": "package",
@@ -1705,40 +1792,40 @@
       "path": "xunit.abstractions/2.0.3",
       "hashPath": "xunit.abstractions.2.0.3.nupkg.sha512"
     },
-    "xunit.analyzers/0.10.0": {
+    "xunit.analyzers/1.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-4/IDFCJfIeg6bix9apmUtIMwvOsiwqdEexeO/R2D4GReIGPLIRODTpId/l4LRSrAJk9lEO3Zx1H0Zx6uohJDNg==",
-      "path": "xunit.analyzers/0.10.0",
-      "hashPath": "xunit.analyzers.0.10.0.nupkg.sha512"
+      "sha512": "sha512-BeO8hEgs/c8Ls2647fPfieMngncvf0D0xYNDfIO59MolxtCtVjFRd6SRc+7tj8VMqkVOuJcnc9eh4ngI2cAmLQ==",
+      "path": "xunit.analyzers/1.0.0",
+      "hashPath": "xunit.analyzers.1.0.0.nupkg.sha512"
     },
-    "xunit.assert/2.4.1": {
+    "xunit.assert/2.4.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-O/Oe0BS5RmSsM+LQOb041TzuPo5MdH2Rov+qXGS37X+KFG1Hxz7kopYklM5+1Y+tRGeXrOx5+Xne1RuqLFQoyQ==",
-      "path": "xunit.assert/2.4.1",
-      "hashPath": "xunit.assert.2.4.1.nupkg.sha512"
+      "sha512": "sha512-pxJISOFjn2XTTi1mcDCkRZrTFb9OtRRCtx2kZFNF51GdReLr1ls2rnyxvAS4JO247K3aNtflvh5Q0346K5BROA==",
+      "path": "xunit.assert/2.4.2",
+      "hashPath": "xunit.assert.2.4.2.nupkg.sha512"
     },
-    "xunit.core/2.4.1": {
+    "xunit.core/2.4.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-Zsj5OMU6JasNGERXZy8s72+pcheG6Q15atS5XpZXqAtULuyQiQ6XNnUsp1gyfC6WgqScqMvySiEHmHcOG6Eg0Q==",
-      "path": "xunit.core/2.4.1",
-      "hashPath": "xunit.core.2.4.1.nupkg.sha512"
+      "sha512": "sha512-KB4yGCxNqIVyekhJLXtKSEq6BaXVp/JO3mbGVE1hxypZTLEe7h+sTbAhpA+yZW2dPtXTuiW+C1B2oxxHEkrmOw==",
+      "path": "xunit.core/2.4.2",
+      "hashPath": "xunit.core.2.4.2.nupkg.sha512"
     },
-    "xunit.extensibility.core/2.4.1": {
+    "xunit.extensibility.core/2.4.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-yKZKm/8QNZnBnGZFD9SewkllHBiK0DThybQD/G4PiAmQjKtEZyHi6ET70QPU9KtSMJGRYS6Syk7EyR2EVDU4Kg==",
-      "path": "xunit.extensibility.core/2.4.1",
-      "hashPath": "xunit.extensibility.core.2.4.1.nupkg.sha512"
+      "sha512": "sha512-W1BoXTIN1C6kpVSMw25huSet25ky6IAQUNovu3zGOGN/jWnbgSoTyCrlIhmXSg0tH5nEf8q7h3OjNHOjyu5PfA==",
+      "path": "xunit.extensibility.core/2.4.2",
+      "hashPath": "xunit.extensibility.core.2.4.2.nupkg.sha512"
     },
-    "xunit.extensibility.execution/2.4.1": {
+    "xunit.extensibility.execution/2.4.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-7e/1jqBpcb7frLkB6XDrHCGXAbKN4Rtdb88epYxCSRQuZDRW8UtTfdTEVpdTl8s4T56e07hOBVd4G0OdCxIY2A==",
-      "path": "xunit.extensibility.execution/2.4.1",
-      "hashPath": "xunit.extensibility.execution.2.4.1.nupkg.sha512"
+      "sha512": "sha512-CZmgcKkwpyo8FlupZdWpJCryrAOWLh1FBPG6gmVZuPQkGQsim/oL4PcP4nfrC2hHgXUFtluvaJ0Sp9PQKUMNpg==",
+      "path": "xunit.extensibility.execution/2.4.2",
+      "hashPath": "xunit.extensibility.execution.2.4.2.nupkg.sha512"
     },
     "xunit.runner.visualstudio/2.4.3": {
       "type": "package",

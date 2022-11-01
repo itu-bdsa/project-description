@@ -7,10 +7,12 @@ public class GitInsightTest
     public void Should_load_a_repository_from_path()
     {
         // Given
-
+        
         // When
 
         // Then
+        var expected = true;
+        Assert.Equal(expected,true);
     }
 
     [Fact]
@@ -21,11 +23,16 @@ public class GitInsightTest
         // When
 
         // Then
+       
+        
+    
     }
 
     [Fact]
     public void User_should_be_able_to_switch_mode_to_Frequency_Mode()
     {
+        var expected = true;
+        Assert.Equal(expected,true);
 
     }
 
