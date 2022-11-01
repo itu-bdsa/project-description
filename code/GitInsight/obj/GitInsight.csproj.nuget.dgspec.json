@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/benjaminmillant/Desktop/ITU/3. sem/bdsa/project/BDSA-project/code/GitInsight/GitInsight.csproj": {}
+    "/Users/thekure23/Library/CloudStorage/OneDrive-ITU/courseDocuments/03sem/analysisDesignSoftArch/project/BDSA-project/code/GitInsight/GitInsight.csproj": {}
   },
   "projects": {
-    "/Users/benjaminmillant/Desktop/ITU/3. sem/bdsa/project/BDSA-project/code/GitInsight/GitInsight.csproj": {
+    "/Users/thekure23/Library/CloudStorage/OneDrive-ITU/courseDocuments/03sem/analysisDesignSoftArch/project/BDSA-project/code/GitInsight/GitInsight.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/benjaminmillant/Desktop/ITU/3. sem/bdsa/project/BDSA-project/code/GitInsight/GitInsight.csproj",
+        "projectUniqueName": "/Users/thekure23/Library/CloudStorage/OneDrive-ITU/courseDocuments/03sem/analysisDesignSoftArch/project/BDSA-project/code/GitInsight/GitInsight.csproj",
         "projectName": "GitInsight",
-        "projectPath": "/Users/benjaminmillant/Desktop/ITU/3. sem/bdsa/project/BDSA-project/code/GitInsight/GitInsight.csproj",
-        "packagesPath": "/Users/benjaminmillant/.nuget/packages/",
-        "outputPath": "/Users/benjaminmillant/Desktop/ITU/3. sem/bdsa/project/BDSA-project/code/GitInsight/obj/",
+        "projectPath": "/Users/thekure23/Library/CloudStorage/OneDrive-ITU/courseDocuments/03sem/analysisDesignSoftArch/project/BDSA-project/code/GitInsight/GitInsight.csproj",
+        "packagesPath": "/Users/thekure23/.nuget/packages/",
+        "outputPath": "/Users/thekure23/Library/CloudStorage/OneDrive-ITU/courseDocuments/03sem/analysisDesignSoftArch/project/BDSA-project/code/GitInsight/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/benjaminmillant/.nuget/NuGet/NuGet.Config"
+          "/Users/thekure23/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -40,7 +40,7 @@
           "dependencies": {
             "LibGit2Sharp": {
               "target": "Package",
-              "version": "[0.26.2, )"
+              "version": "[0.27.0-preview-0182, )"
             }
           },
           "imports": [
