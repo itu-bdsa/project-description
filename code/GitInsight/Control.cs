@@ -6,10 +6,12 @@ class Control
     private Data? _repo;
     private Mode _mode;
     private Boolean _isLoaded;
-    public void Run() {
+    public void Run()
+    {
         var isRunning = true;
         _isLoaded = false;
 
+        Console.WriteLine("Welcome to GitInsight. Type 'newpath' to continue. \n! - ! Remember to exit using the command 'exit' ! - !");
         while (isRunning)
         {
             var input = Console.ReadLine();
@@ -22,9 +24,11 @@ class Control
                     _mode = FREQUENCY;
                     break;
                 case "print":
-                    if (!_isLoaded){
+                    if (!_isLoaded)
+                    {
                         Console.WriteLine("no dataset loaded");
-                    } else
+                    }
+                    else
                     {
                         _repo!.print(_mode);
                     }
@@ -32,7 +36,9 @@ class Control
                 case "newpath":
                     Console.WriteLine("Insert path:");
                     var path = Console.ReadLine();
+                    Console.WriteLine("--- Loading Repository ---");
                     _repo = new Data(path!);
+                    Console.WriteLine("--- Repository has been loaded ---");
                     _isLoaded = true;
                     break;
                 case "help":
@@ -43,7 +49,8 @@ class Control
                     Console.WriteLine("'exit' to exit program");
                     break;
                 case "exit":
-                        isRunning = false;
+                    _repo!.shutDown();
+                    isRunning = false;
                     break;
                 default:
                     Console.WriteLine("Command doesn't exist. Type 'help' for commandlist");
