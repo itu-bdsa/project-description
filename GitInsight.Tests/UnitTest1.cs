@@ -14,23 +14,28 @@ using LibGit2Sharp;
 public class UnitTest1
 {
     [Fact]
-    public void GetListOfAllCommits()
+    public void TestGithubStorageIsStillTheSame()
     {
         //Arrange
         var repoPath = @"C:\Users\eikbo\Skrivebord\BDSA\BDSA_PROJECT\TestGithubStorage\assignment-05";
         var fileOffset = @"YouTube\subscriptions\subscriptions.json";
         var fileOffsetFwdSlash = fileOffset.Replace("\\", "/");
+        var counter = 0;
+
+
+
+        //Act
         using (var repo = new Repository(repoPath))
         {
-            var logs = repo.Commits.QueryBy(fileOffsetFwdSlash).ToList();
+            var logs = repo.Commits.ToList();
             foreach (var log in logs)
             {
-                Debug.WriteLine(log.Commit.Author.When);
+                counter++;
             }
         }
-        //Act
-
         //Actual
+
+        Assert.Equal(31, counter);
 
     }
 }
