@@ -9,6 +9,7 @@ public static void Main (string[] args){
     //creating the context
     using var context = new GitInsightContext();
 
+    //added a new signature to the database test
     var sig = new GitInsight.Entities.Signature{Name="Monica",Email="test@itu.dk",Date=new DateTimeOffset()};
     context.Signatures.Add(sig);
     context.SaveChanges();

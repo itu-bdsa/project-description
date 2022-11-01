@@ -11,7 +11,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace GitInsight.Entities.Migrations
 {
     [DbContext(typeof(GitInsightContext))]
-    [Migration("20221101151416_initialcreate")]
+    [Migration("20221101190727_initialcreate")]
     partial class initialcreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -30,6 +30,10 @@ namespace GitInsight.Entities.Migrations
                         .HasColumnType("integer");
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Date")
+                        .IsRequired()
+                        .HasColumnType("character varying(48)");
 
                     b.Property<string>("Email")
                         .IsRequired()
