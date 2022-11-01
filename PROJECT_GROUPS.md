@@ -20,7 +20,7 @@ Inform us about your group by modifying this file and by sending a pull request 
 |   13 | `Bogos`                               | `mreh`, `paab`, `shho`, `oska`, `nsel`, `clwj`    | https://github.com/nselpriv/Bogos_BDSA.git |
 |   14 | `Storskov Inc.`                       | `jklo`, `jakst`, `malsc`, `biha`, `kmsa`, `phimo` | https://github.com/MegetSkuffet/BDSA-project |
 |   15 | `Bad Decisions, Suggestions Accepted` | `clly`, `selb`, `monha`, `pekp`, `okre`           | https://github.com/Clara-Lyngeraa/GitInsight |
-|   16 | `InsertProfessionalGroupname`         | `bath`, `bhag`, `memr`, `nicha`, `olfw`, `adjr`   |  |
+|   16 | `InsertProfessionalGroupname`         | `bath`, `bhag`, `memr`, `nicha`, `olfw`, `adjr`   | https://github.com/Megabd/BDSA-Project |
 |   17 | `404 group not found`                 | `lawu`, `nkar`, `tosp`, `stmp`, `vist`, `aing`    | https://github.com/nickarlsen/project-description-BDSA-group-17 |
 |   18 | `lars`                                | `labp`, `asly`, `emtj`, `mbjn`, `hecn`, `dlha`    | https://github.com/lauritsbrok/CSharpProject |
 |   19 | `JTG`                                 | `json`, `tokj`, `gues`,                           | https://github.com/tkjelds/GitInsight  |
