@@ -90,14 +90,12 @@ public class InsightTests: IDisposable{
         Assert.Equal(expectedDictionaryOfDictionaries, actual);  
         }
 
+        //Test code coverage dotnet test /p:CollectCoverage=true
+
          [Fact]
         public void printing_prints_seperate_lines_with_correct_information()
         {
-            // Given
-        
-            // When
-        
-            // Then
+           
         }
    
 }
