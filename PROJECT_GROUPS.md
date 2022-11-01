@@ -19,7 +19,7 @@ Inform us about your group by modifying this file and by sending a pull request 
 |   12 | `Grupp1`                              | `unla`, `mesv`, `laku`, `phla`, `raoo`, `bemi`    | https://github.com/bemillant/BDSA-project |
 |   13 | `Bogos`                               | `mreh`, `paab`, `shho`, `oska`, `nsel`, `clwj`    |  |
 |   14 | `Storskov Inc.`                       | `jklo`, `jakst`, `malsc`, `biha`, `kmsa`, `phimo` |  |
-|   15 | `Bad Decisions, Suggestions Accepted` | `clly`, `selb`, `monha`, `pekp`, `okre`           |  |
+|   15 | `Bad Decisions, Suggestions Accepted` | `clly`, `selb`, `monha`, `pekp`, `okre`           | https://github.com/Clara-Lyngeraa/GitInsight
 |   16 | `InsertProfessionalGroupname`         | `bath`, `bhag`, `memr`, `nicha`, `olfw`, `adjr`   |  |
 |   17 | `404 group not found`                 | `lawu`, `nkar`, `tosp`, `stmp`, `vist`, `aing`    |  |
 |   18 | `lars`                                | `labp`, `asly`, `emtj`, `mbjn`, `hecn`, `dlha`    | https://github.com/lauritsbrok/CSharpProject |
