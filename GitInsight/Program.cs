@@ -37,7 +37,7 @@ public class GitInsight
 
     public static void commitFrequencyMode()
     {
-        var repoPath = @"C:\Users\eikbo\Skrivebord\BDSA\BDSA_PROJECT\GitInsight.Tests\Assignment5\assignment-05";
+        var repoPath = @"C:\Users\eikbo\Skrivebord\BDSA\BDSA_PROJECT\TestGithubStorage\assignment-05";
         var fileOffset = @"C:\Users\annem\Desktop\BDSA_PROJECT\GitInsight.Tests\assignment-05\GildedRose\obj\project.assets.json";
         var fileOffsetFwdSlash = fileOffset.Replace("\\", "/");
         using (var repo = new Repository(repoPath))
@@ -91,7 +91,7 @@ public class GitInsight
 
     public static void commitUserFrequencyMode()
     {
-        var repoPath = @"C:\Users\eikbo\Skrivebord\BDSA\BDSA_PROJECT\GitInsight.Tests\Assignment5\assignment-05";
+        var repoPath = @"C:\Users\eikbo\Skrivebord\BDSA\BDSA_PROJECT\TestGithubStorage\assignment-05";
         var fileOffset = @"C:\Users\annem\Desktop\BDSA_PROJECT\GitInsight.Tests\assignment-05\GildedRose\obj\project.assets.json";
         var fileOffsetFwdSlash = fileOffset.Replace("\\", "/");
         using (var repo = new Repository(repoPath))

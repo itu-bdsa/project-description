@@ -17,7 +17,7 @@ public class UnitTest1
     public void GetListOfAllCommits()
     {
         //Arrange
-        var repoPath = @"C:\Users\whoever\Documents\git\SomeRepoName";
+        var repoPath = @"C:\Users\eikbo\Skrivebord\BDSA\BDSA_PROJECT\TestGithubStorage\assignment-05";
         var fileOffset = @"YouTube\subscriptions\subscriptions.json";
         var fileOffsetFwdSlash = fileOffset.Replace("\\", "/");
         using (var repo = new Repository(repoPath))
