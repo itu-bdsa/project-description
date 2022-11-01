@@ -21,7 +21,7 @@ Inform us about your group by modifying this file and by sending a pull request 
 |   14 | `Storskov Inc.`                       | `jklo`, `jakst`, `malsc`, `biha`, `kmsa`, `phimo` |  |
 |   15 | `Bad Decisions, Suggestions Accepted` | `clly`, `selb`, `monha`, `pekp`, `okre`           |  |
 |   16 | `InsertProfessionalGroupname`         | `bath`, `bhag`, `memr`, `nicha`, `olfw`, `adjr`   |  |
-|   17 | `404 group not found`                 | `lawu`, `nkar`, `tosp`, `stmp`, `vist`, `aing`    |  |
+|   17 | `404 group not found`                 | `lawu`, `nkar`, `tosp`, `stmp`, `vist`, `aing`    | https://github.com/nickarlsen/project-description-BDSA-group-17 |
 |   18 | `lars`                                | `labp`, `asly`, `emtj`, `mbjn`, `hecn`, `dlha`    | https://github.com/lauritsbrok/CSharpProject |
 |   19 | `JTG`                                 | `json`, `tokj`, `gues`,                           | https://github.com/tkjelds/GitInsight  |
 |   20 | `<group_name>`                        | `<aaaa>`, `<bbbb>`, `<cccc>`, `<dddd>`, `<eeee>`, `<ffff>` |  |
