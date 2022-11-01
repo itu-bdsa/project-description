@@ -12,7 +12,7 @@ Inform us about your group by modifying this file and by sending a pull request 
 |    5 | `SMB`                                 | `dadh`, `vime`, `laup`, `maxt`, `rasni` , `mbln`  |  |
 |    6 | `NEWgIT`                              | `atro`, `chbl`, `fefa`, `frepe`, `luha`, `mgan`   | https://github.com/duckth/bdsa-project-newgit |
 |    7 | `Gruppe 7`                            | `avia`, `aarv`, `luel`, `mlth`, `mwha`            |  |
-|    8 | `Bravo`                               | `asjo`, `frhc`, `siar`, `behv`, `erja`, `tbru`    |  |
+|    8 | `Bravo`                               | `asjo`, `frhc`, `siar`, `behv`, `erja`, `tbru`    | https://github.com/bhviid/project-description |
 |    9 | `FS`                                  | `adrka`, `lanr`, `mhvl`, `midf`, `siol`           |  |
 |   10 | `The Bear Minimum`                    | `jouj`, `mhsi`, `tuho`, `hcan`, `kbej`            |  |
 |   11 | `Ape in space enterprise`             | `sibh`, `frgm`, `brml`, `kmey`, `otja`            | https://github.com/frmo24042/GitInsight |
