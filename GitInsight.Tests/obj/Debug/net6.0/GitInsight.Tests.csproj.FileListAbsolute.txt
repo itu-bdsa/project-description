@@ -103,3 +103,12 @@ C:\Users\Bruger\Desktop\BDSA Projekt\BDSA_PROJECT\GitInsight.Tests\obj\Debug\net
 C:\Users\Bruger\Desktop\BDSA Projekt\BDSA_PROJECT\GitInsight.Tests\obj\Debug\net6.0\GitInsight.Tests.pdb
 C:\Users\Bruger\Desktop\BDSA Projekt\BDSA_PROJECT\GitInsight.Tests\obj\Debug\net6.0\GitInsight.Tests.genruntimeconfig.cache
 C:\Users\Bruger\Desktop\BDSA Projekt\BDSA_PROJECT\GitInsight.Tests\obj\Debug\net6.0\ref\GitInsight.Tests.dll
+C:\Users\eikbo\Skrivebord\BDSA\BDSA_PROJECT\GitInsight.Tests\bin\Debug\net6.0\CoverletSourceRootsMapping
+C:\Users\eikbo\Skrivebord\BDSA\BDSA_PROJECT\GitInsight.Tests\obj\Debug\net6.0\GitInsight.Tests.csproj.AssemblyReference.cache
+C:\Users\eikbo\Skrivebord\BDSA\BDSA_PROJECT\GitInsight.Tests\obj\Debug\net6.0\GitInsight.Tests.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\eikbo\Skrivebord\BDSA\BDSA_PROJECT\GitInsight.Tests\obj\Debug\net6.0\GitInsight.Tests.AssemblyInfoInputs.cache
+C:\Users\eikbo\Skrivebord\BDSA\BDSA_PROJECT\GitInsight.Tests\obj\Debug\net6.0\GitInsight.Tests.AssemblyInfo.cs
+C:\Users\eikbo\Skrivebord\BDSA\BDSA_PROJECT\GitInsight.Tests\obj\Debug\net6.0\GitInsight.Tests.csproj.CoreCompileInputs.cache
+C:\Users\eikbo\Skrivebord\BDSA\BDSA_PROJECT\GitInsight.Tests\obj\Debug\net6.0\GitInsight.Tests.dll
+C:\Users\eikbo\Skrivebord\BDSA\BDSA_PROJECT\GitInsight.Tests\obj\Debug\net6.0\refint\GitInsight.Tests.dll
+C:\Users\eikbo\Skrivebord\BDSA\BDSA_PROJECT\GitInsight.Tests\obj\Debug\net6.0\GitInsight.Tests.pdb

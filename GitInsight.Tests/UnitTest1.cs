@@ -1,14 +1,15 @@
 namespace GitInsight.Tests;
-using GitInsight.Program;
+using System.Diagnostics;
+using LibGit2Sharp;
 //using (var repo = new Repository(@"/Users/sushi/code/sushi/Xamarin.Forms.Renderer.Tests"))
 
 
 //søndag d.25 setember - 2 commits
-//Torsdag d.6 octover - 6 commits
+//Torsdag d.6 october - 6 commits
 //Fredag d.7 october - 3 commits
 //Lørdag d.8 october - 10 commits
-//Søndag d.9 octover - 1 commits
-//Torsdag d.13 octover - 3 commits
+//Søndag d.9 october - 1 commits
+//Torsdag d.13 october - 3 commits
 
 public class UnitTest1
 {
