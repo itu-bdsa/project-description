@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "5tbyJfQrq6HRGSniyMPtaR7h4gagg5EYynWk1SdGnglpYynvf2wHkWqLI6tEYnbVgGEMmRFw70IUTLOd9OXYfA==",
+  "dgSpecHash": "J1UJCSW1JGV1MXeqW2m+966XCGD+jnLdTJ6taBZh4WZRyWJbV4hkVb32/F1hFj0Z2C1qeoozX78Ta41RW97V0Q==",
   "success": true,
-  "projectFilePath": "c:\\Users\\eikbo\\Skrivebord\\BDSA\\BDSA_PROJECT\\GitInsight.Tests\\GitInsight.Tests.csproj",
+  "projectFilePath": "C:\\Users\\eikbo\\Skrivebord\\BDSA\\BDSA_PROJECT\\GitInsight.Tests\\GitInsight.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\eikbo\\.nuget\\packages\\coverlet.collector\\3.1.2\\coverlet.collector.3.1.2.nupkg.sha512",
     "C:\\Users\\eikbo\\.nuget\\packages\\coverlet.msbuild\\3.1.2\\coverlet.msbuild.3.1.2.nupkg.sha512",

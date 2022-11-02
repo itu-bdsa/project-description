@@ -11,6 +11,7 @@
           "GitInsight": "1.0.0",
           "Microsoft.NET.Test.Sdk": "17.1.0",
           "coverlet.collector": "3.1.2",
+          "coverlet.msbuild": "3.1.2",
           "xunit": "2.4.2",
           "xunit.runner.visualstudio": "2.4.3"
         },
@@ -19,6 +20,7 @@
         }
       },
       "coverlet.collector/3.1.2": {},
+      "coverlet.msbuild/3.1.2": {},
       "LibGit2Sharp/0.26.2": {
         "dependencies": {
           "LibGit2Sharp.NativeBinaries": "2.0.306"
@@ -1197,6 +1199,13 @@
       "sha512": "sha512-wuLDIDKD5XMt0A7lE31JPenT7QQwZPFkP5rRpdJeblyXZ9MGLI8rYjvm5fvAKln+2/X+4IxxQDxBtwdrqKNLZw==",
       "path": "coverlet.collector/3.1.2",
       "hashPath": "coverlet.collector.3.1.2.nupkg.sha512"
+    },
+    "coverlet.msbuild/3.1.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-QhM0fnDtmIMImY7oxyQ/kh1VYtRxPyRVeLwRUGuUvI6Xp83pSYG9gerK8WgJj4TzUl7ISziADUGtIWKhtlbkbQ==",
+      "path": "coverlet.msbuild/3.1.2",
+      "hashPath": "coverlet.msbuild.3.1.2.nupkg.sha512"
     },
     "LibGit2Sharp/0.26.2": {
       "type": "package",

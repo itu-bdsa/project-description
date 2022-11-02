@@ -42,9 +42,7 @@ public class UnitTest1
         //Arrange
         var repoPath = @"C:\Users\eikbo\Skrivebord\BDSA\BDSA_PROJECT\TestGithubStorage\assignment-05";
         var counter = 0;
-        var dateArray = GitInsight.Program.commitFrequencyMode();
-
-    
+        //var dateArray = GitInsight.Program.commitFrequencyMode();
         //Act
         using (var repo = new Repository(repoPath))
         {
