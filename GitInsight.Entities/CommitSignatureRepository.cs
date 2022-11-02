@@ -1,27 +1,30 @@
 namespace GitInsight.Entities;
 
-public class SignatureRepository: ISignatureRepository{
+public class CommitSignatureRepository: ICommitSignatureRepository, IDisposable{
 
 private GitInsightContext _context;
-    private SignatureRepository(GitInsightContext context){
+    public CommitSignatureRepository(GitInsightContext context){
         _context = context;
     }
 
     //creating a SignatureUpdateDTO from a signature
-    private static SignatureUpdateDTO SignatureUpdateDTOFromSignature(Signature sign){
-        return new SignatureUpdateDTO (
+    private static CommitSignatureUpdateDTO SignatureUpdateDTOFromSignature(CommmitSignature sign){
+        return new CommitSignatureUpdateDTO (
         name: sign.Name,
         email: sign.Email,
         date: sign.Date
     );
     }
     
-    public Response Update(SignatureUpdateDTO sign){
+    public Response Update(CommitSignatureUpdateDTO sign){
 
         //find the date of the mathcing signature
         //var toUpdate = _context.Signatures.Find(sign.date);
 
         _context.SaveChanges();
         return Response.Updated;
+    }
+    public void Dispose(){
+        _context.Dispose();
     }
 }
