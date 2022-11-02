@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Bruger\\Desktop\\BDSA Projekt\\BDSA_PROJECT\\GitInsight.Tests\\GitInsight.Tests.csproj": {}
+    "C:\\Users\\eikbo\\Skrivebord\\BDSA\\BDSA_PROJECT\\GitInsight.Tests\\GitInsight.Tests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Bruger\\Desktop\\BDSA Projekt\\BDSA_PROJECT\\GitInsight.Tests\\GitInsight.Tests.csproj": {
+    "C:\\Users\\eikbo\\Skrivebord\\BDSA\\BDSA_PROJECT\\GitInsight.Tests\\GitInsight.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Bruger\\Desktop\\BDSA Projekt\\BDSA_PROJECT\\GitInsight.Tests\\GitInsight.Tests.csproj",
+        "projectUniqueName": "C:\\Users\\eikbo\\Skrivebord\\BDSA\\BDSA_PROJECT\\GitInsight.Tests\\GitInsight.Tests.csproj",
         "projectName": "GitInsight.Tests",
-        "projectPath": "C:\\Users\\Bruger\\Desktop\\BDSA Projekt\\BDSA_PROJECT\\GitInsight.Tests\\GitInsight.Tests.csproj",
-        "packagesPath": "C:\\Users\\Bruger\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Bruger\\Desktop\\BDSA Projekt\\BDSA_PROJECT\\GitInsight.Tests\\obj\\",
+        "projectPath": "C:\\Users\\eikbo\\Skrivebord\\BDSA\\BDSA_PROJECT\\GitInsight.Tests\\GitInsight.Tests.csproj",
+        "packagesPath": "C:\\Users\\eikbo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\eikbo\\Skrivebord\\BDSA\\BDSA_PROJECT\\GitInsight.Tests\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Bruger\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\eikbo\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -26,8 +26,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Bruger\\Desktop\\BDSA Projekt\\BDSA_PROJECT\\GitInsight\\GitInsight.csproj": {
-                "projectPath": "C:\\Users\\Bruger\\Desktop\\BDSA Projekt\\BDSA_PROJECT\\GitInsight\\GitInsight.csproj"
+              "C:\\Users\\eikbo\\Skrivebord\\BDSA\\BDSA_PROJECT\\GitInsight\\GitInsight.csproj": {
+                "projectPath": "C:\\Users\\eikbo\\Skrivebord\\BDSA\\BDSA_PROJECT\\GitInsight\\GitInsight.csproj"
               }
             }
           }
@@ -47,6 +47,12 @@
               "version": "[17.1.0, )"
             },
             "coverlet.collector": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.2, )"
+            },
+            "coverlet.msbuild": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
@@ -83,17 +89,17 @@
         }
       }
     },
-    "C:\\Users\\Bruger\\Desktop\\BDSA Projekt\\BDSA_PROJECT\\GitInsight\\GitInsight.csproj": {
+    "C:\\Users\\eikbo\\Skrivebord\\BDSA\\BDSA_PROJECT\\GitInsight\\GitInsight.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Bruger\\Desktop\\BDSA Projekt\\BDSA_PROJECT\\GitInsight\\GitInsight.csproj",
+        "projectUniqueName": "C:\\Users\\eikbo\\Skrivebord\\BDSA\\BDSA_PROJECT\\GitInsight\\GitInsight.csproj",
         "projectName": "GitInsight",
-        "projectPath": "C:\\Users\\Bruger\\Desktop\\BDSA Projekt\\BDSA_PROJECT\\GitInsight\\GitInsight.csproj",
-        "packagesPath": "C:\\Users\\Bruger\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Bruger\\Desktop\\BDSA Projekt\\BDSA_PROJECT\\GitInsight\\obj\\",
+        "projectPath": "C:\\Users\\eikbo\\Skrivebord\\BDSA\\BDSA_PROJECT\\GitInsight\\GitInsight.csproj",
+        "packagesPath": "C:\\Users\\eikbo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\eikbo\\Skrivebord\\BDSA\\BDSA_PROJECT\\GitInsight\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Bruger\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\eikbo\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -116,6 +122,12 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "LibGit2Sharp": {
+              "target": "Package",
+              "version": "[0.26.2, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

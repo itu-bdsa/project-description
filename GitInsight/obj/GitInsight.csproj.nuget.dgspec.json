@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Chris\\Documents\\code\\BDSA-PROJ\\BDSA_PROJECT\\GitInsight\\GitInsight.csproj": {}
+    "C:\\Users\\eikbo\\Skrivebord\\BDSA\\BDSA_PROJECT\\GitInsight\\GitInsight.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Chris\\Documents\\code\\BDSA-PROJ\\BDSA_PROJECT\\GitInsight\\GitInsight.csproj": {
+    "C:\\Users\\eikbo\\Skrivebord\\BDSA\\BDSA_PROJECT\\GitInsight\\GitInsight.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Chris\\Documents\\code\\BDSA-PROJ\\BDSA_PROJECT\\GitInsight\\GitInsight.csproj",
+        "projectUniqueName": "C:\\Users\\eikbo\\Skrivebord\\BDSA\\BDSA_PROJECT\\GitInsight\\GitInsight.csproj",
         "projectName": "GitInsight",
-        "projectPath": "C:\\Users\\Chris\\Documents\\code\\BDSA-PROJ\\BDSA_PROJECT\\GitInsight\\GitInsight.csproj",
-        "packagesPath": "C:\\Users\\Chris\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Chris\\Documents\\code\\BDSA-PROJ\\BDSA_PROJECT\\GitInsight\\obj\\",
+        "projectPath": "C:\\Users\\eikbo\\Skrivebord\\BDSA\\BDSA_PROJECT\\GitInsight\\GitInsight.csproj",
+        "packagesPath": "C:\\Users\\eikbo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\eikbo\\Skrivebord\\BDSA\\BDSA_PROJECT\\GitInsight\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Chris\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\eikbo\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
