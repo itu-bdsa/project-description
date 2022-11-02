@@ -1,11 +1,11 @@
 ﻿using System.Linq.Expressions;
 using System.Collections;
 using LibGit2Sharp;
-namespace GitInsigt;
+namespace GitInsight;
 
 public class GitInsight
 {
-
+    int hewwo;
     public static void Main(string[] args)
     {
         //user inputs commandline switch /fm or /am to pick a program
@@ -54,6 +54,7 @@ public class GitInsight
             foreach (var item in dateArray)
             {
                 Console.WriteLine(item);
+                DateTime.Parse(item.ToString()!);
             }
             Console.WriteLine(dateArray.Count);
             var currentDate = dateArray[0];
