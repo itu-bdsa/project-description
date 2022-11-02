@@ -11,7 +11,7 @@ Inform us about your group by modifying this file and by sending a pull request 
 |    4 | `U+1F921`                             | `aguh`, `mroa`, `oljh`, `ssbo`, `rakt`, `wihe`    | https://github.com/WilliamHeidemann/GitInsight |
 |    5 | `SMB`                                 | `dadh`, `vime`, `laup`, `maxt`, `rasni` , `mbln`  | https://github.com/whistle-dev/bdsaproject |
 |    6 | `NEWgIT`                              | `atro`, `chbl`, `fefa`, `frepe`, `luha`, `mgan`   | https://github.com/duckth/bdsa-project-newgit |
-|    7 | `Gruppe 7`                            | `avia`, `aarv`, `luel`, `mlth`, `mwha`            |  |
+|    7 | `Gruppe 7`                            | `avia`, `aarv`, `luel`, `mlth`, `mwha`            | https://github.com/Mlth/BDSAProject |
 |    8 | `Bravo`                               | `asjo`, `frhc`, `siar`, `behv`, `erja`, `tbru`    | https://github.com/bhviid/project-description |
 |    9 | `FS`                                  | `adrka`, `lanr`, `mhvl`, `midf`, `siol`           |  |
 |   10 | `The Bear Minimum`                    | `jouj`, `mhsi`, `tuho`, `hcan`, `kbej`            | https://github.com/Tyyrid/BDSA-Project-TheBearMinimum |
