@@ -35,7 +35,7 @@ public class GitInsight
         }
     }
 
-    public static void commitFrequencyMode()
+    public static ArrayList commitFrequencyMode()
     {
         var repoPath = @"C:\Users\eikbo\Skrivebord\BDSA\BDSA_PROJECT\TestGithubStorage\assignment-05";
         var fileOffset = @"C:\Users\annem\Desktop\BDSA_PROJECT\GitInsight.Tests\assignment-05\GildedRose\obj\project.assets.json";
@@ -74,6 +74,9 @@ public class GitInsight
 
             }
             Console.WriteLine(currentDateCount + " " + currentDate.ToString());
+            return dateArray;
+           
+           
             //var dates = loges.GroupBy(x => x.Author.When.Date).Count();//.SelectMany(x=>x).ToList();
             //Console.WriteLine(dates);
             /*foreach (var date in dates){
@@ -89,7 +92,7 @@ public class GitInsight
         }
     }
 
-    public static void commitUserFrequencyMode()
+    public static List<List<String>> commitUserFrequencyMode()
     {
         var repoPath = @"C:\Users\eikbo\Skrivebord\BDSA\BDSA_PROJECT\TestGithubStorage\assignment-05";
         var fileOffset = @"C:\Users\annem\Desktop\BDSA_PROJECT\GitInsight.Tests\assignment-05\GildedRose\obj\project.assets.json";
@@ -165,6 +168,8 @@ public class GitInsight
                 Console.WriteLine(currentDateCount + " " + currentDate.ToString());
                 Console.WriteLine("");
             }
+
+            return dateAuthorArray;
 
 
         }

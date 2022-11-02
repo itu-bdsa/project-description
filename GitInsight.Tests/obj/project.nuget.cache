@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "VSBgBQbkxodOkyXehQ/yav+px31wlmv1G/PjKkXvrtkYljWxOMHDc56vxNVQejJpZUWgAHa0rmCbAm53fNieDA==",
+  "dgSpecHash": "5tbyJfQrq6HRGSniyMPtaR7h4gagg5EYynWk1SdGnglpYynvf2wHkWqLI6tEYnbVgGEMmRFw70IUTLOd9OXYfA==",
   "success": true,
   "projectFilePath": "c:\\Users\\eikbo\\Skrivebord\\BDSA\\BDSA_PROJECT\\GitInsight.Tests\\GitInsight.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\eikbo\\.nuget\\packages\\coverlet.collector\\3.1.2\\coverlet.collector.3.1.2.nupkg.sha512",
+    "C:\\Users\\eikbo\\.nuget\\packages\\coverlet.msbuild\\3.1.2\\coverlet.msbuild.3.1.2.nupkg.sha512",
     "C:\\Users\\eikbo\\.nuget\\packages\\libgit2sharp\\0.26.2\\libgit2sharp.0.26.2.nupkg.sha512",
     "C:\\Users\\eikbo\\.nuget\\packages\\libgit2sharp.nativebinaries\\2.0.306\\libgit2sharp.nativebinaries.2.0.306.nupkg.sha512",
     "C:\\Users\\eikbo\\.nuget\\packages\\microsoft.codecoverage\\17.1.0\\microsoft.codecoverage.17.1.0.nupkg.sha512",
