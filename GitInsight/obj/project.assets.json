@@ -2,6 +2,19 @@
   "version": 3,
   "targets": {
     "net6.0": {
+      "Humanizer.Core/2.8.26": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/_._": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Humanizer.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "LibGit2Sharp/0.26.2": {
         "type": "package",
         "dependencies": {
@@ -132,10 +145,30 @@
           "lib/netstandard2.0/_._": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Relational/6.0.7": {
+      "Microsoft.EntityFrameworkCore.Design/6.0.10": {
         "type": "package",
         "dependencies": {
-          "Microsoft.EntityFrameworkCore": "6.0.7",
+          "Humanizer.Core": "2.8.26",
+          "Microsoft.EntityFrameworkCore.Relational": "6.0.10"
+        },
+        "compile": {
+          "lib/net6.0/_._": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Microsoft.EntityFrameworkCore.Design.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "build/net6.0/Microsoft.EntityFrameworkCore.Design.props": {}
+        }
+      },
+      "Microsoft.EntityFrameworkCore.Relational/6.0.10": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "6.0.10",
           "Microsoft.Extensions.Configuration.Abstractions": "6.0.0"
         },
         "compile": {
@@ -600,6 +633,22 @@
     }
   },
   "libraries": {
+    "Humanizer.Core/2.8.26": {
+      "sha512": "OiKusGL20vby4uDEswj2IgkdchC1yQ6rwbIkZDVBPIR6al2b7n3pC91elBul9q33KaBgRKhbZH3+2Ur4fnWx2A==",
+      "type": "package",
+      "path": "humanizer.core/2.8.26",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "humanizer.core.2.8.26.nupkg.sha512",
+        "humanizer.core.nuspec",
+        "lib/netstandard1.0/Humanizer.dll",
+        "lib/netstandard1.0/Humanizer.xml",
+        "lib/netstandard2.0/Humanizer.dll",
+        "lib/netstandard2.0/Humanizer.xml",
+        "logo.png"
+      ]
+    },
     "LibGit2Sharp/0.26.2": {
       "sha512": "qHLhuI8VEtMf7jiurT/Ypquh37S6ngllCx+aq9uqOY2evok7Fb2AzhJgvNctsXOzHaJwveBs+30sPQJFn/pISg==",
       "type": "package",
@@ -694,17 +743,32 @@
         "microsoft.entityframeworkcore.analyzers.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.Relational/6.0.7": {
-      "sha512": "0uo4fPDHutMbd9AJJEKl2q/2fYuFGA8tEBE2fQeQFaNDd+F/aUjaXc1FUD84J7Wcax8WP40rZo1E0u9A0yPPZw==",
+    "Microsoft.EntityFrameworkCore.Design/6.0.10": {
+      "sha512": "SVqDfUftgBoKCMPfTaWXiKBZPHMjbiBJLE5WE7MeD28nTk7CkmUNX8eXyNIeWxpDuk4r0zZ6XG9zyG7Ef3KS4A==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.relational/6.0.7",
+      "path": "microsoft.entityframeworkcore.design/6.0.10",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "build/net6.0/Microsoft.EntityFrameworkCore.Design.props",
+        "lib/net6.0/Microsoft.EntityFrameworkCore.Design.dll",
+        "lib/net6.0/Microsoft.EntityFrameworkCore.Design.xml",
+        "microsoft.entityframeworkcore.design.6.0.10.nupkg.sha512",
+        "microsoft.entityframeworkcore.design.nuspec"
+      ]
+    },
+    "Microsoft.EntityFrameworkCore.Relational/6.0.10": {
+      "sha512": "8rjVzKtGSTojSefghXqh3Y2wq8A7P7iWuUQQyQieXNYrYA7nw2aHZI2rjU+7ta4jHgKITddUHFaPQJ69H18dQA==",
+      "type": "package",
+      "path": "microsoft.entityframeworkcore.relational/6.0.10",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "lib/net6.0/Microsoft.EntityFrameworkCore.Relational.dll",
         "lib/net6.0/Microsoft.EntityFrameworkCore.Relational.xml",
-        "microsoft.entityframeworkcore.relational.6.0.7.nupkg.sha512",
+        "microsoft.entityframeworkcore.relational.6.0.10.nupkg.sha512",
         "microsoft.entityframeworkcore.relational.nuspec"
       ]
     },
@@ -1286,6 +1350,7 @@
       "GitInsight.Entities >= 1.0.0",
       "LibGit2Sharp >= 0.26.2",
       "Microsoft.EntityFrameworkCore >= 6.0.10",
+      "Microsoft.EntityFrameworkCore.Design >= 6.0.10",
       "Microsoft.Extensions.Configuration >= 6.0.1"
     ]
   },
@@ -1337,6 +1402,12 @@
             "version": "[0.26.2, )"
           },
           "Microsoft.EntityFrameworkCore": {
+            "target": "Package",
+            "version": "[6.0.10, )"
+          },
+          "Microsoft.EntityFrameworkCore.Design": {
+            "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+            "suppressParent": "All",
             "target": "Package",
             "version": "[6.0.10, )"
           },

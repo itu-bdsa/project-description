@@ -37,7 +37,7 @@ public class GitInsight
                 Console.WriteLine("Please chose from this list of modes:");
                 Console.WriteLine("Frequency mode:   /fm");
                 Console.WriteLine("Author mode:      /am");
-                string usermode = Console.ReadLine();
+                string usermode = Console.ReadLine()!;
                 if (usermode.Equals("/fm"))
                 {
                     CommitFrequencyMode();
@@ -88,13 +88,13 @@ public class GitInsight
                 }
                 else
                 {
-                    Console.WriteLine(currentDateCount + " " + currentDate.ToString());
+                    Console.WriteLine(currentDateCount + " " + currentDate?.ToString());
                     currentDate = item;
                     currentDateCount = 1;
                 }
 
             }
-            Console.WriteLine(currentDateCount + " " + currentDate.ToString());
+            Console.WriteLine(currentDateCount + " " + currentDate?.ToString());
             return dateArray;
 
 

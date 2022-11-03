@@ -6,11 +6,11 @@ namespace GitInsight.Entities;
 public class Contribution
 {
     public int Id { get; set; }
-
+    
     [Required]
     public string repoPath { get; set; }
-    
-    public string author { get; set; }
+
+    public string? author { get; set; }
 
     public DateTime date { get; set; }
 
