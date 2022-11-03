@@ -8,6 +8,16 @@ public class GitInsight
     int hewwo;
     public static void Main(string[] args)
     {
+
+        GitInsightContextFactory factory = new GitInsightContextFactory();
+        GitInsightContext context = factory.CreateDbContext(args);
+        var connyboi = new Contribution{repoPath = "uwu", author = "owo", date = new DateTime(2022, 02,02,10,10,10, DateTimeKind.Utc)}; 
+
+        context.Contributions.Add(connyboi);
+        context.SaveChanges();
+
+
+
         //user inputs commandline switch /fm or /am to pick a program
         if (args[0].Equals("/fm"))
         {

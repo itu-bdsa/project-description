@@ -1,4 +1,7 @@
-//using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Design;
+using Microsoft.Extensions.Configuration;
+
 namespace GitInsight;
 
 //context factory here
@@ -6,16 +9,12 @@ namespace GitInsight;
 den laver en instans af GitInsightContext og returnerer den.
 */
 
-/*
-Der mangler sådan en EntityFrameWorkCore.targets thingy.
-check det det microsoft framework shiet*/
-
 internal class GitInsightContextFactory : IDesignTimeDbContextFactory<GitInsightContext>
 {
     public GitInsightContext CreateDbContext(string[] args)
     {
-        var configuration = new ConfigurationBuilder().AddUserSecrets<Program>().Build();
-        var connectionString = configuration.GetConnectionString("<name of string>");
+        var configuration = new ConfigurationBuilder().AddUserSecrets<GitInsight>().Build();
+        var connectionString = configuration.GetConnectionString("GitIn");
 
         var optionsBuilder = new DbContextOptionsBuilder<GitInsightContext>();
         optionsBuilder.UseNpgsql(connectionString);

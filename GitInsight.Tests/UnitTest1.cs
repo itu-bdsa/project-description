@@ -122,7 +122,8 @@ public class UnitTest1
 
     private GitInsightContext _context;
 
-    private RepoRepository _repo;
+    private RepoRepository _Reporepo;
+    private ContributionRepository _Contrepo;
 
     public UnitTest1(){
         /*var configuration = new ConfigurationBuilder().AddUserSecrets<UserRepositoryTests>().Build();
