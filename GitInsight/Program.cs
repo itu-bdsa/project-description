@@ -1,4 +1,4 @@
-﻿using System.Linq.Expressions;
+﻿//using System.Linq.Expressions;
 using System.Collections;
 using LibGit2Sharp;
 namespace GitInsight;
@@ -43,15 +43,18 @@ public class GitInsight
         }
     }
 
-    public static ArrayList CommitFrequencyMode()
+    public static ArrayList CommitFrequencyMode() //ArrayList
     {
-        var repoPath = @"C:\Users\eikbo\Skrivebord\BDSA\BDSA_PROJECT\TestGithubStorage\assignment-05";
-        var fileOffset = @"C:\Users\annem\Desktop\BDSA_PROJECT\GitInsight.Tests\assignment-05\GildedRose\obj\project.assets.json";
-        var fileOffsetFwdSlash = fileOffset.Replace("\\", "/");
+        //C:\Users\annem\Desktop\BDSA_PROJECT\TestGithubStorage\assignment-05
+        var repoPath = @"C:\Users\annem\Desktop\BDSA_PROJECT\TestGithubStorage\assignment-05";
+        //@"C:\Users\annem\Skrivebord\BDSA_PROJECT\TestGithubStorage\assignment-05";
+        //var fileOffset = @"C:\Users\annem\Desktop\BDSA_PROJECT\GitInsight.Tests\assignment-05\GildedRose\obj\project.assets.json";
+        //var fileOffsetFwdSlash = fileOffset.Replace("\\", "/");
         using (var repo = new Repository(repoPath))
         {
             var commitArray = repo.Commits.ToList();
             ArrayList dateArray = new ArrayList();
+
             for (int i = 0; i < commitArray.Count; i++)
             {
                 string[] tempDateArray = commitArray[i].Author.When.ToString().Split(" ");
@@ -102,7 +105,7 @@ public class GitInsight
 
     public static List<List<DateTime>> CommitUserFrequencyMode()
     {
-        var repoPath = @"C:\Users\eikbo\Skrivebord\BDSA\BDSA_PROJECT\TestGithubStorage\assignment-05";
+        var repoPath = @"C:\Users\annem\Skrivebord\BDSA\BDSA_PROJECT\TestGithubStorage\assignment-05";
         using (var repo = new Repository(repoPath))
         {
             var commitArray = repo.Commits.ToList();
@@ -169,7 +172,7 @@ public class GitInsight
     }
 
     public static List<String> FindAllUsersInRepo(){
-    var repoPath = @"C:\Users\eikbo\Skrivebord\BDSA\BDSA_PROJECT\TestGithubStorage\assignment-05";
+    var repoPath = @"C:\Users\annem\Skrivebord\BDSA\BDSA_PROJECT\TestGithubStorage\assignment-05";
         using (var repo = new Repository(repoPath))
         {
 
