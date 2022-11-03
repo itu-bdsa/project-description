@@ -1,6 +1,7 @@
 ﻿using System.Linq.Expressions;
 using System.Collections;
 using LibGit2Sharp;
+using CommandLine;
 namespace GitInsigt;
 
 public class GitInsight
@@ -8,38 +9,24 @@ public class GitInsight
 
     public static void Main(string[] args)
     {
-        //user inputs commandline switch /fm or /am to pick a program
-        if (args[0].Equals("/fm")){
-            commitFrequencyMode();
+        var result = Parser.Default.ParseArguments<Options>(args);
+        //user inputs commandline switches "--AuthMode true" or leave it blank to pick a program
+        if (result.Value.AuthMode.GetValueOrDefault() == true){
+            
+            commitUserFrequencyMode(result.Value.path!);
         }
-        else if (args[0].Equals("/am")){
-            commitUserFrequencyMode();
+        else if (result.Value.FQMode.GetValueOrDefault() == true){
+            commitFrequencyMode(result.Value.path!);
         } else {
-            //if the user didnt write anything or wrote something that wasnt an existing mode:
-            // this will loop if the user continueues to do the same as previous, until the user writes an elegible mode
-            var blocker = true;
-            while(blocker == true){
-            Console.WriteLine("Please chose from this list of modes:");
-            Console.WriteLine("Frequency mode:   /fm");
-            Console.WriteLine("Author mode:      /am");
-            string usermode = Console.ReadLine();
-            if (usermode.Equals("/fm")){
-                commitFrequencyMode();
-                blocker = false;
-            } else if (usermode.Equals("/am")){
-                commitUserFrequencyMode();
-                blocker=false;
-            }
-            }
-
+            Console.WriteLine("please leave etither FQMode to default value, or make sure Author mode is true");
         }
     }
 
-    public static ArrayList commitFrequencyMode()
+    public static ArrayList commitFrequencyMode(string path)
     {
-        var repoPath = @"C:\Users\eikbo\Skrivebord\BDSA\BDSA_PROJECT\TestGithubStorage\assignment-05";
-        var fileOffset = @"C:\Users\annem\Desktop\BDSA_PROJECT\GitInsight.Tests\assignment-05\GildedRose\obj\project.assets.json";
-        var fileOffsetFwdSlash = fileOffset.Replace("\\", "/");
+        var repoPath = path;
+        //var fileOffset = @"C:\Users\annem\Desktop\BDSA_PROJECT\GitInsight.Tests\assignment-05\GildedRose\obj\project.assets.json";
+        //var fileOffsetFwdSlash = fileOffset.Replace("\\", "/");
         using (var repo = new Repository(repoPath))
         {
             var commitArray = repo.Commits.ToList();
@@ -92,11 +79,11 @@ public class GitInsight
         }
     }
 
-    public static List<List<String>> commitUserFrequencyMode()
+    public static List<List<String>> commitUserFrequencyMode(string path)
     {
-        var repoPath = @"C:\Users\eikbo\Skrivebord\BDSA\BDSA_PROJECT\TestGithubStorage\assignment-05";
-        var fileOffset = @"C:\Users\annem\Desktop\BDSA_PROJECT\GitInsight.Tests\assignment-05\GildedRose\obj\project.assets.json";
-        var fileOffsetFwdSlash = fileOffset.Replace("\\", "/");
+        var repoPath = path;
+        //var fileOffset = @"C:\Users\annem\Desktop\BDSA_PROJECT\GitInsight.Tests\assignment-05\GildedRose\obj\project.assets.json";
+        //var fileOffsetFwdSlash = fileOffset.Replace("\\", "/");
         using (var repo = new Repository(repoPath))
         {
             var commitArray = repo.Commits.ToList();
@@ -174,4 +161,17 @@ public class GitInsight
 
         }
     }
+}
+
+class Options{
+    [Option(Default = (bool)false)]
+    public bool? AuthMode { get; set; }
+
+    [Option(Default = (bool)true)]
+    public bool? FQMode { get; set; }
+
+    [Option('t', "Path")]
+    public String ?path {get; set;}
+
+
 }
