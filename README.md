@@ -86,3 +86,24 @@ When necessary, create describe interactions with your `GitInsight` application 
 
 You have to develop your `GitInsight` application in a public GitHub repository (on github.com).
 Before Friday 28/10 10:00, you have to send a pull-request to the file [./PROJECT_GROUPS.md](./PROJECT_GROUPS.md) in which you add the link to your repository.
+
+
+## Week Two (Week 44)
+
+Extend and if necessary refactor your `GitInsight` application so that results from analyzing Git repositories are stored in a database.
+You choose which kind of database is most suitable for this task.
+Earlier in this course you used an SQL Server database, so you might just want to reuse that.
+
+You decide also how precisely you want to organize the data from Git repository analysis in your database, i.e., design the schema.
+For sure, you have to store information about which repositories were analyzed at which state (the most recent commit).
+In case a Git repository is re-analyzed, i.e., your database contains already results from a previous analysis, then the stored data has to be updated to the most current analysis results.
+In case a Git repository is re-analyzed for which you already have analysis results that correspond to the most current state of the repository, then the analysis step should be skipped entirely and the output should be generated from the readily available data directly.
+
+While designing and implementing your persistence solution, remember that you read and heard about certain patterns that might be good to apply in your implementation of a persistence feature.
+
+Make sure that your test suite covers the newly introduced persistence feature in a reasonable way.
+
+
+Update your project documentation in the `docs` directory to reflect the latest design and architecture of your application.
+That is, illustrate the architecture of your tool with a suitable diagram.
+Additionally, based the project description so far, generate a list of functional and non-functional requirements and store them in a respective text file.
