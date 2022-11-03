@@ -2,7 +2,6 @@ namespace GitInsight.Tests;
 //using System.Diagnostics;
 using System.Globalization;
 using LibGit2Sharp;
-//using GitInsight.Entities;
 //using (var repo = new Repository(@"/Users/sushi/code/sushi/Xamarin.Forms.Renderer.Tests"))
 
 
@@ -117,50 +116,6 @@ public class UnitTest1
         //Actual
 
         Assert.Equal(10, counter);
-
-    }
-
-    private GitInsightContext _context;
-
-    private RepoRepository _Reporepo;
-    private ContributionRepository _Contrepo;
-
-    public UnitTest1(){
-        /*var configuration = new ConfigurationBuilder().AddUserSecrets<UserRepositoryTests>().Build();
-        var connectionString = configuration.GetConnectionString("<name of string>");
-
-        var optionsBuilder = new DbContextOptionsBuilder<GitInsightContext>();
-        optionsBuilder.UseNpgsql(connectionString);
-
-        _context = new GitInsightContext(optionsBuilder.Options);
-        _repo = new UserRepository(_context);
-        _context.Database.BeginTransaction();*/
-    }
-
-    /*public void Dispose() //run this before tests w database
-    {
-        _context.Database.RollbackTransaction();
-        _context.Dispose();
-    }*/
-
-
-    [Fact]
-    public void FirstAnalyzeShouldCreateEntryInDBRepositories()
-    {
-        //Arrange
-        var repoPath = @"C:\Users\annem\Skrivebord\BDSA\BDSA_PROJECT\TestGithubStorage\assignment-05";
-
-        //Act
-        var commits = GitInsight.CommitFrequencyMode(); //laver entry
-
-        var repo = new Repository(repoPath);
-        var logs = repo.Commits.ToList();
-        var expected = logs.Last().Id;
-        //last? element in list is last commit - expected state
-        
-        //Actual
-        //check om id for commits er samme
-        _context.Repositories.Find(repoPath).StateCommit.Should().Be(expected);
 
     }
 }

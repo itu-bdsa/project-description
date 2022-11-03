@@ -11,13 +11,12 @@ public class GitInsight
 
         GitInsightContextFactory factory = new GitInsightContextFactory();
         GitInsightContext context = factory.CreateDbContext(args);
-        var connyboi = new Contribution{repoPath = "uwu", author = "owo", date = new DateTime(2022, 02,02,10,10,10, DateTimeKind.Utc)}; 
+        var repoRep = new RepoCheckRepository(context);
+        //var connyboi = new Contribution{repoPath = "uwu", author = "owo", date = new DateTime(2022, 02,02,10,10,10, DateTimeKind.Utc)}; 
         Console.WriteLine(context.Database.EnsureCreated());
 
         //context.Contributions.Add(connyboi);
         //context.SaveChanges();
-
-
 
         //user inputs commandline switch /fm or /am to pick a program
         /*if (args[0].Equals("/fm"))
@@ -54,16 +53,22 @@ public class GitInsight
         }*/
     }
 
-    public static ArrayList CommitFrequencyMode() //ArrayList
+    public static ArrayList CommitFrequencyMode(RepoCheckRepository repoCheckRep)
     {
-        //C:\Users\annem\Desktop\BDSA_PROJECT\TestGithubStorage\assignment-05
         var repoPath = @"C:\Users\annem\Desktop\BDSA_PROJECT\TestGithubStorage\assignment-05";
-        //@"C:\Users\annem\Skrivebord\BDSA_PROJECT\TestGithubStorage\assignment-05";
-        //var fileOffset = @"C:\Users\annem\Desktop\BDSA_PROJECT\GitInsight.Tests\assignment-05\GildedRose\obj\project.assets.json";
-        //var fileOffsetFwdSlash = fileOffset.Replace("\\", "/");
+        bool exists = CheckRepoExistsInDb(repoPath, repoCheckRep);
+
         using (var repo = new Repository(repoPath))
         {
             var commitArray = repo.Commits.ToList();
+            //-------add to database----
+            if(!exists){
+                //analyse and then create entry
+                repoCheckRep.Create(repoPath, commitArray.Last().Id.ToString());
+                //move this later
+            }
+            //---------------------------
+
             ArrayList dateArray = new ArrayList();
 
             for (int i = 0; i < commitArray.Count; i++)
@@ -112,6 +117,24 @@ public class GitInsight
             //  Console.WriteLine(log + " " + log.Author.When.Date);
             //}
         }
+    }
+
+    public static bool CheckRepoExistsInDb(string repoPath, RepoCheckRepository repoCheckRep){
+        //bool - does repo exist in table in db pt?
+        var repoObject = repoCheckRep.Read(repoPath);
+        return (repoObject != null);
+    }
+
+    public void CheckCommitIsNewest(){
+        //bool - is last checked commit the newest commit made?
+    }
+
+    public void AddRepoToDb(){
+        //add repo to table in db
+    }
+
+    public void UpdateRepoInDb(){
+        //update repo info in table in db
     }
 
     public static List<List<DateTime>> CommitUserFrequencyMode()

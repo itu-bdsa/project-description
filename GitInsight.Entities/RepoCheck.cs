@@ -4,7 +4,7 @@ public class RepoCheck
 {
     public int Id { get; set; }
 
-    [Required]
+    [Required, Key] //use as primary key
     public string repoPath { get; set; }
 
     [Required]
