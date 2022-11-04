@@ -17,9 +17,11 @@ class Control
             {
                 case "author":
                     _mode = AUTHOR;
+                    Console.WriteLine("Current Mode: AUTHOR");
                     break;
                 case "frequency":
                     _mode = FREQUENCY;
+                    Console.WriteLine("Current Mode: FREQUENCY");
                     break;
                 case "print":
                     if (!_isLoaded){
@@ -32,8 +34,14 @@ class Control
                 case "newpath":
                     Console.WriteLine("Insert path:");
                     var path = Console.ReadLine();
-                    _repo = new Data(path!);
-                    _isLoaded = true;
+                    _repo = new Data();
+                    
+                    if (_repo != null){
+                        Console.WriteLine("Repository loaded succesfully.");
+                        _isLoaded = true;
+                    } else {
+                        Console.WriteLine("Path is not a valid git repository.");
+                    }
                     break;
                 case "help":
                     Console.WriteLine("'newpath' to set new repository path.");
