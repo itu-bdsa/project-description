@@ -1,0 +1,28 @@
+@startuml classDiagram
+
+class Control {
+  - _repo
+  - _mode
+  - _isLoaded
+  + Run()
+}
+class Data{
+  - _repo
+
+  + Data(url)
+  + Print(mode)
+}
+enum Mode{
+  + NULL
+  + AUTHOR
+  + FREQUENCY
+
+}
+class Program{
+  + Main()
+}
+
+Control --> Data : creates
+Control ..> Mode : use
+Program *--> Control : creates
+@enduml

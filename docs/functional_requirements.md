@@ -7,8 +7,14 @@ List of Functional Requirements:
 
 List of Non-Functional Requirements:
 
-- The project must be developed with AGILE principles.
 - The project must use the libgit2sharp library to collect data from repositories.
 - The code should be written in C#
 - The project should print statements through stdout
-- The project should be developed in a test-driven manner
+- The analyzed results should me stored in a database.
+- The database should be able to be updated with new analyzed results.
+- All features should be tested.
+- The architecture of the system must be illustrated with a suitable diagram.
+
+NOTE: Which specific patterns will we end up using.
+
+---------------- 
