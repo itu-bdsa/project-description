@@ -19,25 +19,6 @@ public class GitInsightTest
 
         _repo.shutDown();
 
-        // System.IO.DirectoryInfo di = new DirectoryInfo("./repoData/deleteMe");
-
-        // foreach (FileInfo file in di.EnumerateFiles())
-        // {
-        //     file.Delete();
-        // }
-        // foreach (DirectoryInfo dir in di.EnumerateDirectories())
-        // {
-        //     dir.Delete(true);
-        // }
-        // if (System.IO.Directory.Exists("../repoData/deleteMe"))
-        // {
-        //     Console.WriteLine("Directory still exist!");
-        // }
-        // else
-        // {
-        //     Console.WriteLine("Directory was deleted!");
-        // }
-
         Console.WriteLine("skrrt");
     }
 

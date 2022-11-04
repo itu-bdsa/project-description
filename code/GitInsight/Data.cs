@@ -48,6 +48,7 @@ public class Data
 
     public void printAuthor()
     {
+
         foreach (var cl in _repo.Commits.GroupBy(c => c.Committer.Name).ToList())
         {
             Console.WriteLine($"\n--- {cl.FirstOrDefault()!.Author.Name} ---");
