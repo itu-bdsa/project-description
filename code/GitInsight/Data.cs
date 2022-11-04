@@ -74,7 +74,7 @@ public class Data
         {
             dir.Delete(true);
         }
-        if (System.IO.Directory.Exists("code/GitInsight/repoData/deleteMe"))
+        if (System.IO.Directory.Exists("./repoData/deleteMe"))
         {
             Console.WriteLine("Directory still exist!");
         }
