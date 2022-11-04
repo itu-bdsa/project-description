@@ -52,7 +52,7 @@ public class Data
         {
             Console.WriteLine($"\n--- {cl.FirstOrDefault()!.Author.Name} ---");
 
-            foreach (var dt in _repo.Commits.GroupBy(c => c.Committer.When.Date).ToList())
+            foreach (var dt in cl.GroupBy(c => c.Committer.When.Date).ToList())
             {
                 Console.WriteLine($"{dt.Count()}, {dt.FirstOrDefault()!.Committer.When.Date.ToString("dd/MM/yyyy")}");
             }

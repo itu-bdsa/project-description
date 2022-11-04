@@ -1,7 +1,7 @@
 namespace GitInsight;
 
 using static Mode;
-class Control
+public class Control
 {
     private Data? _repo;
     private Mode _mode;
