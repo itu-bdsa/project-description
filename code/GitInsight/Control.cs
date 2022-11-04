@@ -32,7 +32,7 @@ class Control
                     }
                     else
                     {
-                        _repo!.print(_mode);
+                        _repo!.Print(_mode);
                     }
                     break;
                 case "newpath":
@@ -51,7 +51,7 @@ class Control
                     Console.WriteLine("'exit' to exit program");
                     break;
                 case "exit":
-                    _repo!.shutDown();
+                    _repo!.Shutdown();
                     isRunning = false;
                     break;
                 default:
