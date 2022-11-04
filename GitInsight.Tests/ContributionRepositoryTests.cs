@@ -28,6 +28,11 @@ public class ContributionRepositoryTests : IDisposable{
         _connection.Dispose();
     }
 
+    /*
+    Tænker vi kan lave metoder i GitInsight til at lave shiet i contributions,
+    og teste dem individuelt, før vi tester vores to modes som helhed,
+    og så ændrer vores orig. tests til at passe nye kode*/
+
     [Fact]
     public void Database_Should_be_empty()
     {
@@ -39,7 +44,8 @@ public class ContributionRepositoryTests : IDisposable{
         Assert.Equal(_repository.Find(1),null);
     }
 
-        public void insert_contribution_Should_exist()
+    [Fact]
+    public void insert_contribution_Should_exist()
     {
         //Arrange
         var Con1 = new Contribution(){ Id = 1, repoPath = "kekw", author = "monke", date = DateTime.Today, commitsCount = 3};

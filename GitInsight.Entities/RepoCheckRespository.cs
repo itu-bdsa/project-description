@@ -20,7 +20,10 @@ public class RepoCheckRepository {
         return repoCheckObject != null ? repoCheckObject : null!;
     }
 
-    public void Update(string repoPath, string lastCheckedCommit){}
-
+    public void Update(string repoPath, string newestCheckedCommit){
+        var toUpdate = _context.RepoChecks.Find(repoPath);
+        toUpdate!.lastCheckedCommit = newestCheckedCommit;
+        _context.SaveChanges();
+    }
 
 }

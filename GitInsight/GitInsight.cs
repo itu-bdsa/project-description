@@ -11,6 +11,7 @@ public class GitInsight
 
         GitInsightContextFactory factory = new GitInsightContextFactory();
         GitInsightContext context = factory.CreateDbContext(args);
+        //context.Database.EnsureDeleted(); //to delete database for tests
         var repoRep = new RepoCheckRepository(context);
         //var connyboi = new Contribution{repoPath = "uwu", author = "owo", date = new DateTime(2022, 02,02,10,10,10, DateTimeKind.Utc)}; 
         Console.WriteLine(context.Database.EnsureCreated());
@@ -19,9 +20,9 @@ public class GitInsight
         //context.SaveChanges();
 
         //user inputs commandline switch /fm or /am to pick a program
-        /*if (args[0].Equals("/fm"))
+        if (args[0].Equals("/fm"))
         {
-            CommitFrequencyMode();
+            CommitFrequencyMode(repoRep);
         }
         else if (args[0].Equals("/am"))
         {
@@ -40,7 +41,7 @@ public class GitInsight
                 string usermode = Console.ReadLine()!;
                 if (usermode.Equals("/fm"))
                 {
-                    CommitFrequencyMode();
+                    CommitFrequencyMode(repoRep);
                     blocker = false;
                 }
                 else if (usermode.Equals("/am"))
@@ -50,28 +51,36 @@ public class GitInsight
                 }
             }
 
-        }*/
+        }
     }
 
     public static ArrayList CommitFrequencyMode(RepoCheckRepository repoCheckRep)
     {
         var repoPath = @"C:\Users\annem\Desktop\BDSA_PROJECT\TestGithubStorage\assignment-05";
-        bool exists = CheckRepoExistsInDb(repoPath, repoCheckRep);
 
-        using (var repo = new Repository(repoPath))
+        using (var repo = new Repository(repoPath)) //hvorfor bruger vi using?
         {
             var commitArray = repo.Commits.ToList();
+            Console.WriteLine(repo.Commits.First().Author.When);
             //-------add to database----
-            if(!exists){
-                //analyse and then create entry
-                repoCheckRep.Create(repoPath, commitArray.Last().Id.ToString());
+            if(RepoExistsInDb(repoPath, repoCheckRep)){
+                /*if(CommitIsNewest(repo, repoCheckRep)){
+                    //read from db and print
+                } else {
+                    //analyze, update db and print
+                }*/
+                
+            } else {
+                //analyse and then create entry in RepoChecks table
+                //repoCheckRep.Create(repoPath, commitArray.Last().Id.ToString());
+                repoCheckRep.Create(repoPath, repo.Commits.First().Id.ToString());
                 //move this later
             }
             //---------------------------
 
             ArrayList dateArray = new ArrayList();
 
-            for (int i = 0; i < commitArray.Count; i++)
+            /*for (int i = 0; i < commitArray.Count; i++)
             {
                 string[] tempDateArray = commitArray[i].Author.When.ToString().Split(" ");
                 dateArray.Add(DateTime.Parse(tempDateArray[0]));
@@ -100,7 +109,7 @@ public class GitInsight
                 }
 
             }
-            Console.WriteLine(currentDateCount + " " + currentDate?.ToString());
+            Console.WriteLine(currentDateCount + " " + currentDate?.ToString());*/
             return dateArray;
 
 
@@ -119,22 +128,27 @@ public class GitInsight
         }
     }
 
-    public static bool CheckRepoExistsInDb(string repoPath, RepoCheckRepository repoCheckRep){
+    public static bool RepoExistsInDb(string repoPath, RepoCheckRepository repoCheckRep){
         //bool - does repo exist in table in db pt?
         var repoObject = repoCheckRep.Read(repoPath);
         return (repoObject != null);
     }
 
-    public void CheckCommitIsNewest(){
+    public static bool CommitIsNewest(string repoPath, RepoCheckRepository repoCheckRep){ //string repoPath
         //bool - is last checked commit the newest commit made?
+        var repoObject = repoCheckRep.Read(repoPath);
+        var rep = new Repository(repoPath);
+        return (repoObject.lastCheckedCommit == rep.Commits.First().Id.ToString());  
     }
 
     public void AddRepoToDb(){
-        //add repo to table in db
+        //add repo to table in db. Slet?
     }
 
-    public void UpdateRepoInDb(){
-        //update repo info in table in db
+    public static void UpdateCheckedCommitInDb(string repoPath, RepoCheckRepository repoCheckRep){
+        //update the latest checked commit in table in db
+        var rep = new Repository(repoPath);
+        repoCheckRep.Update(repoPath, rep.Commits.First().Id.ToString());
     }
 
     public static List<List<DateTime>> CommitUserFrequencyMode()

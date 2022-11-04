@@ -14,4 +14,7 @@ public class Contribution
     public DateTime date { get; set; }
 
     public int commitsCount { get; set; }
+    
+    [Required]
+    public RepoCheck repCheck { get; set; }
 }

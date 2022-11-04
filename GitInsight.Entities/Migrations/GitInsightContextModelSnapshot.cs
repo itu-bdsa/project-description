@@ -50,26 +50,21 @@ namespace GitInsight.Entities.Migrations
 
             modelBuilder.Entity("GitInsight.Entities.RepoCheck", b =>
                 {
+                    b.Property<string>("repoPath")
+                        .HasColumnType("text");
+
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("integer");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
                     b.Property<string>("lastCheckedCommit")
-                        .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("repoPath")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.HasKey("Id");
+                    b.HasKey("repoPath");
 
                     b.HasIndex("repoPath")
                         .IsUnique();
 
-                    b.ToTable("RepoCheck");
+                    b.ToTable("RepoChecks");
                 });
 #pragma warning restore 612, 618
         }

@@ -1,5 +1,4 @@
 namespace GitInsight.Tests;
-//using System.Diagnostics;
 using System.Globalization;
 using LibGit2Sharp;
 //using (var repo = new Repository(@"/Users/sushi/code/sushi/Xamarin.Forms.Renderer.Tests"))
@@ -37,7 +36,7 @@ public class UnitTest1
     }
 
 
-        [Fact]
+        /*[Fact]
     public void October8Has10Commits()
     {
         //Arrange
@@ -62,7 +61,7 @@ public class UnitTest1
 
         Assert.Equal(10, octoberCount);
 
-    }
+    }*/
 
            [Fact]
     public void EikboHas11Commits()

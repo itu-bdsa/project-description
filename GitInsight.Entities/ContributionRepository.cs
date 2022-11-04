@@ -15,13 +15,13 @@ public class ContributionRepository {
        
        var cn = new Contribution();
 
-       if(search is null){
+       /*if(search is null){
         _context.Tags.Add(tg);
        _context.SaveChanges();
 
        return (Created,tg.Id);
        }
-       return (Conflict,tg.Id);
+       return (Conflict,tg.Id);*/
        
     }
 

@@ -6,7 +6,7 @@ namespace GitInsight.Entities;
 public partial class GitInsightContext : DbContext 
 {
     
-    public DbSet<RepoCheck> Repos => Set<RepoCheck>();
+    //public DbSet<RepoCheck> Repos => Set<RepoCheck>();
     public GitInsightContext(DbContextOptions<GitInsightContext> options)
         : base(options)
     {}

@@ -7,9 +7,10 @@ public class RepoCheck
     [Required, Key] //use as primary key
     public string repoPath { get; set; }
 
-    [Required]
-    public string lastCheckedCommit { get; set; }
+    //[Required]
+    public string? lastCheckedCommit { get; set; }
 
     //one-to-many relationship w. Contributions
-    //public ICollection<Contribution> Contributions { get; set; } = new HashSet<Contribution>();
+    [Required]
+    public ICollection<Contribution> Contributions { get; set; } = new HashSet<Contribution>();
 }
