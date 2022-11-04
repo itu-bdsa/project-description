@@ -61,26 +61,26 @@ public class GitInsight
         using (var repo = new Repository(repoPath)) //hvorfor bruger vi using?
         {
             var commitArray = repo.Commits.ToList();
-            Console.WriteLine(repo.Commits.First().Author.When);
+            //Console.WriteLine(repo.Commits.First().Author.When);
             //-------add to database----
-            if(RepoExistsInDb(repoPath, repoCheckRep)){
+            /*if(RepoExistsInDb(repoPath, repoCheckRep)){
                 /*if(CommitIsNewest(repo, repoCheckRep)){
                     //read from db and print
                 } else {
                     //analyze, update db and print
                 }*/
                 
-            } else {
+            //} else {
                 //analyse and then create entry in RepoChecks table
                 //repoCheckRep.Create(repoPath, commitArray.Last().Id.ToString());
-                repoCheckRep.Create(repoPath, repo.Commits.First().Id.ToString());
+                //repoCheckRep.Create(repoPath, repo.Commits.First().Id.ToString());
                 //move this later
-            }
+            //}
             //---------------------------
 
             ArrayList dateArray = new ArrayList();
 
-            /*for (int i = 0; i < commitArray.Count; i++)
+            for (int i = 0; i < commitArray.Count; i++)
             {
                 string[] tempDateArray = commitArray[i].Author.When.ToString().Split(" ");
                 dateArray.Add(DateTime.Parse(tempDateArray[0]));
@@ -109,7 +109,7 @@ public class GitInsight
                 }
 
             }
-            Console.WriteLine(currentDateCount + " " + currentDate?.ToString());*/
+            Console.WriteLine(currentDateCount + " " + currentDate?.ToString());
             return dateArray;
 
 
