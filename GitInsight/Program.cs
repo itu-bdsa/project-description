@@ -9,6 +9,7 @@ public class GitInsight
 
     public static void Main(string[] args)
     {
+        //specify a path by writing "--Path=pathname/somewhere" when running the program
         var result = Parser.Default.ParseArguments<Options>(args);
         //user inputs commandline switches "--AuthMode true" or leave it blank to pick a program
         if (result.Value.AuthMode.GetValueOrDefault() == true){
@@ -24,6 +25,7 @@ public class GitInsight
 
     public static ArrayList commitFrequencyMode(string path)
     {
+        //specify a path by writing "--Path=pathname/somewhere" when running the program
         var repoPath = path;
         //var fileOffset = @"C:\Users\annem\Desktop\BDSA_PROJECT\GitInsight.Tests\assignment-05\GildedRose\obj\project.assets.json";
         //var fileOffsetFwdSlash = fileOffset.Replace("\\", "/");
@@ -81,6 +83,7 @@ public class GitInsight
 
     public static List<List<String>> commitUserFrequencyMode(string path)
     {
+        //specify a path by writing "--Path=pathname/somewhere" when running the program
         var repoPath = path;
         //var fileOffset = @"C:\Users\annem\Desktop\BDSA_PROJECT\GitInsight.Tests\assignment-05\GildedRose\obj\project.assets.json";
         //var fileOffsetFwdSlash = fileOffset.Replace("\\", "/");
@@ -163,6 +166,7 @@ public class GitInsight
     }
 }
 
+//Options class, used by the commandline parser to take user input and set mode and path
 class Options{
     [Option(Default = (bool)false)]
     public bool? AuthMode { get; set; }
