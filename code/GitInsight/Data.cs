@@ -64,7 +64,8 @@ public class Data
     {
         Console.WriteLine("Deleting current repo");
 
-        System.IO.DirectoryInfo di = new DirectoryInfo("./repoData");
+
+        System.IO.DirectoryInfo di = new DirectoryInfo("./repoData/");
 
         foreach (FileInfo file in di.EnumerateFiles())
         {
