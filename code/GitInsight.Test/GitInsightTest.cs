@@ -1,20 +1,60 @@
+using LibGit2Sharp;
+
 namespace GitInsight.Test;
 public class GitInsightTest
 {
 
-    //private Data _repo = new Data();
-    
+    Data? _repo;
+
+
+    private void setupTests()
+    {
+        _repo = new Data("https://github.com/rmccue/test-repository");
+
+    }
+
+    private void closeTest()
+    {
+        Console.WriteLine("skrrt?");
+
+        _repo.shutDown();
+
+        // System.IO.DirectoryInfo di = new DirectoryInfo("./repoData/deleteMe");
+
+        // foreach (FileInfo file in di.EnumerateFiles())
+        // {
+        //     file.Delete();
+        // }
+        // foreach (DirectoryInfo dir in di.EnumerateDirectories())
+        // {
+        //     dir.Delete(true);
+        // }
+        // if (System.IO.Directory.Exists("../repoData/deleteMe"))
+        // {
+        //     Console.WriteLine("Directory still exist!");
+        // }
+        // else
+        // {
+        //     Console.WriteLine("Directory was deleted!");
+        // }
+
+        Console.WriteLine("skrrt");
+    }
 
     [Fact]
     public void Should_load_a_repository_from_path()
     {
         // Given
-        
+        setupTests();
+
         // When
 
+        _repo.print(Mode.AUTHOR);
+
+
         // Then
-        
-       Assert.Equal(true, true);
+        Assert.NotNull(_repo);
+        closeTest();
     }
 
     [Fact]

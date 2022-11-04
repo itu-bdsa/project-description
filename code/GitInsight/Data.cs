@@ -8,7 +8,7 @@ public class Data
     public Data(string url)
     {
         //Checks if a current repository exists and deletes it
-        if (System.IO.Directory.Exists("repoData/deleteMe"))
+        if (System.IO.Directory.Exists("./repoData/deleteMe"))
         {
             Console.WriteLine("Removing current loaded repository...");
             shutDown();
@@ -64,7 +64,7 @@ public class Data
     {
         Console.WriteLine("Deleting current repo");
 
-        System.IO.DirectoryInfo di = new DirectoryInfo("../GitInsight/repoData");
+        System.IO.DirectoryInfo di = new DirectoryInfo("./repoData");
 
         foreach (FileInfo file in di.EnumerateFiles())
         {
