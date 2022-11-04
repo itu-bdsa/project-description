@@ -1,0 +1,14 @@
+C:\Users\annem\Desktop\BDSA_PROJECT\GitInsight.Entities\obj\Debug\net6.0\GitInsight.Entities.csproj.AssemblyReference.cache
+C:\Users\annem\Desktop\BDSA_PROJECT\GitInsight.Entities\obj\Debug\net6.0\GitInsight.Entities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\annem\Desktop\BDSA_PROJECT\GitInsight.Entities\obj\Debug\net6.0\GitInsight.Entities.AssemblyInfoInputs.cache
+C:\Users\annem\Desktop\BDSA_PROJECT\GitInsight.Entities\obj\Debug\net6.0\GitInsight.Entities.AssemblyInfo.cs
+C:\Users\annem\Desktop\BDSA_PROJECT\GitInsight.Entities\obj\Debug\net6.0\GitInsight.Entities.csproj.CoreCompileInputs.cache
+C:\Users\annem\Desktop\BDSA_PROJECT\GitInsight.Entities\bin\Debug\net6.0\GitInsight.Entities.deps.json
+C:\Users\annem\Desktop\BDSA_PROJECT\GitInsight.Entities\bin\Debug\net6.0\GitInsight.Entities.runtimeconfig.json
+C:\Users\annem\Desktop\BDSA_PROJECT\GitInsight.Entities\bin\Debug\net6.0\GitInsight.Entities.dll
+C:\Users\annem\Desktop\BDSA_PROJECT\GitInsight.Entities\bin\Debug\net6.0\GitInsight.Entities.pdb
+C:\Users\annem\Desktop\BDSA_PROJECT\GitInsight.Entities\obj\Debug\net6.0\GitInsight.Entities.dll
+C:\Users\annem\Desktop\BDSA_PROJECT\GitInsight.Entities\obj\Debug\net6.0\refint\GitInsight.Entities.dll
+C:\Users\annem\Desktop\BDSA_PROJECT\GitInsight.Entities\obj\Debug\net6.0\GitInsight.Entities.pdb
+C:\Users\annem\Desktop\BDSA_PROJECT\GitInsight.Entities\obj\Debug\net6.0\GitInsight.Entities.genruntimeconfig.cache
+C:\Users\annem\Desktop\BDSA_PROJECT\GitInsight.Entities\obj\Debug\net6.0\ref\GitInsight.Entities.dll

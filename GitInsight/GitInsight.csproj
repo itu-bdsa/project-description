@@ -4,9 +4,21 @@
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <UserSecretsId>91913826-fb34-424d-9c4b-c7c99b492fc8</UserSecretsId>
   </PropertyGroup>
+
+    <ItemGroup>
+    <ProjectReference Include="..\GitInsight.Entities\GitInsight.Entities.csproj" />
+  </ItemGroup>
+
   <ItemGroup>
-    <PackageReference Include="LibGit2Sharp" Version="0.26.2"/>
+    <PackageReference Include="LibGit2Sharp" Version="0.26.2" />
     <PackageReference Include="CommandLineParser" Version="2.9.1"/>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.10" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.10">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="6.0.1" />
   </ItemGroup>
 </Project>

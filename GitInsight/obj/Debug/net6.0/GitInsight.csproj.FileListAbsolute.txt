@@ -91,6 +91,33 @@ C:\Users\eikbo\Skrivebord\BDSA\BDSA_PROJECT\GitInsight\obj\Debug\net6.0\refint\G
 C:\Users\eikbo\Skrivebord\BDSA\BDSA_PROJECT\GitInsight\obj\Debug\net6.0\GitInsight.pdb
 C:\Users\eikbo\Skrivebord\BDSA\BDSA_PROJECT\GitInsight\obj\Debug\net6.0\GitInsight.genruntimeconfig.cache
 C:\Users\eikbo\Skrivebord\BDSA\BDSA_PROJECT\GitInsight\obj\Debug\net6.0\ref\GitInsight.dll
+<<<<<<< HEAD
+C:\Users\annem\Desktop\BDSA_PROJECT\GitInsight\bin\Debug\net6.0\Humanizer.dll
+C:\Users\annem\Desktop\BDSA_PROJECT\GitInsight\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\annem\Desktop\BDSA_PROJECT\GitInsight\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\annem\Desktop\BDSA_PROJECT\GitInsight\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\annem\Desktop\BDSA_PROJECT\GitInsight\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\annem\Desktop\BDSA_PROJECT\GitInsight\bin\Debug\net6.0\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\annem\Desktop\BDSA_PROJECT\GitInsight\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\annem\Desktop\BDSA_PROJECT\GitInsight\bin\Debug\net6.0\Microsoft.Extensions.Configuration.dll
+C:\Users\annem\Desktop\BDSA_PROJECT\GitInsight\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\annem\Desktop\BDSA_PROJECT\GitInsight\bin\Debug\net6.0\Microsoft.Extensions.Configuration.FileExtensions.dll
+C:\Users\annem\Desktop\BDSA_PROJECT\GitInsight\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Json.dll
+C:\Users\annem\Desktop\BDSA_PROJECT\GitInsight\bin\Debug\net6.0\Microsoft.Extensions.Configuration.UserSecrets.dll
+C:\Users\annem\Desktop\BDSA_PROJECT\GitInsight\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\annem\Desktop\BDSA_PROJECT\GitInsight\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\annem\Desktop\BDSA_PROJECT\GitInsight\bin\Debug\net6.0\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Users\annem\Desktop\BDSA_PROJECT\GitInsight\bin\Debug\net6.0\Microsoft.Extensions.FileProviders.Physical.dll
+C:\Users\annem\Desktop\BDSA_PROJECT\GitInsight\bin\Debug\net6.0\Microsoft.Extensions.FileSystemGlobbing.dll
+C:\Users\annem\Desktop\BDSA_PROJECT\GitInsight\bin\Debug\net6.0\Microsoft.Extensions.Logging.dll
+C:\Users\annem\Desktop\BDSA_PROJECT\GitInsight\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\annem\Desktop\BDSA_PROJECT\GitInsight\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
+C:\Users\annem\Desktop\BDSA_PROJECT\GitInsight\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
+C:\Users\annem\Desktop\BDSA_PROJECT\GitInsight\bin\Debug\net6.0\Npgsql.dll
+C:\Users\annem\Desktop\BDSA_PROJECT\GitInsight\bin\Debug\net6.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
+C:\Users\annem\Desktop\BDSA_PROJECT\GitInsight\bin\Debug\net6.0\GitInsight.Entities.dll
+C:\Users\annem\Desktop\BDSA_PROJECT\GitInsight\bin\Debug\net6.0\GitInsight.Entities.pdb
+=======
 C:\Users\Nicol\OneDrive\Dokumenter\AFolderForUni\bdsagrpprjREAL\BDSA_PROJECT\GitInsight\bin\Debug\net6.0\GitInsight.exe
 C:\Users\Nicol\OneDrive\Dokumenter\AFolderForUni\bdsagrpprjREAL\BDSA_PROJECT\GitInsight\bin\Debug\net6.0\GitInsight.deps.json
 C:\Users\Nicol\OneDrive\Dokumenter\AFolderForUni\bdsagrpprjREAL\BDSA_PROJECT\GitInsight\bin\Debug\net6.0\GitInsight.runtimeconfig.json
@@ -123,3 +150,4 @@ C:\Users\Nicol\OneDrive\Dokumenter\AFolderForUni\bdsagrpprjREAL\BDSA_PROJECT\Git
 C:\Users\Nicol\OneDrive\Dokumenter\AFolderForUni\bdsagrpprjREAL\BDSA_PROJECT\GitInsight\obj\Debug\net6.0\GitInsight.pdb
 C:\Users\Nicol\OneDrive\Dokumenter\AFolderForUni\bdsagrpprjREAL\BDSA_PROJECT\GitInsight\obj\Debug\net6.0\GitInsight.genruntimeconfig.cache
 C:\Users\Nicol\OneDrive\Dokumenter\AFolderForUni\bdsagrpprjREAL\BDSA_PROJECT\GitInsight\obj\Debug\net6.0\ref\GitInsight.dll
+>>>>>>> 02b1f04ca42a4a3a0596d982e6c05f8ba5a81040

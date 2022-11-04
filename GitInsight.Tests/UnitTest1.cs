@@ -1,4 +1,5 @@
 namespace GitInsight.Tests;
+using System.Globalization;
 using System.Diagnostics;
 using LibGit2Sharp;
 //using (var repo = new Repository(@"/Users/sushi/code/sushi/Xamarin.Forms.Renderer.Tests"))
@@ -36,8 +37,8 @@ public class UnitTest1
     }
 
 
-        [Fact]
-    public void commitFrequencyModeWorks()
+        /*[Fact]
+    public void October8Has10Commits()
     {
         //Arrange
         var repoPath = @"C:\Users\eikbo\Skrivebord\BDSA\BDSA_PROJECT\TestGithubStorage\assignment-05";
@@ -56,7 +57,7 @@ public class UnitTest1
 
         Assert.Equal(31, counter);
 
-    }
+    }*/
 
            [Fact]
     public void commitUserFrequencyModeWorks()
