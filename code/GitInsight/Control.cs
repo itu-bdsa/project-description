@@ -19,9 +19,11 @@ class Control
             {
                 case "author":
                     _mode = AUTHOR;
+                    Console.WriteLine("Current Mode: AUTHOR");
                     break;
                 case "frequency":
                     _mode = FREQUENCY;
+                    Console.WriteLine("Current Mode: FREQUENCY");
                     break;
                 case "print":
                     if (!_isLoaded)

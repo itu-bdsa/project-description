@@ -1,7 +1,9 @@
 namespace GitInsight.Test;
-
 public class GitInsightTest
 {
+
+    //private Data _repo = new Data();
+    
 
     [Fact]
     public void Should_load_a_repository_from_path()
@@ -11,11 +13,12 @@ public class GitInsightTest
         // When
 
         // Then
-        var expected = true;
-        Assert.Equal(expected,true);
+        
+       Assert.Equal(true, true);
     }
 
     [Fact]
+    // Purposefully left out for now
     public void Should_be_able_to_update_repo_to_a_new_repo()
     {
         // Given
@@ -23,27 +26,21 @@ public class GitInsightTest
         // When
 
         // Then
-       
-        
-    
     }
 
-    [Fact]
-    public void User_should_be_able_to_switch_mode_to_Frequency_Mode()
-    {
-        var expected = true;
-        Assert.Equal(expected,true);
-
-    }
 
     [Fact]
     public void User_should_be_able_to_switch_mode_to_Author_Mode()
     {
-        // Given
+        // // Given
+        // var firstExpected = _repo.Mode.NULL;
+        // Assert.Equal(_repo.Mode, firstExpected);
 
-        // When
+        // // When
+        // _repo.Mode = _repo.Mode.AUTHOR;
 
-        // Then
+        // // Then
+        // Assert.Equal(_repo.Mode, _repo.Mode);
     }
 
     [Fact]
