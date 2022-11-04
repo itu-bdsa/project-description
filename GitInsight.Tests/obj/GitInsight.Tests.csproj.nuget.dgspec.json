@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\annem\\Desktop\\BDSA_PROJECT\\GitInsight.Tests\\GitInsight.Tests.csproj": {}
+    "c:\\Users\\annem\\Desktop\\BDSA_PROJECT\\GitInsight.Tests\\GitInsight.Tests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\annem\\Desktop\\BDSA_PROJECT\\GitInsight.Entities\\GitInsight.Entities.csproj": {
+    "c:\\Users\\annem\\Desktop\\BDSA_PROJECT\\GitInsight.Entities\\GitInsight.Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\annem\\Desktop\\BDSA_PROJECT\\GitInsight.Entities\\GitInsight.Entities.csproj",
+        "projectUniqueName": "c:\\Users\\annem\\Desktop\\BDSA_PROJECT\\GitInsight.Entities\\GitInsight.Entities.csproj",
         "projectName": "GitInsight.Entities",
-        "projectPath": "C:\\Users\\annem\\Desktop\\BDSA_PROJECT\\GitInsight.Entities\\GitInsight.Entities.csproj",
+        "projectPath": "c:\\Users\\annem\\Desktop\\BDSA_PROJECT\\GitInsight.Entities\\GitInsight.Entities.csproj",
         "packagesPath": "C:\\Users\\annem\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\annem\\Desktop\\BDSA_PROJECT\\GitInsight.Entities\\obj\\",
+        "outputPath": "c:\\Users\\annem\\Desktop\\BDSA_PROJECT\\GitInsight.Entities\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\annem\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -91,14 +91,14 @@
         }
       }
     },
-    "C:\\Users\\annem\\Desktop\\BDSA_PROJECT\\GitInsight.Tests\\GitInsight.Tests.csproj": {
+    "c:\\Users\\annem\\Desktop\\BDSA_PROJECT\\GitInsight.Tests\\GitInsight.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\annem\\Desktop\\BDSA_PROJECT\\GitInsight.Tests\\GitInsight.Tests.csproj",
+        "projectUniqueName": "c:\\Users\\annem\\Desktop\\BDSA_PROJECT\\GitInsight.Tests\\GitInsight.Tests.csproj",
         "projectName": "GitInsight.Tests",
-        "projectPath": "C:\\Users\\annem\\Desktop\\BDSA_PROJECT\\GitInsight.Tests\\GitInsight.Tests.csproj",
+        "projectPath": "c:\\Users\\annem\\Desktop\\BDSA_PROJECT\\GitInsight.Tests\\GitInsight.Tests.csproj",
         "packagesPath": "C:\\Users\\annem\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\annem\\Desktop\\BDSA_PROJECT\\GitInsight.Tests\\obj\\",
+        "outputPath": "c:\\Users\\annem\\Desktop\\BDSA_PROJECT\\GitInsight.Tests\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\annem\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -115,11 +115,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\annem\\Desktop\\BDSA_PROJECT\\GitInsight.Entities\\GitInsight.Entities.csproj": {
-                "projectPath": "C:\\Users\\annem\\Desktop\\BDSA_PROJECT\\GitInsight.Entities\\GitInsight.Entities.csproj"
+              "c:\\Users\\annem\\Desktop\\BDSA_PROJECT\\GitInsight.Entities\\GitInsight.Entities.csproj": {
+                "projectPath": "c:\\Users\\annem\\Desktop\\BDSA_PROJECT\\GitInsight.Entities\\GitInsight.Entities.csproj"
               },
-              "C:\\Users\\annem\\Desktop\\BDSA_PROJECT\\GitInsight\\GitInsight.csproj": {
-                "projectPath": "C:\\Users\\annem\\Desktop\\BDSA_PROJECT\\GitInsight\\GitInsight.csproj"
+              "c:\\Users\\annem\\Desktop\\BDSA_PROJECT\\GitInsight\\GitInsight.csproj": {
+                "projectPath": "c:\\Users\\annem\\Desktop\\BDSA_PROJECT\\GitInsight\\GitInsight.csproj"
               }
             }
           }
@@ -134,6 +134,22 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "FluentAssertions": {
+              "target": "Package",
+              "version": "[6.7.0, )"
+            },
+            "Microsoft.Data.Sqlite": {
+              "target": "Package",
+              "version": "[6.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[6.0.10, )"
+            },
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
               "version": "[17.1.0, )"
@@ -181,14 +197,14 @@
         }
       }
     },
-    "C:\\Users\\annem\\Desktop\\BDSA_PROJECT\\GitInsight\\GitInsight.csproj": {
+    "c:\\Users\\annem\\Desktop\\BDSA_PROJECT\\GitInsight\\GitInsight.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\annem\\Desktop\\BDSA_PROJECT\\GitInsight\\GitInsight.csproj",
+        "projectUniqueName": "c:\\Users\\annem\\Desktop\\BDSA_PROJECT\\GitInsight\\GitInsight.csproj",
         "projectName": "GitInsight",
-        "projectPath": "C:\\Users\\annem\\Desktop\\BDSA_PROJECT\\GitInsight\\GitInsight.csproj",
+        "projectPath": "c:\\Users\\annem\\Desktop\\BDSA_PROJECT\\GitInsight\\GitInsight.csproj",
         "packagesPath": "C:\\Users\\annem\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\annem\\Desktop\\BDSA_PROJECT\\GitInsight\\obj\\",
+        "outputPath": "c:\\Users\\annem\\Desktop\\BDSA_PROJECT\\GitInsight\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\annem\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -205,8 +221,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\annem\\Desktop\\BDSA_PROJECT\\GitInsight.Entities\\GitInsight.Entities.csproj": {
-                "projectPath": "C:\\Users\\annem\\Desktop\\BDSA_PROJECT\\GitInsight.Entities\\GitInsight.Entities.csproj"
+              "c:\\Users\\annem\\Desktop\\BDSA_PROJECT\\GitInsight.Entities\\GitInsight.Entities.csproj": {
+                "projectPath": "c:\\Users\\annem\\Desktop\\BDSA_PROJECT\\GitInsight.Entities\\GitInsight.Entities.csproj"
               }
             }
           }
@@ -221,11 +237,21 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "CommandLineParser": {
+              "target": "Package",
+              "version": "[2.9.1, )"
+            },
             "LibGit2Sharp": {
               "target": "Package",
               "version": "[0.26.2, )"
             },
             "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
               "version": "[6.0.10, )"
             },

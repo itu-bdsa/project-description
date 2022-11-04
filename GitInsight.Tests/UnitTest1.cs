@@ -1,5 +1,6 @@
 namespace GitInsight.Tests;
 using System.Globalization;
+using System.Diagnostics;
 using LibGit2Sharp;
 //using (var repo = new Repository(@"/Users/sushi/code/sushi/Xamarin.Forms.Renderer.Tests"))
 
@@ -14,7 +15,7 @@ using LibGit2Sharp;
 public class UnitTest1
 {
     [Fact]
-    public void GithubIsStillTheSame()
+    public void TheTestGithubIsStillTheSame()
     {
         //Arrange
         var repoPath = @"C:\Users\eikbo\Skrivebord\BDSA\BDSA_PROJECT\TestGithubStorage\assignment-05";
@@ -40,81 +41,45 @@ public class UnitTest1
     public void October8Has10Commits()
     {
         //Arrange
-        var dateArray = GitInsight.CommitFrequencyMode();
+        var repoPath = @"C:\Users\eikbo\Skrivebord\BDSA\BDSA_PROJECT\TestGithubStorage\assignment-05";
+        var counter = 0;
+        //var dateArray = GitInsight.Program.commitFrequencyMode();
         //Act
-            Calendar euCalendar = new GregorianCalendar();
-            var octoberDate = new DateTime(2022,10,08, euCalendar);
-            Console.WriteLine(octoberDate);
-            var octoberCount = 0;
-            foreach (DateTime item in dateArray)
+        using (var repo = new Repository(repoPath))
+        {
+            var logs = repo.Commits.ToList();
+            foreach (var log in logs)
             {
-
-                if (item.CompareTo(octoberDate) == 0)
-                {
-                    Console.WriteLine("HIT!");
-                    octoberCount = octoberCount + 1;
-                }
-
+                counter++;
             }
-
+        }
         //Actual
 
-        Assert.Equal(10, octoberCount);
+        Assert.Equal(31, counter);
 
     }*/
 
            [Fact]
-    public void EikboHas11Commits()
+    public void commitUserFrequencyModeWorks()
     {
         //Arrange
+        var repoPath = @"C:\Users\eikbo\Skrivebord\BDSA\BDSA_PROJECT\TestGithubStorage\assignment-05";
         var counter = 0;
-        var pointer = 0;
-        var authorArray = GitInsight.FindAllUsersInRepo();
-        var dateArray = GitInsight.CommitUserFrequencyMode();
+
+
 
         //Act
-        for (int i = 0; i < authorArray.Count; i++)
+        using (var repo = new Repository(repoPath))
         {
-            if(authorArray[i].Equals("eikbo")){
-                pointer = i;
-                counter = dateArray[i].Count;
-            }
-        }
-
-        //Actual
-
-        Assert.Equal(11, counter);
-
-    }
-
-              [Fact]
-    public void EikboHas10CommitsOnOct8()
-    {
-        //Arrange
-        var counter = 0;
-        var pointer = 0;
-        Calendar euCalendar = new GregorianCalendar();
-        var authorArray = GitInsight.FindAllUsersInRepo();
-        var dateArray = GitInsight.CommitUserFrequencyMode();
-
-        //Act
-        for (int i = 0; i < authorArray.Count; i++)
-        {
-            if(authorArray[i].Equals("eikbo")){
-                pointer = i;
-            }
-        }
-
-        foreach (var item in dateArray[pointer])
-        {
-            if(item.CompareTo(new DateTime(2022,10,08,euCalendar)) == 0){
+            var logs = repo.Commits.ToList();
+            foreach (var log in logs)
+            {
                 counter++;
             }
         }
-
         //Actual
 
-        Assert.Equal(10, counter);
+        Assert.Equal(31, counter);
 
     }
 }

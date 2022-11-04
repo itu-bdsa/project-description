@@ -2,6 +2,19 @@
   "version": 3,
   "targets": {
     "net6.0": {
+      "CommandLineParser/2.9.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/CommandLine.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/CommandLine.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Humanizer.Core/2.8.26": {
         "type": "package",
         "compile": {
@@ -633,6 +646,28 @@
     }
   },
   "libraries": {
+    "CommandLineParser/2.9.1": {
+      "sha512": "OE0sl1/sQ37bjVsPKKtwQlWDgqaxWgtme3xZz7JssWUzg5JpMIyHgCTY9MVMxOg48fJ1AgGT3tgdH5m/kQ5xhA==",
+      "type": "package",
+      "path": "commandlineparser/2.9.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "CommandLine20.png",
+        "License.md",
+        "README.md",
+        "commandlineparser.2.9.1.nupkg.sha512",
+        "commandlineparser.nuspec",
+        "lib/net40/CommandLine.dll",
+        "lib/net40/CommandLine.xml",
+        "lib/net45/CommandLine.dll",
+        "lib/net45/CommandLine.xml",
+        "lib/net461/CommandLine.dll",
+        "lib/net461/CommandLine.xml",
+        "lib/netstandard2.0/CommandLine.dll",
+        "lib/netstandard2.0/CommandLine.xml"
+      ]
+    },
     "Humanizer.Core/2.8.26": {
       "sha512": "OiKusGL20vby4uDEswj2IgkdchC1yQ6rwbIkZDVBPIR6al2b7n3pC91elBul9q33KaBgRKhbZH3+2Ur4fnWx2A==",
       "type": "package",
@@ -1347,6 +1382,7 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "CommandLineParser >= 2.9.1",
       "GitInsight.Entities >= 1.0.0",
       "LibGit2Sharp >= 0.26.2",
       "Microsoft.EntityFrameworkCore >= 6.0.10",
@@ -1360,11 +1396,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\annem\\Desktop\\BDSA_PROJECT\\GitInsight\\GitInsight.csproj",
+      "projectUniqueName": "c:\\Users\\annem\\Desktop\\BDSA_PROJECT\\GitInsight\\GitInsight.csproj",
       "projectName": "GitInsight",
-      "projectPath": "C:\\Users\\annem\\Desktop\\BDSA_PROJECT\\GitInsight\\GitInsight.csproj",
+      "projectPath": "c:\\Users\\annem\\Desktop\\BDSA_PROJECT\\GitInsight\\GitInsight.csproj",
       "packagesPath": "C:\\Users\\annem\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\annem\\Desktop\\BDSA_PROJECT\\GitInsight\\obj\\",
+      "outputPath": "c:\\Users\\annem\\Desktop\\BDSA_PROJECT\\GitInsight\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\annem\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -1381,8 +1417,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\annem\\Desktop\\BDSA_PROJECT\\GitInsight.Entities\\GitInsight.Entities.csproj": {
-              "projectPath": "C:\\Users\\annem\\Desktop\\BDSA_PROJECT\\GitInsight.Entities\\GitInsight.Entities.csproj"
+            "c:\\Users\\annem\\Desktop\\BDSA_PROJECT\\GitInsight.Entities\\GitInsight.Entities.csproj": {
+              "projectPath": "c:\\Users\\annem\\Desktop\\BDSA_PROJECT\\GitInsight.Entities\\GitInsight.Entities.csproj"
             }
           }
         }
@@ -1397,6 +1433,10 @@
       "net6.0": {
         "targetAlias": "net6.0",
         "dependencies": {
+          "CommandLineParser": {
+            "target": "Package",
+            "version": "[2.9.1, )"
+          },
           "LibGit2Sharp": {
             "target": "Package",
             "version": "[0.26.2, )"

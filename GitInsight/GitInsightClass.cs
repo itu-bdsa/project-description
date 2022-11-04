@@ -1,64 +1,43 @@
-﻿//using System.Linq.Expressions;
+﻿namespace GitInsight;
+//using System.Linq.Expressions;
 using System.Collections;
 using LibGit2Sharp;
-namespace GitInsight;
+using CommandLine;
 
-public class GitInsight
+
+public class GitInsightClass
 {
-    //int hewwo;
+
     public static void Main(string[] args)
     {
-
         GitInsightContextFactory factory = new GitInsightContextFactory();
         GitInsightContext context = factory.CreateDbContext(args);
         //context.Database.EnsureDeleted(); //to delete database for tests
         var repoRep = new RepoCheckRepository(context);
-        //var connyboi = new Contribution{repoPath = "uwu", author = "owo", date = new DateTime(2022, 02,02,10,10,10, DateTimeKind.Utc)}; 
         Console.WriteLine(context.Database.EnsureCreated());
 
-        //context.Contributions.Add(connyboi);
-        //context.SaveChanges();
-
-        //user inputs commandline switch /fm or /am to pick a program
-        if (args[0].Equals("/fm"))
-        {
-            CommitFrequencyMode(repoRep);
+        //specify a path by writing "--Path=pathname/somewhere" when running the program
+        var result = Parser.Default.ParseArguments<Options>(args);
+        //user inputs commandline switches "--AuthMode true" or leave it blank to pick a program
+        if (result.Value.AuthMode.GetValueOrDefault() == true){
+            
+            CommitUserFrequencyMode(result.Value.path!);
         }
-        else if (args[0].Equals("/am"))
-        {
-            CommitUserFrequencyMode();
-        }
-        else
-        {
-            //if the user didnt write anything or wrote something that wasnt an existing mode:
-            // this will loop if the user continueues to do the same as previous, until the user writes an elegible mode
-            var blocker = true;
-            while (blocker == true)
-            {
-                Console.WriteLine("Please chose from this list of modes:");
-                Console.WriteLine("Frequency mode:   /fm");
-                Console.WriteLine("Author mode:      /am");
-                string usermode = Console.ReadLine()!;
-                if (usermode.Equals("/fm"))
-                {
-                    CommitFrequencyMode(repoRep);
-                    blocker = false;
-                }
-                else if (usermode.Equals("/am"))
-                {
-                    CommitUserFrequencyMode();
-                    blocker = false;
-                }
-            }
-
+        else if (result.Value.FQMode.GetValueOrDefault() == true){
+            CommitFrequencyMode(result.Value.path!);
+        } else {
+            Console.WriteLine("please leave etither FQMode to default value, or make sure Author mode is true");
         }
     }
 
-    public static ArrayList CommitFrequencyMode(RepoCheckRepository repoCheckRep)
+    public static ArrayList CommitFrequencyMode(string path)
     {
-        var repoPath = @"C:\Users\annem\Desktop\BDSA_PROJECT\TestGithubStorage\assignment-05";
-
-        using (var repo = new Repository(repoPath)) //hvorfor bruger vi using?
+        //specify a path by writing "--Path=pathname/somewhere" when running the program
+        //var repoPath = @"C:\Users\annem\Desktop\BDSA_PROJECT\TestGithubStorage\assignment-05";
+        var repoPath = path;
+        //var fileOffset = @"C:\Users\annem\Desktop\BDSA_PROJECT\GitInsight.Tests\assignment-05\GildedRose\obj\project.assets.json";
+        //var fileOffsetFwdSlash = fileOffset.Replace("\\", "/");
+        using (var repo = new Repository(repoPath))
         {
             var commitArray = repo.Commits.ToList();
             //Console.WriteLine(repo.Commits.First().Author.When);
@@ -83,7 +62,7 @@ public class GitInsight
             for (int i = 0; i < commitArray.Count; i++)
             {
                 string[] tempDateArray = commitArray[i].Author.When.ToString().Split(" ");
-                dateArray.Add(DateTime.Parse(tempDateArray[0]));
+                dateArray.Add(tempDateArray[0]);
             }
 
             dateArray.Sort();
@@ -94,10 +73,10 @@ public class GitInsight
             Console.WriteLine(dateArray.Count);
             var currentDate = dateArray[0];
             var currentDateCount = 0;
-            foreach (DateTime item in dateArray)
+            foreach (var item in dateArray)
             {
 
-                if (item.CompareTo(currentDate) == 0)
+                if (item.Equals(currentDate))
                 {
                     currentDateCount = currentDateCount + 1;
                 }
@@ -111,8 +90,8 @@ public class GitInsight
             }
             Console.WriteLine(currentDateCount + " " + currentDate?.ToString());
             return dateArray;
-
-
+           
+           
             //var dates = loges.GroupBy(x => x.Author.When.Date).Count();//.SelectMany(x=>x).ToList();
             //Console.WriteLine(dates);
             /*foreach (var date in dates){
@@ -151,69 +130,84 @@ public class GitInsight
         repoCheckRep.Update(repoPath, rep.Commits.First().Id.ToString());
     }
 
-    public static List<List<DateTime>> CommitUserFrequencyMode()
+    public static List<List<String>> CommitUserFrequencyMode(string path)
     {
-        var repoPath = @"C:\Users\annem\Skrivebord\BDSA\BDSA_PROJECT\TestGithubStorage\assignment-05";
+        //var repoPath = @"C:\Users\annem\Skrivebord\BDSA\BDSA_PROJECT\TestGithubStorage\assignment-05";
+        //specify a path by writing "--Path=pathname/somewhere" when running the program
+        var repoPath = path;
         using (var repo = new Repository(repoPath))
         {
             var commitArray = repo.Commits.ToList();
-            //var dateAuthorArray = new List<List<String>>();
-            var authorArray = FindAllUsersInRepo();
-            var dateArray = new List<List<DateTime>>();
+            var dateAuthorArray = new List<List<String>>();
 
-            foreach (var item in authorArray)
+
+            for (int i = 0; i < commitArray.Count; i++)
             {
-                dateArray.Add(new List<DateTime>());
+                string[] tempAuthorArray = commitArray[i].Author.ToString().Split(" ");
+
+                bool containsInList = false;
+
+                foreach (var item in dateAuthorArray)
+                {
+                    if (item[0].Equals(tempAuthorArray[0]))
+                    {
+                        containsInList = true;
+                    }
+                }
+
+                if (!containsInList)
+                {
+                    var AuthorList = new List<String>();
+                    AuthorList.Add(tempAuthorArray[0]);
+                    dateAuthorArray.Add(AuthorList);
+                }
             }
+
+
 
 
             for (int i = 0; i < commitArray.Count; i++)
             {
 
                 string[] tempAuthorArray = commitArray[i].Author.ToString().Split(" ");
-
-                for (int m = 0; m < authorArray.Count; m++)
+                foreach (var item in dateAuthorArray)
                 {
-                    if (authorArray[m].Equals(tempAuthorArray[0]))
+                    if (item[0].Equals(tempAuthorArray[0]))
                     {
-                        string[] tempDateArray = commitArray[i].Author.When.ToString().Split(" ");
-                        dateArray[m].Add(DateTime.Parse(tempDateArray[0]));
+                        var tempDateArray = commitArray[i].Author.When.Date.ToString().Split(" ");
+                        item.Add(tempDateArray[0].ToString());
                     }
-
                 }
 
             }
 
-            foreach (var item in dateArray)
+            foreach (var item in dateAuthorArray)
             {
                 item.Sort();
             }
-            var authorCounter = 0;
-            foreach (var item in dateArray)
-            {
 
-                Console.WriteLine(authorArray[authorCounter]);
+            foreach (var item in dateAuthorArray)
+            {
+                Console.WriteLine(item[item.Count-1]);
                 var currentDate = item[0];
-                var currentDateCount = 1;
-                for (int i = 0; i < item.Count - 1; i++)
-                {
-                    if (item[i].CompareTo(currentDate) == 0)
+                var currentDateCount = 0;
+                for(int i = 0; i < item.Count-1; i++){
+                    if (item[i].Equals(currentDate))
                     {
                         currentDateCount = currentDateCount + 1;
                     }
                     else
                     {
                         Console.WriteLine(currentDateCount + " " + currentDate.ToString());
-                        currentDate = item[i];
+                        currentDate = item[i].ToString();
                         currentDateCount = 1;
                     }
                 }
                 Console.WriteLine(currentDateCount + " " + currentDate.ToString());
                 Console.WriteLine("");
-                authorCounter = authorCounter + 1;
             }
 
-            return dateArray;
+            return dateAuthorArray;
 
 
         }
@@ -222,21 +216,22 @@ public class GitInsight
     public static List<String> FindAllUsersInRepo(){
     var repoPath = @"C:\Users\annem\Skrivebord\BDSA\BDSA_PROJECT\TestGithubStorage\assignment-05";
         using (var repo = new Repository(repoPath))
-        {
-
-            var commitArray = repo.Commits.ToList();
-            var authorArray = new List<String>();
-
-             for (int i = 0; i < commitArray.Count; i++)
-            {
-                string[] tempAuthorArray = commitArray[i].Author.ToString().Split(" ");
-                if (!authorArray.Contains(tempAuthorArray[0]))
-                {
-                    authorArray.Add(tempAuthorArray[0]);
-                }
-            }
-
-            return authorArray;
-        }
+        {}
+        return new List<String>(); //ret!
     }
+
 }
+
+//Options class, used by the commandline parser to take user input and set mode and path
+class Options{
+    [Option(Default = (bool)false)]
+    public bool? AuthMode { get; set; }
+
+    [Option(Default = (bool)true)]
+    public bool? FQMode { get; set; }
+
+    [Option('t', "Path")]
+    public String ?path {get; set;}
+
+}
+

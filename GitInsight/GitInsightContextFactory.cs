@@ -1,25 +1,24 @@
+namespace GitInsight;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.Configuration;
 
-namespace GitInsight;
+
 
 //context factory here
 /*Program.cs skal kalde den her, for at lave database.
 den laver en instans af GitInsightContext og returnerer den.
 */
-
-
 /*
 Kommando til at lave migrations. Skal ikke bruges igen pt. da de er blevet lavet
 dotnet ef migrations add Added_something --verbose -p .\GitInsight.Entities\ -s .\GitInsight
 */
 
-internal class GitInsightContextFactory : IDesignTimeDbContextFactory<GitInsightContext>
+public class GitInsightContextFactory : IDesignTimeDbContextFactory<GitInsightContext> //internal
 {
     public GitInsightContext CreateDbContext(string[] args)
     {
-        var configuration = new ConfigurationBuilder().AddUserSecrets<GitInsight>().Build();
+        var configuration = new ConfigurationBuilder().AddUserSecrets<GitInsightClass>().Build();
         var connectionString = configuration.GetConnectionString("GitIn");
         /*$CONNECTION_STRING="Host=localhost;Database=postgres;Username=<username>;Password=<password>");" 
         dotnet user-secrets set "ConnectionStrings:GitIn" "$CONNECTION_STRING"*/
