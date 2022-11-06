@@ -1,5 +1,6 @@
 namespace GitInsight.Tests;
 //using System.Collections;
+using GitInsight.Core;
 using LibGit2Sharp;
 using Microsoft.Data.Sqlite;
 //using Microsoft.EntityFrameworkCore.Infrastructure;
@@ -35,7 +36,7 @@ public class DbTests{
         //rewrite to fit w. new one to many relationship
 
         //Arrange
-        var l = GitInsight.CommitFrequencyMode(_repository);
+        var l = GitInsightClass.CommitFrequencyMode(repoPath, _repository);
 
         var repo = new Repository(repoPath);
 
@@ -74,10 +75,10 @@ public class DbTests{
     public void CheckCommitMostRecentShouldBeTrue(){
 
         //Arrange
-        var l = GitInsight.CommitFrequencyMode(_repository);
+        var l = GitInsightClass.CommitFrequencyMode(repoPath, _repository);
 
         //Act
-        var actual = GitInsight.CommitIsNewest(repoPath, _repository);
+        var actual = GitInsightClass.CommitIsNewest(repoPath, _repository);
 
         //Assert
         actual.Should().Be(true);
@@ -89,10 +90,13 @@ public class DbTests{
         //Arrange
         var repo = new Repository(repoPath);
         //set first (Last i Commits collection) commit made as last checked commit
-        _repository.Create(repoPath, repo.Commits.Last().Id.ToString());
+        var wrongCommitRepoCheck = new RepoCheckCreateDTO(repoPath, 
+                                    repo.Commits.Last().Id.ToString(),
+                                    new List<ContributionDTO>{});
+        _repository.Create(wrongCommitRepoCheck);
 
         //Act
-        var actual = GitInsight.CommitIsNewest(repoPath, _repository);
+        var actual = GitInsightClass.CommitIsNewest(repoPath, _repository);
 
         //Assert
         Assert.False(actual);
@@ -103,10 +107,13 @@ public class DbTests{
 
         //Arrange
         var repo = new Repository(repoPath);
-        _repository.Create(repoPath, repo.Commits.Last().Id.ToString());
+        var OutdatedRepoCheck = new RepoCheckCreateDTO(repoPath, 
+                                    repo.Commits.Last().Id.ToString(),
+                                    new List<ContributionDTO>{});
+        _repository.Create(OutdatedRepoCheck);
 
         //Act
-        GitInsight.UpdateCheckedCommitInDb(repoPath, _repository);
+        GitInsightClass.UpdateCheckedCommitInDb(repoPath, _repository);
         var expected = repo.Commits.First().Id.ToString();
         var actual = _repository.Read(repoPath).lastCheckedCommit;
 

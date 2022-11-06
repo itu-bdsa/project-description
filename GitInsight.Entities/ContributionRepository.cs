@@ -25,17 +25,21 @@ public class ContributionRepository {
        
     }
 
-    public void Read(string repoPath){} //read for different modes
+    public void Read(string repoPath){
+
+    } //read for different modes
 
     //seaches for contribution in Db
-    public Contribution Find(int id){
+    /*public Contribution Find(int id){
         var con = from c in _context.Contributions
         where c.Id == id
         select c;
 
         return con.FirstOrDefault();
-    }
+    }*/
 
-    public void Update(string repoPath, string author, DateTime date, int newCommitsSum){}
+    public void Update(string repoPath, string author, DateTime date, int newCommitsSum){
+        
+    }
 
 }

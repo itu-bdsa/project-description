@@ -3,6 +3,7 @@
 using System.Collections;
 using LibGit2Sharp;
 using CommandLine;
+using GitInsight.Core;
 
 
 public class GitInsightClass
@@ -24,13 +25,13 @@ public class GitInsightClass
             CommitUserFrequencyMode(result.Value.path!);
         }
         else if (result.Value.FQMode.GetValueOrDefault() == true){
-            CommitFrequencyMode(result.Value.path!);
+            CommitFrequencyMode(result.Value.path!, repoRep);
         } else {
             Console.WriteLine("please leave etither FQMode to default value, or make sure Author mode is true");
         }
     }
 
-    public static ArrayList CommitFrequencyMode(string path)
+    public static ArrayList CommitFrequencyMode(string path, RepoCheckRepository repoRep)
     {
         //specify a path by writing "--Path=pathname/somewhere" when running the program
         //var repoPath = @"C:\Users\annem\Desktop\BDSA_PROJECT\TestGithubStorage\assignment-05";
@@ -127,7 +128,8 @@ public class GitInsightClass
     public static void UpdateCheckedCommitInDb(string repoPath, RepoCheckRepository repoCheckRep){
         //update the latest checked commit in table in db
         var rep = new Repository(repoPath);
-        repoCheckRep.Update(repoPath, rep.Commits.First().Id.ToString());
+        var update = new RepoCheckUpdateDTO(repoPath, rep.Commits.First().Id.ToString());
+        repoCheckRep.Update(update);
     }
 
     public static List<List<String>> CommitUserFrequencyMode(string path)

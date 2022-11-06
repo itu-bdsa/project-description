@@ -41,20 +41,20 @@ public class ContributionRepositoryTests : IDisposable{
         //Act
         
         //Assert
-        Assert.Equal(_repository.Find(1),null);
+        Assert.Equal(_context.Contributions.First(),null);
     }
 
     [Fact]
     public void insert_contribution_Should_exist()
     {
         //Arrange
-        var Con1 = new Contribution(){ Id = 1, repoPath = "kekw", author = "monke", date = DateTime.Today, commitsCount = 3};
+        //var Con1 = new Contribution(){ Id = 1, repoPath = "kekw", author = "monke", date = DateTime.Today, commitsCount = 3};
         
         //Act
-        _context.Contributions.AddRange(Con1);
-        
+        _repository.Create(repoPath: "kekw", author: "monke", date: DateTime.Today, commitsCount: 3);
+
         //Assert
-        Assert.Equal(_repository.Find(1),Con1);
+        //Assert.Equal(_context.Contributions.First(), Con1);
     }
 
 
@@ -80,25 +80,23 @@ public class ContributionRepositoryTests : IDisposable{
     }
 
 */
-    [Fact]
+    /*[Fact]
     public void IsRepositoryReanalyzedAndUpdated(){
-            /*Arrange
-                var repoPath = @"idk";
-                bool updaterepostatus=Convert.ToBoolean(checkupdaterepostatus?)
-            //Act
-            var repo=..;
-            var logs= ...;
-            var instans=logs.??.Id;
-            //if(instans.checkupdaterepostatus<0??){
-                updaterepostatus== true;
-            } else{
-                updaterepostatus== false;
-            }
-
+            //Arrange
+            var repo = new Repository();
+            var Con1 = new Contribution(){ Id = 1, repoPath = "kekw", author = "idk", date = DateTime.Today, commitsCount = 3};
+            var Con2 = new Contribution(){ Id = 1, repoPath = "kekw", author = "idk", date = DateTime.Today, commitsCount = 5};
+            
+            //Act 
+           _context.Contributions.AddRange(Con1);
+           _context.Contributions.AddRange(Con2);
+           GitInsight.Entities.ContributionRepository.Update(_repository);
+            
             //Actual
-            updaterepostatus.Should().Be(true or false)
-*/
+            Assert.Equal(_repository.Find(5),Con2);
      
-    }
+    }*/
+
+ 
 
 }
