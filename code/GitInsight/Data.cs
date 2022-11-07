@@ -5,6 +5,7 @@ public class Data
 {
     // /Users/thekure23/Library/CloudStorage/OneDrive-ITU/courseDocuments/03sem/analysisDesignSoftArch/project/BDSA-project
     private Repository _repo;
+    private Mode currMode;
     public Data(string url)
     {
         //Checks if a current repository exists and deletes it
@@ -19,6 +20,7 @@ public class Data
 
     public void print(Mode mode)
     {
+        currMode = mode;
         if (mode == FREQUENCY)
         {
             Console.WriteLine("Frequency:");
@@ -65,7 +67,6 @@ public class Data
     {
         Console.WriteLine("Deleting current repo");
 
-
         System.IO.DirectoryInfo di = new DirectoryInfo("./repoData/");
 
         foreach (FileInfo file in di.EnumerateFiles())
@@ -84,6 +85,16 @@ public class Data
         {
             Console.WriteLine("Directory was deleted!");
         }
+    }
+
+    public Mode getMode()
+    {
+        return currMode;
+    }
+
+    public void setMode(Mode mode)
+    {
+        currMode = mode;
     }
 
 }
