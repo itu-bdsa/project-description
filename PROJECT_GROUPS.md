@@ -25,7 +25,7 @@ Inform us about your group by modifying this file and by sending a pull request 
 |   18 | `lars`                                | `labp`, `asly`, `emtj`, `mbjn`, `hecn`, `dlha`    | https://github.com/lauritsbrok/CSharpProject |
 |   19 | `JTG`                                 | `json`, `tokj`, `gues`,                           | https://github.com/tkjelds/GitInsight  |
 |   20 | `gruppen`                             | `rogy`, `frai`, `lufr`, `mfjo`                    | https://github.com/luczito/BDSA-projekt.git |
-|   21 | `Ceenja Impact`                       | `<annro>`, `<eikb>`, `<jric>`, `<crco>`, `<nihp>`, `<elbr>` | https://github.com/Divik-kid/BDSA_PROJECT |
+|   21 | `Ceenja Impact`                       | `annro`, `eikb`, `jric`, `crco`, `nihp`, `elbr`   | https://github.com/Divik-kid/BDSA_PROJECT |
 |   22 | `<group_name>`                        | `<aaaa>`, `<bbbb>`, `<cccc>`, `<dddd>`, `<eeee>`, `<ffff>` |  |
 |   23 | `<group_name>`                        | `<aaaa>`, `<bbbb>`, `<cccc>`, `<dddd>`, `<eeee>`, `<ffff>` |  |
 |   24 | `<group_name>`                        | `<aaaa>`, `<bbbb>`, `<cccc>`, `<dddd>`, `<eeee>`, `<ffff>` |  |
