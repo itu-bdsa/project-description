@@ -18,6 +18,8 @@
     </PackageReference>
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="7.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.9" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="7.0.0" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.4" />
 
     <ProjectReference Include="..\GitInsight.Entities\GitInsight.Entities.csproj" />
     <ProjectReference Include="..\GitInsight.Core\GitInsight.Core.csproj" />
