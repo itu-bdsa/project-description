@@ -108,6 +108,45 @@ public class GitInsightClass
         }
     }
 
+    public HashSet<ContributionDTO> AddRepoDataToHS(string repoPath, Repository repo){
+        //add repo data in hashset
+        var commitArray = repo.Commits.ToList();
+        var contributionsList = new HashSet<ContributionDTO>();
+
+        foreach (var c in commitArray){
+            //get number of commits by auhtor on date
+            int commitNr = getNrCommitsOnDateByAuthor(c.Author.When.Date, c.Author, repo);
+
+            var newContri = new ContributionDTO(
+                RepoPath: repoPath,
+                Author: c.Author.ToString(), 
+                Date: c.Author.When.Date,
+                CommitsCount: commitNr);
+
+            contributionsList.Add(newContri);
+        }
+
+        return contributionsList;
+
+        //var actual = _context.Tasks.Find(task.Id).Tags.Select(t => t.Name);
+    }
+
+
+
+    public int getNrCommitsOnDateByAuthor(DateTime date, Signature author, Repository repo){
+        //Group by author, date
+        var query = repo.Commits
+                .GroupBy(c => new { c.Author, c.Author.When })
+                .Select(a => new { grouping = a.Key, count = a.Count()}) //key name & when
+                .ToList();
+
+        var nrCommits = query.Where(a => a.grouping.Author.Equals(author)
+                            && a.grouping.When.Equals(date))
+                            .Select(a => a.count).First();
+        
+        return nrCommits;
+    }
+
     public static bool RepoExistsInDb(string repoPath, RepoCheckRepository repoCheckRep){
         //bool - does repo exist in table in db pt?
         var repoObject = repoCheckRep.Read(repoPath);
@@ -120,10 +159,6 @@ public class GitInsightClass
         var rep = new Repository(repoPath);
         //rep.Commits.First().Author.When.Date;
         return (repoObject.lastCheckedCommit == rep.Commits.First().Id.ToString());  
-    }
-
-    public void AddRepoToDb(){
-        //add repo to table in db. Slet?
     }
 
     public static void UpdateCheckedCommitInDb(string repoPath, RepoCheckRepository repoCheckRep){

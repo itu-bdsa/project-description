@@ -57,9 +57,24 @@ public class ContributionRepositoryTests : IDisposable{
         actual.Should().Be(expected);
     }
 
-
-
     [Fact]
+    public void Update_should_change_commitsCount_to_3(){
+        //Arrange
+        var Con1 = new ContributionCreateDTO(RepoPath: "kekw", Author: "monke", Date: DateTime.Today, CommitsCount: 3);
+        _repository.Create(Con1);
+
+        //Act
+        var updateDTO = new ContributionUpdateDTO(RepoPath: "kekw", Author: "monke", Date: DateTime.Today,
+                                        NewCommitsCount: 2);
+
+       _repository.Update(updateDTO);
+        var expected = new ContributionDTO(RepoPath: "kekw", Author: "monke", Date: DateTime.Today, CommitsCount: 5);
+        var actual = _repository.Read("kekw","monke", DateTime.Today);
+        //Assert
+        actual.Should().Be(expected);
+    }
+
+    /*[Fact]
     public void FirstAnalyzeShouldCreateEntryInDB()
     {
         //Arrange
@@ -101,7 +116,7 @@ public class ContributionRepositoryTests : IDisposable{
         //Actual
         actual.Equals(expectedList);
 
-    }
+    }*/
 
 
     /*[Fact]

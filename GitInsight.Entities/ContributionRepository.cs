@@ -41,13 +41,7 @@ public class ContributionRepository {
 
         return contribution != null ? ContributionDTOFromContribution(contribution)
         : null!;
-        /*new ContributionDTO(
-                                    //contribution.Id,
-                                    contribution.repoPath,
-                                    contribution.author,
-                                    contribution.date,
-                                    contribution.commitsCount
-        ) : null!;*/
+    
     } //read for different modes
 
     public IReadOnlyCollection<ContributionDTO> ReadAllforRepo(string repoPath){
@@ -59,21 +53,21 @@ public class ContributionRepository {
         
         var ContributionDTOs = _context.Contributions
                 .Select(contribution => ContributionDTOFromContribution(contribution));
-                
+
         return ContributionDTOs.ToList().AsReadOnly();
     }
 
-    //seaches for contribution in Db
-    /*public Contribution Find(int id){
-        var con = from c in _context.Contributions
-        where c.Id == id
-        select c;
 
-        return con.FirstOrDefault();
-    }*/
-
-    public void Update(string repoPath, string author, DateTime date, int newCommitsSum){
+    public void Update(ContributionUpdateDTO contribution){
+        //find entry - opdater antal commits for entry
+        var contributionToUpdate = _context.Contributions
+                            .Where(c => contribution.Author == c.author 
+                            && contribution.Date == c.date 
+                            && contribution.RepoPath == c.repoPath).FirstOrDefault();
         
+        contributionToUpdate.commitsCount +=  contribution.NewCommitsCount;
+
+        _context.SaveChanges();
     }
 
 }
