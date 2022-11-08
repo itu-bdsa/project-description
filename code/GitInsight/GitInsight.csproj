@@ -7,6 +7,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+
+
   <ItemGroup>
     <PackageReference Include="LibGit2Sharp" Version="0.27.0-preview-0182" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.10" />
@@ -14,6 +16,12 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="7.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.9" />
+
+    <ProjectReference Include="..\GitInsight.Entities\GitInsight.Entities.csproj" />
+    <ProjectReference Include="..\GitInsight.Core\GitInsight.Core.csproj" />
+
   </ItemGroup>
 
 </Project>

@@ -3,32 +3,32 @@ namespace GitInsight.Entities;
 using GitInsight.Core;
 using GitInsight;
 
-public class FrequencyRepository : IAuthorRepository
+public class FrequencyRepository : IFrequencyRepository
 {
 
-    private readonly IKanbanContext context;
+    private readonly CommitTreeContext context;
 
-    public FrequencyRepository(I context)
+    public FrequencyRepository(CommitTreeContext context)
     {
         this.context = context;
     }
 
-    public FrequencyCreateDTO (FrequencyCreateDTO frequency) {
+    public void Create (FrequencyCreateDTO frequency) {
 
-        var entry = new Frequency(frequency.Name);
+        var entry = new Frequency(frequency.Date);
         context.Frequencies.Add(entry);
-        context.SaveChanges;
+        context.SaveChanges();
 
-        Console.WriteLine(frequency.Name + " has been created");
+        Console.WriteLine(frequency.Date + " has been created");
     }
 
-    public IReadOnlyCollection<AuthorDTO> ReadAll(){
-        return context.Frequencies.select ( e => new FrequencyDTO(e.Id, e.Name )).ToList().AsReadOnly();
+    public IReadOnlyCollection<FrequencyDTO> ReadAll(){
+        return context.Frequencies.Select ( e => new FrequencyDTO(e.Id)).ToList().AsReadOnly();
     }
 
-    public UpdateDTO(){
+    public void Update(){
         // not implemented yet
-        // context.Authors.delete
+        // context.Frequenices.delete
     }
 
 }

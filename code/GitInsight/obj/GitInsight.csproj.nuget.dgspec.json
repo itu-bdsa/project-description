@@ -4,14 +4,14 @@
     "C:\\code\\bdsa\\BDSA-project\\code\\GitInsight\\GitInsight.csproj": {}
   },
   "projects": {
-    "C:\\code\\bdsa\\BDSA-project\\code\\GitInsight\\GitInsight.csproj": {
+    "C:\\code\\bdsa\\BDSA-project\\code\\GitInsight.Core\\GitInsight.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\code\\bdsa\\BDSA-project\\code\\GitInsight\\GitInsight.csproj",
-        "projectName": "GitInsight",
-        "projectPath": "C:\\code\\bdsa\\BDSA-project\\code\\GitInsight\\GitInsight.csproj",
+        "projectUniqueName": "C:\\code\\bdsa\\BDSA-project\\code\\GitInsight.Core\\GitInsight.Core.csproj",
+        "projectName": "GitInsight.Core",
+        "projectPath": "C:\\code\\bdsa\\BDSA-project\\code\\GitInsight.Core\\GitInsight.Core.csproj",
         "packagesPath": "C:\\Users\\pl\\.nuget\\packages\\",
-        "outputPath": "C:\\code\\bdsa\\BDSA-project\\code\\GitInsight\\obj\\",
+        "outputPath": "C:\\code\\bdsa\\BDSA-project\\code\\GitInsight.Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\pl\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -38,6 +38,143 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "target": "Package",
+              "version": "[6.0.10, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\code\\bdsa\\BDSA-project\\code\\GitInsight.Entities\\GitInsight.Entities.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\code\\bdsa\\BDSA-project\\code\\GitInsight.Entities\\GitInsight.Entities.csproj",
+        "projectName": "GitInsight.Entities",
+        "projectPath": "C:\\code\\bdsa\\BDSA-project\\code\\GitInsight.Entities\\GitInsight.Entities.csproj",
+        "packagesPath": "C:\\Users\\pl\\.nuget\\packages\\",
+        "outputPath": "C:\\code\\bdsa\\BDSA-project\\code\\GitInsight.Entities\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\pl\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\code\\bdsa\\BDSA-project\\code\\GitInsight.Core\\GitInsight.Core.csproj": {
+                "projectPath": "C:\\code\\bdsa\\BDSA-project\\code\\GitInsight.Core\\GitInsight.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "target": "Package",
+              "version": "[6.0.10, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\code\\bdsa\\BDSA-project\\code\\GitInsight\\GitInsight.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\code\\bdsa\\BDSA-project\\code\\GitInsight\\GitInsight.csproj",
+        "projectName": "GitInsight",
+        "projectPath": "C:\\code\\bdsa\\BDSA-project\\code\\GitInsight\\GitInsight.csproj",
+        "packagesPath": "C:\\Users\\pl\\.nuget\\packages\\",
+        "outputPath": "C:\\code\\bdsa\\BDSA-project\\code\\GitInsight\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\pl\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\code\\bdsa\\BDSA-project\\code\\GitInsight.Core\\GitInsight.Core.csproj": {
+                "projectPath": "C:\\code\\bdsa\\BDSA-project\\code\\GitInsight.Core\\GitInsight.Core.csproj"
+              },
+              "C:\\code\\bdsa\\BDSA-project\\code\\GitInsight.Entities\\GitInsight.Entities.csproj": {
+                "projectPath": "C:\\code\\bdsa\\BDSA-project\\code\\GitInsight.Entities\\GitInsight.Entities.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
             "LibGit2Sharp": {
               "target": "Package",
               "version": "[0.27.0-preview-0182, )"
@@ -51,6 +188,14 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[6.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.9, )"
+            },
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[7.0.0, )"
             }
           },
           "imports": [

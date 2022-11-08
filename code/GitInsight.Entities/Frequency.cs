@@ -6,9 +6,12 @@ public class Frequency {
         this.Date = Date;
     }
 
-    [key]
+
     public DateTime Date {get;}
 
     public int Count {get; set;}
+
+    [Key]
+    public int Id {get;}
 
 }

@@ -3,10 +3,10 @@ namespace GitInsight.Core;
 
 public interface IAuthorRepository{
 
-    Create (AuthorCreateDTO author);
+    void Create (AuthorCreateDTO author);
 
     IReadOnlyCollection<AuthorDTO> ReadAll();
 
-    Update();
+    void Update();
 
 }

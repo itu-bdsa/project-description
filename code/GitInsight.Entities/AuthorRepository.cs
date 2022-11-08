@@ -6,27 +6,27 @@ using GitInsight;
 public class AuthorRepository : IAuthorRepository
 {
 
-    private readonly IKanbanContext context;
+    private readonly CommitTreeContext context;
 
-    public AuthorRepository(I context)
+    public AuthorRepository(CommitTreeContext context)
     {
         this.context = context;
     }
 
-    public CreateAuthor (AuthorCreateDTO author) {
+    public void Create (AuthorCreateDTO author) {
 
         var entry = new Author(author.Name);
         context.Authors.Add(entry);
-        context.SaveChanges;
+        context.SaveChanges();
 
         Console.WriteLine(author.Name + " has been created");
     }
 
     public IReadOnlyCollection<AuthorDTO> ReadAll(){
-        return context.Authors.select ( e => new AuthorDTO(e.Id, e.Name )).ToList().AsReadOnly();
+        return context.Authors.Select ( e => new AuthorDTO(e.Id, e.Name )).ToList().AsReadOnly();
     }
 
-    public UpdateDTO(){
+    public void Update(){
         // not implemented yet
         // context.Authors.delete
     }
