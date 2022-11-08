@@ -1,10 +1,8 @@
 ﻿namespace GitInsight;
-//using System.Linq.Expressions;
 using System.Collections;
 using LibGit2Sharp;
 using CommandLine;
 using GitInsight.Core;
-
 
 public class GitInsightClass
 {
@@ -15,13 +13,6 @@ public class GitInsightClass
         //context.Database.EnsureDeleted(); //to delete database for tests
         var repoRep = new RepoCheckRepository(context);
         Console.WriteLine(context.Database.EnsureCreated());
-
-        /*var repoPath = @"C:\Users\annem\Desktop\BDSA_PROJECT\TestGithubStorage\assignment-05";
-        var repo = new Repository(repoPath);
-        var date = repo.Commits.ElementAt(0).Author.When.Date;
-        var author = repo.Commits.ElementAt(0).Author;
-
-        var act = GitInsightClass.getNrCommitsOnDateByAuthor(date, author, repo);*/
 
         //specify a path by writing "--Path=pathname/somewhere" when running the program
         var result = Parser.Default.ParseArguments<Options>(args);
@@ -93,7 +84,7 @@ public class GitInsightClass
             Console.WriteLine(currentDateCount + " " + currentDate?.ToString());
             return dateArray;
            
-           
+           //bruger vi det her under???
             //var dates = loges.GroupBy(x => x.Author.When.Date).Count();//.SelectMany(x=>x).ToList();
             //Console.WriteLine(dates);
             /*foreach (var date in dates){
@@ -113,12 +104,12 @@ public class GitInsightClass
         var checkedCommit = repo.Commits.ToList().First().Id.ToString();
 
         var newRepoCheck = new RepoCheckCreateDTO(repoPath, checkedCommit, 
-                                        AddContributionsDataToHS(repoPath, repo));
+                                        AddContributionsDataToSet(repoPath, repo));
         
         repoRep.Create(newRepoCheck);
     }
 
-    public static HashSet<ContributionDTO> AddContributionsDataToHS(string repoPath, Repository repo){
+    public static HashSet<ContributionDTO> AddContributionsDataToSet(string repoPath, Repository repo){
         //add repo data to hashset
         var commitArray = repo.Commits.ToList();
         var contributionsList = new HashSet<ContributionDTO>();
@@ -164,9 +155,7 @@ public class GitInsightClass
 
     //change to update properly
     public static void UpdateEntryInDb(RepoCheckUpdateDTO repoCheckUpdate, RepoCheckRepository repoCheckRep){
-        //update the latest checked commit in table in db
-        //var rep = new Repository(repoCheck.repoPath);
-        //var update = new RepoCheckUpdateDTO(repoCheck.repoPath, rep.Commits.First().Id.ToString());
+        //update the latest checked commit and contributions in db
         repoCheckRep.Update(repoCheckUpdate);
     }
 
@@ -253,6 +242,7 @@ public class GitInsightClass
         }
     }
 
+    //bruger vi denne??
     public static List<String> FindAllUsersInRepo(){
     var repoPath = @"C:\Users\annem\Skrivebord\BDSA\BDSA_PROJECT\TestGithubStorage\assignment-05";
         using (var repo = new Repository(repoPath))

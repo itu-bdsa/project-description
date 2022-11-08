@@ -128,7 +128,7 @@ public class DbTests{
         var repo = new Repository(repoPath);
         
         //Act
-        var list = GitInsightClass.AddContributionsDataToHS(repoPath, repo);
+        var list = GitInsightClass.AddContributionsDataToSet(repoPath, repo);
         var expected = new RepoCheckDTO(repoPath, repo.Commits.First().Id.ToString(), list);
 
         GitInsightClass.addRepoCheckToDB(repoPath, repo, _repository);
