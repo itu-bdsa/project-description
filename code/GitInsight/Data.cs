@@ -3,7 +3,6 @@ using static Mode;
 
 public class Data
 {
-    // /Users/thekure23/Library/CloudStorage/OneDrive-ITU/courseDocuments/03sem/analysisDesignSoftArch/project/BDSA-project
     private Repository _repo;
     public Data(string url)
     {
@@ -11,23 +10,23 @@ public class Data
         if (System.IO.Directory.Exists("./repoData/deleteMe"))
         {
             Console.WriteLine("Removing current loaded repository...");
-            shutDown();
+            Shutdown();
         }
         //Creates a new repository from an url inside new folder
         _repo = new Repository(Repository.Clone(url, "repoData/deleteMe"));
     }
 
-    public void print(Mode mode)
+    public void Print(Mode mode)
     {
         if (mode == FREQUENCY)
         {
             Console.WriteLine("Frequency:");
-            printFreq();
+            PrintFreq();
         }
         else if (mode == AUTHOR)
         {
             Console.WriteLine("Author: ");
-            printAuthor();
+            PrintAuth();
         }
         else
         {
@@ -36,7 +35,7 @@ public class Data
     }
 
 
-    public void printFreq()
+    public void PrintFreq()
     {
         foreach (var cl in _repo.Commits.GroupBy(c => c.Committer.When.Date).ToList())
         {
@@ -44,7 +43,7 @@ public class Data
         }
     }
 
-    public void printAuthor()
+    public void PrintAuth()
     {
 
         foreach (var cl in _repo.Commits.GroupBy(c => c.Committer.Name).ToList())
@@ -59,7 +58,7 @@ public class Data
         }
     }
 
-    public void shutDown()
+    public void Shutdown()
     {
         Console.WriteLine("Deleting current repo");
 
