@@ -8,12 +8,12 @@ public class AuthorRepository : IAuthorRepository
 
     private readonly IKanbanContext context;
 
-    public AuthorRepository(IKanbanContext context)
+    public AuthorRepository(I context)
     {
         this.context = context;
     }
 
-    public AuthorCreateDTO (AuthorCreateDTO author) {
+    public CreateAuthor (AuthorCreateDTO author) {
 
         var entry = new Author(author.Name);
         context.Authors.Add(entry);
@@ -24,6 +24,11 @@ public class AuthorRepository : IAuthorRepository
 
     public IReadOnlyCollection<AuthorDTO> ReadAll(){
         return context.Authors.select ( e => new AuthorDTO(e.Id, e.Name )).ToList().AsReadOnly();
+    }
+
+    public UpdateDTO(){
+        // not implemented yet
+        // context.Authors.delete
     }
 
 }

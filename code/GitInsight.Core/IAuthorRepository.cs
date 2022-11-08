@@ -7,7 +7,6 @@ public interface IAuthorRepository{
 
     IReadOnlyCollection<AuthorDTO> ReadAll();
 
-    Update(AuthorUpdateDTO author);
-
+    Update();
 
 }
