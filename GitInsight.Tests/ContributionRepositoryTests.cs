@@ -3,6 +3,7 @@ using LibGit2Sharp;
 using Microsoft.Data.Sqlite;
 using GitInsight.Entities;
 using GitInsight.Core;
+using GitInsight;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 
@@ -31,7 +32,7 @@ public class ContributionRepositoryTests : IDisposable{
         _connection.Dispose();
     }
 
-    [Fact]
+    /*[Fact]
     public void Database_Should_be_empty()
     {
         //Arrange
@@ -73,6 +74,8 @@ public class ContributionRepositoryTests : IDisposable{
         //Assert
         actual.Should().Be(expected);
     }
+
+ 
 
     /*[Fact]
     public void FirstAnalyzeShouldCreateEntryInDB()
@@ -136,6 +139,6 @@ public class ContributionRepositoryTests : IDisposable{
      
     }*/
 
- 
+    
 
 }

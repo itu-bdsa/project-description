@@ -1,5 +1,6 @@
 namespace GitInsight.Entities;
 
+//Forældet - DO NOT USE!!!
 public class ContributionRepository {
 
     private GitInsightContext _context;
@@ -18,7 +19,7 @@ public class ContributionRepository {
     );
 
 
-    public void Create(ContributionCreateDTO contribution){
+    /*public void Create(ContributionCreateDTO contribution){
         var newContribution = new Contribution {
                             repoPath = contribution.RepoPath,
                             author = contribution.Author,
@@ -31,11 +32,11 @@ public class ContributionRepository {
        /*var search = _context.Contributions.Where(x=>x.repoPath.Equals(repoPath)).FirstOrDefault();
         return (Created,tg.Id);
        }
-       return (Conflict,tg.Id);*/
+       return (Conflict,tg.Id);
        
-    }
+    }*/
 
-    public ContributionDTO Read(string repoPath, string author, DateTime date){
+    /*public ContributionDTO Read(string repoPath, string author, DateTime date){
         var contribution = _context.Contributions.Find(repoPath, author, date);
 
 
@@ -68,6 +69,6 @@ public class ContributionRepository {
         contributionToUpdate.commitsCount +=  contribution.NewCommitsCount;
 
         _context.SaveChanges();
-    }
+    }*/
 
 }
