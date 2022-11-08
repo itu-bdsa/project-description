@@ -1,0 +1,10 @@
+@startuml Activity_diagram
+:GET;
+switch (Is a repository linked?)
+case ( No )
+  #pink:Please load a repo before trying to GET!;
+  end
+case ( Yes ) 
+:Load and return JSON objects;
+:Display JSON objects through REST API;
+@enduml

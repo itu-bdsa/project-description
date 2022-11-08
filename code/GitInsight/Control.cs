@@ -1,7 +1,7 @@
 namespace GitInsight;
 
 using static Mode;
-class Control
+public class Control
 {
     private Data? _repo;
     private Mode _mode;
@@ -18,11 +18,11 @@ class Control
             switch (input)
             {
                 case "author":
-                    _mode = AUTHOR;
+                    SetMode(Mode.AUTHOR);
                     Console.WriteLine("Current Mode: AUTHOR");
                     break;
                 case "frequency":
-                    _mode = FREQUENCY;
+                    SetMode(Mode.FREQUENCY);
                     Console.WriteLine("Current Mode: FREQUENCY");
                     break;
                 case "print":
@@ -32,7 +32,7 @@ class Control
                     }
                     else
                     {
-                        _repo!.print(_mode);
+                        _repo!.Print(_mode);
                     }
                     break;
                 case "newpath":
@@ -51,7 +51,7 @@ class Control
                     Console.WriteLine("'exit' to exit program");
                     break;
                 case "exit":
-                    _repo!.shutDown();
+                    _repo!.Shutdown();
                     isRunning = false;
                     break;
                 default:
@@ -59,5 +59,15 @@ class Control
                     break;
             }
         }
+    }
+
+    public Mode GetMode()
+    {
+        return _mode;
+    }
+
+    public void SetMode(Mode mode)
+    {
+        _mode = mode;
     }
 }
