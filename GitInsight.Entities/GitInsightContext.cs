@@ -23,6 +23,12 @@ public partial class GitInsightContext : DbContext
             entity.HasIndex(e => e.repoPath).IsUnique();
         });
 
+        modelBuilder.Entity<Contribution>(entity =>
+        {
+            //lav primary key (repoPath, author, date)
+            entity.HasKey(c => new { c.repoPath, c.author, c.date});
+        });
+
         OnModelCreatingPartial(modelBuilder);
     }
 

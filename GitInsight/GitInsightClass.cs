@@ -118,6 +118,7 @@ public class GitInsightClass
         //bool - is last checked commit the newest commit made?
         var repoObject = repoCheckRep.Read(repoPath);
         var rep = new Repository(repoPath);
+        //rep.Commits.First().Author.When.Date;
         return (repoObject.lastCheckedCommit == rep.Commits.First().Id.ToString());  
     }
 

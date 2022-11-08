@@ -4,7 +4,7 @@ namespace GitInsight.Entities;
 
 public class Contribution
 {
-    public int Id { get; set; }
+    //public int Id { get; set; }
 
     [Required]
     public string repoPath { get; set; }
@@ -15,6 +15,6 @@ public class Contribution
 
     public int commitsCount { get; set; }
     
-    [Required]
-    public RepoCheck repCheck { get; set; }
+    //[Required]
+    //public RepoCheck repCheck { get; set; }
 }

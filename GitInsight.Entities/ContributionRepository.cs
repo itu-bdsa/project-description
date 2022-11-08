@@ -9,25 +9,59 @@ public class ContributionRepository {
         _context = context;
     }
 
+    private static ContributionDTO ContributionDTOFromContribution(Contribution contribution)
+     => new ContributionDTO(
+        RepoPath: contribution.repoPath,
+        Author: contribution.author,
+        Date: contribution.date,
+        CommitsCount: contribution.commitsCount
+    );
 
-    public void Create(string repoPath, string author, DateTime date, int commitsCount){
-       var search = _context.Contributions.Where(x=>x.repoPath.Equals(repoPath)).FirstOrDefault();
-       
-       var cn = new Contribution();
 
-       /*if(search is null){
-        _context.Tags.Add(tg);
-       _context.SaveChanges();
+    public void Create(ContributionCreateDTO contribution){
+        var newContribution = new Contribution {
+                            repoPath = contribution.RepoPath,
+                            author = contribution.Author,
+                            date = contribution.Date,
+                            commitsCount = contribution.CommitsCount,
+        };
+        _context.Contributions.Add(newContribution);
+        _context.SaveChanges();
 
-       return (Created,tg.Id);
+       /*var search = _context.Contributions.Where(x=>x.repoPath.Equals(repoPath)).FirstOrDefault();
+        return (Created,tg.Id);
        }
        return (Conflict,tg.Id);*/
        
     }
 
-    public void Read(string repoPath){
+    public ContributionDTO Read(string repoPath, string author, DateTime date){
+        var contribution = _context.Contributions.Find(repoPath, author, date);
 
+
+        return contribution != null ? ContributionDTOFromContribution(contribution)
+        : null!;
+        /*new ContributionDTO(
+                                    //contribution.Id,
+                                    contribution.repoPath,
+                                    contribution.author,
+                                    contribution.date,
+                                    contribution.commitsCount
+        ) : null!;*/
     } //read for different modes
+
+    public IReadOnlyCollection<ContributionDTO> ReadAllforRepo(string repoPath){
+
+        var contributions = _context.Contributions
+                            .Where(c => c.repoPath == repoPath)
+                            .ToList()
+                            .AsReadOnly();
+        
+        var ContributionDTOs = _context.Contributions
+                .Select(contribution => ContributionDTOFromContribution(contribution));
+                
+        return ContributionDTOs.ToList().AsReadOnly();
+    }
 
     //seaches for contribution in Db
     /*public Contribution Find(int id){

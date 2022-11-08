@@ -32,7 +32,7 @@ public class RepoCheckRepository {
     private ICollection<ContributionDTO> ContributionDTOsToList(RepoCheck repoCheck){
         var contributions = repoCheck.Contributions
                     .Select(cont => new ContributionDTO(
-                        cont.Id, cont.repoPath, cont.author,
+                        cont.repoPath, cont.author, //cont.Id, 
                         cont.date, cont.commitsCount
                     )).ToList();
         return contributions;
