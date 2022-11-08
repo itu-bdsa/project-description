@@ -12,3 +12,17 @@ C:\Users\annem\Desktop\BDSA_PROJECT\GitInsight.Entities\obj\Debug\net6.0\refint\
 C:\Users\annem\Desktop\BDSA_PROJECT\GitInsight.Entities\obj\Debug\net6.0\GitInsight.Entities.pdb
 C:\Users\annem\Desktop\BDSA_PROJECT\GitInsight.Entities\obj\Debug\net6.0\GitInsight.Entities.genruntimeconfig.cache
 C:\Users\annem\Desktop\BDSA_PROJECT\GitInsight.Entities\obj\Debug\net6.0\ref\GitInsight.Entities.dll
+C:\Users\Bruger\Desktop\BDSA\BDSA_PROJECT\GitInsight.Entities\bin\Debug\net6.0\GitInsight.Entities.deps.json
+C:\Users\Bruger\Desktop\BDSA\BDSA_PROJECT\GitInsight.Entities\bin\Debug\net6.0\GitInsight.Entities.runtimeconfig.json
+C:\Users\Bruger\Desktop\BDSA\BDSA_PROJECT\GitInsight.Entities\bin\Debug\net6.0\GitInsight.Entities.dll
+C:\Users\Bruger\Desktop\BDSA\BDSA_PROJECT\GitInsight.Entities\bin\Debug\net6.0\GitInsight.Entities.pdb
+C:\Users\Bruger\Desktop\BDSA\BDSA_PROJECT\GitInsight.Entities\obj\Debug\net6.0\GitInsight.Entities.csproj.AssemblyReference.cache
+C:\Users\Bruger\Desktop\BDSA\BDSA_PROJECT\GitInsight.Entities\obj\Debug\net6.0\GitInsight.Entities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Bruger\Desktop\BDSA\BDSA_PROJECT\GitInsight.Entities\obj\Debug\net6.0\GitInsight.Entities.AssemblyInfoInputs.cache
+C:\Users\Bruger\Desktop\BDSA\BDSA_PROJECT\GitInsight.Entities\obj\Debug\net6.0\GitInsight.Entities.AssemblyInfo.cs
+C:\Users\Bruger\Desktop\BDSA\BDSA_PROJECT\GitInsight.Entities\obj\Debug\net6.0\GitInsight.Entities.csproj.CoreCompileInputs.cache
+C:\Users\Bruger\Desktop\BDSA\BDSA_PROJECT\GitInsight.Entities\obj\Debug\net6.0\GitInsight.Entities.dll
+C:\Users\Bruger\Desktop\BDSA\BDSA_PROJECT\GitInsight.Entities\obj\Debug\net6.0\refint\GitInsight.Entities.dll
+C:\Users\Bruger\Desktop\BDSA\BDSA_PROJECT\GitInsight.Entities\obj\Debug\net6.0\GitInsight.Entities.pdb
+C:\Users\Bruger\Desktop\BDSA\BDSA_PROJECT\GitInsight.Entities\obj\Debug\net6.0\GitInsight.Entities.genruntimeconfig.cache
+C:\Users\Bruger\Desktop\BDSA\BDSA_PROJECT\GitInsight.Entities\obj\Debug\net6.0\ref\GitInsight.Entities.dll

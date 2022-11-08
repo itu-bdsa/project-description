@@ -8,34 +8,30 @@
     ".NETCoreApp,Version=v6.0": {
       "GitInsight/1.0.0": {
         "dependencies": {
-<<<<<<< HEAD
+          "CommandLineParser": "2.9.1",
           "GitInsight.Entities": "1.0.0",
           "LibGit2Sharp": "0.26.2",
           "Microsoft.EntityFrameworkCore": "6.0.10",
           "Microsoft.EntityFrameworkCore.Design": "6.0.10",
           "Microsoft.Extensions.Configuration": "6.0.1"
-=======
-          "CommandLineParser": "2.9.1",
-          "LibGit2Sharp": "0.26.2"
->>>>>>> 02b1f04ca42a4a3a0596d982e6c05f8ba5a81040
         },
         "runtime": {
           "GitInsight.dll": {}
         }
       },
-<<<<<<< HEAD
-      "Humanizer.Core/2.8.26": {
-        "runtime": {
-          "lib/netstandard2.0/Humanizer.dll": {
-            "assemblyVersion": "2.8.0.0",
-            "fileVersion": "2.8.26.1919"
-=======
       "CommandLineParser/2.9.1": {
         "runtime": {
           "lib/netstandard2.0/CommandLine.dll": {
             "assemblyVersion": "2.9.1.0",
             "fileVersion": "2.9.1.0"
->>>>>>> 02b1f04ca42a4a3a0596d982e6c05f8ba5a81040
+          }
+        }
+      },
+      "Humanizer.Core/2.8.26": {
+        "runtime": {
+          "lib/netstandard2.0/Humanizer.dll": {
+            "assemblyVersion": "2.8.0.0",
+            "fileVersion": "2.8.26.1919"
           }
         }
       },
@@ -433,21 +429,19 @@
       "serviceable": false,
       "sha512": ""
     },
-<<<<<<< HEAD
-    "Humanizer.Core/2.8.26": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-OiKusGL20vby4uDEswj2IgkdchC1yQ6rwbIkZDVBPIR6al2b7n3pC91elBul9q33KaBgRKhbZH3+2Ur4fnWx2A==",
-      "path": "humanizer.core/2.8.26",
-      "hashPath": "humanizer.core.2.8.26.nupkg.sha512"
-=======
     "CommandLineParser/2.9.1": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-OE0sl1/sQ37bjVsPKKtwQlWDgqaxWgtme3xZz7JssWUzg5JpMIyHgCTY9MVMxOg48fJ1AgGT3tgdH5m/kQ5xhA==",
       "path": "commandlineparser/2.9.1",
       "hashPath": "commandlineparser.2.9.1.nupkg.sha512"
->>>>>>> 02b1f04ca42a4a3a0596d982e6c05f8ba5a81040
+    },
+    "Humanizer.Core/2.8.26": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-OiKusGL20vby4uDEswj2IgkdchC1yQ6rwbIkZDVBPIR6al2b7n3pC91elBul9q33KaBgRKhbZH3+2Ur4fnWx2A==",
+      "path": "humanizer.core/2.8.26",
+      "hashPath": "humanizer.core.2.8.26.nupkg.sha512"
     },
     "LibGit2Sharp/0.26.2": {
       "type": "package",
