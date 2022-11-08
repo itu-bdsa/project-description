@@ -11,9 +11,9 @@ Inform us about your group by modifying this file and by sending a pull request 
 |    4 | `U+1F921`                             | `aguh`, `mroa`, `oljh`, `ssbo`, `rakt`, `wihe`    | https://github.com/WilliamHeidemann/GitInsight |
 |    5 | `SMB`                                 | `dadh`, `vime`, `laup`, `maxt`, `rasni` , `mbln`  | https://github.com/whistle-dev/bdsaproject |
 |    6 | `NEWgIT`                              | `atro`, `chbl`, `fefa`, `frepe`, `luha`, `mgan`   | https://github.com/duckth/bdsa-project-newgit |
-|    7 | `Gruppe 7`                            | `avia`, `aarv`, `luel`, `mlth`, `mwha`            |  |
+|    7 | `Gruppe 7`                            | `avia`, `aarv`, `luel`, `mlth`, `mwha`            | https://github.com/Mlth/BDSAProject |
 |    8 | `Bravo`                               | `asjo`, `frhc`, `siar`, `behv`, `erja`, `tbru`    | https://github.com/bhviid/project-description |
-|    9 | `FS`                                  | `adrka`, `lanr`, `mhvl`, `midf`, `siol`           |  |
+|    9 | `FS`                                  | `adrka`, `lanr`, `mhvl`, `midf`, `siol`           | https://github.com/Kliaxe/GitInsight |
 |   10 | `The Bear Minimum`                    | `jouj`, `mhsi`, `tuho`, `hcan`, `kbej`            | https://github.com/Tyyrid/BDSA-Project-TheBearMinimum |
 |   11 | `Ape in space enterprise`             | `sibh`, `frgm`, `brml`, `kmey`, `otja`            | https://github.com/frmo24042/GitInsight |
 |   12 | `Grupp1`                              | `unla`, `mesv`, `laku`, `phla`, `raoo`, `bemi`    | https://github.com/bemillant/BDSA-project |
@@ -25,7 +25,7 @@ Inform us about your group by modifying this file and by sending a pull request 
 |   18 | `lars`                                | `labp`, `asly`, `emtj`, `mbjn`, `hecn`, `dlha`    | https://github.com/lauritsbrok/CSharpProject |
 |   19 | `JTG`                                 | `json`, `tokj`, `gues`,                           | https://github.com/tkjelds/GitInsight  |
 |   20 | `gruppen`                             | `rogy`, `frai`, `lufr`, `mfjo`                    | https://github.com/luczito/BDSA-projekt.git |
-|   21 | `Ceenja Impact`                       | `<annro>`, `<eikb>`, `<jric>`, `<crco>`, `<nihp>`, `<elbr>` | https://github.com/Divik-kid/BDSA_PROJECT |
+|   21 | `Ceenja Impact`                       | `annro`, `eikb`, `jric`, `crco`, `nihp`, `elbr`   | https://github.com/Divik-kid/BDSA_PROJECT |
 |   22 | `<group_name>`                        | `<aaaa>`, `<bbbb>`, `<cccc>`, `<dddd>`, `<eeee>`, `<ffff>` |  |
 |   23 | `<group_name>`                        | `<aaaa>`, `<bbbb>`, `<cccc>`, `<dddd>`, `<eeee>`, `<ffff>` |  |
 |   24 | `<group_name>`                        | `<aaaa>`, `<bbbb>`, `<cccc>`, `<dddd>`, `<eeee>`, `<ffff>` |  |
