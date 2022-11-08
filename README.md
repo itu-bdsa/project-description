@@ -107,3 +107,24 @@ Make sure that your test suite covers the newly introduced persistence feature i
 Update your project documentation in the `docs` directory to reflect the latest design and architecture of your application.
 That is, illustrate the architecture of your tool with a suitable diagram.
 Additionally, based the project description so far, generate a list of functional and non-functional requirements and store them in a respective text file.
+
+
+## Week Three (Week 45)
+
+Refactor your `GitInsight` application from last week from a command-line application into a web-application that exposes a REST API.
+The REST API shall receive a repository identifier from GitHub, i.e., in the form `<github_user>/<repository_name>` or of the form `<github_organization>/<repository_name>`. 
+In case the repository does not exist locally, then your `GitInsight` application shall clone the remote repository from GitHub and store it in a temporary local directory on your computer.
+In case the repository was already cloned earlier, then the respective local repository shall be updated.
+That is, using [`libgit2sharp`](https://github.com/libgit2/libgit2sharp) your application should update the local repository similar to running a `git pull` if you were to update a Git repository manually.
+The analyses that your `GitInsight` application is performing on that now cloned local repository remain the same as described previously and they are stored in a database as required during last week.
+The REST API shall return the analysis results via a JSON objects.
+
+For example, in case your application is running on your computer (`localhost`) and it is listening to port 8000, then on a `GET` request to the route `http://localhost:8000/mono/xwt` will either clone or update the repository `mono/xwt` from GitHub into a temporary directory on your computer, run the analysis on that local repository, store in or update the database accordingly, and return the analysis results via a corresponding JSON object.
+
+
+Update your test suite so that it covers the newly introduced persistence feature in a reasonable way.
+Besides unit tests implement one or more integration tests in your test suite.
+Likely it is also recommendable to add some API tests in a suitable format.
+
+Illustrate the architecture of your REST service using a suitable notation.
+Additionally, illustrate with an UML activity diagram the sequence of operations that your `GitInsight` application performs once triggered with a respective `GET` request and until it responds with the corresponding JSON data.
