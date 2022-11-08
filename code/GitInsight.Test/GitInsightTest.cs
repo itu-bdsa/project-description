@@ -9,35 +9,35 @@ public class GitInsightTest
     Control _app;
 
 
-    private void setupTests()
+    private void SetupTests()
     {
         _repo = new Data("https://github.com/rmccue/test-repository");
         _app = new Control();
 
 
     }
-    private void setupTests(string url)
+    private void SetupTests(string url)
     {
         _repo = new Data(url);
 
     }
 
-    private void closeTest()
+    private void CloseTest()
     {
-        _repo.shutDown();
+        _repo.Shutdown();
     }
 
     [Fact]
     public void Should_load_a_repository_from_path()
     {
         // Given
-        setupTests();
+        SetupTests();
 
         // When
 
         // Then
         Assert.NotNull(_repo);
-        closeTest();
+        CloseTest();
     }
 
     [Fact]
@@ -45,19 +45,19 @@ public class GitInsightTest
     public void Should_be_able_to_update_repo_to_a_new_repo()
     {
         // Given
-        setupTests();
+        SetupTests();
         System.IO.DirectoryInfo di = new DirectoryInfo("./repoData/deleteMe");
         var diLength = di.GetFiles().Length;
         Assert.Equal(diLength, 2);
 
         // When
-        setupTests("https://github.com/thekure/chittychat_skrrrt");
+        SetupTests("https://github.com/thekure/chittychat_skrrrt");
         diLength = di.GetFiles().Length;
 
 
         // Then
         Assert.Equal(diLength, 6);
-        closeTest();
+        CloseTest();
     }
 
 
@@ -65,29 +65,29 @@ public class GitInsightTest
     public void User_should_be_able_to_switch_mode_to_Author_Mode()
     {
         // // Given
-        setupTests();
+        SetupTests();
         var firstExpected = Mode.NULL;
-        Assert.Equal(_app.getMode(), firstExpected);
+        Assert.Equal(_app.GetMode(), firstExpected);
 
         // // When
-        _app.setMode(Mode.AUTHOR);
+        _app.SetMode(Mode.AUTHOR);
 
         // // Then
-        Assert.Equal(_app.getMode(), Mode.AUTHOR);
-        closeTest();
+        Assert.Equal(_app.GetMode(), Mode.AUTHOR);
+        CloseTest();
     }
 
     [Fact]
     public void Should_print_right_text_when_in_author_mode()
     {
-        setupTests();
+        SetupTests();
         // Given
         TextWriter currentOut = Console.Out;
         using var writer = new StringWriter();
         Console.SetOut(writer);
 
         // When
-        _repo.print(Mode.AUTHOR);
+        _repo.Print(Mode.AUTHOR);
 
         // Then
         var output = writer.GetStringBuilder().ToString().TrimEnd();
@@ -97,21 +97,21 @@ public class GitInsightTest
         //--- Ryan McCue ---
         //3, 24/08/2008
         Assert.Equal(output, outputShouldBe);
-        closeTest();
+        CloseTest();
         Console.SetOut(currentOut);
     }
     [Fact]
     public void Should_print_right_text_when_in_frequency_mode()
     {
         // Given
-        setupTests();
+        SetupTests();
         // Given
         TextWriter currentOut = Console.Out;
         using var writer = new StringWriter();
         Console.SetOut(writer);
 
         // When
-        _repo.print(Mode.FREQUENCY);
+        _repo.Print(Mode.FREQUENCY);
 
         // Then
         var output = writer.GetStringBuilder().ToString().TrimEnd();
@@ -120,6 +120,6 @@ public class GitInsightTest
         //24/08/2008, 3
         Assert.Equal(output, outputShouldBe);
         Console.SetOut(currentOut);
-        closeTest();
+        CloseTest();
     }
 }
