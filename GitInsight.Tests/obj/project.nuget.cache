@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "oMcHbXjz2rSI7oMJLf7QdKv1ZEHB4Y+5g37xC9GJOrb8CZ0L/J6/U5zrBcshVRL+4gTKCFhEXn7oQfwnBJhCGQ==",
+  "dgSpecHash": "scU7J+SsUJ96kuV/bhtscmdY4eFVNypNAYi/md7IXXZMKeBCbf9sudDdvuqJPxtesXqbLGXYPE0FoTDmmMmF0A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Bruger\\Desktop\\BDSA\\BDSA_PROJECT\\GitInsight.Tests\\GitInsight.Tests.csproj",
+  "projectFilePath": "c:\\Users\\Bruger\\Desktop\\BDSA\\BDSA_PROJECT\\GitInsight.Tests\\GitInsight.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Bruger\\.nuget\\packages\\commandlineparser\\2.9.1\\commandlineparser.2.9.1.nupkg.sha512",
     "C:\\Users\\Bruger\\.nuget\\packages\\coverlet.collector\\3.1.2\\coverlet.collector.3.1.2.nupkg.sha512",

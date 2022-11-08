@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Bruger\\Desktop\\BDSA\\BDSA_PROJECT\\GitInsight.Entities\\GitInsight.Entities.csproj": {}
+    "c:\\Users\\Bruger\\Desktop\\BDSA\\BDSA_PROJECT\\GitInsight.Entities\\GitInsight.Entities.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Bruger\\Desktop\\BDSA\\BDSA_PROJECT\\GitInsight.Entities\\GitInsight.Entities.csproj": {
+    "c:\\Users\\Bruger\\Desktop\\BDSA\\BDSA_PROJECT\\GitInsight.Entities\\GitInsight.Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Bruger\\Desktop\\BDSA\\BDSA_PROJECT\\GitInsight.Entities\\GitInsight.Entities.csproj",
+        "projectUniqueName": "c:\\Users\\Bruger\\Desktop\\BDSA\\BDSA_PROJECT\\GitInsight.Entities\\GitInsight.Entities.csproj",
         "projectName": "GitInsight.Entities",
-        "projectPath": "C:\\Users\\Bruger\\Desktop\\BDSA\\BDSA_PROJECT\\GitInsight.Entities\\GitInsight.Entities.csproj",
+        "projectPath": "c:\\Users\\Bruger\\Desktop\\BDSA\\BDSA_PROJECT\\GitInsight.Entities\\GitInsight.Entities.csproj",
         "packagesPath": "C:\\Users\\Bruger\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Bruger\\Desktop\\BDSA\\BDSA_PROJECT\\GitInsight.Entities\\obj\\",
+        "outputPath": "c:\\Users\\Bruger\\Desktop\\BDSA\\BDSA_PROJECT\\GitInsight.Entities\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Bruger\\AppData\\Roaming\\NuGet\\NuGet.Config"
