@@ -18,11 +18,11 @@ public class Control
             switch (input)
             {
                 case "author":
-                    _mode = AUTHOR;
+                    setMode(Mode.AUTHOR);
                     Console.WriteLine("Current Mode: AUTHOR");
                     break;
                 case "frequency":
-                    _mode = FREQUENCY;
+                    setMode(Mode.FREQUENCY);
                     Console.WriteLine("Current Mode: FREQUENCY");
                     break;
                 case "print":
@@ -59,5 +59,15 @@ public class Control
                     break;
             }
         }
+    }
+
+    public Mode getMode()
+    {
+        return _mode;
+    }
+
+    public void setMode(Mode mode)
+    {
+        _mode = mode;
     }
 }

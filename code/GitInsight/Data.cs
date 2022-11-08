@@ -5,7 +5,6 @@ public class Data
 {
     // /Users/thekure23/Library/CloudStorage/OneDrive-ITU/courseDocuments/03sem/analysisDesignSoftArch/project/BDSA-project
     private Repository _repo;
-    private Mode currMode;
     public Data(string url)
     {
         //Checks if a current repository exists and deletes it
@@ -20,7 +19,6 @@ public class Data
 
     public void print(Mode mode)
     {
-        currMode = mode;
         if (mode == FREQUENCY)
         {
             Console.WriteLine("Frequency:");
@@ -35,8 +33,6 @@ public class Data
         {
             Console.WriteLine("Please select a mode in order to print");
         }
-
-
     }
 
 
@@ -87,14 +83,5 @@ public class Data
         }
     }
 
-    public Mode getMode()
-    {
-        return currMode;
-    }
-
-    public void setMode(Mode mode)
-    {
-        currMode = mode;
-    }
 
 }

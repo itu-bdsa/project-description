@@ -6,11 +6,14 @@ public class GitInsightTest
 {
 
     Data? _repo;
+    Control _app;
 
 
     private void setupTests()
     {
         _repo = new Data("https://github.com/rmccue/test-repository");
+        _app = new Control();
+
 
     }
     private void setupTests(string url)
@@ -64,13 +67,13 @@ public class GitInsightTest
         // // Given
         setupTests();
         var firstExpected = Mode.NULL;
-        Assert.Equal(_repo.getMode(), firstExpected);
+        Assert.Equal(_app.getMode(), firstExpected);
 
         // // When
-        _repo.setMode(Mode.AUTHOR);
+        _app.setMode(Mode.AUTHOR);
 
         // // Then
-        Assert.Equal(_repo.getMode(), Mode.AUTHOR);
+        Assert.Equal(_app.getMode(), Mode.AUTHOR);
         closeTest();
     }
 
