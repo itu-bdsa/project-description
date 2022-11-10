@@ -10,11 +10,11 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddDbContext<GitInsightContext>(opt =>
-    opt.UseInMemoryDatabase("WebApiList"));
-//builder.Services.AddSwaggerGen(c =>
-//{
-//    c.SwaggerDoc("v1", new() { Title = "TodoApi", Version = "v1" });
-//});
+    opt.UseInMemoryDatabase("GitInsightApi"));
+builder.Services.AddSwaggerGen(c =>
+{
+    c.SwaggerDoc("v1", new() { Title = "GitInsightApi", Version = "v1" });
+});
 
 var app = builder.Build();
 
