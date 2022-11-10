@@ -11,7 +11,7 @@ public class ContributionRepositoryTests : IDisposable{
     private readonly SqliteConnection _connection;
     private readonly GitInsightContext _context;
     private readonly ContributionRepository _repository;
-    private readonly RepoCheckRepository _repoCheckRepository;
+    private readonly GitInsightController _repoCheckRepository;
 
         public ContributionRepositoryTests(){
         _connection = new SqliteConnection("Filename=:memory:");
@@ -23,7 +23,7 @@ public class ContributionRepositoryTests : IDisposable{
         _context.SaveChanges();
 
         _repository = new ContributionRepository(_context);
-        _repoCheckRepository = new RepoCheckRepository(_context);
+        _repoCheckRepository = new GitInsightController(_context);
     }
 
      public void Dispose()

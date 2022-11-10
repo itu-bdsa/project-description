@@ -1,11 +1,17 @@
 namespace GitInsight.Entities;
 using GitInsight.Core;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using GitInsight.Entities;
 
-public class RepoCheckRepository {
+    [Route("api/[controller]")]
+    [ApiController]
+public class GitInsightController {
+
 
     private GitInsightContext _context;
 
-    public RepoCheckRepository(GitInsightContext context)
+    public GitInsightController(GitInsightContext context)
     {
         _context = context;
     }
@@ -18,7 +24,8 @@ public class RepoCheckRepository {
         commitsCount = contribution.CommitsCount
      };
 
-    public void Create(RepoCheckCreateDTO repoCheck){ //string repoPath, string lastCheckedCommit
+    [HttpPost("{repoPath}")]
+    public void Post(RepoCheckCreateDTO repoCheck){ //string repoPath, string lastCheckedCommit
         var newRepoCheck = new RepoCheck{ repoPath = repoCheck.repoPath,
                              lastCheckedCommit = repoCheck.lastCheckedCommit,
                              Contributions = repoCheck.Contributions.Select(c => ContributionFromContributionDTO(c)).ToHashSet()};
@@ -27,7 +34,8 @@ public class RepoCheckRepository {
         _context.SaveChanges();
     }
 
-    public RepoCheckDTO Read(string repoPath){
+    [HttpGet("{repoPath}")]
+    public RepoCheckDTO Get(string repoPath){
         var repoCheck = _context.RepoChecks.Find(repoPath);
         //var DTO = new RepoCheckDTO();
         return repoCheck != null ? new RepoCheckDTO(
@@ -46,7 +54,9 @@ public class RepoCheckRepository {
         return contributions;
     }
 
-    public void Update(RepoCheckUpdateDTO repoCheck){ //string repoPath, string newestCheckedCommit
+    [HttpPut("{repoPath}")]
+
+    public void Put(RepoCheckUpdateDTO repoCheck){ //string repoPath, string newestCheckedCommit
         var toUpdate = _context.RepoChecks.Find(repoCheck.repoPath);
         toUpdate!.lastCheckedCommit = repoCheck.lastCheckedCommit;
 

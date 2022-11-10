@@ -11,7 +11,7 @@ public class GitInsightClass
         GitInsightContextFactory factory = new GitInsightContextFactory();
         GitInsightContext context = factory.CreateDbContext(args);
         //context.Database.EnsureDeleted(); //to delete database for tests
-        var repoRep = new RepoCheckRepository(context);
+        var repoRep = new GitInsightController(context);
         Console.WriteLine(context.Database.EnsureCreated());
 
         //specify a path by writing "--Path=pathname/somewhere" when running the program
@@ -27,7 +27,7 @@ public class GitInsightClass
         }
     }
 
-    public static ArrayList CommitFrequencyMode(string path, RepoCheckRepository repoRep) //ArrayList
+    public static ArrayList CommitFrequencyMode(string path, GitInsightController repoRep) //ArrayList
     {
         //specify a path by writing "--Path=pathname/somewhere" when running the program
         var repoPath = path;
@@ -100,13 +100,13 @@ public class GitInsightClass
         }
     }
 
-    public static void addRepoCheckToDB(string repoPath, Repository repo, RepoCheckRepository repoRep){
+    public static void addRepoCheckToDB(string repoPath, Repository repo, GitInsightController repoRep){
         var checkedCommit = repo.Commits.ToList().First().Id.ToString();
 
         var newRepoCheck = new RepoCheckCreateDTO(repoPath, checkedCommit, 
                                         AddContributionsDataToSet(repoPath, repo));
         
-        repoRep.Create(newRepoCheck);
+        repoRep.Post(newRepoCheck);
     }
 
     public static HashSet<ContributionDTO> AddContributionsDataToSet(string repoPath, Repository repo){
@@ -139,24 +139,24 @@ public class GitInsightClass
         return commitsCount;
     }
 
-    public static bool RepoExistsInDb(string repoPath, RepoCheckRepository repoCheckRep){
+    public static bool RepoExistsInDb(string repoPath, GitInsightController repoCheckRep){
         //bool - does repo exist in table in db pt?
-        var repoObject = repoCheckRep.Read(repoPath);
+        var repoObject = repoCheckRep.Get(repoPath);
         return (repoObject != null);
     }
 
-    public static bool CommitIsNewest(string repoPath, RepoCheckRepository repoCheckRep){ //string repoPath
+    public static bool CommitIsNewest(string repoPath, GitInsightController repoCheckRep){ //string repoPath
         //bool - is last checked commit the newest commit made?
-        var repoObject = repoCheckRep.Read(repoPath);
+        var repoObject = repoCheckRep.Get(repoPath);
         var rep = new Repository(repoPath);
         //rep.Commits.First().Author.When.Date;
         return (repoObject.lastCheckedCommit == rep.Commits.First().Id.ToString());  
     }
 
     //change to update properly
-    public static void UpdateEntryInDb(RepoCheckUpdateDTO repoCheckUpdate, RepoCheckRepository repoCheckRep){
+    public static void UpdateEntryInDb(RepoCheckUpdateDTO repoCheckUpdate, GitInsightController repoCheckRep){
         //update the latest checked commit and contributions in db
-        repoCheckRep.Update(repoCheckUpdate);
+        repoCheckRep.Put(repoCheckUpdate);
     }
 
     public static List<List<String>> CommitUserFrequencyMode(string path)
