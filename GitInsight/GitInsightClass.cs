@@ -106,7 +106,7 @@ public class GitInsightClass
         var newRepoCheck = new RepoCheckCreateDTO(repoPath, checkedCommit, 
                                         AddContributionsDataToSet(repoPath, repo));
         
-        repoRep.Post(newRepoCheck);
+        //repoRep.Post(newRepoCheck);
     }
 
     public static HashSet<ContributionDTO> AddContributionsDataToSet(string repoPath, Repository repo){
@@ -161,7 +161,7 @@ public class GitInsightClass
 
     public static List<List<String>> CommitUserFrequencyMode(string path)
     {
-        //var repoPath = @"C:\Users\annem\Skrivebord\BDSA\BDSA_PROJECT\TestGithubStorage\assignment-05";
+        //var repoPath = @"C:\Users\annem\Skrivebord\BDSA_PROJECT\TestGithubStorage\assignment-05";
         //specify a path by writing "--Path=pathname/somewhere" when running the program
         var repoPath = path;
         using (var repo = new Repository(repoPath))

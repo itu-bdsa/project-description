@@ -29,3 +29,6 @@ C:\Users\Bruger\Desktop\BDSA\BDSA_PROJECT\GitInsight.Entities\obj\Debug\net6.0\r
 c:\Users\Bruger\Desktop\BDSA\BDSA_PROJECT\GitInsight.Entities\bin\Debug\net6.0\GitInsight.Core.dll
 c:\Users\Bruger\Desktop\BDSA\BDSA_PROJECT\GitInsight.Entities\bin\Debug\net6.0\GitInsight.Core.pdb
 c:\Users\Bruger\Desktop\BDSA\BDSA_PROJECT\GitInsight.Entities\obj\Debug\net6.0\GitInsight.Entities.csproj.CopyComplete
+C:\Users\annem\Desktop\BDSA_PROJECT\GitInsight.Entities\bin\Debug\net6.0\GitInsight.Core.dll
+C:\Users\annem\Desktop\BDSA_PROJECT\GitInsight.Entities\bin\Debug\net6.0\GitInsight.Core.pdb
+C:\Users\annem\Desktop\BDSA_PROJECT\GitInsight.Entities\obj\Debug\net6.0\GitInsight.Entities.csproj.CopyComplete

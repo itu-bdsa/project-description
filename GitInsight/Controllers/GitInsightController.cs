@@ -3,14 +3,14 @@ using GitInsight.Core;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using GitInsight.Entities;
+using LibGit2Sharp;
+
 namespace GitInsight.Entities
 {
     [Route("api/[controller]")]
     [ApiController]
     public class GitInsightController : ControllerBase
     {
-
-
         private GitInsightContext _context;
 
         public GitInsightController(GitInsightContext context)
@@ -28,20 +28,68 @@ namespace GitInsight.Entities
          };
 
         [HttpPost("{repoPath}")]
-        public void Post(RepoCheckCreateDTO repoCheck)
-        { //string repoPath, string lastCheckedCommit
-            var newRepoCheck = new RepoCheck
-            {
-                repoPath = repoCheck.repoPath,
-                lastCheckedCommit = repoCheck.lastCheckedCommit,
-                Contributions = repoCheck.Contributions.Select(c => ContributionFromContributionDTO(c)).ToHashSet()
-            };
+        public void Post(string repoPath)
+        {
+            _context.Database.OpenConnection();
+            Console.WriteLine(_context.Database.CanConnect());
+            addRepoCheckToDB(repoPath);
 
-            _context.Add(newRepoCheck);
-            _context.SaveChanges();
+            //_context.Add(newRepoCheck);
+            //_context.SaveChanges();
         }
 
+    //--------------Helper methods to Post()-------------------
+    private void addRepoCheckToDB(string repoPath){
+        var repo = new Repository(repoPath);
+        var checkedCommit = repo.Commits.ToList().First().Id.ToString();
 
+        var conDTOs = AddContributionsDataToSet(repoPath, repo);
+
+        var newRepoCheck = new RepoCheck
+                    {
+                        repoPath = repoPath,
+                        lastCheckedCommit = checkedCommit,
+                        Contributions = conDTOs.Select(c => 
+                        ContributionFromContributionDTO(c)).ToHashSet()
+                    };
+
+        
+        _context.RepoChecks.Add(newRepoCheck);
+        _context.SaveChanges();
+        
+    }
+
+    private HashSet<ContributionDTO> AddContributionsDataToSet(string repoPath, Repository repo){
+        //add repo data to hashset
+        var commitArray = repo.Commits.ToList();
+        var contributionsList = new HashSet<ContributionDTO>();
+
+        foreach (var c in commitArray){
+            //get number of commits by auhtor on date
+            int commitNr = getNrCommitsOnDateByAuthor(c.Author.When.Date, c.Author, repo);
+
+            var newContri = new ContributionDTO(
+                RepoPath: repoPath,
+                Author: c.Author.ToString(), 
+                Date: c.Author.When.Date,
+                CommitsCount: commitNr);
+
+            contributionsList.Add(newContri);
+        }
+
+        return contributionsList;
+    }
+
+    private int getNrCommitsOnDateByAuthor(DateTime date, Signature author, Repository repo){
+        var commitsCount = repo.Commits
+        .Select(e => new { e.Author, e.Author.When.Date })
+        .Where(e => e.Author.ToString() == author.ToString()
+        && e.Author.When.Date == date).Count();
+
+        return commitsCount;
+    }
+
+    //-------------------------------------------------------
 
         /* [HttpGet]
           public async Task<ActionResult<RepoCheckDTO>> Get(string repoPath){
@@ -53,9 +101,10 @@ namespace GitInsight.Entities
                                           Contributions: ContributionDTOsToList(repoCheck)) : null!;
           }*/
 
-        [HttpGet("{repoPath}")]
+        [HttpGet("{repoPath}")] //the GET()
         public RepoCheckDTO GetRepoCheck(string repoPath)
         {
+            //C:\Users\annem\Desktop\BDSA_PROJECT\TestGithubStorage\assignment-05
             var repoCheck = _context.RepoChecks.Find(repoPath);
             //var DTO = new RepoCheckDTO();
             return repoCheck != null ? new RepoCheckDTO(
@@ -88,6 +137,15 @@ namespace GitInsight.Entities
             //toUpdate.Contributions.ToList()
             //.AddRange(newCons.Except(toUpdate.Contributions.ToList()));
 
+            _context.SaveChanges();
+        }
+
+        /* THIS METHOD DOESNT WORK YET! DONT USE OR DELETE PLZ AND TY
+        [HttpDelete("{repoPath}")]
+        
+        public void Delete(string repoPath){
+            var repoCheck = _context.RepoChecks.Find(repoPath);
+            _context.RepoChecks.Remove(repoCheck);
             _context.SaveChanges();
         }
 

@@ -121,7 +121,7 @@ public class DbTests{
         actual.Should().Be(expected);
     }*/
 
-    [Fact]
+    /*[Fact]
     public void addrepoTest()
     {
         //Arrange
@@ -139,7 +139,7 @@ public class DbTests{
         actual.repoPath.Should().Be(expected.repoPath);
         actual.lastCheckedCommit.Should().Be(expected.lastCheckedCommit);
         
-    }
+    }*/
 
     [Fact]
     public void getCommitsByAuthorOnDateTest(){
