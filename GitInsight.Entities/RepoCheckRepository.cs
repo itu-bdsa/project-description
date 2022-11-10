@@ -14,7 +14,7 @@ public class RepoCheckRepository {
 
     private static Contribution ContributionFromContributionDTO(ContributionDTO contribution)
      => new Contribution{
-        repoPath = contribution.RepoPath,
+        //repoPath = contribution.RepoPath,
         author = contribution.Author,
         date = contribution.Date,
         commitsCount = contribution.CommitsCount
@@ -42,7 +42,7 @@ public class RepoCheckRepository {
     private HashSet<ContributionDTO> ContributionDTOsToList(RepoCheck repoCheck){
         var contributions = repoCheck.Contributions
                     .Select(cont => new ContributionDTO(
-                        cont.repoPath, cont.author, //cont.Id, 
+                        cont.author, //cont.Id, cont.repoPath, 
                         cont.date, cont.commitsCount
                     )).ToHashSet();
         return contributions;

@@ -17,7 +17,8 @@ public class GitInsightClass
         var repopath = @"C:\Users\annem\Desktop\BDSA_PROJECT\TestGithubStorage\assignment-05";
         CommitFrequencyMode(repopath, repoRep);
 
-        readFreqMode(repopath, repoRep);
+        //readFreqMode(repopath, repoRep);
+        //readUserFreqMode(repopath, repoRep);
 
         //specify a path by writing "--Path=pathname/somewhere" when running the program
         //var result = Parser.Default.ParseArguments<Options>(args);
@@ -130,7 +131,7 @@ public class GitInsightClass
             int commitNr = getNrCommitsOnDateByAuthor(c.Author.When.Date, c.Author, repo);
 
             var newContri = new ContributionDTO(
-                RepoPath: repoPath,
+                //RepoPath: repoPath,
                 Author: c.Author.ToString(), 
                 Date: c.Author.When.Date,
                 CommitsCount: commitNr);
@@ -190,8 +191,32 @@ public class GitInsightClass
         }
     }
 
-    public void readUserFreqMode(string repoPath, RepoCheckRepository repoCheckRep){
+    public static void readUserFreqMode(string repoPath, RepoCheckRepository repoCheckRep){
+        var repoCheckDTOItem = repoCheckRep.Read(repoPath);
+        var users = repoCheckDTOItem.Contributions
+            .Select(c => c.Author).Distinct().ToList();
         
+        foreach(var user in users){
+            var intList = new ArrayList();
+
+            var dates = repoCheckDTOItem.Contributions
+            .Where(k => k.Author.Equals(user))
+            .Select(c => c.Date).Distinct().ToList();
+
+            foreach(var d in dates){
+                var comCount = repoCheckDTOItem.Contributions.Where(k => k.Date.Equals(d)
+                && k.Author.Equals(user))
+                .Select(k => k.CommitsCount).Sum();
+                intList.Add(comCount);
+            }
+            
+            Console.WriteLine(user.ToString());
+            for (var i = 0; i < intList.Count; i++){
+                Console.WriteLine("Date: "+ dates[i].Date.ToString() + " commitCounts: " + intList[i]);
+            }
+        }
+        
+
     }
 
     //-------------------------------
@@ -280,8 +305,8 @@ public class GitInsightClass
     }
 
     //bruger vi denne??
-    public static List<String> FindAllUsersInRepo(){
-    var repoPath = @"C:\Users\annem\Skrivebord\BDSA\BDSA_PROJECT\TestGithubStorage\assignment-05";
+    public static List<String> FindAllUsersInRepo(string repoPath){
+    //var repoPath = @"C:\Users\annem\Skrivebord\BDSA\BDSA_PROJECT\TestGithubStorage\assignment-05";
         using (var repo = new Repository(repoPath))
         {}
         return new List<String>(); //ret!

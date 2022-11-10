@@ -12,7 +12,7 @@ public class ContributionRepository {
 
     private static ContributionDTO ContributionDTOFromContribution(Contribution contribution)
      => new ContributionDTO(
-        RepoPath: contribution.repoPath,
+        //RepoPath: contribution.repoPath,
         Author: contribution.author,
         Date: contribution.date,
         CommitsCount: contribution.commitsCount

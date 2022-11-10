@@ -24,7 +24,7 @@ public partial class GitInsightContext : DbContext
         modelBuilder.Entity<Contribution>(entity =>
         {
             //lav primary key (repoPath, author, date)
-            entity.HasKey(c => new { c.repoPath, c.author, c.date});
+            //entity.HasKey(c => new { c.author, c.date});
         });
 
         OnModelCreatingPartial(modelBuilder);
