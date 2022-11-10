@@ -9,7 +9,7 @@ namespace GitInsight.Entities{
 public class GitInsightController : ControllerBase {
 
 
-    private readonly GitInsightContext _context;
+    private GitInsightContext _context;
 
     public GitInsightController(GitInsightContext context)
     {
@@ -36,15 +36,15 @@ public class GitInsightController : ControllerBase {
 
 
 
-   [HttpGet]
-    public async Task<ActionResult<RepoCheckDTO>> GetRepoCheck(string repoPath){
-        var repoCheck = await _context.RepoChecks.FindAsync(repoPath);
+  /* [HttpGet]
+    public async Task<ActionResult<RepoCheckDTO>> Get(string repoPath){
+        var repoCheck = _context.RepoChecks.Find(repoPath);
         //var DTO = new RepoCheckDTO();
         return repoCheck != null ? new RepoCheckDTO(
                                     repoCheck.repoPath,
                                     repoCheck.lastCheckedCommit,
                                     Contributions: ContributionDTOsToList(repoCheck)) : null!;
-    }
+    }*/
 
   [HttpGet("{repoPath}")]
         public async Task<ActionResult<RepoCheckDTO>> GetWebApiItem(string repoPath)
@@ -72,7 +72,8 @@ public class GitInsightController : ControllerBase {
     }
 
     [HttpPut("{repoPath}")]
-    public void UpdateRepoCheck(RepoCheckUpdateDTO repoCheck){ //string repoPath, string newestCheckedCommit
+
+    public void Put(RepoCheckUpdateDTO repoCheck){ //string repoPath, string newestCheckedCommit
         var toUpdate = _context.RepoChecks.Find(repoCheck.repoPath);
         toUpdate!.lastCheckedCommit = repoCheck.lastCheckedCommit;
 

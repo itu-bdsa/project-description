@@ -141,13 +141,13 @@ public class GitInsightClass
 
     public static bool RepoExistsInDb(string repoPath, GitInsightController repoCheckRep){
         //bool - does repo exist in table in db pt?
-        var repoObject = repoCheckRep.Get(repoPath);
+        var repoObject = repoCheckRep.GetRepoCheck(repoPath);
         return (repoObject != null);
     }
 
     public static bool CommitIsNewest(string repoPath, GitInsightController repoCheckRep){ //string repoPath
         //bool - is last checked commit the newest commit made?
-        var repoObject = repoCheckRep.Get(repoPath);
+        var repoObject = repoCheckRep.GetRepoCheck(repoPath);
         var rep = new Repository(repoPath);
         //rep.Commits.First().Author.When.Date;
         return (repoObject.lastCheckedCommit == rep.Commits.First().Id.ToString());  
