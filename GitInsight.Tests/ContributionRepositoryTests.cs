@@ -2,6 +2,7 @@ using System.Collections;
 using LibGit2Sharp;
 using Microsoft.Data.Sqlite;
 using GitInsight.Entities;
+using GitInsight.Core;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 
@@ -9,6 +10,7 @@ public class ContributionRepositoryTests : IDisposable{
     private readonly SqliteConnection _connection;
     private readonly GitInsightContext _context;
     private readonly ContributionRepository _repository;
+    private readonly RepoCheckRepository _repoCheckRepository;
 
         public ContributionRepositoryTests(){
         _connection = new SqliteConnection("Filename=:memory:");
@@ -20,6 +22,7 @@ public class ContributionRepositoryTests : IDisposable{
         _context.SaveChanges();
 
         _repository = new ContributionRepository(_context);
+        _repoCheckRepository = new RepoCheckRepository(_context);
     }
 
      public void Dispose()
@@ -27,11 +30,6 @@ public class ContributionRepositoryTests : IDisposable{
         _context.Dispose();
         _connection.Dispose();
     }
-
-    /*
-    Tænker vi kan lave metoder i GitInsight til at lave shiet i contributions,
-    og teste dem individuelt, før vi tester vores to modes som helhed,
-    og så ændrer vores orig. tests til at passe nye kode*/
 
     [Fact]
     public void Database_Should_be_empty()
@@ -41,64 +39,103 @@ public class ContributionRepositoryTests : IDisposable{
         //Act
         
         //Assert
-        Assert.Equal(_repository.Find(1),null);
+        Assert.Equal(_context.Contributions.First(),null);
     }
 
     [Fact]
     public void insert_contribution_Should_exist()
     {
         //Arrange
-        var Con1 = new Contribution(){ Id = 1, repoPath = "kekw", author = "monke", date = DateTime.Today, commitsCount = 3};
+        var Con1 = new ContributionCreateDTO(RepoPath: "kekw", Author: "monke", Date: DateTime.Today, CommitsCount: 3);
         
         //Act
-        _context.Contributions.AddRange(Con1);
-        
+        _repository.Create(Con1);
+        var expected = new ContributionDTO(RepoPath: "kekw", Author: "monke", Date: DateTime.Today, CommitsCount: 3);
+        var actual = _repository.Read("kekw", "monke", DateTime.Today);
+
         //Assert
-        Assert.Equal(_repository.Find(1),Con1);
+        actual.Should().Be(expected);
     }
 
-
-/*
     [Fact]
-    public void FirstAnalyzeShouldCreateEntryInDBRepositories()
+    public void Update_should_change_commitsCount_to_3(){
+        //Arrange
+        var Con1 = new ContributionCreateDTO(RepoPath: "kekw", Author: "monke", Date: DateTime.Today, CommitsCount: 3);
+        _repository.Create(Con1);
+
+        //Act
+        var updateDTO = new ContributionUpdateDTO(RepoPath: "kekw", Author: "monke", Date: DateTime.Today,
+                                        NewCommitsCount: 2);
+
+       _repository.Update(updateDTO);
+        var expected = new ContributionDTO(RepoPath: "kekw", Author: "monke", Date: DateTime.Today, CommitsCount: 5);
+        var actual = _repository.Read("kekw","monke", DateTime.Today);
+        //Assert
+        actual.Should().Be(expected);
+    }
+
+    /*[Fact]
+    public void FirstAnalyzeShouldCreateEntryInDB()
     {
         //Arrange
         var repoPath = @"C:\Users\annem\Skrivebord\BDSA\BDSA_PROJECT\TestGithubStorage\assignment-05";
+        var expectedList = new List<ContributionDTO>();
+        int nrCommits = 0;
 
         //Act
-        var commits = GitInsight.CommitFrequencyMode(); //laver entry
+        var commits = GitInsightClass.CommitFrequencyMode(repoPath, _repoCheckRepository); //laver entry
 
         var repo = new Repository(repoPath);
         var logs = repo.Commits.ToList();
-        var expected = logs.Last().Id;
-        //last? element in list is last commit - expected state
+
+        //want to count commits, group by author
+        var query = repo.Commits
+                .GroupBy(c => new { c.Author, c.Author.When })
+                .Select(a => new { grouping = a.Key, count = a.Count()}) //key name & when
+                .ToList();
+
+        //expected commits
+        foreach (var l in logs) {
+            nrCommits = query.Where(a => a.grouping.Author.Equals(l.Author)
+            && a.grouping.When.Equals(l.Author.When))
+            .Select(a => a.count).First();
+
+            var con = new ContributionDTO(RepoPath: repoPath,
+                                 Author: l.Author.ToString(), 
+                                 Date: l.Author.When.Date, 
+                                 CommitsCount: nrCommits);
+            expectedList.Add(con);
+        }
+        //actual
+        var actual = _repository.ReadAllforRepo(repoPath);
+        
+        //repo.Commits.Select().GroupBy(c => c.Count() c.Author).Count();
+        //repo.Commits.Select(t => t.Author t => t.Id).Distinct();
+        //repo.Commits.GroupBy(c => c.Author).SelectMany(c => c.au);
         
         //Actual
-        //check om id for commits er samme
-        _context.Repositories.Find(repoPath).StateCommit.Should().Be(expected);
+        actual.Equals(expectedList);
 
-    }
+    }*/
 
-*/
-    [Fact]
+
+    /*[Fact]
     public void IsRepositoryReanalyzedAndUpdated(){
-            /*Arrange
-                var repoPath = @"idk";
-                bool updaterepostatus=Convert.ToBoolean(checkupdaterepostatus?)
-            //Act
-            var repo=..;
-            var logs= ...;
-            var instans=logs.??.Id;
-            //if(instans.checkupdaterepostatus<0??){
-                updaterepostatus== true;
-            } else{
-                updaterepostatus== false;
-            }
-
+            //Arrange
+            var repo = new Repository();
+            var Con1 = new Contribution(){ Id = 1, repoPath = "kekw", author = "idk", date = DateTime.Today, commitsCount = 3};
+            var Con2 = new Contribution(){ Id = 1, repoPath = "kekw", author = "idk", date = DateTime.Today, commitsCount = 5};
+            
+            //Act 
+           _context.Contributions.AddRange(Con1);
+           _context.Contributions.AddRange(Con2);
+           GitInsight.Entities.ContributionRepository.Update(_repository);
+            
             //Actual
-            updaterepostatus.Should().Be(true or false)
-*/
+            Assert.Equal(_repository.Find(5),Con2);
      
-    }
+    }*/
+
+ 
 
 }

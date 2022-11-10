@@ -20,7 +20,7 @@ public class GitInsightContextFactory : IDesignTimeDbContextFactory<GitInsightCo
     {
         var configuration = new ConfigurationBuilder().AddUserSecrets<GitInsightClass>().Build();
         var connectionString = configuration.GetConnectionString("GitIn");
-        /*$CONNECTION_STRING="Host=localhost;Database=postgres;Username=<username>;Password=<password>");" 
+        /*$CONNECTION_STRING="Host=localhost;Database=GitIn;Username=<username>;Password=<password>");" 
         dotnet user-secrets set "ConnectionStrings:GitIn" "$CONNECTION_STRING"*/
 
         var optionsBuilder = new DbContextOptionsBuilder<GitInsightContext>();
