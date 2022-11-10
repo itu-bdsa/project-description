@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Qjn9Rhk7iHnR2v6fFPArEtVEJSLj3TTESO0mbEfVuGQfdoFSdYOTH0X/0ojZzqbnfXf4m+9JttxnLV4zxLrYfw==",
+  "dgSpecHash": "K/jyrBxRM87103obWaZ99tXZpt7olcFIASOM9AIWUuyJw0/5r2yEvGz6bEIfxm69hlOumv99gOFHKPrJC0K8BQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Bruger\\Desktop\\BDSA\\BDSA_PROJECT\\WebApi\\WebApi.csproj",
+  "projectFilePath": "c:\\Users\\Bruger\\Desktop\\BDSA\\BDSA_PROJECT\\WebApi\\WebApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Bruger\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\Bruger\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
