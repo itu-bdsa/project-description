@@ -10,21 +10,26 @@ public class GitInsightClass
     {
         GitInsightContextFactory factory = new GitInsightContextFactory();
         GitInsightContext context = factory.CreateDbContext(args);
-        //context.Database.EnsureDeleted(); //to delete database for tests
+        context.Database.EnsureDeleted(); //to delete database for tests
         var repoRep = new RepoCheckRepository(context);
         Console.WriteLine(context.Database.EnsureCreated());
 
+        var repopath = @"C:\Users\annem\Desktop\BDSA_PROJECT\TestGithubStorage\assignment-05";
+        CommitFrequencyMode(repopath, repoRep);
+
+        readFreqMode(repopath, repoRep);
+
         //specify a path by writing "--Path=pathname/somewhere" when running the program
-        var result = Parser.Default.ParseArguments<Options>(args);
+        //var result = Parser.Default.ParseArguments<Options>(args);
         //user inputs commandline switches "--AuthMode true" or leave it blank to pick a program
-        if (result.Value.AuthMode.GetValueOrDefault() == true){
+        /*if (result.Value.AuthMode.GetValueOrDefault() == true){
             CommitUserFrequencyMode(result.Value.path!);
         }
         else if (result.Value.FQMode.GetValueOrDefault() == true){
             CommitFrequencyMode(result.Value.path!, repoRep);
         } else {
             Console.WriteLine("please leave etither FQMode to default value, or make sure Author mode is true");
-        }
+        }*/
     }
 
     public static ArrayList CommitFrequencyMode(string path, RepoCheckRepository repoRep) //ArrayList
@@ -34,6 +39,12 @@ public class GitInsightClass
         using (var repo = new Repository(repoPath))
         {
             var commitArray = repo.Commits.ToList();
+
+            addRepoCheckToDB(repoPath, repo, repoRep);
+
+            var k = new ArrayList();
+            return k;
+
             //-------add to database----
             /*if(RepoExistsInDb(repoPath, repoCheckRep)){
                 /*if(CommitIsNewest(repo, repoCheckRep)){
@@ -50,7 +61,7 @@ public class GitInsightClass
             //}
             //---------------------------
 
-            ArrayList dateArray = new ArrayList();
+            /*ArrayList dateArray = new ArrayList();
 
             for (int i = 0; i < commitArray.Count; i++)
             {
@@ -158,6 +169,32 @@ public class GitInsightClass
         //update the latest checked commit and contributions in db
         repoCheckRep.Update(repoCheckUpdate);
     }
+
+    //--------READING FROM DB--------
+
+    public static void readFreqMode(string repoPath, RepoCheckRepository repoCheckRep){
+        //antalCommits dato x however many
+        var repoCheckDTOItem = repoCheckRep.Read(repoPath);
+        var intList = new ArrayList();
+        
+        var date = repoCheckDTOItem.Contributions.Select(c => c.Date).Distinct().ToList();
+
+        foreach(var d in date){
+            var comCount = repoCheckDTOItem.Contributions.Where(k => k.Date.Equals(d))
+            .Select(k => k.CommitsCount).Sum();
+            intList.Add(comCount);
+        }
+        
+        for (var i = 0; i < intList.Count; i++){
+            Console.WriteLine("Date: "+ date[i].Date.ToString() + " commitCounts: " + intList[i]);
+        }
+    }
+
+    public void readUserFreqMode(string repoPath, RepoCheckRepository repoCheckRep){
+        
+    }
+
+    //-------------------------------
 
     public static List<List<String>> CommitUserFrequencyMode(string path)
     {

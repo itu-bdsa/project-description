@@ -625,10 +625,21 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
+      "GitInsight.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/GitInsight.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GitInsight.Core.dll": {}
+        }
+      },
       "GitInsight.Entities/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
+          "GitInsight.Core": "1.0.0",
           "LibGit2Sharp": "0.26.2",
           "Microsoft.EntityFrameworkCore": "6.0.10",
           "Microsoft.Extensions.Configuration": "6.0.1",
@@ -1374,6 +1385,11 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "GitInsight.Core/1.0.0": {
+      "type": "project",
+      "path": "../GitInsight.Core/GitInsight.Core.csproj",
+      "msbuildProject": "../GitInsight.Core/GitInsight.Core.csproj"
+    },
     "GitInsight.Entities/1.0.0": {
       "type": "project",
       "path": "../GitInsight.Entities/GitInsight.Entities.csproj",
@@ -1396,11 +1412,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\annem\\Desktop\\BDSA_PROJECT\\GitInsight\\GitInsight.csproj",
+      "projectUniqueName": "C:\\Users\\annem\\Desktop\\BDSA_PROJECT\\GitInsight\\GitInsight.csproj",
       "projectName": "GitInsight",
-      "projectPath": "c:\\Users\\annem\\Desktop\\BDSA_PROJECT\\GitInsight\\GitInsight.csproj",
+      "projectPath": "C:\\Users\\annem\\Desktop\\BDSA_PROJECT\\GitInsight\\GitInsight.csproj",
       "packagesPath": "C:\\Users\\annem\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\annem\\Desktop\\BDSA_PROJECT\\GitInsight\\obj\\",
+      "outputPath": "C:\\Users\\annem\\Desktop\\BDSA_PROJECT\\GitInsight\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\annem\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -1417,8 +1433,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "c:\\Users\\annem\\Desktop\\BDSA_PROJECT\\GitInsight.Entities\\GitInsight.Entities.csproj": {
-              "projectPath": "c:\\Users\\annem\\Desktop\\BDSA_PROJECT\\GitInsight.Entities\\GitInsight.Entities.csproj"
+            "C:\\Users\\annem\\Desktop\\BDSA_PROJECT\\GitInsight.Entities\\GitInsight.Entities.csproj": {
+              "projectPath": "C:\\Users\\annem\\Desktop\\BDSA_PROJECT\\GitInsight.Entities\\GitInsight.Entities.csproj"
             }
           }
         }

@@ -1,4 +1,6 @@
 namespace GitInsight.Entities;
+
+using System.Data.SqlTypes;
 using GitInsight.Core;
 
 public class RepoCheckRepository {

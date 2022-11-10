@@ -21,6 +21,7 @@ public class GitInsightContextFactory : IDesignTimeDbContextFactory<GitInsightCo
 
         var optionsBuilder = new DbContextOptionsBuilder<GitInsightContext>();
         optionsBuilder.UseNpgsql(connectionString);
+        AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
         
         var context = new GitInsightContext(optionsBuilder.Options);
         return context;

@@ -151,3 +151,6 @@ C:\Users\Nicol\OneDrive\Dokumenter\AFolderForUni\bdsagrpprjREAL\BDSA_PROJECT\Git
 C:\Users\Nicol\OneDrive\Dokumenter\AFolderForUni\bdsagrpprjREAL\BDSA_PROJECT\GitInsight\obj\Debug\net6.0\GitInsight.genruntimeconfig.cache
 C:\Users\Nicol\OneDrive\Dokumenter\AFolderForUni\bdsagrpprjREAL\BDSA_PROJECT\GitInsight\obj\Debug\net6.0\ref\GitInsight.dll
 >>>>>>> 02b1f04ca42a4a3a0596d982e6c05f8ba5a81040
+C:\Users\annem\Desktop\BDSA_PROJECT\GitInsight\bin\Debug\net6.0\CommandLine.dll
+C:\Users\annem\Desktop\BDSA_PROJECT\GitInsight\bin\Debug\net6.0\GitInsight.Core.dll
+C:\Users\annem\Desktop\BDSA_PROJECT\GitInsight\bin\Debug\net6.0\GitInsight.Core.pdb
