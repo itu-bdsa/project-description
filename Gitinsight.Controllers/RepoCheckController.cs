@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using GitInsight.Core;
+using GitInsight.Entities;
 
 namespace GitInsight.Controllers
 {
