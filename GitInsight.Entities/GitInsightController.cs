@@ -1,4 +1,4 @@
-
+/*
 using GitInsight.Core;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -96,7 +96,7 @@ public class GitInsightController : ControllerBase {
         contributionToUpdate.commitsCount +=  contribution.NewCommitsCount;
 
         _context.SaveChanges();
-    }*/
+    }
 
 }
-}
+}*/

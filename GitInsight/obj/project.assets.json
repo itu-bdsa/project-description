@@ -10729,11 +10729,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Bruger\\Desktop\\BDSA\\BDSA_PROJECT\\gitinsight\\GitInsight.csproj",
+      "projectUniqueName": "C:\\Users\\Bruger\\Desktop\\BDSA\\BDSA_PROJECT\\GitInsight\\GitInsight.csproj",
       "projectName": "GitInsight",
-      "projectPath": "C:\\Users\\Bruger\\Desktop\\BDSA\\BDSA_PROJECT\\gitinsight\\GitInsight.csproj",
+      "projectPath": "C:\\Users\\Bruger\\Desktop\\BDSA\\BDSA_PROJECT\\GitInsight\\GitInsight.csproj",
       "packagesPath": "C:\\Users\\Bruger\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Bruger\\Desktop\\BDSA\\BDSA_PROJECT\\gitinsight\\obj\\",
+      "outputPath": "C:\\Users\\Bruger\\Desktop\\BDSA\\BDSA_PROJECT\\GitInsight\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Bruger\\AppData\\Roaming\\NuGet\\NuGet.Config"
