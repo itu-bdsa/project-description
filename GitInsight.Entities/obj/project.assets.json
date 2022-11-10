@@ -611,6 +611,16 @@
         "build": {
           "buildTransitive/netcoreapp3.1/_._": {}
         }
+      },
+      "GitInsight.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/GitInsight.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GitInsight.Core.dll": {}
+        }
       }
     }
   },
@@ -1320,10 +1330,16 @@
         "system.text.json.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "GitInsight.Core/1.0.0": {
+      "type": "project",
+      "path": "../GitInsight.Core/GitInsight.Core.csproj",
+      "msbuildProject": "../GitInsight.Core/GitInsight.Core.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "GitInsight.Core >= 1.0.0",
       "LibGit2Sharp >= 0.26.2",
       "Microsoft.EntityFrameworkCore >= 6.0.10",
       "Microsoft.EntityFrameworkCore.Design >= 6.0.10",
@@ -1357,7 +1373,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Bruger\\Desktop\\BDSA\\BDSA_PROJECT\\GitInsight.Core\\GitInsight.Core.csproj": {
+              "projectPath": "C:\\Users\\Bruger\\Desktop\\BDSA\\BDSA_PROJECT\\GitInsight.Core\\GitInsight.Core.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
