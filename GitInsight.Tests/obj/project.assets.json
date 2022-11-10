@@ -2635,10 +2635,21 @@
           "bin/placeholder/GitInsight.dll": {}
         }
       },
+      "GitInsight.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/GitInsight.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GitInsight.Core.dll": {}
+        }
+      },
       "GitInsight.Entities/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
+          "GitInsight.Core": "1.0.0",
           "LibGit2Sharp": "0.26.2",
           "Microsoft.EntityFrameworkCore": "6.0.10",
           "Microsoft.Extensions.Configuration": "6.0.1",
@@ -7976,6 +7987,11 @@
       "path": "../GitInsight/GitInsight.csproj",
       "msbuildProject": "../GitInsight/GitInsight.csproj"
     },
+    "GitInsight.Core/1.0.0": {
+      "type": "project",
+      "path": "../GitInsight.Core/GitInsight.Core.csproj",
+      "msbuildProject": "../GitInsight.Core/GitInsight.Core.csproj"
+    },
     "GitInsight.Entities/1.0.0": {
       "type": "project",
       "path": "../GitInsight.Entities/GitInsight.Entities.csproj",
@@ -7998,37 +8014,35 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\annem\\.nuget\\packages\\": {}
+    "C:\\Users\\Bruger\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\annem\\Desktop\\BDSA_PROJECT\\GitInsight.Tests\\GitInsight.Tests.csproj",
+      "projectUniqueName": "c:\\Users\\Bruger\\Desktop\\BDSA\\BDSA_PROJECT\\GitInsight.Tests\\GitInsight.Tests.csproj",
       "projectName": "GitInsight.Tests",
-      "projectPath": "c:\\Users\\annem\\Desktop\\BDSA_PROJECT\\GitInsight.Tests\\GitInsight.Tests.csproj",
-      "packagesPath": "C:\\Users\\annem\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\annem\\Desktop\\BDSA_PROJECT\\GitInsight.Tests\\obj\\",
+      "projectPath": "c:\\Users\\Bruger\\Desktop\\BDSA\\BDSA_PROJECT\\GitInsight.Tests\\GitInsight.Tests.csproj",
+      "packagesPath": "C:\\Users\\Bruger\\.nuget\\packages\\",
+      "outputPath": "c:\\Users\\Bruger\\Desktop\\BDSA\\BDSA_PROJECT\\GitInsight.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\annem\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\Bruger\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "c:\\Users\\annem\\Desktop\\BDSA_PROJECT\\GitInsight.Entities\\GitInsight.Entities.csproj": {
-              "projectPath": "c:\\Users\\annem\\Desktop\\BDSA_PROJECT\\GitInsight.Entities\\GitInsight.Entities.csproj"
+            "c:\\Users\\Bruger\\Desktop\\BDSA\\BDSA_PROJECT\\GitInsight.Entities\\GitInsight.Entities.csproj": {
+              "projectPath": "c:\\Users\\Bruger\\Desktop\\BDSA\\BDSA_PROJECT\\GitInsight.Entities\\GitInsight.Entities.csproj"
             },
-            "c:\\Users\\annem\\Desktop\\BDSA_PROJECT\\GitInsight\\GitInsight.csproj": {
-              "projectPath": "c:\\Users\\annem\\Desktop\\BDSA_PROJECT\\GitInsight\\GitInsight.csproj"
+            "c:\\Users\\Bruger\\Desktop\\BDSA\\BDSA_PROJECT\\GitInsight\\GitInsight.csproj": {
+              "projectPath": "c:\\Users\\Bruger\\Desktop\\BDSA\\BDSA_PROJECT\\GitInsight\\GitInsight.csproj"
             }
           }
         }
@@ -8102,7 +8116,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }

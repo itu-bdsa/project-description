@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v6.0": {
       "GitInsight.Entities/1.0.0": {
         "dependencies": {
+          "GitInsight.Core": "1.0.0",
           "LibGit2Sharp": "0.26.2",
           "Microsoft.EntityFrameworkCore": "6.0.10",
           "Microsoft.EntityFrameworkCore.Design": "6.0.10",
@@ -400,6 +401,11 @@
           "System.Runtime.CompilerServices.Unsafe": "6.0.0",
           "System.Text.Encodings.Web": "6.0.0"
         }
+      },
+      "GitInsight.Core/1.0.0": {
+        "runtime": {
+          "GitInsight.Core.dll": {}
+        }
       }
     }
   },
@@ -625,6 +631,11 @@
       "sha512": "sha512-zaJsHfESQvJ11vbXnNlkrR46IaMULk/gHxYsJphzSF+07kTjPHv+Oc14w6QEOfo3Q4hqLJgStUaYB9DBl0TmWg==",
       "path": "system.text.json/6.0.0",
       "hashPath": "system.text.json.6.0.0.nupkg.sha512"
+    },
+    "GitInsight.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }
