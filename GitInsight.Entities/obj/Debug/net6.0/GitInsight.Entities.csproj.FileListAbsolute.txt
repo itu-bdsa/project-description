@@ -26,3 +26,6 @@ C:\Users\Bruger\Desktop\BDSA\BDSA_PROJECT\GitInsight.Entities\obj\Debug\net6.0\r
 C:\Users\Bruger\Desktop\BDSA\BDSA_PROJECT\GitInsight.Entities\obj\Debug\net6.0\GitInsight.Entities.pdb
 C:\Users\Bruger\Desktop\BDSA\BDSA_PROJECT\GitInsight.Entities\obj\Debug\net6.0\GitInsight.Entities.genruntimeconfig.cache
 C:\Users\Bruger\Desktop\BDSA\BDSA_PROJECT\GitInsight.Entities\obj\Debug\net6.0\ref\GitInsight.Entities.dll
+c:\Users\Bruger\Desktop\BDSA\BDSA_PROJECT\GitInsight.Entities\bin\Debug\net6.0\GitInsight.Core.dll
+c:\Users\Bruger\Desktop\BDSA\BDSA_PROJECT\GitInsight.Entities\bin\Debug\net6.0\GitInsight.Core.pdb
+c:\Users\Bruger\Desktop\BDSA\BDSA_PROJECT\GitInsight.Entities\obj\Debug\net6.0\GitInsight.Entities.csproj.CopyComplete

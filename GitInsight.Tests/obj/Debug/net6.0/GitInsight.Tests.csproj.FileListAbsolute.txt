@@ -513,3 +513,5 @@ c:\Users\Bruger\Desktop\BDSA\BDSA_PROJECT\GitInsight.Tests\obj\Debug\net6.0\refi
 c:\Users\Bruger\Desktop\BDSA\BDSA_PROJECT\GitInsight.Tests\obj\Debug\net6.0\GitInsight.Tests.pdb
 c:\Users\Bruger\Desktop\BDSA\BDSA_PROJECT\GitInsight.Tests\obj\Debug\net6.0\GitInsight.Tests.genruntimeconfig.cache
 c:\Users\Bruger\Desktop\BDSA\BDSA_PROJECT\GitInsight.Tests\obj\Debug\net6.0\ref\GitInsight.Tests.dll
+c:\Users\Bruger\Desktop\BDSA\BDSA_PROJECT\GitInsight.Tests\bin\Debug\net6.0\GitInsight.Core.dll
+c:\Users\Bruger\Desktop\BDSA\BDSA_PROJECT\GitInsight.Tests\bin\Debug\net6.0\GitInsight.Core.pdb

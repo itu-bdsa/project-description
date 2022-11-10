@@ -208,3 +208,5 @@ C:\Users\Bruger\Desktop\BDSA\BDSA_PROJECT\GitInsight\obj\Debug\net6.0\refint\Git
 C:\Users\Bruger\Desktop\BDSA\BDSA_PROJECT\GitInsight\obj\Debug\net6.0\GitInsight.pdb
 C:\Users\Bruger\Desktop\BDSA\BDSA_PROJECT\GitInsight\obj\Debug\net6.0\GitInsight.genruntimeconfig.cache
 C:\Users\Bruger\Desktop\BDSA\BDSA_PROJECT\GitInsight\obj\Debug\net6.0\ref\GitInsight.dll
+c:\Users\Bruger\Desktop\BDSA\BDSA_PROJECT\GitInsight\bin\Debug\net6.0\GitInsight.Core.dll
+c:\Users\Bruger\Desktop\BDSA\BDSA_PROJECT\GitInsight\bin\Debug\net6.0\GitInsight.Core.pdb
