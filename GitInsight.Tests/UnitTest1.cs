@@ -59,7 +59,7 @@ public class UnitTest1
 
     }*/
 
-           [Fact]
+    [Fact]
     public void commitUserFrequencyModeWorks()
     {
         //Arrange
@@ -82,4 +82,6 @@ public class UnitTest1
         Assert.Equal(31, counter);
 
     }
+
+
 }

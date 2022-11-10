@@ -102,7 +102,7 @@ public class DbTests{
         Assert.False(actual);
     }
 
-        [Fact]
+      /*  [Fact]
     public void OutdatedCommitShouldBeUpdatedToNewest(){ 
 
         //Arrange
@@ -119,6 +119,41 @@ public class DbTests{
 
         //Assert
         actual.Should().Be(expected);
+    }*/
+
+    [Fact]
+    public void addrepoTest()
+    {
+        //Arrange
+        var repo = new Repository(repoPath);
+        
+        //Act
+        var list = GitInsightClass.AddContributionsDataToSet(repoPath, repo);
+        var expected = new RepoCheckDTO(repoPath, repo.Commits.First().Id.ToString(), list);
+
+        GitInsightClass.addRepoCheckToDB(repoPath, repo, _repository);
+        var actual = _repository.Read(repoPath);
+
+        //Assert
+        actual.Contributions.Equals(expected.Contributions);
+        actual.repoPath.Should().Be(expected.repoPath);
+        actual.lastCheckedCommit.Should().Be(expected.lastCheckedCommit);
+        
     }
-*/
+
+    [Fact]
+    public void getCommitsByAuthorOnDateTest(){
+        
+        //Arrange
+        var repo = new Repository(repoPath);
+        var date = repo.Commits.ElementAt(0).Author.When.Date;
+        var author = repo.Commits.ElementAt(0).Author;
+
+        //Act
+        int expected = 2;
+        int actual = GitInsightClass.getNrCommitsOnDateByAuthor(date, author, repo);
+
+        //Assert
+        actual.Should().Be(expected);
+    }
 }

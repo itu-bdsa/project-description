@@ -1,14 +1,11 @@
 ﻿namespace GitInsight;
-//using System.Linq.Expressions;
 using System.Collections;
 using LibGit2Sharp;
 using CommandLine;
 using GitInsight.Core;
 
-
 public class GitInsightClass
 {
-
     public static void Main(string[] args)
     {
         GitInsightContextFactory factory = new GitInsightContextFactory();
@@ -21,7 +18,6 @@ public class GitInsightClass
         var result = Parser.Default.ParseArguments<Options>(args);
         //user inputs commandline switches "--AuthMode true" or leave it blank to pick a program
         if (result.Value.AuthMode.GetValueOrDefault() == true){
-            
             CommitUserFrequencyMode(result.Value.path!);
         }
         else if (result.Value.FQMode.GetValueOrDefault() == true){
@@ -31,17 +27,13 @@ public class GitInsightClass
         }
     }
 
-    public static ArrayList CommitFrequencyMode(string path, RepoCheckRepository repoRep)
+    public static ArrayList CommitFrequencyMode(string path, RepoCheckRepository repoRep) //ArrayList
     {
         //specify a path by writing "--Path=pathname/somewhere" when running the program
-        //var repoPath = @"C:\Users\annem\Desktop\BDSA_PROJECT\TestGithubStorage\assignment-05";
         var repoPath = path;
-        //var fileOffset = @"C:\Users\annem\Desktop\BDSA_PROJECT\GitInsight.Tests\assignment-05\GildedRose\obj\project.assets.json";
-        //var fileOffsetFwdSlash = fileOffset.Replace("\\", "/");
         using (var repo = new Repository(repoPath))
         {
             var commitArray = repo.Commits.ToList();
-            //Console.WriteLine(repo.Commits.First().Author.When);
             //-------add to database----
             /*if(RepoExistsInDb(repoPath, repoCheckRep)){
                 /*if(CommitIsNewest(repo, repoCheckRep)){
@@ -92,7 +84,7 @@ public class GitInsightClass
             Console.WriteLine(currentDateCount + " " + currentDate?.ToString());
             return dateArray;
            
-           
+           //bruger vi det her under???
             //var dates = loges.GroupBy(x => x.Author.When.Date).Count();//.SelectMany(x=>x).ToList();
             //Console.WriteLine(dates);
             /*foreach (var date in dates){
@@ -108,8 +100,17 @@ public class GitInsightClass
         }
     }
 
-    public HashSet<ContributionDTO> AddRepoDataToHS(string repoPath, Repository repo){
-        //add repo data in hashset
+    public static void addRepoCheckToDB(string repoPath, Repository repo, RepoCheckRepository repoRep){
+        var checkedCommit = repo.Commits.ToList().First().Id.ToString();
+
+        var newRepoCheck = new RepoCheckCreateDTO(repoPath, checkedCommit, 
+                                        AddContributionsDataToSet(repoPath, repo));
+        
+        repoRep.Create(newRepoCheck);
+    }
+
+    public static HashSet<ContributionDTO> AddContributionsDataToSet(string repoPath, Repository repo){
+        //add repo data to hashset
         var commitArray = repo.Commits.ToList();
         var contributionsList = new HashSet<ContributionDTO>();
 
@@ -127,24 +128,15 @@ public class GitInsightClass
         }
 
         return contributionsList;
-
-        //var actual = _context.Tasks.Find(task.Id).Tags.Select(t => t.Name);
     }
 
+    public static int getNrCommitsOnDateByAuthor(DateTime date, Signature author, Repository repo){
+        var commitsCount = repo.Commits
+        .Select(e => new { e.Author, e.Author.When.Date })
+        .Where(e => e.Author.ToString() == author.ToString()
+        && e.Author.When.Date == date).Count();
 
-
-    public int getNrCommitsOnDateByAuthor(DateTime date, Signature author, Repository repo){
-        //Group by author, date
-        var query = repo.Commits
-                .GroupBy(c => new { c.Author, c.Author.When })
-                .Select(a => new { grouping = a.Key, count = a.Count()}) //key name & when
-                .ToList();
-
-        var nrCommits = query.Where(a => a.grouping.Author.Equals(author)
-                            && a.grouping.When.Equals(date))
-                            .Select(a => a.count).First();
-        
-        return nrCommits;
+        return commitsCount;
     }
 
     public static bool RepoExistsInDb(string repoPath, RepoCheckRepository repoCheckRep){
@@ -161,11 +153,10 @@ public class GitInsightClass
         return (repoObject.lastCheckedCommit == rep.Commits.First().Id.ToString());  
     }
 
-    public static void UpdateCheckedCommitInDb(string repoPath, RepoCheckRepository repoCheckRep){
-        //update the latest checked commit in table in db
-        var rep = new Repository(repoPath);
-        var update = new RepoCheckUpdateDTO(repoPath, rep.Commits.First().Id.ToString());
-        repoCheckRep.Update(update);
+    //change to update properly
+    public static void UpdateEntryInDb(RepoCheckUpdateDTO repoCheckUpdate, RepoCheckRepository repoCheckRep){
+        //update the latest checked commit and contributions in db
+        repoCheckRep.Update(repoCheckUpdate);
     }
 
     public static List<List<String>> CommitUserFrequencyMode(string path)
@@ -251,6 +242,7 @@ public class GitInsightClass
         }
     }
 
+    //bruger vi denne??
     public static List<String> FindAllUsersInRepo(){
     var repoPath = @"C:\Users\annem\Skrivebord\BDSA\BDSA_PROJECT\TestGithubStorage\assignment-05";
         using (var repo = new Repository(repoPath))
