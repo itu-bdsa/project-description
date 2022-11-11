@@ -19,20 +19,17 @@ public class GitInsightFrequencyTests : IDisposable
         var context = new CommitTreeContext(builder.Options);
         context.Database.EnsureCreated();
 
-
-
         //24/08/2008, 3
         context.Frequencies.AddRange(
-            new Frequency(DateTime.Parse("24/08/2008")),
-            new Frequency(DateTime.Parse("20/10/2009")),
-            new Frequency(DateTime.Parse("24/08/2010")),
-            new Frequency(DateTime.Parse("04/03/2011"))
+            new Frequency(1, DateTime.Parse("24/08/2008")),
+            new Frequency(2, DateTime.Parse("20/10/2009")),
+            new Frequency(3, DateTime.Parse("24/08/2010")),
+            new Frequency(4, DateTime.Parse("04/03/2011"))
         );
         context.SaveChanges();
 
         _context = context;
         _freqRepo = new FrequencyRepository(context);
-
 
     }
 
@@ -54,19 +51,16 @@ public class GitInsightFrequencyTests : IDisposable
     public void Create_Freq_Should_give_conflict_since_freq_exists()
     {
         _freqRepo.Create(new FrequencyCreateDTO(DateTime.Parse("20/10/2009"), 1));
-
-        // response.Should().Be(Response.Conflict);
-
-        // id.Should().Be(new TagDTO(1, "Cleaning").Id);
+        Assert.Equal(_context.Frequencies.Count(), 4);
     }
 
-    // [Fact]
-    // public void Delete_existing_tag_not_in_use()
-    // {
-    //     var response = _tagRepository.Delete(1);
-    //     response.Should().Be(Response.Deleted);
-    //     _context.Tags.Find(1).Should().BeNull();
-    // }
+    [Fact]
+    public void Delete_existing_commit()
+    {
+        _freqRepo.Delete(4);
+
+        Assert.Equal(_context.Frequencies.Count(), 3);
+    }
 
     // [Fact]
     // public void Delete_non_existing_tag_return_notFound()
@@ -89,13 +83,17 @@ public class GitInsightFrequencyTests : IDisposable
     //     _context.Tags.Find(1).Should().NotBeNull();
     // }
 
-    // [Fact]
-    // public void Read_return_the_right_tag()
-    // {
-    //     var tagD = new TagDTO(1, "Cleaning");
-    //     var result = _tagRepository.Read(1);
-    //     result.Should().Be(tagD);
-    // }
+    [Fact]
+    public void ReadAll_return_all_frequencies()
+    {
+        var listToCheck = _freqRepo.ReadAll();
+
+        Assert.Equivalent(listToCheck, _context.Frequencies);
+
+        // var tagD = new TagDTO(1, "Cleaning");
+        // var result = _tagRepository.Read(1);
+        // result.Should().Be(tagD);
+    }
 
     // [Fact]
     // public void ReadAll_Should_return_all_the_tags()
