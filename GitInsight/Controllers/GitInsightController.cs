@@ -36,10 +36,10 @@ namespace GitInsight.Entities
             Console.WriteLine(_context.Database.CanConnect());
 
 
-
+            //Repo name generator so we can create multiple temp-folders
             string folderPath = "../TestGithubStorage/" + repoPath.Replace("%2F", "-");
 
-
+            //String manupulation bc / gets replaced with %2F so we have to change it back for the function to work
             repoPath = repoPath.Replace("%2F", "/");
             repoPath = "https://github.com/" + repoPath;
             
