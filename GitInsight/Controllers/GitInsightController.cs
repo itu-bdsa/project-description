@@ -30,18 +30,25 @@ namespace GitInsight.Entities
         [HttpPost("{repoPath}")]
         public void Post(string repoPath)
         {
+
+            
             _context.Database.OpenConnection();
             Console.WriteLine(_context.Database.CanConnect());
 
 
-            //----------Clone git repository to newly made folder ../TestGithubStorage/tempGitRepo------
-            //This only works if tempGitRepo currently doesnt exist
-            //for some reason, inputting the git link in the swagger api fucks it up, and it doesnt accept it like this:
-            //Repository.Clone(repoPath, "../TestGithubStorage/tempGitRepo");
-            //But below works:
-            Repository.Clone("https://github.com/VictoriousAnnro/Assignment0.git", "../TestGithubStorage/tempGitRepo");
-            //------------------------------------------------------
 
+            string folderPath = "../TestGithubStorage/" + repoPath.Replace("%2F", "-");
+
+
+            repoPath = repoPath.Replace("%2F", "/");
+            repoPath = "https://github.com/" + repoPath;
+            
+
+            Repository.Clone(repoPath, folderPath);
+            
+
+
+            //Repository.Clone("https://github.com/VictoriousAnnro/Assignment0.git", "../TestGithubStorage/tempGitRepo");
             //addRepoCheckToDB(repoPath);
         }
 
