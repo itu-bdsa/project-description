@@ -39,17 +39,27 @@ namespace GitInsight.Entities
             //Repo name generator so we can create multiple temp-folders
             string folderPath = "../TestGithubStorage/" + repoPath.Replace("%2F", "-");
 
-            //String manupulation bc / gets replaced with %2F so we have to change it back for the function to work
+            //String manupulation bc / gets replaced with %2F so we have to change it back for the method to work
             repoPath = repoPath.Replace("%2F", "/");
             repoPath = "https://github.com/" + repoPath;
             
+            if(Directory.Exists(folderPath)){
 
+            //I cant really fathom why this works, but it does update the folder to the newest version of main
+            Repository repo = new Repository(folderPath);
+            Commands.Pull(repo,new Signature(" d", "d ",new DateTimeOffset()),new PullOptions());
+
+
+            } else {
             Repository.Clone(repoPath, folderPath);
+            addRepoCheckToDB(folderPath);
+            }
+            
             
 
 
             //Repository.Clone("https://github.com/VictoriousAnnro/Assignment0.git", "../TestGithubStorage/tempGitRepo");
-            //addRepoCheckToDB(repoPath);
+            
         }
 
     //--------------Helper methods to Post()-------------------
