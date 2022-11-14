@@ -23,14 +23,15 @@ namespace GitInsight.Entities
         //new method to put Post and Get together
         [HttpGet("{repoPath}")]
         public IActionResult GetAnalysis(string repoPath, string analyseMode){
-            String s = repoPath.Substring(repoPath.IndexOf("github.com%2F") + 13);
-            s.Trim();
+            
+            
 
             //Repo name generator so we can create multiple temp-folders
-            string folderPath = "../TestGithubStorage/" + s.Replace("%2F", "-");
+            string folderPath = "../TestGithubStorage/" + repoPath.Replace("%2F", "-");
 
             //String manipulation bc / gets replaced with %2F so we have to change it back for the method to work
             repoPath = repoPath.Replace("%2F", "/");
+            repoPath = "https://github.com/" + repoPath;
 
             if(Directory.Exists(folderPath)){
 
