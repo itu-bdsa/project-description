@@ -1,4 +1,22 @@
+<<<<<<< HEAD
 C:\Users\annem\Desktop\BDSA_PROJECT\GitInsight.Core\bin\Debug\net6.0\GitInsight.Core.deps.json
+=======
+c:\Users\Bruger\Desktop\BDSA\BDSA_PROJECT\GitInsight.Core\bin\Debug\net6.0\GitInsight.Core.deps.json
+c:\Users\Bruger\Desktop\BDSA\BDSA_PROJECT\GitInsight.Core\bin\Debug\net6.0\GitInsight.Core.dll
+c:\Users\Bruger\Desktop\BDSA\BDSA_PROJECT\GitInsight.Core\bin\Debug\net6.0\GitInsight.Core.pdb
+c:\Users\Bruger\Desktop\BDSA\BDSA_PROJECT\GitInsight.Core\obj\Debug\net6.0\GitInsight.Core.csproj.AssemblyReference.cache
+c:\Users\Bruger\Desktop\BDSA\BDSA_PROJECT\GitInsight.Core\obj\Debug\net6.0\GitInsight.Core.GeneratedMSBuildEditorConfig.editorconfig
+c:\Users\Bruger\Desktop\BDSA\BDSA_PROJECT\GitInsight.Core\obj\Debug\net6.0\GitInsight.Core.AssemblyInfoInputs.cache
+c:\Users\Bruger\Desktop\BDSA\BDSA_PROJECT\GitInsight.Core\obj\Debug\net6.0\GitInsight.Core.AssemblyInfo.cs
+c:\Users\Bruger\Desktop\BDSA\BDSA_PROJECT\GitInsight.Core\obj\Debug\net6.0\GitInsight.Core.csproj.CoreCompileInputs.cache
+c:\Users\Bruger\Desktop\BDSA\BDSA_PROJECT\GitInsight.Core\obj\Debug\net6.0\GitInsight.Core.dll
+c:\Users\Bruger\Desktop\BDSA\BDSA_PROJECT\GitInsight.Core\obj\Debug\net6.0\refint\GitInsight.Core.dll
+c:\Users\Bruger\Desktop\BDSA\BDSA_PROJECT\GitInsight.Core\obj\Debug\net6.0\GitInsight.Core.pdb
+c:\Users\Bruger\Desktop\BDSA\BDSA_PROJECT\GitInsight.Core\obj\Debug\net6.0\ref\GitInsight.Core.dll
+C:\Users\Bruger\Desktop\BDSA\BDSA_PROJECT\GitInsight.Core\bin\Debug\net6.0\GitInsight.Core.runtimeconfig.json
+C:\Users\Bruger\Desktop\BDSA\BDSA_PROJECT\GitInsight.Core\obj\Debug\net6.0\GitInsight.Core.genruntimeconfig.cache
+C:\Users\annem\Desktop\BDSA_PROJECT\GitInsight.Core\bin\Debug\net6.0\GitInsight.Core.runtimeconfig.json
+>>>>>>> DeadTimeLine1
 C:\Users\annem\Desktop\BDSA_PROJECT\GitInsight.Core\bin\Debug\net6.0\GitInsight.Core.dll
 C:\Users\annem\Desktop\BDSA_PROJECT\GitInsight.Core\bin\Debug\net6.0\GitInsight.Core.pdb
 C:\Users\annem\Desktop\BDSA_PROJECT\GitInsight.Core\obj\Debug\net6.0\GitInsight.Core.csproj.AssemblyReference.cache
@@ -10,3 +28,18 @@ C:\Users\annem\Desktop\BDSA_PROJECT\GitInsight.Core\obj\Debug\net6.0\GitInsight.
 C:\Users\annem\Desktop\BDSA_PROJECT\GitInsight.Core\obj\Debug\net6.0\refint\GitInsight.Core.dll
 C:\Users\annem\Desktop\BDSA_PROJECT\GitInsight.Core\obj\Debug\net6.0\GitInsight.Core.pdb
 C:\Users\annem\Desktop\BDSA_PROJECT\GitInsight.Core\obj\Debug\net6.0\ref\GitInsight.Core.dll
+C:\Users\annem\Desktop\BDSA_PROJECT\GitInsight.Core\obj\Debug\net6.0\GitInsight.Core.genruntimeconfig.cache
+C:\Users\eikbo\Skrivebord\BDSA\bdsa_project\GitInsight.Core\bin\Debug\net6.0\GitInsight.Core.deps.json
+C:\Users\eikbo\Skrivebord\BDSA\bdsa_project\GitInsight.Core\bin\Debug\net6.0\GitInsight.Core.runtimeconfig.json
+C:\Users\eikbo\Skrivebord\BDSA\bdsa_project\GitInsight.Core\bin\Debug\net6.0\GitInsight.Core.dll
+C:\Users\eikbo\Skrivebord\BDSA\bdsa_project\GitInsight.Core\bin\Debug\net6.0\GitInsight.Core.pdb
+C:\Users\eikbo\Skrivebord\BDSA\bdsa_project\GitInsight.Core\obj\Debug\net6.0\GitInsight.Core.csproj.AssemblyReference.cache
+C:\Users\eikbo\Skrivebord\BDSA\bdsa_project\GitInsight.Core\obj\Debug\net6.0\GitInsight.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\eikbo\Skrivebord\BDSA\bdsa_project\GitInsight.Core\obj\Debug\net6.0\GitInsight.Core.AssemblyInfoInputs.cache
+C:\Users\eikbo\Skrivebord\BDSA\bdsa_project\GitInsight.Core\obj\Debug\net6.0\GitInsight.Core.AssemblyInfo.cs
+C:\Users\eikbo\Skrivebord\BDSA\bdsa_project\GitInsight.Core\obj\Debug\net6.0\GitInsight.Core.csproj.CoreCompileInputs.cache
+C:\Users\eikbo\Skrivebord\BDSA\bdsa_project\GitInsight.Core\obj\Debug\net6.0\GitInsight.Core.dll
+C:\Users\eikbo\Skrivebord\BDSA\bdsa_project\GitInsight.Core\obj\Debug\net6.0\refint\GitInsight.Core.dll
+C:\Users\eikbo\Skrivebord\BDSA\bdsa_project\GitInsight.Core\obj\Debug\net6.0\GitInsight.Core.pdb
+C:\Users\eikbo\Skrivebord\BDSA\bdsa_project\GitInsight.Core\obj\Debug\net6.0\GitInsight.Core.genruntimeconfig.cache
+C:\Users\eikbo\Skrivebord\BDSA\bdsa_project\GitInsight.Core\obj\Debug\net6.0\ref\GitInsight.Core.dll

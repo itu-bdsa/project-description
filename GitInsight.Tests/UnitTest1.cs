@@ -10,7 +10,7 @@ using LibGit2Sharp;
 //Fredag d.7 october - 3 commits
 //Lørdag d.8 october - 10 commits
 //Søndag d.9 october - 1 commits
-//Torsdag d.13 october - 3 commits
+//Torsdag d.13 october - 2 commits
 
 public class UnitTest1
 {

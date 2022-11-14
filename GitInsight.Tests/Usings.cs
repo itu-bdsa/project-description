@@ -3,4 +3,6 @@ global using FluentAssertions;
 global using GitInsight;
 global using GitInsight.Entities;
 global using Microsoft.EntityFrameworkCore;
+global using Microsoft.Data.Sqlite;
+global using LibGit2Sharp;
 //global using GitInsightContextFactory;

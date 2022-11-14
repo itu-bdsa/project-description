@@ -10,12 +10,14 @@ public class GitInsightClass
     {
         GitInsightContextFactory factory = new GitInsightContextFactory();
         GitInsightContext context = factory.CreateDbContext(args);
-        context.Database.EnsureDeleted(); //to delete database for tests
-        var repoRep = new RepoCheckRepository(context);
+        //context.Database.EnsureDeleted(); //to delete database for tests
+        var repoRep = new GitInsightController(context);
+        Console.WriteLine(context.Database.EnsureDeleted()); //to delete database for tests
+        //var repoRep = new RepoCheckRepository(context);
         Console.WriteLine(context.Database.EnsureCreated());
 
-        var repopath = @"C:\Users\annem\Desktop\BDSA_PROJECT\TestGithubStorage\assignment-05";
-        CommitFrequencyMode(repopath, repoRep);
+        //var repopath = @"C:\Users\annem\Desktop\BDSA_PROJECT\TestGithubStorage\assignment-05";
+        //CommitFrequencyMode(repopath, repoRep);
 
         //readFreqMode(repopath, repoRep);
         //readUserFreqMode(repopath, repoRep);
@@ -32,8 +34,9 @@ public class GitInsightClass
             Console.WriteLine("please leave etither FQMode to default value, or make sure Author mode is true");
         }*/
     }
+}
 
-    public static ArrayList CommitFrequencyMode(string path, RepoCheckRepository repoRep) //ArrayList
+    /*public static ArrayList CommitFrequencyMode(string path, GitInsightController repoRep) //ArrayList
     {
         //specify a path by writing "--Path=pathname/somewhere" when running the program
         var repoPath = path;
@@ -109,16 +112,16 @@ public class GitInsightClass
             //foreach (var log in loges){
             //  Console.WriteLine(log + " " + log.Author.When.Date);
             //}
-        }
+        /*}
     }
 
-    public static void addRepoCheckToDB(string repoPath, Repository repo, RepoCheckRepository repoRep){
+    public static void addRepoCheckToDB(string repoPath, Repository repo, GitInsightController repoRep){
         var checkedCommit = repo.Commits.ToList().First().Id.ToString();
 
         var newRepoCheck = new RepoCheckCreateDTO(repoPath, checkedCommit, 
                                         AddContributionsDataToSet(repoPath, repo));
         
-        repoRep.Create(newRepoCheck);
+        //repoRep.Post(newRepoCheck);
     }
 
     public static HashSet<ContributionDTO> AddContributionsDataToSet(string repoPath, Repository repo){
@@ -151,24 +154,24 @@ public class GitInsightClass
         return commitsCount;
     }
 
-    public static bool RepoExistsInDb(string repoPath, RepoCheckRepository repoCheckRep){
+    public static bool RepoExistsInDb(string repoPath, GitInsightController repoCheckRep){
         //bool - does repo exist in table in db pt?
-        var repoObject = repoCheckRep.Read(repoPath);
+        var repoObject = repoCheckRep.GetRepoCheck(repoPath);
         return (repoObject != null);
     }
 
-    public static bool CommitIsNewest(string repoPath, RepoCheckRepository repoCheckRep){ //string repoPath
+    public static bool CommitIsNewest(string repoPath, GitInsightController repoCheckRep){ //string repoPath
         //bool - is last checked commit the newest commit made?
-        var repoObject = repoCheckRep.Read(repoPath);
+        var repoObject = repoCheckRep.GetRepoCheck(repoPath);
         var rep = new Repository(repoPath);
         //rep.Commits.First().Author.When.Date;
         return (repoObject.lastCheckedCommit == rep.Commits.First().Id.ToString());  
     }
 
     //change to update properly
-    public static void UpdateEntryInDb(RepoCheckUpdateDTO repoCheckUpdate, RepoCheckRepository repoCheckRep){
+    public static void UpdateEntryInDb(RepoCheckUpdateDTO repoCheckUpdate, GitInsightController repoCheckRep){
         //update the latest checked commit and contributions in db
-        repoCheckRep.Update(repoCheckUpdate);
+        repoCheckRep.Put(repoCheckUpdate);
     }
 
     //--------READING FROM DB--------
@@ -215,15 +218,13 @@ public class GitInsightClass
                 Console.WriteLine("Date: "+ dates[i].Date.ToString() + " commitCounts: " + intList[i]);
             }
         }
-        
-
     }
 
     //-------------------------------
 
     public static List<List<String>> CommitUserFrequencyMode(string path)
     {
-        //var repoPath = @"C:\Users\annem\Skrivebord\BDSA\BDSA_PROJECT\TestGithubStorage\assignment-05";
+        //var repoPath = @"C:\Users\annem\Skrivebord\BDSA_PROJECT\TestGithubStorage\assignment-05";
         //specify a path by writing "--Path=pathname/somewhere" when running the program
         var repoPath = path;
         using (var repo = new Repository(repoPath))
@@ -327,3 +328,4 @@ class Options{
 
 }
 
+*/

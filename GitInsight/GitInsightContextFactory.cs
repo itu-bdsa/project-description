@@ -3,12 +3,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.Configuration;
 
-/*Program.cs skal kalde den her, for at lave database.
-den laver en instans af GitInsightContext og returnerer den.
-
-Kommando til at lave migrations. Skal ikke bruges igen pt. da de er blevet lavet
+/*Kommando til at lave migrations. Skal ikke bruges igen pt. da de er blevet lavet
 dotnet ef migrations add Added_something --verbose -p .\GitInsight.Entities\ -s .\GitInsight
 */
+
+//Denne klasse er kun relevant ift. før-api-projekt
 
 public class GitInsightContextFactory : IDesignTimeDbContextFactory<GitInsightContext> //internal
 {

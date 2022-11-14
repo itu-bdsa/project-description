@@ -1,6 +1,6 @@
 namespace GitInsight.Core;
 
-public record ContributionDTO(string Author, DateTime Date, int CommitsCount); //int Id, 
+public record ContributionDTO(string Author, DateTime Date, int CommitsCount);
 
 //public record ContributionCreateDTO(string RepoPath, string Author, DateTime Date, int CommitsCount);
 
