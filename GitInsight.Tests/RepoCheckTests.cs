@@ -1,18 +1,17 @@
 namespace GitInsight.Tests;
-//using System.Collections;
 using GitInsight.Core;
 using LibGit2Sharp;
 using Microsoft.Data.Sqlite;
-//using Microsoft.EntityFrameworkCore.Infrastructure;
+using GitInsight.Entities;
 
-// Placeholder
-public class DbTests{
+public class RepoCheckTests{
     private readonly SqliteConnection _connection;
     private readonly GitInsightContext _context;
-    private readonly GitInsightController _repository;
-    private readonly string repoPath;
+    private readonly GitInsightController _GitController;
+    private readonly RepoCheckRepository _repository;
+    private readonly string folderPath;
 
-    public DbTests() {
+    public RepoCheckTests() {
         _connection = new SqliteConnection("Filename=:memory:");
         _connection.Open();
         var builder = new DbContextOptionsBuilder<GitInsightContext>().UseSqlite(_connection);
@@ -21,9 +20,12 @@ public class DbTests{
 
         _context.SaveChanges();
 
-        _repository = new GitInsightController(_context);
+        _GitController = new GitInsightController(_context);
+        _repository = new RepoCheckRepository(_context);
 
-        repoPath = @"C:\Users\annem\Desktop\BDSA_PROJECT\TestGithubStorage\assignment-05";
+        folderPath = @"C:\Users\annem\Desktop\BDSA_PROJECT\TestGithubStorage\VictoriousAnnro-Assignment0.git";
+        //below doesnt work for some goddamn reason and i dont know why. YES i tried using the other backslash
+        //"../TestGithubStorage/VictoriousAnnro-Assignment0.git";
     }
 
     public void Dispose() {
@@ -31,130 +33,105 @@ public class DbTests{
         _connection.Dispose();
     }
 
-/*
     [Fact]
-    public void FirstAnalyzeCreatesNewRepoChecksEntry(){
-        //rewrite to fit w. new one to many relationship
+    public void FirstAnalyzeCreatesEntry(){
 
         //Arrange
-        var l = GitInsightClass.CommitFrequencyMode(repoPath, _repository);
+        _repository.CreateEntryInDB(folderPath);
+        var repo = new Repository(folderPath);
 
-        var repo = new Repository(repoPath);
+        //Act
+        var expectedCommitId = repo.Commits.First().Id.ToString();
+        var conDTOs = _repository.AddContributionsDataToSet(repo);
+
+        var expectedRepoCheckObj = new RepoCheckDTO(folderPath, expectedCommitId, conDTOs);
+
+       var actualEntry = _repository.Read(folderPath);
+
+        //Assert
+        Assert.Equal(actualEntry.Contributions, expectedRepoCheckObj.Contributions);
+        actualEntry.repoPath.Should().Be(expectedRepoCheckObj.repoPath);
+        actualEntry.lastCheckedCommit.Should().Be(expectedRepoCheckObj.lastCheckedCommit);
+    }
+
+    [Fact]
+    public void FirstCommitCountForCommitFreqShouldBe_2Sep2022_8Commits(){
+
+        //Arrange
+        _repository.CreateEntryInDB(folderPath);
+        var repo = new Repository(folderPath);
+
+        //Act
+        var expected = new RepoCheckRepository.comFreqObj("02-09-2022 00:00:00", 8);
+        var actual = _repository.getCommitFreq(folderPath).Last();
+
+        //Assert
+        actual.Should().Be(expected);
+    }
+
+    [Fact]
+    public void FirstCommitCountForUserCommitFreqShouldBe_AnneMarie_2Sep2022_5Commits(){
+
+        //Arrange
+        _repository.CreateEntryInDB(folderPath);
+        var repo = new Repository(folderPath);
+
+        //Act
+        var tempList = new List<Tuple<string, int>>(){Tuple.Create("02-09-2022 00:00:00",5)};
+        var author = "Anne-Marie <annemarierommerdahl@gmail.com>";
+        var expected = new RepoCheckRepository.userComFreqObj(author, tempList);
+
+        var actual = _repository.getUserCommitFreq(folderPath).Last();
+
+        //Assert
+        actual.author.Should().Be(expected.author);
+        Assert.Equal(actual.datesCommits, expected.datesCommits);
+    }
+
+    [Fact]
+    public void LastCheckedCommit_ShouldBeMostRecent(){
+
+        //Arrange
+        _repository.CreateEntryInDB(folderPath);
+        var repo = new Repository(folderPath);
 
         //Act
         var expectedCommitId = repo.Commits.First().Id.ToString();
 
-        var commitCounts = repo.Commits.GroupBy(c => c.Author, c => c.Author.When)
-                        .Select(t => t.Count());
-        var expectedComCount = commitCounts.First(); //check om rigtigt
-        //repo.Commits.Count();
-
-        var expectedFirstContribution = new Contribution {
-            Id = 0,
-            repoPath = repoPath,
-            author = repo.Commits.First().Author.ToString(),
-            date = repo.Commits.First().Author.When.As<DateTime>(),
-            commitsCount = expectedComCount,
-            repCheck = _repository.Read(repoPath),
-
-        };
-
-        var expectedContributions = new HashSet<Contribution>(){};
-
-       // var actualEntry = _repository.Read(repoPath);
+       var actualEntry = _repository.Read(folderPath);
 
         //Assert
-        //actual.Should().Be(expected); cant use without use of record type
-       // actualEntry.lastCheckedCommit.Should().Be(expectedCommitId);
-        //Assert.Equal(expected: , actual: );
-
-        //check attached contri. 
-        //var actual = _context.Tasks.Find(task.Id).Tags.Select(t => t.Name);
+        actualEntry.lastCheckedCommit.Should().Be(expectedCommitId);
     }
 
-        [Fact]
-    public void CheckCommitMostRecentShouldBeTrue(){
+    [Fact]
+    public void UpdatedEntriesInDBTest(){ 
 
         //Arrange
-        var l = GitInsightClass.CommitFrequencyMode(repoPath, _repository);
+        //make fake repocheck with real foldername path
+        var repo = new Repository(folderPath);
+        var fakeRepoCheck = new RepoCheck
+                    {
+                        repoPath = folderPath,
+                        lastCheckedCommit = "fakeCommitIDHehee",
+                        Contributions = new HashSet<Contribution>(),
+                    };
+
+        _context.RepoChecks.Add(fakeRepoCheck);
 
         //Act
-        var actual = GitInsightClass.CommitIsNewest(repoPath, _repository);
+        _repository.Update(folderPath);
+
+
+        var expectedCommitId = repo.Commits.First().Id.ToString();
+        var conDTOs = _repository.AddContributionsDataToSet(repo);
+        var expected = new RepoCheckDTO(folderPath, expectedCommitId, conDTOs);
+
+        var actual = _repository.Read(folderPath);
 
         //Assert
-        actual.Should().Be(true);
-    }
-
-        [Fact]
-    public void CheckCommitMostRecentShouldBeFalse(){ 
-
-        //Arrange
-        var repo = new Repository(repoPath);
-        //set first (Last i Commits collection) commit made as last checked commit
-        var wrongCommitRepoCheck = new RepoCheckCreateDTO(repoPath, 
-                                    repo.Commits.Last().Id.ToString(),
-                                    new List<ContributionDTO>{});
-        _repository.Create(wrongCommitRepoCheck);
-
-        //Act
-        var actual = GitInsightClass.CommitIsNewest(repoPath, _repository);
-
-        //Assert
-        Assert.False(actual);
-    }
-
-      /*  [Fact]
-    public void OutdatedCommitShouldBeUpdatedToNewest(){ 
-
-        //Arrange
-        var repo = new Repository(repoPath);
-        var OutdatedRepoCheck = new RepoCheckCreateDTO(repoPath, 
-                                    repo.Commits.Last().Id.ToString(),
-                                    new List<ContributionDTO>{});
-        _repository.Create(OutdatedRepoCheck);
-
-        //Act
-        GitInsightClass.UpdateCheckedCommitInDb(repoPath, _repository);
-        var expected = repo.Commits.First().Id.ToString();
-        var actual = _repository.Read(repoPath).lastCheckedCommit;
-
-        //Assert
-        actual.Should().Be(expected);
-    }*/
-
-    /*[Fact]
-    public void addrepoTest()
-    {
-        //Arrange
-        var repo = new Repository(repoPath);
-        
-        //Act
-        var list = GitInsightClass.AddContributionsDataToSet(repoPath, repo);
-        var expected = new RepoCheckDTO(repoPath, repo.Commits.First().Id.ToString(), list);
-
-        GitInsightClass.addRepoCheckToDB(repoPath, repo, _repository);
-        var actual = _repository.Get(repoPath);
-
-        //Assert
-        actual.Contributions.Equals(expected.Contributions);
+        Assert.Equal(actual.Contributions, expected.Contributions);
         actual.repoPath.Should().Be(expected.repoPath);
         actual.lastCheckedCommit.Should().Be(expected.lastCheckedCommit);
-        
-    }*/
-
-    /*[Fact]
-    public void getCommitsByAuthorOnDateTest(){
-        
-        //Arrange
-        var repo = new Repository(repoPath);
-        var date = repo.Commits.ElementAt(0).Author.When.Date;
-        var author = repo.Commits.ElementAt(0).Author;
-
-        //Act
-        int expected = 2;
-        int actual = GitInsightClass.getNrCommitsOnDateByAuthor(date, author, repo);
-
-        //Assert
-        actual.Should().Be(expected);
-    }*/
+    }
 }
