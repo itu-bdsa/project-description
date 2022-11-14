@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Configuration;
+using GitInsight;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,6 +22,14 @@ var connectionString = configuration.GetConnectionString("GitIn");
 
 //hvis ovenstående ikke fungerer, brug denne i stedet. Husk at udskifte info og udkommentere ovenstående
 //var connectionString = @"Host=localhost;Database=GitDB;Username=postgres;Password=bianca3";
+
+GitInsightContextFactory factory = new GitInsightContextFactory();
+        GitInsightContext context = factory.CreateDbContext(args);
+        //context.Database.EnsureDeleted(); //to delete database for tests
+        var repoRep = new GitInsightController(context);
+        //Console.WriteLine(context.Database.EnsureDeleted()); //to delete database for tests
+        //var repoRep = new RepoCheckRepository(context);
+        Console.WriteLine(context.Database.EnsureCreated());
 
 
 builder.Services.AddDbContext<GitInsightContext>(options =>
