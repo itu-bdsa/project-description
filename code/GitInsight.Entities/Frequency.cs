@@ -6,12 +6,13 @@ public class Frequency
     public Frequency(DateTime Date)
     {
         this.Date = Date;
+        this.Count = 1;
     }
 
+    [Key]
     public DateTime Date { get; set; }
 
     public int Count { get; set; }
 
-    [Key]
     public int Id { get; set; }
 }

@@ -15,12 +15,23 @@ public class FrequencyRepository : IFrequencyRepository
 
     public void Create(FrequencyCreateDTO frequency)
     {
-
-        var entry = new Frequency(frequency.Date);
-        context.Frequencies.Add(entry);
-        context.SaveChanges();
-
-        Console.WriteLine(frequency.Date + " has been created");
+        
+        var frequencyToAdd = (
+            from f in context.Frequencies
+            where f.Date == frequency.Date
+            select f
+        ).FirstOrDefault();
+        if (frequencyToAdd == null) {
+            var entry = new Frequency(frequency.Date);
+            context.Frequencies.Add(entry);
+            context.SaveChanges();
+            Console.WriteLine(frequency.Date + " has been created");
+        } else
+        {
+            frequencyToAdd.Count++;
+            Console.WriteLine(frequencyToAdd.Count);
+            context.SaveChanges();
+        }
     }
 
     public IReadOnlyCollection<FrequencyDTO> ReadAll()
@@ -30,14 +41,29 @@ public class FrequencyRepository : IFrequencyRepository
 
     public void Update()
     {
-        // not implemented yet
-        // context.Frequenices.delete
+        // Incoporated in Create()
     }
 
-    public void Delete(int Id)
+    public void DeleteSpecificFreq(DateTime Date)
     {
-        // not implemented yet
-        // context.Frequenices.delete
+        var frequencyToRemove = (
+            from f in context.Frequencies
+            where f.Date == Date
+            select f
+        ).FirstOrDefault();
+        if (frequencyToRemove != null) {
+            context.Frequencies.Remove(frequencyToRemove);
+            context.SaveChanges();
+            Console.WriteLine(frequencyToRemove + " has been deleted");
+        }
+    }
+
+    public void DeleteAll() {
+        foreach (var freq in context.Frequencies)
+        {
+            context.Frequencies.Remove(freq);
+            context.SaveChanges();
+        }
     }
 
 }

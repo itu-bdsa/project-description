@@ -8,7 +8,6 @@ public class AuthorRepositoryTests : IDisposable
     private readonly CommitTreeContext _context;
     private readonly AuthorRepository _authorRepository;
 
-
     public AuthorRepositoryTests()
     {
         var connection = new SqliteConnection("Filename=:memory:");

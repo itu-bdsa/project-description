@@ -47,73 +47,42 @@ public class GitInsightFrequencyTests : IDisposable
         Assert.Equal(_context.Frequencies.Count(), 5);
     }
 
-    [Fact(Skip = "Duplication is still allowed")]
-    public void Create_Freq_Should_give_conflict_since_freq_exists()
+    [Fact]
+    public void Create_Freq_Should_not_change_count_of_freq_since_freq_exists()
     {
         _freqRepo.Create(new FrequencyCreateDTO(DateTime.Parse("20/10/2009"), 1));
         Assert.Equal(_context.Frequencies.Count(), 4);
     }
 
-    [Fact(Skip = "Delete No Existo")]
+    [Fact]
+    public void Create_Freq_Should_change_freq_count_freq_exists()
+    {
+        var newFreq = new FrequencyCreateDTO(DateTime.Parse("20/10/2009"), 1);
+        _freqRepo.Create(newFreq);
+
+        Assert.Equal(_context.Frequencies.Find(newFreq.Date)!.Count, 2);
+    }
+
+    [Fact]
     public void Delete_existing_commit()
     {
-        // _freqRepo.Delete(4);
+        _freqRepo.DeleteSpecificFreq(DateTime.Parse("20/10/2009"));
 
         Assert.Equal(_context.Frequencies.Count(), 3);
     }
 
-    // [Fact]
-    // public void Delete_non_existing_tag_return_notFound()
-    // {
-    //     var response = _tagRepository.Delete(100);
-    //     response.Should().Be(Response.NotFound);
-    //     _context.Tags.Find(100).Should().BeNull();
-    // }
+    [Fact]
+    public void Delete_all_existing_commits()
+    {
+        _freqRepo.DeleteAll();
 
-    // [Fact]
-    // public void Delete_tag_in_use_without_using_force_should_give_conflict()
-    // {
-    //     var task1 = new Task { Title = "Clean Office", Id = 1, State = State.Active };
-    //     var task2 = new Task { Title = "Do Taxes", Id = 2, State = State.New };
-    //     var list = new List<Task> { task1, task2 };
-    //     _context.Tags.Find(1)!.Tasks = list;
+        Assert.Equal(_context.Frequencies.Count(), 0);
+    }
 
-    //     var response = _tagRepository.Delete(1);
-    //     response.Should().Be(Response.Conflict);
-    //     _context.Tags.Find(1).Should().NotBeNull();
-    // }
-
-    [Fact(Skip = "not yet ready")]
     public void ReadAll_return_all_frequencies()
     {
         var listToCheck = _freqRepo.ReadAll();
 
         Assert.Equivalent(listToCheck, _context.Frequencies);
-
-        // var tagD = new TagDTO(1, "Cleaning");
-        // var result = _tagRepository.Read(1);
-        // result.Should().Be(tagD);
     }
-
-    // [Fact]
-    // public void ReadAll_Should_return_all_the_tags()
-    // {
-    //     var t1 = new TagDTO(1, "Cleaning");
-    //     var t2 = new TagDTO(2, "Urgent");
-    //     var t3 = new TagDTO(3, "TBD");
-    //     var listOfTags = new List<TagDTO> { t1, t2, t3 };
-    //     var result = _tagRepository.ReadAll();
-
-    //     result.Should().BeEquivalentTo(listOfTags);
-    // }
-
-    // [Fact]
-    // public void Update_tag_should_give_updated()
-    // {
-    //     var response = _tagRepository.Update(new TagUpdateDTO(1, "Office work"));
-    //     response.Should().Be(Response.Updated);
-
-    //     var entity = _context.Tags.Find(1)!;
-    //     entity.Name.Should().Be("Office work");
-    // }
 }
