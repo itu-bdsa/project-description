@@ -21,19 +21,23 @@ else
             </tr>
         </thead>
         <tbody>
+                 @foreach (GitInsight.Entities.RepoCheckRepository.comFreqObj result in result)
+            {
                 <tr>
-                    <td>@result</td>
-                </tr> 
+                    <td>@result.commits</td>
+                    <td>@result.date</td>
+                </tr>
+            } 
         </tbody>
     </table>
 }
 
 @code {
-    private object result;
+    private List<GitInsight.Entities.RepoCheckRepository.comFreqObj> result;
 
     protected override void OnInitialized()
     {
         Microsoft.AspNetCore.Mvc.OkObjectResult tempResult = (Microsoft.AspNetCore.Mvc.OkObjectResult) Controller.GetAnalysis("SpaceVikingEik/hewwo", "FQMode");
-        result = tempResult.Value.ToString();
+        result = tempResult.Value as List<GitInsight.Entities.RepoCheckRepository.comFreqObj>;
     }
 }
