@@ -25,7 +25,6 @@ public partial class GitInsightContext : DbContext
         modelBuilder.Entity<Contribution>(entity =>
         {
             
-            //entity.HasIndex(e => e.repoPath).IsUnique();
         });
 
 
