@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "GHTQwHEC00g2eU0fUdycoPsKXdIvK2TXqkNHtkhgVZ89e7df4pgwVOVWz5ITvpYHeXMyGeB31YLDfjy9eF/zeg==",
+  "dgSpecHash": "Mi3ZTKJ8joFSbJkvP3Kn2k1eq1cY0zuWFcw9371ia1Zd+bzOa1RUDSclll5JvZ6qUkoOhSSaGOWZYVXdvmlEhQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\eikbo\\Skrivebord\\BDSA\\BDSA_PROJECT\\GitInsight.Entities\\GitInsight.Entities.csproj",
+  "projectFilePath": "c:\\Users\\eikbo\\Skrivebord\\BDSA\\BDSA_PROJECT\\GitInsight.Entities\\GitInsight.Entities.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\eikbo\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\eikbo\\.nuget\\packages\\libgit2sharp\\0.26.2\\libgit2sharp.0.26.2.nupkg.sha512",
