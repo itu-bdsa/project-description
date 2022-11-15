@@ -16,7 +16,7 @@ public class FrequencyRepository : IFrequencyRepository
     public void Create(FrequencyCreateDTO frequency)
     {
 
-        var entry = new Frequency(1, frequency.Date);
+        var entry = new Frequency(frequency.Date);
         context.Frequencies.Add(entry);
         context.SaveChanges();
 

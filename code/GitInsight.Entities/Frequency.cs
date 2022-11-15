@@ -3,7 +3,7 @@ namespace GitInsight.Entities;
 public class Frequency
 {
 
-    public Frequency(int id, DateTime Date)
+    public Frequency(DateTime Date)
     {
         this.Date = Date;
     }
