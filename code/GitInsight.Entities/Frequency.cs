@@ -7,11 +7,11 @@ public class Frequency {
     }
 
 
-    public DateTime Date {get;}
+    public DateTime Date {get; set;}
 
     public int Count {get; set;}
 
     [Key]
-    public int Id {get;}
+    public int Id {get; set;}
 
 }

@@ -6,12 +6,12 @@ public class Author {
         this.Name = Name;
     }
 
-    public int Id {get;}
+    public int Id {get; set;}
 
     [StringLength(50)]
-    public string Name {get;}
+    public string Name {get; set;}
 
-    public DateTime Date {get;}
+    public DateTime Date {get; set;}
 
     public int Count {get; set;}
 
