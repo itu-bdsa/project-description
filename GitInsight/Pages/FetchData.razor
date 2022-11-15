@@ -29,11 +29,11 @@ else
 }
 
 @code {
-    private string? result;
+    private object result;
 
     protected override void OnInitialized()
     {
-        Microsoft.AspNetCore.Mvc.IActionResult tempResult = Controller.GetAnalysis("SpaceVikingEik/hewwo", "FQMode");
-        result = tempResult.ToString();
+        Microsoft.AspNetCore.Mvc.OkObjectResult tempResult = (Microsoft.AspNetCore.Mvc.OkObjectResult) Controller.GetAnalysis("SpaceVikingEik/hewwo", "FQMode");
+        result = tempResult.Value.ToString();
     }
 }
