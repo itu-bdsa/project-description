@@ -15,4 +15,8 @@ public class CommitTreeContextFactory : IDesignTimeDbContextFactory<CommitTreeCo
         return new CommitTreeContext(optionsBuilder.Options);
     }
 
+    public void Dispose()
+    {
+        throw new NotImplementedException();
+    }
 }

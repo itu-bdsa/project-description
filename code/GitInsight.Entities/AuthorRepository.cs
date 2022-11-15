@@ -13,7 +13,8 @@ public class AuthorRepository : IAuthorRepository
         this.context = context;
     }
 
-    public void Create (AuthorCreateDTO author) {
+    public void Create(AuthorCreateDTO author)
+    {
 
         var entry = new Author(author.Name);
         context.Authors.Add(entry);
@@ -22,11 +23,16 @@ public class AuthorRepository : IAuthorRepository
         Console.WriteLine(author.Name + " has been created");
     }
 
-    public IReadOnlyCollection<AuthorDTO> ReadAll(){
-        return context.Authors.Select ( e => new AuthorDTO(e.Id, e.Name )).ToList().AsReadOnly();
+    public IReadOnlyCollection<AuthorDTO> ReadAll()
+    {
+        var authors = context.Authors.Select(e => new AuthorDTO(e.Id, e.Name));
+
+        return authors.ToList().AsReadOnly();
+
     }
 
-    public void Update(){
+    public void Update()
+    {
         // not implemented yet
         // context.Authors.delete
     }

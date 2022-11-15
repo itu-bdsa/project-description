@@ -1,6 +1,3 @@
-using System.Reflection;
-using LibGit2Sharp;
-
 namespace GitInsight.Test;
 public class GitInsightTest
 {
