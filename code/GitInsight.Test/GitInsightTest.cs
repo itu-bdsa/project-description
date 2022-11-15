@@ -27,7 +27,7 @@ public class GitInsightTest
         _repo.Shutdown();
     }
 
-    [Fact(Skip="a")]
+    [Fact]
     public void Should_load_a_repository_from_path()
     {
         // Given
@@ -40,7 +40,7 @@ public class GitInsightTest
         CloseTest();
     }
 
-    [Fact(Skip="b")]
+    [Fact]
     // Purposefully left out for now
     public void Should_be_able_to_update_repo_to_a_new_repo()
     {
@@ -61,7 +61,7 @@ public class GitInsightTest
     }
 
 
-    [Fact(Skip="c")]
+    [Fact]
     public void User_should_be_able_to_switch_mode_to_Author_Mode()
     {
         // // Given
@@ -77,7 +77,7 @@ public class GitInsightTest
         CloseTest();
     }
 
-    [Fact(Skip="d")]
+    [Fact]
     public void Should_print_right_text_when_in_author_mode()
     {
         SetupTests();
@@ -100,7 +100,7 @@ public class GitInsightTest
         CloseTest();
         Console.SetOut(currentOut);
     }
-    [Fact(Skip="e")]
+    [Fact]
     public void Should_print_right_text_when_in_frequency_mode()
     {
         // Given
@@ -121,15 +121,5 @@ public class GitInsightTest
         Assert.Equal(output, outputShouldBe);
         Console.SetOut(currentOut);
         CloseTest();
-    }
-
-    [Fact]
-    public void testToDelete(){
-        var factory = new CommitTreeContextFactory();
-        var context = factory.CreateDbContext(new string[1]);
-        var authorRepo = new AuthorRepository(context);;
-
-        authorRepo.Create(new AuthorCreateDTO("hej"));
-        Assert.True(true);
     }
 }
