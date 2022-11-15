@@ -14,7 +14,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
-builder.Services.AddSingleton<GitInsight.Data.WeatherForecastService>();
+//builder.Services.AddSingleton<GitInsight.Data.WeatherForecastService>();
+builder.Services.AddScoped<GitInsightController>();
+builder.Services.AddScoped<GitInsightContext>();
 //--------------Real database setup---------------------
 //Naviger til GitInsight folder og kør disse to commands i terminal.
 //Husk at udskift database, username og password med dit eget
