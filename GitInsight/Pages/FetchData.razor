@@ -6,38 +6,113 @@
 
 <h1>GitInsight</h1>
 
-<p>This component demonstrates fetching data from a service.</p>
+<p>Please write github repository and what mode to analyze in:</p>
+<p>- FQMode </p>
+<p>- AuthMode </p>
 
-@if (result == null)
+<div>
+    Repository:
+    <input type="text" @bind="gitRepoInput">
+</div>
+<br>
+<div> 
+    Analyze Mode:
+    <input type="text" @bind="analyzeModeInput"> 
+</div>
+<br>
+<div>
+    <button class="btn btn-primary" @onclick="submitInput">
+        Run Analysis
+    </button>
+</div>
+
+<br>
+<div>
+@if (FQresult == null && Authresult == null)
 {
-    <p><em>Loading...</em></p>
+    <p><em>Waiting for input...</em></p>
 }
-else
+else if (FQresult != null)
 {
-    <table class="table">
+    <table id = "FQTable" class="table">
         <thead>
             <tr>
-                <th>result</th>
+                <th>Github Repository</th>
+                <th>Date</th>
+                <th>Total Commits</th>
             </tr>
         </thead>
-        <tbody>
-                 @foreach (GitInsight.Entities.RepoCheckRepository.comFreqObj result in result)
+<tbody>
+                 @foreach (GitInsight.Entities.RepoCheckRepository.comFreqObj result in FQresult)
             {
                 <tr>
+                    <td>@gitRepoInput</td>
+                    <td>@result.date.Replace("00:00:00", "")</td>
                     <td>@result.commits</td>
-                    <td>@result.date</td>
                 </tr>
             } 
         </tbody>
     </table>
+} else if (Authresult != null){
+    <table id = "AuthTable" class="table">
+        <thead>
+            <tr>
+                <th>Github Repository</th>
+                <th>Author</th>
+                <th>Date</th>
+                <th>Total Commits</th>
+            </tr>
+        </thead>
+<tbody>
+        @foreach (GitInsight.Entities.RepoCheckRepository.userComFreqObj result in Authresult)
+            {
+                @foreach (var contr in @result.datesCommits)
+                    {
+                    <tr>
+                        <td>@gitRepoInput</td>
+                        <td>@result.author.ToString();</td>
+                        <td>@contr.Item1.Replace("00:00:00", "")</td>
+                        <td>@contr.Item2</td>
+                    </tr>
+                    }
+            } 
+        </tbody>
+    </table>
 }
+</div>
+
 
 @code {
-    private List<GitInsight.Entities.RepoCheckRepository.comFreqObj> result;
 
-    protected override void OnInitialized()
-    {
-        Microsoft.AspNetCore.Mvc.OkObjectResult tempResult = (Microsoft.AspNetCore.Mvc.OkObjectResult) Controller.GetAnalysis("SpaceVikingEik/hewwo", "FQMode");
-        result = tempResult.Value as List<GitInsight.Entities.RepoCheckRepository.comFreqObj>;
+    public string gitRepoInput {get; set; }
+
+    public string analyzeModeInput {get; set; }
+    private List<GitInsight.Entities.RepoCheckRepository.comFreqObj> FQresult;
+
+    private List<GitInsight.Entities.RepoCheckRepository.userComFreqObj> Authresult;
+
+    public void submitInput(){
+        //"SpaceVikingEik/hewwo", "FQMode"
+        Console.WriteLine(this.gitRepoInput);
+        Console.WriteLine(this.analyzeModeInput);
+
+        if(this.analyzeModeInput == "FQMode"){
+            runFQMode();
+        } else if (this.analyzeModeInput == "AuthMode"){
+            runAuthMode();
+        }
     }
+
+    private void runFQMode(){
+        Authresult = null;
+        Microsoft.AspNetCore.Mvc.OkObjectResult tempResult = (Microsoft.AspNetCore.Mvc.OkObjectResult) Controller.GetAnalysis(this.gitRepoInput, this.analyzeModeInput);
+        FQresult = tempResult.Value as List<GitInsight.Entities.RepoCheckRepository.comFreqObj>;
+    }
+
+    private void runAuthMode(){
+        FQresult = null;
+        Microsoft.AspNetCore.Mvc.OkObjectResult tempResult = (Microsoft.AspNetCore.Mvc.OkObjectResult) Controller.GetAnalysis(this.gitRepoInput, this.analyzeModeInput);
+        Authresult = tempResult.Value as List<GitInsight.Entities.RepoCheckRepository.userComFreqObj>;
+    }
+
 }
