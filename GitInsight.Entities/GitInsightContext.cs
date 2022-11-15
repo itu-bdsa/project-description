@@ -10,7 +10,8 @@ public partial class GitInsightContext : DbContext
     {}
 
     public virtual DbSet<RepoCheck> RepoChecks { get; set; } = null!;
-    //public virtual DbSet<Contribution> Contributions { get; set; } = null!;
+
+    public virtual DbSet<Contribution> Contributions { get; set; } = null!;
 
     protected override void OnModelCreating(ModelBuilder modelBuilder){
         //write stuff heeeereeeee
@@ -23,9 +24,9 @@ public partial class GitInsightContext : DbContext
 
         modelBuilder.Entity<Contribution>(entity =>
         {
-            //lav primary key (repoPath, author, date)
-            entity.HasKey(c => new { c.repoPath, c.author, c.date});
+            
         });
+
 
         OnModelCreatingPartial(modelBuilder);
     }
@@ -36,7 +37,7 @@ public partial class GitInsightContext : DbContext
 
         using var transaction = this.Database.BeginTransaction();
         RepoChecks.RemoveRange(RepoChecks);
-        //Contributions.RemoveRange(Contributions);
+        Contributions.RemoveRange(Contributions);
         SaveChanges();
         transaction.Commit();
     }
