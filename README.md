@@ -128,3 +128,48 @@ Likely it is also recommendable to add some API tests in a suitable format.
 
 Illustrate the architecture of your REST service using a suitable notation.
 Additionally, illustrate with an UML activity diagram the sequence of operations that your `GitInsight` application performs once triggered with a respective `GET` request and until it responds with the corresponding JSON data.
+
+
+## Week Four (Week 46)
+
+Add a front-end web-application that you write with .Net Blazor (WebAssembly) to your already existing applications.
+That front-end application interacts with your `GitInsight` back-end application via the REST API that you implemented last week.
+
+The front-end application should be able to receive the identifier of a GitHub repository (`<github_user>/<repository_name>` or `<github_organization>/<repository_name>` as described for last week, see above) via a suitable input field.
+
+Next to that input field, implement visualizations to your .Net Blazor front-ends that look similar to those in the illustrations on top of this page.
+These visualizations should present the results of the two analyses that you already implemented in your `GitInsight` applications, i.e., the commit frequencies over time and the and the commit frequencies over time per author.
+You might want to use bar charts or another suitable chart type to present the analyses results.
+
+Besides the [component providers that Rasmus mentioned in his lecture on web-applications](https://github.com/itu-bdsa/lecture-notes/blob/main/sessions/csharp_09/slides.md#component-vendors), you might want to check the following free and open-source tools to create charts with Blazor:
+
+  * [Radzen](https://blazor.radzen.com/)
+    - <https://blazor.radzen.com/chart-trends>
+  * [Blazorize](https://blazorise.com/)
+    - <https://bootstrapdemo.blazorise.com/tests/charts>
+  * [ChartJs.Blazor](https://www.iheartblazor.com/)
+
+
+Additionally, in your `GitInsight` back-end applications implement a new analysis.
+It should be able to list all forks of a repository on GitHub.
+To do so, it should call the [GitHub REST API](https://docs.github.com/en/rest) and [collect a list of all forks from a given repository](https://docs.github.com/en/rest/repos/forks#list-forks).
+That is, when your `GitInsight` REST API receives a `GET` request with a GitHub repository identifier of the form `<github_user>/<repository_name>` or `<github_organization>/<repository_name>`, then besides the two already existing analyses of cloned Git repositories your application contacts the GitHub REST API to collect the number of forks of that repository.
+
+To connect to the GitHub REST API, you need an _Access Token_.
+Read [this documentation](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) on how to receive an Access Token for the GitHub REST API.
+Remember and double check on how Rasmus demonstrated to handle secrets like access tokens in .Net projects.
+That is, do not store the access token directly in your source code.
+It should never end up in your source code repository that is publicly shared with the world.
+
+Implement a visualization of the forks of a GitHub repository as a third visualization.
+It might just be a list view similar as illustrated on top.
+In case you find a more suitable visualization, you are free to choose that instead.
+
+Now that your application changed, update the documentation of your `GitInsight` applications to reflect the current state of the application.
+For sure, update the architecture illustration from last week.
+Likely it is a good idea to illustrate how the front-end and the back-end interact when a new analysis is triggered via a sequence diagram.
+In this case the it will be a sub-system sequence diagram where the blocks on top of swim lanes represent the front-end, back-end, and other systems as sub-systems instead of objects as shown multiple times in lectures, see for example [here](https://www.lucidchart.com/pages/uml-system-sequence-diagram).
+
+Also make sure that your test suite actually tests your current application.
+You likely want to add unit tests and integration tests for the new functionality.
+If you like, add one or more end-to-end tests to your applications' test suite.
