@@ -42,7 +42,7 @@ public class GitInsightFrequencyTests : IDisposable
     [Fact]
     public void Create_Frequency_Should_Create_Frequency_And_Add_To_DB()
     {
-        _freqRepo.Create(new Core.FrequencyCreateDTO(DateTime.Parse("01/01/2023"), 1));
+        _freqRepo.Create(new FrequencyCreateDTO(DateTime.Parse("01/01/2023"), 1));
 
         Assert.Equal(_context.Frequencies.Count(), 5);
     }
