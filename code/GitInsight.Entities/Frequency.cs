@@ -8,7 +8,6 @@ public class Frequency
         this.Date = Date;
     }
 
-
     public DateTime Date { get; set; }
 
     public int Count { get; set; }
