@@ -4,7 +4,7 @@ global using GitInsight.Entities;
 
 global using LibGit2Sharp;
 
-global using System.Reflection;
+global using System;
 
 global using Microsoft.EntityFrameworkCore;
 global using Microsoft.Data.Sqlite;
