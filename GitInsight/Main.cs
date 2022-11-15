@@ -6,6 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using GitInsight;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,6 +14,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
+builder.Services.Configure<RazorPagesOptions>(options => options.RootDirectory = "/Pages");
+builder.Services.AddRazorPages(options => options.RootDirectory = "/Pages");
 builder.Services.AddSingleton<GitInsight.Data.WeatherForecastService>();
 //--------------Real database setup---------------------
 //Naviger til GitInsight folder og kør disse to commands i terminal.
@@ -57,7 +60,7 @@ if (builder.Environment.IsDevelopment())
     app.UseDeveloperExceptionPage();
     app.UseSwagger();
     app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "GetInsight v1"));
-}
+} 
 app.UseStaticFiles();
 
 app.UseRouting();
