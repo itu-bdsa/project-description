@@ -3,15 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GitInsight", "code\GitInsight\GitInsight.csproj", "{F7C7C9C3-535E-4C6C-8021-A038028950A6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GitInsight", "code\GitInsight\GitInsight.csproj", 	"{F7C7C9C3-535E-4C6C-8021-A038028950A6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GitInsight.Test", "code\GitInsight.Test\GitInsight.Test.csproj", "{C5F927C0-1FC3-4B79-BC6E-21E584791BD7}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "code"		, "code", 								"{2588A9E5-81FA-4B85-A881-FDC30B46F61E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GitInsight.WebApp", "code\GitInsight.WebApp\GitInsight.WebApp.csproj", "{30A8288F-A966-4F02-925E-A7DC5822AA1C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models"	, "code\Models\Models.csproj", 			"{1F44350C-B49C-4235-AADF-0BD4F09250C3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GitInsight.Core", "code\GitInsight.Core\GitInsight.Core.csproj", "{4F98F246-6345-46C0-B93A-6553478C0B2F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests"		, "code\Tests\Tests.csproj", 			"{3C499BB6-7932-467A-BF19-75D479978B1E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GitInsight.Entities", "code\GitInsight.Entities\GitInsight.Entities.csproj", "{2FBFF780-ABBC-4B98-8840-371619C6967C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "View"		, "code\View\View.csproj", 				"{DB1D45A3-8F57-4833-9855-02E23C238DD1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "REST"		, "code\REST\REST.csproj", 				"{4626194F-C459-42D9-AB7F-9BB5B877DF54}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -42,5 +44,27 @@ Global
 		{2FBFF780-ABBC-4B98-8840-371619C6967C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2FBFF780-ABBC-4B98-8840-371619C6967C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2FBFF780-ABBC-4B98-8840-371619C6967C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F44350C-B49C-4235-AADF-0BD4F09250C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F44350C-B49C-4235-AADF-0BD4F09250C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F44350C-B49C-4235-AADF-0BD4F09250C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F44350C-B49C-4235-AADF-0BD4F09250C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C499BB6-7932-467A-BF19-75D479978B1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C499BB6-7932-467A-BF19-75D479978B1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C499BB6-7932-467A-BF19-75D479978B1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C499BB6-7932-467A-BF19-75D479978B1E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB1D45A3-8F57-4833-9855-02E23C238DD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB1D45A3-8F57-4833-9855-02E23C238DD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB1D45A3-8F57-4833-9855-02E23C238DD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB1D45A3-8F57-4833-9855-02E23C238DD1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4626194F-C459-42D9-AB7F-9BB5B877DF54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4626194F-C459-42D9-AB7F-9BB5B877DF54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4626194F-C459-42D9-AB7F-9BB5B877DF54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4626194F-C459-42D9-AB7F-9BB5B877DF54}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1F44350C-B49C-4235-AADF-0BD4F09250C3} = {2588A9E5-81FA-4B85-A881-FDC30B46F61E}
+		{3C499BB6-7932-467A-BF19-75D479978B1E} = {2588A9E5-81FA-4B85-A881-FDC30B46F61E}
+		{DB1D45A3-8F57-4833-9855-02E23C238DD1} = {2588A9E5-81FA-4B85-A881-FDC30B46F61E}
+		{4626194F-C459-42D9-AB7F-9BB5B877DF54} = {2588A9E5-81FA-4B85-A881-FDC30B46F61E}
 	EndGlobalSection
 EndGlobal

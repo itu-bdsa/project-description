@@ -1,5 +1,6 @@
 namespace GitInsight;
 
+
 public class CommitTreeContextFactory : IDesignTimeDbContextFactory<CommitTreeContext>
 {
 

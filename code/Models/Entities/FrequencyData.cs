@@ -1,8 +1,8 @@
-namespace GitInsight.Entities;
+namespace Models;
 
-public class Frequency {
+public class FrequencyData {
 
-    public Frequency (DateTime Date) {
+    public FrequencyData (DateTime Date) {
         this.Date = Date;
     }
         

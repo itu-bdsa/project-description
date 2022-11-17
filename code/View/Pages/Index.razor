@@ -1,0 +1,154 @@
+﻿@using Models;
+@using System.Net.Http;
+@using System.Net.Http.Json
+@using System.Threading.Tasks
+@using View.Shared;
+
+@inject HttpClient Http
+@inject NavigationManager NavManager
+
+@page "/"
+
+<PageTitle>Index</PageTitle>
+
+<h1>Hello, world!</h1>
+
+
+<button>don't press me. really. i'm serious</button>
+
+<input @bind="newItemName" placeholder="New Author Data" />
+<button @onclick="AddItem">Add</button>
+
+@* @if (allAuthorData == null)
+{
+    <p>No author data was found.</p>
+}
+else
+{
+    <ul>
+        @foreach (var item in allAuthorData)
+        {
+            <li>@item.Name</li>
+        }
+    </ul>
+} *@
+
+
+
+
+
+@code {
+    private AuthorData[]? allAuthorData;
+    private TodoItem[]? todoItems;
+    private string? newItemName;
+ 
+}
+
+<button onclick=@(async () => await PrintWebApiResponse())>Print Web API Response</button>
+
+@* <button onclick=@(async () => await FillWithDemoData())>Fill with demo data</button>
+<button onclick=@(async () => await DeleteAllCustomers())>Delete all customers</button> *@
+@page "/"
+@if (allAuthorData == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class='table'>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Date</th>
+                <th>Count</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var authorData in allAuthorData)
+            {
+                <tr>
+                    <td>@authorData.Id</td>
+                    <td>@authorData.Name</td>
+                    <td>@authorData.Date</td>
+                    <td>@authorData.Count</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@functions {
+    protected override async Task OnInitializedAsync(){ 
+        allAuthorData = await Http.GetFromJsonAsync<AuthorData[]>("api/authordatarepository");
+        await RefreshAllAuthorData();
+    }
+    private async Task AddItem(){
+        var addItem = new AuthorData() { Name = newItemName };
+        await Http.PostAsJsonAsync("api/authordatarepository", addItem);
+        // NavManager.NavigateTo("/fetch-data-via-factory");
+    }
+
+    // THESE ARE PASTE:
+
+    private async Task RefreshAllAuthorData()
+    {
+        allAuthorData = await Http.GetFromJsonAsync<AuthorData[]>("/api/authordatarepository/getallauthordata");
+        StateHasChanged();
+    }
+
+    @* private async Task FillWithDemoData()
+    {
+        for (var i = 0; i < 10; i++)
+        {
+            await Http.SendJsonAsync(HttpMethod.Post, "/api/Customer", new Customer
+            {
+                FirstName = "Tom",
+                LastName = $"Customer {i}",
+                Department = i % 2 == 0 ? "Sales" : "Research"
+            });
+        }
+
+        await RefreshCustomerList();
+    } *@
+
+    @* private async Task DeleteAllCustomers()
+    {
+        foreach (var c in Customers)
+        {
+            await Http.DeleteAsync($"/api/Customer/{c.ID}");
+        }
+
+        await RefreshCustomerList();
+    } *@
+
+    private async Task PrintWebApiResponse()
+    {
+        var response = await Http.GetStringAsync("/api/AuthorDataRepository");
+        Console.WriteLine(response);
+    }
+
+    
+
+}
+
+@* 
+<input type="checkbox" @bind="editItem.IsComplete" />
+<input @bind="editItem.Name" />
+<button @onclick="SaveItem">Save</button>
+
+@code {
+    private string? id;
+    private TodoItem editItem = new TodoItem();
+
+    private void EditItem(long id)
+    {
+        editItem = todoItems.Single(i => i.Id == id);
+    }
+
+    private async Task SaveItem() =>
+        await Http.PutAsJsonAsync($"api/TodoItems/{editItem.Id}", editItem);
+} *@
+
+
+

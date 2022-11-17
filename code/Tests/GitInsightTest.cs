@@ -1,7 +1,7 @@
 using System.Reflection;
 using LibGit2Sharp;
 
-namespace GitInsight.Test;
+namespace Tests;
 public class GitInsightTest
 {
 
@@ -66,14 +66,14 @@ public class GitInsightTest
     {
         // // Given
         SetupTests();
-        var firstExpected = Mode.NULL;
+        var firstExpected = Modes.NULL;
         Assert.Equal(_app.GetMode(), firstExpected);
 
         // // When
-        _app.SetMode(Mode.AUTHOR);
+        _app.SetMode(Modes.AUTHOR);
 
         // // Then
-        Assert.Equal(_app.GetMode(), Mode.AUTHOR);
+        Assert.Equal(_app.GetMode(), Modes.AUTHOR);
         CloseTest();
     }
 
@@ -87,7 +87,7 @@ public class GitInsightTest
         Console.SetOut(writer);
 
         // When
-        _repo.Print(Mode.AUTHOR);
+        _repo.Print(Modes.AUTHOR);
 
         // Then
         var output = writer.GetStringBuilder().ToString().TrimEnd();
@@ -111,7 +111,7 @@ public class GitInsightTest
         Console.SetOut(writer);
 
         // When
-        _repo.Print(Mode.FREQUENCY);
+        _repo.Print(Modes.FREQUENCY);
 
         // Then
         var output = writer.GetStringBuilder().ToString().TrimEnd();

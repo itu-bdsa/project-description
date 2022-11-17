@@ -1,4 +1,4 @@
-namespace GitInsight.Entities;
+namespace Models;
 
 public sealed class CommitTreeContext : DbContext , ICommitTreeContext
 {
@@ -7,8 +7,10 @@ public sealed class CommitTreeContext : DbContext , ICommitTreeContext
     {
     }
 
-    public DbSet<Author> Authors => Set<Author>();
-    public DbSet<Frequency> Frequencies => Set<Frequency>();
+    public DbSet<AuthorData> allAuthorData => Set<AuthorData>();
+    public DbSet<FrequencyData> allFrequencyData => Set<FrequencyData>();
+
+    public DbSet<TodoItem> TodoItems { get; set; } = null!;
     
 
 //NOTE for later use, incase we need to specify type conversions susch as Enums.
