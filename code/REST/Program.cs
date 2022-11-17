@@ -14,7 +14,7 @@ class Program
         builder.Services.AddDbContext<CommitTreeContext>(opt =>
             opt.UseInMemoryDatabase("inMemDB"));
         builder.Services.AddCors(options => {
-            options.AddPolicy("Open", builder => builder.AllowAnyOrigin().AllowAnyHeader());
+            options.AddPolicy("Open", builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
         });
         
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

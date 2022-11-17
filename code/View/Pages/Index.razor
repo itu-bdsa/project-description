@@ -80,6 +80,7 @@ else
 
 @functions {
     protected override async Task OnInitializedAsync(){ 
+        
         allAuthorData = await Http.GetFromJsonAsync<AuthorData[]>("api/authordatarepository");
         await RefreshAllAuthorData();
     }
