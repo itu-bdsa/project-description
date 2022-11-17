@@ -1,3 +1,4 @@
+using System.IO;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Microsoft.Playwright.NUnit;
@@ -12,21 +13,9 @@ public class Tests : PageTest
     [Test]
     public async Task HomepageHasPlaywrightInTitleAndGetStartedLinkLinkingtoTheIntroPage()
     {
-        await Page.GotoAsync("https://playwright.dev");
-
-        // Expect a title "to contain" a substring.
-        await Expect(Page).ToHaveTitleAsync(new Regex("Playwright"));
-
-        // create a locator
-        var getStarted = Page.GetByRole(AriaRole.Link, new() { NameString = "Get started" });
-
-        // Expect an attribute "to be strictly equal" to the value.
-        await Expect(getStarted).ToHaveAttributeAsync("href", "/docs/intro");
-
-        // Click the get started link.
-        await getStarted.ClickAsync();
-
-        // E    xpects the URL to contain intro.
-        await Expect(Page).ToHaveURLAsync(new Regex(".*intro"));
+        await Page.GotoAsync("https://localhost:7111/fetchdata");
+        await Expect(Page).ToHaveTitleAsync("GitInsight");
+        //await Page.Locator("input type").TypeAsync("SpaceVikingEik/hewwo"); does not work
+        
     }
 }
