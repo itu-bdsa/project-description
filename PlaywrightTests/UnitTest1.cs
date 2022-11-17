@@ -15,7 +15,7 @@ public class Tests : PageTest
     {
         await Page.GotoAsync("https://localhost:7111/fetchdata");
         await Expect(Page).ToHaveTitleAsync("GitInsight");
-        //await Page.Locator("input type").TypeAsync("SpaceVikingEik/hewwo"); does not work
-        
+                //await Page.Locator("input type").TypeAsync("SpaceVikingEik/hewwo"); does not work
+
     }
 }
