@@ -942,3 +942,16 @@ C:\Users\annem\Desktop\BDSA_PROJECT\GitInsight\obj\Debug\net6.0\scopedcss\Shared
 C:\Users\annem\Desktop\BDSA_PROJECT\GitInsight\obj\Debug\net6.0\scopedcss\Shared\NavMenu.razor.rz.scp.css
 C:\Users\annem\Desktop\BDSA_PROJECT\GitInsight\obj\Debug\net6.0\scopedcss\bundle\GitInsight.styles.css
 C:\Users\annem\Desktop\BDSA_PROJECT\GitInsight\obj\Debug\net6.0\scopedcss\projectbundle\GitInsight.bundle.scp.css
+C:\Users\Bruger\Desktop\BDSA\BDSA_PROJECT\GitInsight\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\Bruger\Desktop\BDSA\BDSA_PROJECT\GitInsight\bin\Debug\net6.0\appsettings.json
+C:\Users\Bruger\Desktop\BDSA\BDSA_PROJECT\GitInsight\bin\Debug\net6.0\GitInsight.staticwebassets.runtime.json
+C:\Users\Bruger\Desktop\BDSA\BDSA_PROJECT\GitInsight\obj\Debug\net6.0\GitInsight.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Bruger\Desktop\BDSA\BDSA_PROJECT\GitInsight\obj\Debug\net6.0\GitInsight.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Bruger\Desktop\BDSA\BDSA_PROJECT\GitInsight\obj\Debug\net6.0\GitInsight.RazorAssemblyInfo.cache
+C:\Users\Bruger\Desktop\BDSA\BDSA_PROJECT\GitInsight\obj\Debug\net6.0\GitInsight.RazorAssemblyInfo.cs
+C:\Users\Bruger\Desktop\BDSA\BDSA_PROJECT\GitInsight\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\Bruger\Desktop\BDSA\BDSA_PROJECT\GitInsight\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\Bruger\Desktop\BDSA\BDSA_PROJECT\GitInsight\obj\Debug\net6.0\scopedcss\Shared\MainLayout.razor.rz.scp.css
+C:\Users\Bruger\Desktop\BDSA\BDSA_PROJECT\GitInsight\obj\Debug\net6.0\scopedcss\Shared\NavMenu.razor.rz.scp.css
+C:\Users\Bruger\Desktop\BDSA\BDSA_PROJECT\GitInsight\obj\Debug\net6.0\scopedcss\bundle\GitInsight.styles.css
+C:\Users\Bruger\Desktop\BDSA\BDSA_PROJECT\GitInsight\obj\Debug\net6.0\scopedcss\projectbundle\GitInsight.bundle.scp.css

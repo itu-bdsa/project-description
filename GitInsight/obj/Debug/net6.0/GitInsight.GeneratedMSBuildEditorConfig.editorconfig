@@ -8,49 +8,49 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = GitInsight
 build_property.RootNamespace = GitInsight
-build_property.ProjectDir = C:\Users\annem\Desktop\BDSA_PROJECT\GitInsight\
+build_property.ProjectDir = C:\Users\Bruger\Desktop\BDSA\BDSA_PROJECT\gitinsight\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\annem\Desktop\BDSA_PROJECT\GitInsight
+build_property.MSBuildProjectDirectory = C:\Users\Bruger\Desktop\BDSA\BDSA_PROJECT\gitinsight
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/annem/Desktop/BDSA_PROJECT/GitInsight/App.razor]
+[C:/Users/Bruger/Desktop/BDSA/BDSA_PROJECT/gitinsight/App.razor]
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/annem/Desktop/BDSA_PROJECT/GitInsight/Pages/Counter.razor]
+[C:/Users/Bruger/Desktop/BDSA/BDSA_PROJECT/gitinsight/Pages/Counter.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/annem/Desktop/BDSA_PROJECT/GitInsight/Pages/FetchData.razor]
+[C:/Users/Bruger/Desktop/BDSA/BDSA_PROJECT/gitinsight/Pages/FetchData.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmV0Y2hEYXRhLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/annem/Desktop/BDSA_PROJECT/GitInsight/Pages/Index.razor]
+[C:/Users/Bruger/Desktop/BDSA/BDSA_PROJECT/gitinsight/Pages/Index.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/annem/Desktop/BDSA_PROJECT/GitInsight/Shared/SurveyPrompt.razor]
+[C:/Users/Bruger/Desktop/BDSA/BDSA_PROJECT/gitinsight/Shared/SurveyPrompt.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFN1cnZleVByb21wdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/annem/Desktop/BDSA_PROJECT/GitInsight/_Imports.razor]
+[C:/Users/Bruger/Desktop/BDSA/BDSA_PROJECT/gitinsight/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/annem/Desktop/BDSA_PROJECT/GitInsight/Shared/MainLayout.razor]
+[C:/Users/Bruger/Desktop/BDSA/BDSA_PROJECT/gitinsight/Shared/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-gkduaegyiv
 
-[C:/Users/annem/Desktop/BDSA_PROJECT/GitInsight/Shared/NavMenu.razor]
+[C:/Users/Bruger/Desktop/BDSA/BDSA_PROJECT/gitinsight/Shared/NavMenu.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5hdk1lbnUucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-o83216bj43
 
-[C:/Users/annem/Desktop/BDSA_PROJECT/GitInsight/Pages/Error.cshtml]
+[C:/Users/Bruger/Desktop/BDSA/BDSA_PROJECT/gitinsight/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/annem/Desktop/BDSA_PROJECT/GitInsight/Pages/_Host.cshtml]
+[C:/Users/Bruger/Desktop/BDSA/BDSA_PROJECT/gitinsight/Pages/_Host.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0hvc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
