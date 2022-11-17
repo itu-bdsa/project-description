@@ -1057,3 +1057,6 @@ c:\Users\eikbo\Skrivebord\BDSA\BDSA_PROJECT\GitInsight.Tests\bin\Debug\net6.0\Gi
 c:\Users\eikbo\Skrivebord\BDSA\BDSA_PROJECT\GitInsight.Tests\bin\Debug\net6.0\GitInsight.Entities.dll
 c:\Users\eikbo\Skrivebord\BDSA\BDSA_PROJECT\GitInsight.Tests\bin\Debug\net6.0\GitInsight.Entities.pdb
 c:\Users\eikbo\Skrivebord\BDSA\BDSA_PROJECT\GitInsight.Tests\bin\Debug\net6.0\GitInsight.Core.pdb
+c:\Users\annem\Desktop\BDSA_PROJECT\GitInsight.Tests\bin\Debug\net6.0\appsettings.Development.json
+c:\Users\annem\Desktop\BDSA_PROJECT\GitInsight.Tests\bin\Debug\net6.0\appsettings.json
+c:\Users\annem\Desktop\BDSA_PROJECT\GitInsight.Tests\bin\Debug\net6.0\GitInsight.staticwebassets.runtime.json
