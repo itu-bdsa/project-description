@@ -1,7 +1,7 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Bruger\\Desktop\\BDSA\\BDSA_PROJECT\\GitInsight\\GitInsight.csproj": {}
+    "C:\\Users\\Bruger\\Desktop\\BDSA\\BDSA_PROJECT\\gitinsight\\GitInsight.csproj": {}
   },
   "projects": {
     "C:\\Users\\Bruger\\Desktop\\BDSA\\BDSA_PROJECT\\GitInsight.Core\\GitInsight.Core.csproj": {
@@ -170,14 +170,14 @@
         }
       }
     },
-    "C:\\Users\\Bruger\\Desktop\\BDSA\\BDSA_PROJECT\\GitInsight\\GitInsight.csproj": {
+    "C:\\Users\\Bruger\\Desktop\\BDSA\\BDSA_PROJECT\\gitinsight\\GitInsight.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Bruger\\Desktop\\BDSA\\BDSA_PROJECT\\GitInsight\\GitInsight.csproj",
+        "projectUniqueName": "C:\\Users\\Bruger\\Desktop\\BDSA\\BDSA_PROJECT\\gitinsight\\GitInsight.csproj",
         "projectName": "GitInsight",
-        "projectPath": "C:\\Users\\Bruger\\Desktop\\BDSA\\BDSA_PROJECT\\GitInsight\\GitInsight.csproj",
+        "projectPath": "C:\\Users\\Bruger\\Desktop\\BDSA\\BDSA_PROJECT\\gitinsight\\GitInsight.csproj",
         "packagesPath": "C:\\Users\\Bruger\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Bruger\\Desktop\\BDSA\\BDSA_PROJECT\\GitInsight\\obj\\",
+        "outputPath": "C:\\Users\\Bruger\\Desktop\\BDSA\\BDSA_PROJECT\\gitinsight\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Bruger\\AppData\\Roaming\\NuGet\\NuGet.Config"

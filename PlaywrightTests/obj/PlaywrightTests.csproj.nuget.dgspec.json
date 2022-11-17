@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Bruger\\Desktop\\BDSA\\BDSA_PROJECT\\PlayWrightTests\\PlaywrightTests.csproj": {}
+    "C:\\Users\\Bruger\\Desktop\\BDSA\\BDSA_PROJECT\\PlaywrightTests\\PlaywrightTests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Bruger\\Desktop\\BDSA\\BDSA_PROJECT\\PlayWrightTests\\PlaywrightTests.csproj": {
+    "C:\\Users\\Bruger\\Desktop\\BDSA\\BDSA_PROJECT\\PlaywrightTests\\PlaywrightTests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Bruger\\Desktop\\BDSA\\BDSA_PROJECT\\PlayWrightTests\\PlaywrightTests.csproj",
+        "projectUniqueName": "C:\\Users\\Bruger\\Desktop\\BDSA\\BDSA_PROJECT\\PlaywrightTests\\PlaywrightTests.csproj",
         "projectName": "PlaywrightTests",
-        "projectPath": "C:\\Users\\Bruger\\Desktop\\BDSA\\BDSA_PROJECT\\PlayWrightTests\\PlaywrightTests.csproj",
+        "projectPath": "C:\\Users\\Bruger\\Desktop\\BDSA\\BDSA_PROJECT\\PlaywrightTests\\PlaywrightTests.csproj",
         "packagesPath": "C:\\Users\\Bruger\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Bruger\\Desktop\\BDSA\\BDSA_PROJECT\\PlayWrightTests\\obj\\",
+        "outputPath": "C:\\Users\\Bruger\\Desktop\\BDSA\\BDSA_PROJECT\\PlaywrightTests\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Bruger\\AppData\\Roaming\\NuGet\\NuGet.Config"
