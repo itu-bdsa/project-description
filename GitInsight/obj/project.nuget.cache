@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "SOGwrlkLGxtb2rocKtFQeAoEgSftxsieFL69mHOWm5EdWFk8k+QIcDg+88wGnUa3Z+eqNXs84jq9j85iPkDWgQ==",
+  "dgSpecHash": "enwCfsy7+cKCrOVQUcEYuE68jTAOuz90vHohWf31tOK9RUlT0pZAj1SdtYtLsDg4RLVEyfosY/S0QqRDLaZigA==",
   "success": true,
-  "projectFilePath": "c:\\Users\\eikbo\\Skrivebord\\BDSA\\BDSA_PROJECT\\GitInsight\\GitInsight.csproj",
+  "projectFilePath": "C:\\Users\\eikbo\\Skrivebord\\BDSA\\BDSA_PROJECT\\GitInsight\\GitInsight.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\eikbo\\.nuget\\packages\\commandlineparser\\2.9.1\\commandlineparser.2.9.1.nupkg.sha512",
     "C:\\Users\\eikbo\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",

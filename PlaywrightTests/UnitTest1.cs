@@ -17,23 +17,21 @@ public class Tests : PageTest
     public async Task WeCanNavigateToFetchDataAndYoinkSomeData()
     {
 
-         await Page.GotoAsync("https://localhost:7111/");
+        await Page.GotoAsync("https://localhost:7111/");
 
         await Page.GetByRole(AriaRole.Link, new() { NameString = "Fetch data" }).ClickAsync();
 
-        await Page.GetByRole(AriaRole.Textbox).First.ClickAsync();
+        await Page.GetByRole(AriaRole.Textbox).ClickAsync();
 
-        await Page.GetByRole(AriaRole.Textbox).First.FillAsync("SpaceVikingEik/hewwo");
-
-        await Page.GetByRole(AriaRole.Textbox).First.PressAsync("Tab");
-
-        await Page.GetByRole(AriaRole.Textbox).Nth(1).FillAsync("FQMode");
+        await Page.GetByRole(AriaRole.Textbox).FillAsync("SpaceVikingEik/hewwo");
 
         await Page.GetByRole(AriaRole.Button, new() { NameString = "Run Analysis" }).ClickAsync();
 
-        await Page.GetByRole(AriaRole.Row, new() { NameString = "SpaceVikingEik/hewwo 12-11-2022 4" }).GetByRole(AriaRole.Cell, new() { NameString = "SpaceVikingEik/hewwo" }).ClickAsync();
+        await Page.Locator("svg").Filter(new() { HasTextString = "0 5 10 15 20 Commits 12-11-2022 13-11-2022 20 20" }).ClickAsync();
 
-        await Page.GetByRole(AriaRole.Row, new() { NameString = "SpaceVikingEik/hewwo 13-11-2022 4" }).GetByRole(AriaRole.Cell, new() { NameString = "SpaceVikingEik/hewwo" }).ClickAsync();
+        await Page.Locator("svg").Filter(new() { HasTextString = "8 10 12 12-11-2022 13-11-2022 9 20" }).ClickAsync();
+
+        await Page.Locator("svg").Filter(new() { HasTextString = "0 2 4 12-11-2022 3" }).ClickAsync();
 
     }
 }

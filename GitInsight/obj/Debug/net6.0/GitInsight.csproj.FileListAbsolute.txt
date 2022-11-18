@@ -942,7 +942,6 @@ C:\Users\annem\Desktop\BDSA_PROJECT\GitInsight\obj\Debug\net6.0\scopedcss\Shared
 C:\Users\annem\Desktop\BDSA_PROJECT\GitInsight\obj\Debug\net6.0\scopedcss\Shared\NavMenu.razor.rz.scp.css
 C:\Users\annem\Desktop\BDSA_PROJECT\GitInsight\obj\Debug\net6.0\scopedcss\bundle\GitInsight.styles.css
 C:\Users\annem\Desktop\BDSA_PROJECT\GitInsight\obj\Debug\net6.0\scopedcss\projectbundle\GitInsight.bundle.scp.css
-<<<<<<< HEAD
 C:\Users\Bruger\Desktop\BDSA\BDSA_PROJECT\GitInsight\bin\Debug\net6.0\appsettings.Development.json
 C:\Users\Bruger\Desktop\BDSA\BDSA_PROJECT\GitInsight\bin\Debug\net6.0\appsettings.json
 C:\Users\Bruger\Desktop\BDSA\BDSA_PROJECT\GitInsight\bin\Debug\net6.0\GitInsight.staticwebassets.runtime.json
@@ -956,7 +955,8 @@ C:\Users\Bruger\Desktop\BDSA\BDSA_PROJECT\GitInsight\obj\Debug\net6.0\scopedcss\
 C:\Users\Bruger\Desktop\BDSA\BDSA_PROJECT\GitInsight\obj\Debug\net6.0\scopedcss\Shared\NavMenu.razor.rz.scp.css
 C:\Users\Bruger\Desktop\BDSA\BDSA_PROJECT\GitInsight\obj\Debug\net6.0\scopedcss\bundle\GitInsight.styles.css
 C:\Users\Bruger\Desktop\BDSA\BDSA_PROJECT\GitInsight\obj\Debug\net6.0\scopedcss\projectbundle\GitInsight.bundle.scp.css
-=======
 C:\Users\annem\Desktop\BDSA_PROJECT\GitInsight\bin\Debug\net6.0\Radzen.Blazor.dll
 C:\Users\annem\Desktop\BDSA_PROJECT\GitInsight\bin\Debug\net6.0\System.Linq.Dynamic.Core.dll
 >>>>>>> origin/barChart
+C:\Users\eikbo\Skrivebord\BDSA\BDSA_PROJECT\GitInsight\bin\Debug\net6.0\Radzen.Blazor.dll
+C:\Users\eikbo\Skrivebord\BDSA\BDSA_PROJECT\GitInsight\bin\Debug\net6.0\System.Linq.Dynamic.Core.dll
