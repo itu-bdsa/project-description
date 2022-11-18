@@ -248,6 +248,10 @@
               "target": "Package",
               "version": "[6.0.10, )"
             },
+            "Radzen.Blazor": {
+              "target": "Package",
+              "version": "[4.3.6, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.2.3, )"
