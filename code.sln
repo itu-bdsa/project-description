@@ -3,8 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GitInsight", "code\GitInsight\GitInsight.csproj", 	"{F7C7C9C3-535E-4C6C-8021-A038028950A6}"
-EndProject
+
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "code"		, "code", 								"{2588A9E5-81FA-4B85-A881-FDC30B46F61E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models"	, "code\Models\Models.csproj", 			"{1F44350C-B49C-4235-AADF-0BD4F09250C3}"
