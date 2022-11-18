@@ -7,7 +7,9 @@
 
     <IsPackable>false</IsPackable>
   </PropertyGroup>
-
+    <ItemGroup>
+    <ProjectReference Include="GitInsight"/>
+  </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.1.0" />
     <PackageReference Include="Microsoft.Playwright.NUnit" Version="1.28.0" />

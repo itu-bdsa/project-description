@@ -2,6 +2,7 @@ using System.IO;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Microsoft.Playwright.NUnit;
+using GitInsight;
 using NUnit.Framework;
 
 namespace PlaywrightTests;
@@ -10,6 +11,8 @@ namespace PlaywrightTests;
 [TestFixture]
 public class Tests : PageTest
 {
+
+    //Startup Website, pgAdmin needs to be turned on
     [Test]
     public async Task HomepageHasPlaywrightInTitleAndGetStartedLinkLinkingtoTheIntroPage()
     {
