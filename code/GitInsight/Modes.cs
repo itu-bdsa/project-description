@@ -1,5 +1,5 @@
 namespace GitInsight;
-public enum Mode
+public enum Modes
 {
     NULL,
     AUTHOR,

@@ -1,5 +1,5 @@
 namespace GitInsight;
-using static Mode;
+using static Modes;
 
 public class Data
 {
@@ -16,7 +16,7 @@ public class Data
         _repo = new Repository(Repository.Clone(url, "repoData/deleteMe"));
     }
 
-    public void Print(Mode mode)
+    public void Print(Modes mode)
     {
         if (mode == FREQUENCY)
         {
