@@ -11,10 +11,29 @@ namespace PlaywrightTests;
 [TestFixture]
 public class Tests : PageTest
 {
-
-    //Startup Website, pgAdmin needs to be turned on
     [Test]
-    public async Task WeCanNavigateToFetchDataAndYoinkSomeData()
+    public async Task LocalHostIsActive()
+    {
+
+        await Page.GotoAsync("https://localhost:7111/");
+
+        await Page.GetByRole(AriaRole.Heading, new() { NameString = "Hello, world!" }).ClickAsync();
+
+    }
+    [Test]
+    public async Task FetchDataIsActive()
+    {
+
+        await Page.GotoAsync("https://localhost:7111/");
+
+        await Page.GetByRole(AriaRole.Link, new() { NameString = "Fetch data" }).ClickAsync();
+
+        await Page.GetByRole(AriaRole.Heading, new() { NameString = "GitInsight" }).ClickAsync();
+
+    }
+
+       [Test]
+    public async Task UserIsAbleToAnalyseAnRepo()
     {
 
         await Page.GotoAsync("https://localhost:7111/");
@@ -27,11 +46,10 @@ public class Tests : PageTest
 
         await Page.GetByRole(AriaRole.Button, new() { NameString = "Run Analysis" }).ClickAsync();
 
-        await Page.Locator("svg").Filter(new() { HasTextString = "0 5 10 15 20 Commits 12-11-2022 13-11-2022 20 20" }).ClickAsync();
+        await Page.GetByRole(AriaRole.Heading, new() { NameString = "FQMode Barchart" }).ClickAsync();
 
-        await Page.Locator("svg").Filter(new() { HasTextString = "8 10 12 12-11-2022 13-11-2022 9 20" }).ClickAsync();
-
-        await Page.Locator("svg").Filter(new() { HasTextString = "0 2 4 12-11-2022 3" }).ClickAsync();
+        await Page.GetByRole(AriaRole.Heading, new() { NameString = "AuthMode Barchart(s)" }).ClickAsync();
 
     }
+
 }
