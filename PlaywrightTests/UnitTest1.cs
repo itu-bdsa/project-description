@@ -11,6 +11,8 @@ namespace PlaywrightTests;
 [TestFixture]
 public class Tests : PageTest
 {
+
+    //Husk at starte websitet op før testing!!
     [Test]
     public async Task LocalHostIsActive()
     {
