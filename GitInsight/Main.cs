@@ -8,6 +8,8 @@ using Microsoft.AspNetCore.Components.Web;
 using GitInsight;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
+using Newtonsoft.Json;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -44,6 +46,10 @@ builder.Services.AddDbContext<GitInsightContext>(options =>
      //lortet funker kun med Npgsql server, dunno why but it works
 
 AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
+
+// JsonConvert.
+
+
 
 //-------------------------------------
 

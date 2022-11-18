@@ -6,18 +6,11 @@
 
 <h1>GitInsight</h1>
 
-<p>Please write github repository and what mode to analyze in:</p>
-<p>- FQMode </p>
-<p>- AuthMode </p>
+<p>Please write github repository:</p>
 
 <div>
     Repository:
     <input type="text" @bind="gitRepoInput">
-</div>
-<br>
-<div> 
-    Analyze Mode:
-    <input type="text" @bind="analyzeModeInput"> 
 </div>
 <br>
 <div>
@@ -27,92 +20,67 @@
 </div>
 
 <br>
-<div>
-@if (FQresult == null && Authresult == null)
+@if (!showTable)
 {
     <p><em>Waiting for input...</em></p>
 }
-else if (FQresult != null)
+else if (showTable)
 {
-    <table id = "FQTable" class="table">
-        <thead>
-            <tr>
-                <th>Github Repository</th>
-                <th>Date</th>
-                <th>Total Commits</th>
-            </tr>
-        </thead>
-<tbody>
-                 @foreach (GitInsight.Entities.RepoCheckRepository.comFreqObj result in FQresult)
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 my-5">
+            <h4>FQMode Barchart</h4>
+            <RadzenChart ColorScheme=ColorScheme.Divergent>
+                <RadzenColumnSeries Data="@FQresult" Title="FQ" CategoryProperty="date" LineType="LineType.Dashed" ValueProperty="commits">
+                    <RadzenSeriesDataLabels Visible="@showTable" />
+                </RadzenColumnSeries>
+                <RadzenColumnOptions Radius="5" />
+                <RadzenValueAxis>
+                    <RadzenGridLines Visible="true" />
+                    <RadzenAxisTitle Text="Commits" />
+                </RadzenValueAxis>
+            </RadzenChart>
+
+            <h4>AuthMode Barchart(s)</h4>
+            @foreach (var auth in Authresult)
             {
-                <tr>
-                    <td>@gitRepoInput</td>
-                    <td>@result.date.Replace("00:00:00", "")</td>
-                    <td>@result.commits</td>
-                </tr>
-            } 
-        </tbody>
-    </table>
-} else if (Authresult != null){
-    <table id = "AuthTable" class="table">
-        <thead>
-            <tr>
-                <th>Github Repository</th>
-                <th>Author</th>
-                <th>Date</th>
-                <th>Total Commits</th>
-            </tr>
-        </thead>
-<tbody>
-        @foreach (GitInsight.Entities.RepoCheckRepository.userComFreqObj result in Authresult)
-            {
-                @foreach (var contr in @result.datesCommits)
-                    {
-                    <tr>
-                        <td>@gitRepoInput</td>
-                        <td>@result.author.ToString();</td>
-                        <td>@contr.Item1.Replace("00:00:00", "")</td>
-                        <td>@contr.Item2</td>
-                    </tr>
-                    }
-            } 
-        </tbody>
-    </table>
-}
+                <RadzenChart ColorScheme=ColorScheme.Pastel>
+                    <RadzenColumnSeries Data=@auth.datesCommits Title=@auth.author CategoryProperty="date" LineType="LineType.Dashed" ValueProperty="totalCommits">
+                        <RadzenSeriesDataLabels Visible="@showTable" />
+                        <RadzenLegend Position="LegendPosition.Top" />
+                    </RadzenColumnSeries>
+                </RadzenChart> 
+            }        
+        </div>
+    </div>
 </div>
 
+}
 
 @code {
-
-    public string gitRepoInput {get; set; }
-
-    public string analyzeModeInput {get; set; }
+    bool showTable = false;
+    public string gitRepoInput { get; set; }
     private List<GitInsight.Entities.RepoCheckRepository.comFreqObj> FQresult;
 
     private List<GitInsight.Entities.RepoCheckRepository.userComFreqObj> Authresult;
 
     public void submitInput(){
-        //"SpaceVikingEik/hewwo", "FQMode"
-        Console.WriteLine(this.gitRepoInput);
-        Console.WriteLine(this.analyzeModeInput);
+        //SpaceVikingEik/hewwo
+        //bliver graf opdateret hvis analyse kører igen og der er ændringer?
 
-        if(this.analyzeModeInput == "FQMode"){
-            runFQMode();
-        } else if (this.analyzeModeInput == "AuthMode"){
-            runAuthMode();
-        }
+        runFQMode();
+        runAuthMode();
+        this.showTable = true;
     }
 
     private void runFQMode(){
-        Authresult = null;
-        Microsoft.AspNetCore.Mvc.OkObjectResult tempResult = (Microsoft.AspNetCore.Mvc.OkObjectResult) Controller.GetAnalysis(this.gitRepoInput, this.analyzeModeInput);
-        FQresult = tempResult.Value as List<GitInsight.Entities.RepoCheckRepository.comFreqObj>;
+        Microsoft.AspNetCore.Mvc.OkObjectResult tempResult = (Microsoft.AspNetCore.Mvc.OkObjectResult) Controller.GetAnalysis(this.gitRepoInput, "FQMode");
+        this.FQresult = tempResult.Value as List<GitInsight.Entities.RepoCheckRepository.comFreqObj>;
     }
 
     private void runAuthMode(){
-        FQresult = null;
-        Microsoft.AspNetCore.Mvc.OkObjectResult tempResult = (Microsoft.AspNetCore.Mvc.OkObjectResult) Controller.GetAnalysis(this.gitRepoInput, this.analyzeModeInput);
-        Authresult = tempResult.Value as List<GitInsight.Entities.RepoCheckRepository.userComFreqObj>;
+        Microsoft.AspNetCore.Mvc.OkObjectResult tempResult = (Microsoft.AspNetCore.Mvc.OkObjectResult) Controller.GetAnalysis(this.gitRepoInput, "AuthMode");
+        this.Authresult = tempResult.Value as List<GitInsight.Entities.RepoCheckRepository.userComFreqObj>;
     }
 
 }
