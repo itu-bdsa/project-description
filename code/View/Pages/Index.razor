@@ -9,7 +9,7 @@
 
 @page "/"
 
-<PageTitle>Index</PageTitle>
+
 
 <h1>Hello, world!</h1>
 
@@ -81,12 +81,12 @@ else
 @functions {
     protected override async Task OnInitializedAsync(){ 
         
-        allAuthorData = await Http.GetFromJsonAsync<AuthorData[]>("api/authordatarepository");
+        allAuthorData = await Http.GetFromJsonAsync<AuthorData[]>("api/authordatarepository/getallauthordata");
         await RefreshAllAuthorData();
     }
     private async Task AddItem(){
         var addItem = new AuthorData() { Name = newItemName };
-        await Http.PostAsJsonAsync("api/authordatarepository", addItem);
+        await Http.PostAsJsonAsync("api/authordatarepository/postauthordata", addItem);
         // NavManager.NavigateTo("/fetch-data-via-factory");
     }
 
@@ -125,7 +125,7 @@ else
 
     private async Task PrintWebApiResponse()
     {
-        var response = await Http.GetStringAsync("/api/authordatarepository");
+        var response = await Http.GetStringAsync("/api/authordatarepository/getallauthordata");
         Console.WriteLine(response);
     }
 

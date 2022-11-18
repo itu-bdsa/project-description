@@ -5,7 +5,13 @@ class Program
 {
     static void Main(string[] args)
     {
+        var  MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
         var builder = WebApplication.CreateBuilder(args);
+
+        builder.Services.AddCors(options =>
+            {
+                options.AddDefaultPolicy(policy  => { policy.WithOrigins("https://localhost:7251").AllowAnyHeader().AllowAnyMethod();});
+            });
 
         // Add services to the container.
 
@@ -13,9 +19,10 @@ class Program
         // builder.Services.AddDbContext<CommitTreeContext>();
         builder.Services.AddDbContext<CommitTreeContext>(opt =>
             opt.UseInMemoryDatabase("inMemDB"));
-        builder.Services.AddCors(options => {
-            options.AddPolicy("Open", builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
-        });
+            
+        // builder.Services.AddCors(options => {
+        //     options.AddPolicy("Open", builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+        // });
         
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
         builder.Services.AddEndpointsApiExplorer();
@@ -30,7 +37,10 @@ class Program
             app.UseSwaggerUI();
         }
 
-        app.UseHttpsRedirection();
+        // app.UseHttpsRedirection();
+
+
+        app.UseCors();
 
         app.UseAuthorization();
 

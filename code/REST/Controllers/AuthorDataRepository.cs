@@ -76,7 +76,7 @@ public class AuthorDataRepository : ControllerBase
 
     // POST: api/allAuthorData
     // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-    [HttpPost]
+    [HttpPost (Name = "postauthordata")]
     public async Task<ActionResult<AuthorData>> PostAuthorData(AuthorData authorData)
     {
         if (_context.allAuthorData == null)
