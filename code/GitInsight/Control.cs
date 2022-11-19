@@ -1,10 +1,10 @@
 namespace GitInsight;
 
-using static Mode;
+using static Modes;
 public class Control
 {
     private Data? _repo;
-    private Mode _mode;
+    private Modes _mode;
     private Boolean _isLoaded;
     public void Run()
     {
@@ -18,11 +18,11 @@ public class Control
             switch (input)
             {
                 case "author":
-                    SetMode(Mode.AUTHOR);
+                    SetMode(Modes.AUTHOR);
                     Console.WriteLine("Current Mode: AUTHOR");
                     break;
                 case "frequency":
-                    SetMode(Mode.FREQUENCY);
+                    SetMode(Modes.FREQUENCY);
                     Console.WriteLine("Current Mode: FREQUENCY");
                     break;
                 case "print":
@@ -61,12 +61,12 @@ public class Control
         }
     }
 
-    public Mode GetMode()
+    public Modes GetMode()
     {
         return _mode;
     }
 
-    public void SetMode(Mode mode)
+    public void SetMode(Modes mode)
     {
         _mode = mode;
     }
