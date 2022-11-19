@@ -1,4 +1,4 @@
-@page "/fetch-data-via-factory"
+@* @page "/fetch-data-via-factory"
 @using Models;
 @using System.Net.Http
 @using System.Net.Http.Json
@@ -37,4 +37,4 @@ else
         forecasts = await client.GetFromJsonAsync<WeatherForecast[]>(
             "WeatherForecast");
     }
-}
+} *@

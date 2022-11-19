@@ -1,12 +1,9 @@
-
-using Microsoft.Data.Sqlite;
-
-namespace GitInsight.Test;
+namespace Tests;
 
 public class AuthorRepositoryTests : IDisposable
 {
     private readonly CommitTreeContext _context;
-    private readonly AuthorRepository _authorRepository;
+    private readonly AuthorDataRepository _authorRepository;
 
     public AuthorRepositoryTests()
     {
@@ -19,7 +16,7 @@ public class AuthorRepositoryTests : IDisposable
         context.SaveChanges();
 
         _context = context;
-        _authorRepository = new AuthorRepository(_context);
+        _authorRepository = new AuthorDataRepository(_context);
     }
 
 #pragma warning disable
@@ -31,10 +28,10 @@ public class AuthorRepositoryTests : IDisposable
         var testAuthorString = "Stephen King";
 
         // Act
-        _authorRepository.Create(new AuthorCreateDTO("Stephen King"));
+        _authorRepository.Create(new AuthorDataCreateDTO("Stephen King"));
 
         // Assert
-        Assert.Equal(_context.Authors.FirstOrDefault().Name, testAuthorString);
+        Assert.Equal(_context.allAuthorData.FirstOrDefault().Name, testAuthorString);
     }
 
     [Fact]
@@ -47,13 +44,13 @@ public class AuthorRepositoryTests : IDisposable
         var listOfTestAuthorStrings = new List<string>(){testAuthorString0, testAuthorString1, testAuthorString2};
 
         // Act
-        _authorRepository.Create(new AuthorCreateDTO(testAuthorString0));
-        _authorRepository.Create(new AuthorCreateDTO(testAuthorString1));
-        _authorRepository.Create(new AuthorCreateDTO(testAuthorString2));
+        _authorRepository.Create(new AuthorDataCreateDTO(testAuthorString0));
+        _authorRepository.Create(new AuthorDataCreateDTO(testAuthorString1));
+        _authorRepository.Create(new AuthorDataCreateDTO(testAuthorString2));
 
         var jens = _authorRepository.ReadAll().ToList();
         var hans = new List<string>();
-        foreach (AuthorDTO a in jens) {
+        foreach (AuthorDataDTO a in jens) {
             hans.Add(a.Name);
         }
 

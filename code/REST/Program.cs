@@ -5,7 +5,6 @@ class Program
 {
     static void Main(string[] args)
     {
-        var  MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
         var builder = WebApplication.CreateBuilder(args);
 
         builder.Services.AddCors(options =>
@@ -37,7 +36,7 @@ class Program
             app.UseSwaggerUI();
         }
 
-        // app.UseHttpsRedirection();
+        app.UseHttpsRedirection();
 
 
         app.UseCors();

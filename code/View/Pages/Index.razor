@@ -39,7 +39,6 @@ else
 
 @code {
     private AuthorData[]? allAuthorData;
-    private TodoItem[]? todoItems;
     private string? newItemName;
  
 }
@@ -79,14 +78,13 @@ else
 }
 
 @functions {
-    protected override async Task OnInitializedAsync(){ 
-        
-        allAuthorData = await Http.GetFromJsonAsync<AuthorData[]>("api/authordatarepository/getallauthordata");
+    protected override async Task OnInitializedAsync(){
+        allAuthorData = await Http.GetFromJsonAsync<AuthorData[]>("api/AuthorDataRepository/AD_ReadAll");
         await RefreshAllAuthorData();
     }
     private async Task AddItem(){
-        var addItem = new AuthorData() { Name = newItemName };
-        await Http.PostAsJsonAsync("api/authordatarepository/postauthordata", addItem);
+        var addItem = new AuthorData() { Name = newItemName! };
+        await Http.PostAsJsonAsync("api/AuthorDataRepository/AD_Create", addItem);
         // NavManager.NavigateTo("/fetch-data-via-factory");
     }
 
@@ -94,7 +92,7 @@ else
 
     private async Task RefreshAllAuthorData()
     {
-        allAuthorData = await Http.GetFromJsonAsync<AuthorData[]>("/api/authordatarepository/getallauthordata");
+        allAuthorData = await Http.GetFromJsonAsync<AuthorData[]>("api/AuthorDataRepository/AD_ReadAll");
         StateHasChanged();
     }
 
@@ -125,7 +123,7 @@ else
 
     private async Task PrintWebApiResponse()
     {
-        var response = await Http.GetStringAsync("/api/authordatarepository/getallauthordata");
+        var response = await Http.GetStringAsync("api/AuthorDataRepository/AD_ReadAll");
         Console.WriteLine(response);
     }
 

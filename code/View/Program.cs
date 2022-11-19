@@ -8,7 +8,7 @@ builder.RootComponents.Add<App>("#app");
 builder.RootComponents.Add<HeadOutlet>("head::after");
 
 builder.Services.AddHttpClient("WebAPI", client => 
-    client.BaseAddress = new Uri("https://localhost:7221")
+    client.BaseAddress = new Uri("https://localhost:7251")
 );
             
 await builder.Build().RunAsync();
