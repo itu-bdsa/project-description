@@ -7,6 +7,7 @@ public class AuthorData {
         this.Name = Name;
         this.Date = Date;
     }
+    
     public AuthorData()
     {
     }

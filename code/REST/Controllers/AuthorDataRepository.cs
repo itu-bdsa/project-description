@@ -5,6 +5,9 @@ using Models;
 [ApiController]
 [Route("api/authordatarepository")]
 public class AuthorDataRepository : ControllerBase
+
+// OBS: SHOULD IMPLEMENT IAuthorDataRepository
+
 {
 
     private readonly CommitTreeContext _context;
@@ -13,6 +16,63 @@ public class AuthorDataRepository : ControllerBase
     {
         _context = context;
     }
+
+    public void Create(AuthorDataCreateDTO author)
+    {
+
+        var entry = new AuthorData(author.Name, DateTime.ParseExact("01/01/0001", "dd/mm/yyyy", null));
+        _context.allAuthorData.Add(entry);
+        _context.SaveChanges();
+
+        Console.WriteLine(author.Name + " has been created");
+    }
+
+    public IReadOnlyCollection<AuthorDataDTO> ReadAll()
+    {
+        var authors = _context.allAuthorData.Select(e => new AuthorDataDTO(e.Id, e.Name));
+
+        return authors.ToList().AsReadOnly();
+
+    }
+
+    public void Update()
+    {
+        // not implemented yet
+        // context.Authors.delete
+    }
+
+        public void DeleteSpecificAuth(DateTime Date)
+    {
+        var authorToRemove = (
+            from a in _context.allAuthorData
+            where a.Date == Date
+            select a
+        ).FirstOrDefault();
+        if (authorToRemove != null) {
+            _context.allAuthorData.Remove(authorToRemove);
+            _context.SaveChanges();
+            Console.WriteLine(authorToRemove + " has been deleted");
+        }
+    }
+
+    public void DeleteAll() {
+        foreach (var auth in _context.allAuthorData)
+        {
+            _context.allAuthorData.Remove(auth);
+            _context.SaveChanges();
+        }
+    }
+
+
+
+
+    /*
+
+
+        ALT HERUNDER ER AUTO GENERERET
+
+
+    */
 
     // GET: api/allAuthorData
     [HttpGet(Name = "getallauthordata")]

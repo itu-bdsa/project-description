@@ -5,6 +5,9 @@ using Models;
 [ApiController]
 [Route("api/FrequencyDataRepository")]
 public class FrequencyDataRepository : ControllerBase
+
+// OBS: SHOULD IMPLEMENT IFrequencyDataRepository
+
 {
 
     private readonly CommitTreeContext _context;
@@ -13,6 +16,70 @@ public class FrequencyDataRepository : ControllerBase
     {
         _context = context;
     }
+
+    public void Create(FrequencyDataCreateDTO frequency)
+    {
+        
+        var frequencyToAdd = (
+            from f in _context.allFrequencyData
+            where f.Date == frequency.Date
+            select f
+        ).FirstOrDefault();
+        if (frequencyToAdd == null) {
+            var entry = new FrequencyData(frequency.Date);
+            _context.allFrequencyData.Add(entry);
+            _context.SaveChanges();
+            Console.WriteLine(frequency.Date + " has been created");
+        } else
+        {
+            frequencyToAdd.Count++;
+            Console.WriteLine(frequencyToAdd.Count);
+            _context.SaveChanges();
+        }
+    }
+
+    public IReadOnlyCollection<FrequencyDataDTO> ReadAll()
+    {
+        return _context.allFrequencyData.Select(e => new FrequencyDataDTO(e.Id)).ToList().AsReadOnly();
+    }
+
+    public void Update()
+    {
+        // Incorporated in Create()
+    }
+
+    public void DeleteSpecificFreq(DateTime Date)
+    {
+        var frequencyToRemove = (
+            from f in _context.allFrequencyData
+            where f.Date == Date
+            select f
+        ).FirstOrDefault();
+        if (frequencyToRemove != null) {
+            _context.allFrequencyData.Remove(frequencyToRemove);
+            _context.SaveChanges();
+            Console.WriteLine(frequencyToRemove + " has been deleted");
+        }
+    }
+
+    public void DeleteAll() {
+        foreach (var freq in _context.allFrequencyData)
+        {
+            _context.allFrequencyData.Remove(freq);
+            _context.SaveChanges();
+        }
+    }
+
+
+
+
+    /*
+
+
+        ALT HERUNDER ER AUTO GENERERET
+
+
+    */
 
 
     // GET: api/allFrequencyData
