@@ -122,4 +122,4 @@ public class GitInsightTest
         Console.SetOut(currentOut);
         CloseTest();
     }
-}
+}*/

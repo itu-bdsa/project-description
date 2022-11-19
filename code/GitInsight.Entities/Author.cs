@@ -1,14 +1,12 @@
-namespace Models;
+namespace GitInsight.Entities;
 
-public class AuthorData {
+public class Author
+{
 
-    public AuthorData(string Name, DateTime Date)
+    public Author(string Name, DateTime Date)
     {
         this.Name = Name;
         this.Date = Date;
-    }
-    public AuthorData()
-    {
     }
 
     public int Id { get; set; }
@@ -21,5 +19,4 @@ public class AuthorData {
 
     [Required]
     public int Count { get; set; }
-
 }
