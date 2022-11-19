@@ -2,7 +2,7 @@ namespace REST.Controllers;
 
 public class CommitDataRepository : ICommitDataRepository
 {
-    private readonly CommitTreeContext context;
+    private readonly CommitTreeContext _context;
 
     public CommitDataRepository(CommitTreeContext context)
     {
