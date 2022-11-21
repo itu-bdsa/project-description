@@ -1,5 +1,4 @@
 namespace GitInsight.Entities;
-using GitInsight.Entities.Fork;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Builder;
