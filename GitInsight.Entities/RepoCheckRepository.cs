@@ -165,6 +165,7 @@ public class RepoCheckRepository {
 
     public record dateCommits(string date, int totalCommits);
 
+
     public bool CurrentCommitIdMostRecentCommit(string folderPath){
         var repoCheckObj = _context.RepoChecks.Find(folderPath);
         var repo = new Repository(folderPath);
@@ -195,4 +196,5 @@ public class RepoCheckRepository {
         _context.SaveChanges();
     }
 
+    
 }

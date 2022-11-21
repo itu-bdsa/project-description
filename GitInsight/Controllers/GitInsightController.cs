@@ -2,6 +2,7 @@ using GitInsight.Core;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using LibGit2Sharp;
+
 using System.Collections;
 
 namespace GitInsight.Entities
@@ -12,7 +13,6 @@ namespace GitInsight.Entities
     {
         private GitInsightContext _context;
         private RepoCheckRepository _repository;
-
         public GitInsightController(GitInsightContext context)
         {
             _context = context;
@@ -55,8 +55,13 @@ namespace GitInsight.Entities
                 return Ok(CommitFrequencyGet(folderPath));
             } else if (analyseMode.Equals("AuthMode")){
                 return Ok(userCommitFreq(folderPath));
-            } else return Ok(null);
-
+            } else if (analyseMode.Equals("ForkMode")){
+                return Ok(repoForkGet(folderPath));
+            } else{
+                return Ok(null);
+            }
+                
+                
         }
 
         //--Helper method to GetAnalysis()-----
@@ -73,6 +78,13 @@ namespace GitInsight.Entities
         private List<RepoCheckRepository.userComFreqObj> userCommitFreq(string folderPath){
             return _repository.getUserCommitFreq(folderPath);
         }
+
+        private IEnumerable<RepoFork.RepoForkObj> repoForkGet(string folderPath){
+           
+               return RepoFork.getRepoForks(folderPath).GetAwaiter().GetResult();
+        }
+
+
 
     }
 }
