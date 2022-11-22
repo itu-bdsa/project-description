@@ -52,7 +52,7 @@ public class RepoCheckRepository {
 
             var newContri = new ContributionDTO(
                 Author: c.Author.ToString(), 
-                Date: c.Author.When.Date,
+                Date: c.Author.When.Date, //change to string format dd-mm-yy w. no 00:00:00!
                 CommitsCount: commitNr);
 
             contributionsList.Add(newContri);
@@ -109,7 +109,7 @@ public class RepoCheckRepository {
 
             var tempList = new List<comFreqObj>();
             for (var i = 0; i < intList.Count; i++){
-                var tem = new comFreqObj(date[i].Date.ToString(), intList[i]);
+                var tem = new comFreqObj(date[i].Date.ToShortDateString(), intList[i]);
                 tempList.Add(tem);
             }
 
@@ -128,7 +128,7 @@ public class RepoCheckRepository {
         var data = new List<userComFreqObj>();
         foreach(string auth in authors){
             var intList = new List<int>();
-            var contrList = new List<Tuple<string, int>>();
+            var contrList = new List<dateCommits>();
 
             var dates = contributions.Where(k => k.author.Equals(auth))
                         .Select(c => c.date).Distinct().ToList();
@@ -141,11 +141,18 @@ public class RepoCheckRepository {
             }
             
             for (var i = 0; i < intList.Count; i++){
-                var tempTuple = Tuple.Create(dates[i].Date.ToString(), intList[i]);
-                contrList.Add(tempTuple);
+                //var tempTuple = Tuple.Create(dates[i].Date.ToString(), intList[i]);
+                var dateComObj = new dateCommits(dates[i].Date.ToShortDateString(), intList[i]);
+                //contrList.Add(tempTuple);
+                contrList.Add(dateComObj);
             }
 
-            data.Add(new userComFreqObj(auth, contrList));
+
+            //change auth string to remove <email-stuff>
+            String authNameOnly = auth.Remove(auth.IndexOf("<"));
+            authNameOnly.Trim();
+
+            data.Add(new userComFreqObj(authNameOnly, contrList));
         }
             
         return data;
@@ -154,7 +161,9 @@ public class RepoCheckRepository {
 
     public record comFreqObj(string date, int commits);
 
-    public record userComFreqObj(string author, List<Tuple<string, int>> datesCommits);
+    public record userComFreqObj(string author, List<dateCommits> datesCommits);
+
+    public record dateCommits(string date, int totalCommits);
 
     public bool CurrentCommitIdMostRecentCommit(string folderPath){
         var repoCheckObj = _context.RepoChecks.Find(folderPath);

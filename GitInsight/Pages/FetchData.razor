@@ -1,0 +1,86 @@
+﻿@page "/fetchdata"
+@using GitInsight.Data
+@inject GitInsightController Controller
+
+<PageTitle>GitInsight</PageTitle>
+
+<h1>GitInsight</h1>
+
+<p>Please write github repository:</p>
+
+<div>
+    Repository:
+    <input type="text" @bind="gitRepoInput">
+</div>
+<br>
+<div>
+    <button class="btn btn-primary" @onclick="submitInput">
+        Run Analysis
+    </button>
+</div>
+
+<br>
+@if (!showTable)
+{
+    <p><em>Waiting for input...</em></p>
+}
+else if (showTable)
+{
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 my-5">
+            <h4>FQMode Barchart</h4>
+            <RadzenChart ColorScheme=ColorScheme.Divergent>
+                <RadzenColumnSeries Data="@FQresult" Title="FQ" CategoryProperty="date" LineType="LineType.Dashed" ValueProperty="commits">
+                    <RadzenSeriesDataLabels Visible="@showTable" />
+                </RadzenColumnSeries>
+                <RadzenColumnOptions Radius="5" />
+                <RadzenValueAxis>
+                    <RadzenGridLines Visible="true" />
+                    <RadzenAxisTitle Text="Commits" />
+                </RadzenValueAxis>
+            </RadzenChart>
+
+            <h4>AuthMode Barchart(s)</h4>
+            @foreach (var auth in Authresult)
+            {
+                <RadzenChart ColorScheme=ColorScheme.Pastel>
+                    <RadzenColumnSeries Data=@auth.datesCommits Title=@auth.author CategoryProperty="date" LineType="LineType.Dashed" ValueProperty="totalCommits">
+                        <RadzenSeriesDataLabels Visible="@showTable" />
+                        <RadzenLegend Position="LegendPosition.Top" />
+                    </RadzenColumnSeries>
+                </RadzenChart> 
+            }        
+        </div>
+    </div>
+</div>
+
+}
+
+@code {
+    bool showTable = false;
+    public string gitRepoInput { get; set; }
+    private List<GitInsight.Entities.RepoCheckRepository.comFreqObj> FQresult;
+
+    private List<GitInsight.Entities.RepoCheckRepository.userComFreqObj> Authresult;
+
+    public void submitInput(){
+        //SpaceVikingEik/hewwo
+        //bliver graf opdateret hvis analyse kører igen og der er ændringer?
+
+        runFQMode();
+        runAuthMode();
+        this.showTable = true;
+    }
+
+    private void runFQMode(){
+        Microsoft.AspNetCore.Mvc.OkObjectResult tempResult = (Microsoft.AspNetCore.Mvc.OkObjectResult) Controller.GetAnalysis(this.gitRepoInput, "FQMode");
+        this.FQresult = tempResult.Value as List<GitInsight.Entities.RepoCheckRepository.comFreqObj>;
+    }
+
+    private void runAuthMode(){
+        Microsoft.AspNetCore.Mvc.OkObjectResult tempResult = (Microsoft.AspNetCore.Mvc.OkObjectResult) Controller.GetAnalysis(this.gitRepoInput, "AuthMode");
+        this.Authresult = tempResult.Value as List<GitInsight.Entities.RepoCheckRepository.userComFreqObj>;
+    }
+
+}

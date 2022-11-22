@@ -3,13 +3,22 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Configuration;
+using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Web;
 using GitInsight;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+
+using Newtonsoft.Json;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllers();
-
+builder.Services.AddRazorPages();
+builder.Services.AddServerSideBlazor();
+//builder.Services.AddSingleton<GitInsight.Data.WeatherForecastService>();
+builder.Services.AddScoped<GitInsightController>();
+builder.Services.AddScoped<GitInsightContext>();
 //--------------Real database setup---------------------
 //Naviger til GitInsight folder og kør disse to commands i terminal.
 //Husk at udskift database, username og password med dit eget
@@ -38,6 +47,10 @@ builder.Services.AddDbContext<GitInsightContext>(options =>
 
 AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
 
+// JsonConvert.
+
+
+
 //-------------------------------------
 
 builder.Services.AddSwaggerGen(c =>
@@ -53,8 +66,13 @@ if (builder.Environment.IsDevelopment())
     app.UseDeveloperExceptionPage();
     app.UseSwagger();
     app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "GetInsight v1"));
-}
+} 
+app.UseStaticFiles();
 
+app.UseRouting();
+
+app.MapBlazorHub();
+app.MapFallbackToPage("/_Host");
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
