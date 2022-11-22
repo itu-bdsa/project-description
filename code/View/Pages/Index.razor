@@ -7,40 +7,22 @@
 @inject HttpClient Http
 @inject NavigationManager NavManager
 
+
 @page "/"
-
-
 
 <h1>Hello, world!</h1>
 
 
 <button>don't press me. really. i'm serious</button>
 
-<input @bind="newRepoName" placeholder="New Repository Data" />
+<input @bind="repoURL" placeholder="Repo URL" />
 <button @onclick="AddItem">Add</button>
-
-@* @if (allCommitData == null)
-    {
-    <p>No author data was found.</p>
-    }
-    else
-    {
-    <ul>
-    @foreach (var item in allCommitData)
-    {
-    <li>@item.Name</li>
-    }
-    </ul>
-    } *@
-
-
-
 
 
 @code {
     private CommitData[]? allCommitData;
     private string? newHasCode;
-    private string? newRepoName;
+    private string? repoURL;
     private DateTime newDateTime;
     private string? newAuthorName;
 
@@ -82,19 +64,13 @@ else
 @functions {
     protected override async Task OnInitializedAsync()
     {
-        allCommitData = await Http.GetFromJsonAsync<CommitData[]>("api/CommitDataRepository/CD_ReadAll");
-        await RefreshAllCommitData();
+        @* allCommitData = await Http.GetFromJsonAsync<CommitData[]>("api/CommitDataRepository/CD_ReadAll");
+        await RefreshAllCommitData(); *@
     }
     private async Task AddItem()
     {
-        var addItem = new CommitData(newHasCode, newRepoName, newAuthorName, newDateTime)
-        {
-            //HashCode = newHasCode,
-            //RepositoryName = newRepoName,
-            //AuthorName = newAuthorName,
-            //Date = newDateTime,
-        };
-        await Http.PostAsJsonAsync("api/CommitDataRepository/AD_Create", addItem);
+        // OldData repo = new OldData(repoURL);
+        
         // NavManager.NavigateTo("/fetch-data-via-factory");
     }
 
@@ -106,55 +82,13 @@ else
         StateHasChanged();
     }
 
-    @* private async Task FillWithDemoData()
-        {
-        for (var i = 0; i < 10; i++)
-        {
-        await Http.SendJsonAsync(HttpMethod.Post, "/api/Customer", new Customer
-        {
-        FirstName = "Tom",
-        LastName = $"Customer {i}",
-        Department = i % 2 == 0 ? "Sales" : "Research"
-        });
-        }
-
-        await RefreshCustomerList();
-        } *@
-
-    @* private async Task DeleteAllCustomers()
-        {
-        foreach (var c in Customers)
-        {
-        await Http.DeleteAsync($"/api/Customer/{c.ID}");
-        }
-
-        await RefreshCustomerList();
-        } *@
-
+    
     private async Task PrintWebApiResponse()
     {
         var response = await Http.GetStringAsync("api/AuthorDataRepository/AD_ReadAll");
         Console.WriteLine(response);
     }
 
-
-
 }
 
-@*
-    <input type="checkbox" @bind="editItem.IsComplete" />
-    <input @bind="editItem.Name" />
-    <button @onclick="SaveItem">Save</button>
 
-    @code {
-    private string? id;
-    private TodoItem editItem = new TodoItem();
-
-    private void EditItem(long id)
-    {
-    editItem = todoItems.Single(i => i.Id == id);
-    }
-
-    private async Task SaveItem() =>
-    await Http.PutAsJsonAsync($"api/TodoItems/{editItem.Id}", editItem);
-    } *@
