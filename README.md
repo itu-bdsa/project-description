@@ -173,3 +173,29 @@ In this case the it will be a sub-system sequence diagram where the blocks on to
 Also make sure that your test suite actually tests your current application.
 You likely want to add unit tests and integration tests for the new functionality.
 If you like, add one or more end-to-end tests to your applications' test suite.
+
+
+## Week Five (Week 47)
+
+So far, your `GitInsight` applications can be assessed by anybody with access to the application's URL via a browser.
+Also, the REST API of the back-end's can be accessed by anybody that knows the corresponding URL.
+This week you extend you `GitInsight` applications with a feature that restricts access only to authorized users.
+That is, based on the contents of Rasmus' lecture on security you modify your applications so that users have to authenticate themselves before they are able to analyze a GitHub repository.
+This authentication should hold for the front-end web-application as well as for the back-and REST API. 
+
+Additionally, make sure that all communication between your front-end application communicates and your back-end application (see last week's project description) is encrypted.
+
+Besides these security related features, implement an analysis and visualization of your choice in your `GitInsight` applications.
+For example, you might want to identify and present those files that change most often/least often, those files that change most often together (i.e., they appear in commits together, which is called logical coupling), identify groups of authors that work often on the same files, etc.
+
+Make sure that the new features and analyses are covered by appropriate tests in your test suites.
+
+
+
+**Optional features**:
+
+If you have implemented an application with all the requirements presented so far and in case you are in the mood for a challenge work on the following:
+
+Modify your `GitInsight` applications so that it can analyze _private_ repositories from GitHub.
+That feature should work so that a user only specifies a private repository together with required information (security tokens, SSH keys, etc.) in the application's front-end.
+Only analysis of private repositories to which a user has at least read access should be analyzable by a user.
