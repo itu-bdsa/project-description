@@ -42,15 +42,15 @@ public class CommitDataRepository : ControllerBase, ICommitDataRepository
         _context.SaveChanges();
     }
 
-    [HttpGet(Name = "CD_GetAllFC")]
-    public IReadOnlyCollection<Tuple<DateTime, int>> ReadAllCommitsFromRepo(string RepositoryName)
+    [HttpGet("{RepositoryName1}", Name = "CD_GetAllFC")]
+    public IReadOnlyCollection<Tuple<DateTime, int>> ReadAllCommitsFromRepo(string RepositoryName1)
     {
 
         Tuple<DateTime, int> tup;
         var listToReturn = new List<Tuple<DateTime, int>>();
 
 
-        var start = _context.CommitData.Where(c => c.RepositoryName == RepositoryName);
+        var start = _context.CommitData.Where(c => c.RepositoryName == RepositoryName1);
         var dates = start.GroupBy(c => c.Date);
 
         foreach (var date in dates)
@@ -71,12 +71,12 @@ public class CommitDataRepository : ControllerBase, ICommitDataRepository
 
     // Method returns a dictionary of all all commits per author from a given repo. 
     // Key is author and value is a tuple of DateTimes and Count of the amount of commits on the given date
-    [HttpGet(Name = "CD_GetAllAC")]
-    public IReadOnlyDictionary<string, List<Tuple<DateTime, int>>> GetAllAuthorsCommitsFromRepository(string RepositoryName)
+    [HttpGet("{RepositoryName2}", Name = "CD_GetAllAC")]
+    public IReadOnlyDictionary<string, List<Tuple<DateTime, int>>> GetAllAuthorsCommitsFromRepository(string RepositoryName2)
     {
 
         var mapToReturn = new Dictionary<string, List<Tuple<DateTime, int>>>();
-        var start = _context.CommitData.Where(c => c.RepositoryName == RepositoryName);
+        var start = _context.CommitData.Where(c => c.RepositoryName == RepositoryName2);
         var ListOfNames = start.Select(c => c.AuthorName).Distinct();
 
 

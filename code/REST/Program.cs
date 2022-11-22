@@ -1,5 +1,6 @@
 namespace REST;
 using Models;
+using REST.Controllers; 
 
 class Program
 {
@@ -11,6 +12,8 @@ class Program
             {
                 options.AddDefaultPolicy(policy  => { policy.WithOrigins("https://localhost:7251").AllowAnyHeader().AllowAnyMethod();});
             });
+
+        builder.Services.AddScoped<ICommitDataRepository, CommitDataRepository>();
 
         // Add services to the container.
 
@@ -38,7 +41,7 @@ class Program
 
         app.UseHttpsRedirection();
 
-
+        // app.UseRouting();
         app.UseCors();
 
         app.UseAuthorization();
