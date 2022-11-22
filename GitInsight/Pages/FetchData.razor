@@ -64,6 +64,9 @@ else if (showTable)
 
     private List<GitInsight.Entities.RepoCheckRepository.userComFreqObj> Authresult;
 
+    private List<GitInsight.Entities.RepoFork.RepoForkObj> Forkresult;
+
+
     public void submitInput(){
         //SpaceVikingEik/hewwo
         //bliver graf opdateret hvis analyse kører igen og der er ændringer?
@@ -81,6 +84,11 @@ else if (showTable)
     private void runAuthMode(){
         Microsoft.AspNetCore.Mvc.OkObjectResult tempResult = (Microsoft.AspNetCore.Mvc.OkObjectResult) Controller.GetAnalysis(this.gitRepoInput, "AuthMode");
         this.Authresult = tempResult.Value as List<GitInsight.Entities.RepoCheckRepository.userComFreqObj>;
+    }
+
+    private void runForkMode(){
+        Microsoft.AspNetCore.Mvc.OkObjectResult tempResult = (Microsoft.AspNetCore.Mvc.OkObjectResult) Controller.GetAnalysis(this.gitRepoInput, "ForkMode");
+        this.Forkresult = tempResult.Value as List<GitInsight.Entities.RepoFork.RepoForkObj>;
     }
 
 }
