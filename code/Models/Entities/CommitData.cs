@@ -11,8 +11,6 @@ public class CommitData
         this.Date = Date;
     }
 
-    public int Id { get; set; }
-
     [Key]
     public string HashCode { get; set; }
 
