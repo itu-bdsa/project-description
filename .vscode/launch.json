@@ -10,7 +10,7 @@
             "request": "launch",
             "preLaunchTask": "build",
             // If you have changed target frameworks, make sure to update the program path.
-            "program": "${workspaceFolder}/code/REST/bin/Debug/net6.0/REST.dll",
+            "program": "${workspaceFolder}/code/REST/bin/Debug/net7.0/REST.dll",
             "args": [],
             "cwd": "${workspaceFolder}/code/REST",
             // For more information about the 'console' field, see https://aka.ms/VSCode-CS-LaunchJson-Console

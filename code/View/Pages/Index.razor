@@ -16,61 +16,63 @@
 
 <button>don't press me. really. i'm serious</button>
 
-<input @bind="newItemName" placeholder="New Author Data" />
+<input @bind="newRepoName" placeholder="New Repository Data" />
 <button @onclick="AddItem">Add</button>
 
-@* @if (allAuthorData == null)
-{
+@* @if (allCommitData == null)
+    {
     <p>No author data was found.</p>
-}
-else
-{
+    }
+    else
+    {
     <ul>
-        @foreach (var item in allAuthorData)
-        {
-            <li>@item.Name</li>
-        }
+    @foreach (var item in allCommitData)
+    {
+    <li>@item.Name</li>
+    }
     </ul>
-} *@
+    } *@
 
 
 
 
 
 @code {
-    private AuthorData[]? allAuthorData;
-    private string? newItemName;
- 
+    private CommitData[]? allCommitData;
+    private string? newHasCode;
+    private string? newRepoName;
+    private DateTime newDateTime;
+    private string? newAuthorName;
+
 }
 
 <button onclick=@(async () => await PrintWebApiResponse())>Print Web API Response</button>
 
 @* <button onclick=@(async () => await FillWithDemoData())>Fill with demo data</button>
-<button onclick=@(async () => await DeleteAllCustomers())>Delete all customers</button> *@
+    <button onclick=@(async () => await DeleteAllCustomers())>Delete all customers</button> *@
 
-@if (allAuthorData == null)
+@if (allCommitData == null)
 {
     <p><em>Loading...</em></p>
 }
 else
 {
     <table class='table'>
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Date</th>
-                <th>Count</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var authorData in allAuthorData)
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Date</th>
+            <th>Count</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var authorData in allCommitData)
             {
                 <tr>
-                    <td>@authorData.Id</td>
-                    <td>@authorData.Name</td>
+                    <td>@authorData.RepositoryName</td>
+                    <td>@authorData.AuthorName</td>
                     <td>@authorData.Date</td>
-                    <td>@authorData.Count</td>
                 </tr>
             }
         </tbody>
@@ -78,48 +80,56 @@ else
 }
 
 @functions {
-    protected override async Task OnInitializedAsync(){
-        allAuthorData = await Http.GetFromJsonAsync<AuthorData[]>("api/AuthorDataRepository/AD_ReadAll");
-        await RefreshAllAuthorData();
+    protected override async Task OnInitializedAsync()
+    {
+        allCommitData = await Http.GetFromJsonAsync<CommitData[]>("api/CommitDataRepository/CD_ReadAll");
+        await RefreshAllCommitData();
     }
-    private async Task AddItem(){
-        var addItem = new AuthorData() { Name = newItemName! };
-        await Http.PostAsJsonAsync("api/AuthorDataRepository/AD_Create", addItem);
+    private async Task AddItem()
+    {
+        var addItem = new CommitData(newHasCode, newRepoName, newAuthorName, newDateTime)
+        {
+            //HashCode = newHasCode,
+            //RepositoryName = newRepoName,
+            //AuthorName = newAuthorName,
+            //Date = newDateTime,
+        };
+        await Http.PostAsJsonAsync("api/CommitDataRepository/AD_Create", addItem);
         // NavManager.NavigateTo("/fetch-data-via-factory");
     }
 
     // THESE ARE PASTE:
 
-    private async Task RefreshAllAuthorData()
+    private async Task RefreshAllCommitData()
     {
-        allAuthorData = await Http.GetFromJsonAsync<AuthorData[]>("api/AuthorDataRepository/AD_ReadAll");
+        allCommitData = await Http.GetFromJsonAsync<CommitData[]>("api/CommitDataRepository/CD_ReadAll");
         StateHasChanged();
     }
 
     @* private async Task FillWithDemoData()
-    {
+        {
         for (var i = 0; i < 10; i++)
         {
-            await Http.SendJsonAsync(HttpMethod.Post, "/api/Customer", new Customer
-            {
-                FirstName = "Tom",
-                LastName = $"Customer {i}",
-                Department = i % 2 == 0 ? "Sales" : "Research"
-            });
+        await Http.SendJsonAsync(HttpMethod.Post, "/api/Customer", new Customer
+        {
+        FirstName = "Tom",
+        LastName = $"Customer {i}",
+        Department = i % 2 == 0 ? "Sales" : "Research"
+        });
         }
 
         await RefreshCustomerList();
-    } *@
+        } *@
 
     @* private async Task DeleteAllCustomers()
-    {
+        {
         foreach (var c in Customers)
         {
-            await Http.DeleteAsync($"/api/Customer/{c.ID}");
+        await Http.DeleteAsync($"/api/Customer/{c.ID}");
         }
 
         await RefreshCustomerList();
-    } *@
+        } *@
 
     private async Task PrintWebApiResponse()
     {
@@ -127,27 +137,24 @@ else
         Console.WriteLine(response);
     }
 
-    
+
 
 }
 
-@* 
-<input type="checkbox" @bind="editItem.IsComplete" />
-<input @bind="editItem.Name" />
-<button @onclick="SaveItem">Save</button>
+@*
+    <input type="checkbox" @bind="editItem.IsComplete" />
+    <input @bind="editItem.Name" />
+    <button @onclick="SaveItem">Save</button>
 
-@code {
+    @code {
     private string? id;
     private TodoItem editItem = new TodoItem();
 
     private void EditItem(long id)
     {
-        editItem = todoItems.Single(i => i.Id == id);
+    editItem = todoItems.Single(i => i.Id == id);
     }
 
     private async Task SaveItem() =>
-        await Http.PutAsJsonAsync($"api/TodoItems/{editItem.Id}", editItem);
-} *@
-
-
-
+    await Http.PutAsJsonAsync($"api/TodoItems/{editItem.Id}", editItem);
+    } *@
