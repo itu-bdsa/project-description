@@ -960,3 +960,5 @@ C:\Users\annem\Desktop\BDSA_PROJECT\GitInsight\bin\Debug\net6.0\System.Linq.Dyna
 >>>>>>> origin/barChart
 C:\Users\eikbo\Skrivebord\BDSA\BDSA_PROJECT\GitInsight\bin\Debug\net6.0\Radzen.Blazor.dll
 C:\Users\eikbo\Skrivebord\BDSA\BDSA_PROJECT\GitInsight\bin\Debug\net6.0\System.Linq.Dynamic.Core.dll
+c:\Users\Bruger\Desktop\BDSA\BDSA_PROJECT\GitInsight\bin\Debug\net6.0\Radzen.Blazor.dll
+c:\Users\Bruger\Desktop\BDSA\BDSA_PROJECT\GitInsight\bin\Debug\net6.0\System.Linq.Dynamic.Core.dll
