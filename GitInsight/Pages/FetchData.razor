@@ -55,6 +55,17 @@ else if (showTable)
     </div>
 </div>
 
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 col-lg-6 offset-lg-3 my-5">
+        <RadzenChart>
+            <RadzenPieSeries Data="@FileChanges" Title="Files Changed" CategoryProperty="fileName" ValueProperty="changes">
+            </RadzenPieSeries>
+        </RadzenChart>
+        </div>
+    </div>
+</div>
+
 }
 
 @code {
@@ -64,13 +75,21 @@ else if (showTable)
 
     private List<GitInsight.Entities.RepoCheckRepository.userComFreqObj> Authresult;
 
+    private List<GitFileAnalyzer.FileAndNrChanges> FileChanges;
+
     public void submitInput(){
         //SpaceVikingEik/hewwo
         //bliver graf opdateret hvis analyse kører igen og der er ændringer?
 
-        runFQMode();
-        runAuthMode();
-        this.showTable = true;
+        //runFQMode();
+        //runAuthMode();
+        //this.showTable = true;
+        getFileChanges();
+    }
+
+    private void getFileChanges(){
+        Microsoft.AspNetCore.Mvc.OkObjectResult tempResult = (Microsoft.AspNetCore.Mvc.OkObjectResult) Controller.GetAnalysis(this.gitRepoInput, "");
+        this.FileChanges = tempResult.Value as List<GitFileAnalyzer.FileAndNrChanges>;
     }
 
     private void runFQMode(){

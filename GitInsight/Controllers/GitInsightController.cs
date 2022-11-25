@@ -12,11 +12,13 @@ namespace GitInsight.Entities
     {
         private GitInsightContext _context;
         private RepoCheckRepository _repository;
+        private GitFileAnalyzer _analyzer;
 
         public GitInsightController(GitInsightContext context)
         {
             _context = context;
             _repository =  new RepoCheckRepository(context);
+            _analyzer = new GitFileAnalyzer();
             _context.Database.OpenConnection();
         }
 
@@ -53,7 +55,7 @@ namespace GitInsight.Entities
                 return Ok(CommitFrequencyGet(folderPath));
             } else if (analyseMode.Equals("AuthMode")){
                 return Ok(userCommitFreq(folderPath));
-            } else return Ok(null);
+            } else return Ok(fileChangeList(folderPath));
 
         }
 
@@ -70,6 +72,11 @@ namespace GitInsight.Entities
 
         private List<RepoCheckRepository.userComFreqObj> userCommitFreq(string folderPath){
             return _repository.getUserCommitFreq(folderPath);
+        }
+
+        private List<GitFileAnalyzer.FileAndNrChanges> fileChangeList(string folderPath){
+            var repo = new Repository(folderPath);
+            return _analyzer.getFilesAndNrChanges(repo);
         }
 
     }

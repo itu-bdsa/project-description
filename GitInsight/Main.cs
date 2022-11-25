@@ -8,8 +8,6 @@ using Microsoft.AspNetCore.Components.Web;
 using GitInsight;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-using Newtonsoft.Json;
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
