@@ -58,8 +58,9 @@ else if (showTable)
 <div class="container">
     <div class="row">
         <div class="col-sm-12 col-lg-6 offset-lg-3 my-5">
-        <RadzenChart>
-            <RadzenPieSeries Data="@FileChanges" Title="Files Changed" CategoryProperty="fileName" ValueProperty="changes">
+        <h4>Distribution of changes to files</h4>
+        <RadzenChart Visible="@showTable">
+            <RadzenPieSeries Data="@FileChanges" Title="Changes" CategoryProperty="fileName" ValueProperty="changes">
             </RadzenPieSeries>
         </RadzenChart>
         </div>
@@ -81,14 +82,14 @@ else if (showTable)
         //SpaceVikingEik/hewwo
         //bliver graf opdateret hvis analyse kører igen og der er ændringer?
 
-        //runFQMode();
-        //runAuthMode();
-        //this.showTable = true;
+        runFQMode();
+        runAuthMode();
         getFileChanges();
+        this.showTable = true;
     }
 
     private void getFileChanges(){
-        Microsoft.AspNetCore.Mvc.OkObjectResult tempResult = (Microsoft.AspNetCore.Mvc.OkObjectResult) Controller.GetAnalysis(this.gitRepoInput, "");
+        Microsoft.AspNetCore.Mvc.OkObjectResult tempResult = (Microsoft.AspNetCore.Mvc.OkObjectResult) Controller.GetAnalysis(this.gitRepoInput, "PieChart");
         this.FileChanges = tempResult.Value as List<GitFileAnalyzer.FileAndNrChanges>;
     }
 

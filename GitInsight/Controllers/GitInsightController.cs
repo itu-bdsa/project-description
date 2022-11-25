@@ -55,7 +55,9 @@ namespace GitInsight.Entities
                 return Ok(CommitFrequencyGet(folderPath));
             } else if (analyseMode.Equals("AuthMode")){
                 return Ok(userCommitFreq(folderPath));
-            } else return Ok(fileChangeList(folderPath));
+            } else if(analyseMode.Equals("PieChart")){
+                return Ok(fileChangeList(folderPath));
+            } else return Ok(null);
 
         }
 

@@ -22,6 +22,7 @@ builder.Services.AddScoped<GitInsightContext>();
 //Husk at udskift database, username og password med dit eget
 
 //$CONNECTION_STRING="Host=localhost;Database=GitDB;Username=postgres;Password=bianca3";
+//til mac for am: //CONNECTION_STRING="Host=localhost;Database=GitDB;Username=annemariemygind";
 //dotnet user-secrets set "ConnectionStrings:GitIn" "$CONNECTION_STRING"
 
 var configuration = new ConfigurationBuilder().AddUserSecrets<GitInsightController>().Build();
