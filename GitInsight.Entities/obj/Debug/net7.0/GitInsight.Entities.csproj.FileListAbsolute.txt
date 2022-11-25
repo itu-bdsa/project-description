@@ -1,0 +1,17 @@
+/Users/annemariemygind/Desktop/BDSA_PROJECT/GitInsight.Entities/bin/Debug/net7.0/GitInsight.Entities.deps.json
+/Users/annemariemygind/Desktop/BDSA_PROJECT/GitInsight.Entities/bin/Debug/net7.0/GitInsight.Entities.runtimeconfig.json
+/Users/annemariemygind/Desktop/BDSA_PROJECT/GitInsight.Entities/bin/Debug/net7.0/GitInsight.Entities.dll
+/Users/annemariemygind/Desktop/BDSA_PROJECT/GitInsight.Entities/bin/Debug/net7.0/GitInsight.Entities.pdb
+/Users/annemariemygind/Desktop/BDSA_PROJECT/GitInsight.Entities/bin/Debug/net7.0/GitInsight.Core.dll
+/Users/annemariemygind/Desktop/BDSA_PROJECT/GitInsight.Entities/bin/Debug/net7.0/GitInsight.Core.pdb
+/Users/annemariemygind/Desktop/BDSA_PROJECT/GitInsight.Entities/obj/Debug/net7.0/GitInsight.Entities.csproj.AssemblyReference.cache
+/Users/annemariemygind/Desktop/BDSA_PROJECT/GitInsight.Entities/obj/Debug/net7.0/GitInsight.Entities.GeneratedMSBuildEditorConfig.editorconfig
+/Users/annemariemygind/Desktop/BDSA_PROJECT/GitInsight.Entities/obj/Debug/net7.0/GitInsight.Entities.AssemblyInfoInputs.cache
+/Users/annemariemygind/Desktop/BDSA_PROJECT/GitInsight.Entities/obj/Debug/net7.0/GitInsight.Entities.AssemblyInfo.cs
+/Users/annemariemygind/Desktop/BDSA_PROJECT/GitInsight.Entities/obj/Debug/net7.0/GitInsight.Entities.csproj.CoreCompileInputs.cache
+/Users/annemariemygind/Desktop/BDSA_PROJECT/GitInsight.Entities/obj/Debug/net7.0/GitInsight.Entities.csproj.CopyComplete
+/Users/annemariemygind/Desktop/BDSA_PROJECT/GitInsight.Entities/obj/Debug/net7.0/GitInsight.Entities.dll
+/Users/annemariemygind/Desktop/BDSA_PROJECT/GitInsight.Entities/obj/Debug/net7.0/refint/GitInsight.Entities.dll
+/Users/annemariemygind/Desktop/BDSA_PROJECT/GitInsight.Entities/obj/Debug/net7.0/GitInsight.Entities.pdb
+/Users/annemariemygind/Desktop/BDSA_PROJECT/GitInsight.Entities/obj/Debug/net7.0/GitInsight.Entities.genruntimeconfig.cache
+/Users/annemariemygind/Desktop/BDSA_PROJECT/GitInsight.Entities/obj/Debug/net7.0/ref/GitInsight.Entities.dll
