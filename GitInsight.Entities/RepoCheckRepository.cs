@@ -61,6 +61,44 @@ public class RepoCheckRepository {
         return contributionsList;
     }
 
+    public HashSet<ContributionDTO> AddContributionsDataToSetButRemoveEverythingAlreadyThere(Repository repo, String folderPath){
+        //add repo data to hashset
+        var commitArray = repo.Commits.ToList();
+        var contributionsList = new HashSet<ContributionDTO>();
+        //just for testing remove later
+        Console.WriteLine(commitArray.Count);
+        Console.WriteLine(repo.Info.Path);
+        
+        var repoCheckItem = _context.RepoChecks.Find(folderPath); //check om commit newest, fix
+        var contributions = _context.Contributions.Where(c => c.repoCheckObj.Equals(repoCheckItem));
+        var latestCommitDate = contributions.Select(c => c.date).Max();
+        var lastCommitList = contributions.Where(c => c.date.Equals(latestCommitDate)).ToList();
+
+        foreach(var d in lastCommitList){
+            var toDel = _context.Contributions.Find(d.Id);
+            _context.Contributions.Remove(toDel);
+        }
+
+        foreach (var c in commitArray){
+            Console.WriteLine(c.Author.When.Date);
+            //get number of commits by auhtor on date
+            if(c.Author.When.Date >= latestCommitDate){
+                int commitNr = getNrCommitsOnDateByAuthor(c.Author.When.Date, c.Author, repo);
+
+                var newContri = new ContributionDTO(
+                    Author: c.Author.ToString(), 
+                    Date: c.Author.When.Date,
+                    CommitsCount: commitNr);
+
+                contributionsList.Add(newContri);
+            }
+            
+            
+        }
+
+        return contributionsList;
+    }
+
     private int getNrCommitsOnDateByAuthor(DateTime date, Signature author, Repository repo){
         var commitsCount = repo.Commits
         .Select(e => new { e.Author, e.Author.When.Date })
@@ -174,7 +212,7 @@ public class RepoCheckRepository {
         var repo = new Repository(folderPath);
         var newestCommitId = repo.Commits.ToList().First().Id.ToString();
 
-        var conDTOs = AddContributionsDataToSet(repo);
+        var conDTOs = AddContributionsDataToSetButRemoveEverythingAlreadyThere(repo, folderPath);
 
         var newCons = conDTOs.Select(c => 
         ContributionFromContributionDTO(c)).ToList();
