@@ -1,5 +1,7 @@
 ﻿@page "/fetchdata"
 @using GitInsight.Data
+@using System.Threading;
+@using System.Linq;
 @inject GitInsightController Controller
 
 <PageTitle>GitInsight</PageTitle>
@@ -53,9 +55,21 @@ else if (showTable)
             }        
         </div>
     </div>
+    <h4>ForkMode Table</h4>
+    <RadzenDataGrid Data="@Forkresult" TItem="GitInsight.Entities.RepoFork.RepoForkObj" ColumnWidth="300px" AllowColumnResize="true">
+        <Columns>
+        <RadzenDataGridColumn TItem="GitInsight.Entities.RepoFork.RepoForkObj" Property="repoName" Title="Repository Name" FormatString="{0:d}"/>
+        <RadzenDataGridColumn TItem="GitInsight.Entities.RepoFork.RepoForkObj" Property="ownerName" Title="Owner Name"/>
+        <RadzenDataGridColumn TItem="GitInsight.Entities.RepoFork.RepoForkObj" Property="repo_url" Title="URL"/>  
+        </Columns>
+    </RadzenDataGrid>
+
 </div>
 
+
+
 }
+
 
 @code {
     bool showTable = false;
@@ -70,11 +84,13 @@ else if (showTable)
     public void submitInput(){
         //SpaceVikingEik/hewwo
         //bliver graf opdateret hvis analyse kører igen og der er ændringer?
-
+        runForkMode();
         runFQMode();
         runAuthMode();
         this.showTable = true;
     }
+
+    
 
     private void runFQMode(){
         Microsoft.AspNetCore.Mvc.OkObjectResult tempResult = (Microsoft.AspNetCore.Mvc.OkObjectResult) Controller.GetAnalysis(this.gitRepoInput, "FQMode");
@@ -87,7 +103,7 @@ else if (showTable)
     }
 
     private void runForkMode(){
-        Microsoft.AspNetCore.Mvc.OkObjectResult tempResult = (Microsoft.AspNetCore.Mvc.OkObjectResult) Controller.GetAnalysis(this.gitRepoInput, "ForkMode");
+        var tempResult = (Microsoft.AspNetCore.Mvc.OkObjectResult) Controller.GetAnalysis(this.gitRepoInput, "ForkMode");
         this.Forkresult = tempResult.Value as List<GitInsight.Entities.RepoFork.RepoForkObj>;
     }
 
