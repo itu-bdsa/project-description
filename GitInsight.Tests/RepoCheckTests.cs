@@ -77,7 +77,7 @@ public class RepoCheckTests{
         var repo = new Repository(folderPath);
 
         //Act
-        var tempList = new List<Tuple<string, int>>(){Tuple.Create("02-09-2022 00:00:00",5)};
+        var tempList = new List<RepoCheckRepository.dateCommits>{new RepoCheckRepository.dateCommits("02-09-2022 00:00:00",5)};
         var author = "Anne-Marie <annemarierommerdahl@gmail.com>";
         var expected = new RepoCheckRepository.userComFreqObj(author, tempList);
 

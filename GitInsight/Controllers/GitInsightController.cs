@@ -24,8 +24,6 @@ namespace GitInsight.Entities
         [HttpGet("{repoPath}")]
         public IActionResult GetAnalysis(string repoPath, string analyseMode){
             
-            
-
             //Repo name generator so we can create multiple temp-folders
             string folderPath = "../TestGithubStorage/" + repoPath.Replace("%2F", "-");
 

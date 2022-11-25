@@ -1,6 +1,4 @@
 namespace GitInsight.Entities;
-using GitInsight.Core;
-using LibGit2Sharp;
 
 public class RepoCheckRepository {
 

@@ -47,10 +47,6 @@ builder.Services.AddDbContext<GitInsightContext>(options =>
 
 AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
 
-// JsonConvert.
-
-
-
 //-------------------------------------
 
 builder.Services.AddSwaggerGen(c =>
