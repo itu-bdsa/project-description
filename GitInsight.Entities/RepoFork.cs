@@ -9,16 +9,15 @@ public class RepoFork
 
     public record RepoForkObj(string repoName, string ownerName, string repo_url);
 
-    public static async Task<IEnumerable<RepoForkObj>> getRepoForks(string gitPath){
+    public static async Task<IEnumerable<RepoForkObj>> getRepoForks(string gitPath, string kee){
         
-        var rawData = await Task.WhenAll(ConnectGithubAPI(gitPath)).ConfigureAwait(false);
+        var rawData = await Task.WhenAll(ConnectGithubAPI(gitPath, kee)).ConfigureAwait(false);
         var data = rawData.SelectMany(x=>x.Select(y=>new RepoForkObj(y.name!,y.owner!.login!, y.html_url!)));
-        
         
         return data;
     }
 
-    public static async Task<IEnumerable<Fork>> ConnectGithubAPI(string gitPath){   
+    public static async Task<IEnumerable<Fork>> ConnectGithubAPI(string gitPath, string kee){   
       
         //Sets up the connection to Github API
         HttpClient client = new HttpClient();
@@ -35,21 +34,34 @@ public class RepoFork
         var app = builder.Build();
        
         var token = builder.Configuration["Git:HubToken"];
-       
+        
         client.DefaultRequestHeaders.UserAgent.Add(new System.Net.Http.Headers.ProductInfoHeaderValue("AppName", "1.0"));
         client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
+
+        //For tesing
+        if(kee!= null){
+        client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue(kee, token);
+        }else{
         client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Token", token);
+        }
         
         //takes the "/repos/:Organization name:/:Repo Name:/forks" as an argument
+        try{
         var gitForks = await client.GetAsync("/repos/" + gitPath + "/forks").ConfigureAwait(false);
         gitForks.EnsureSuccessStatusCode();
-       
+
         string responseBody = await gitForks.Content.ReadAsStringAsync().ConfigureAwait(false);
         var list = new List<Fork>();
 
         var forkList = JsonConvert.DeserializeObject<List<Fork>>(responseBody);
 
         return forkList!;
+        
+        }catch(Exception){
+            return new List<Fork>();
+        }
+        
+        
     }
 
 

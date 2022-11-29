@@ -86,7 +86,7 @@ namespace GitInsight.Entities
         }
 
         private List<RepoFork.RepoForkObj> repoForkGet(string folderPath){
-               return RepoFork.getRepoForks(folderPath).GetAwaiter().GetResult().ToList();
+               return RepoFork.getRepoForks(folderPath, null).GetAwaiter().GetResult().ToList();
         }
 
     }
