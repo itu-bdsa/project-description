@@ -68,13 +68,13 @@ public class RepoCheckRepository {
         Console.WriteLine(repo.Info.Path);
         
         var repoCheckItem = _context.RepoChecks.Find(folderPath); //check om commit newest, fix
-        var contributions = _context.Contributions.Where(c => c.repoCheckObj.Equals(repoCheckItem));
+        var contributions = _context.Contributions.Where(c => c.repoCheckObj!.Equals(repoCheckItem));
         var latestCommitDate = contributions.Select(c => c.date).Max();
         var lastCommitList = contributions.Where(c => c.date.Equals(latestCommitDate)).ToList();
 
         foreach(var d in lastCommitList){
             var toDel = _context.Contributions.Find(d.Id);
-            _context.Contributions.Remove(toDel);
+            _context.Contributions.Remove(toDel!);
         }
 
         foreach (var c in commitArray){
@@ -112,7 +112,7 @@ public class RepoCheckRepository {
     public HashSet<ContributionDTO> ContributionToContributionDTOHS(RepoCheck repoCheck){
         var contributions = repoCheck.Contributions
                     .Select(cont => new ContributionDTO(
-                        cont.author,
+                        cont.author!,
                         cont.date, cont.commitsCount
                     )).ToHashSet();
         return contributions;
@@ -123,8 +123,8 @@ public class RepoCheckRepository {
         var repoCheck = _context.RepoChecks.Find(folderPath);
         //var DTO = new RepoCheckDTO();
         return repoCheck != null ? new RepoCheckDTO(
-                                    repoCheck.repoPath,
-                                    repoCheck.lastCheckedCommit,
+                                    repoCheck.repoPath!,
+                                    repoCheck.lastCheckedCommit!,
                                     Contributions: ContributionToContributionDTOHS(repoCheck)) : null!;
     }
 
@@ -132,7 +132,7 @@ public class RepoCheckRepository {
         _context.Database.OpenConnection();
 
             var repoCheckItem = _context.RepoChecks.Find(folderPath); //check om commit newest, fix
-            var items = _context.Contributions.Where(c => c.repoCheckObj.Equals(repoCheckItem));
+            var items = _context.Contributions.Where(c => c.repoCheckObj!.Equals(repoCheckItem));
 
             var date = items.Select(c => c.date.Date).Distinct().ToList();
 
@@ -158,7 +158,7 @@ public class RepoCheckRepository {
         _context.Database.OpenConnection();
 
         var repoCheckItem = _context.RepoChecks.Find(folderPath); //check om commit newest, fix
-        var contributions = _context.Contributions.Where(c => c.repoCheckObj.Equals(repoCheckItem));
+        var contributions = _context.Contributions.Where(c => c.repoCheckObj!.Equals(repoCheckItem));
 
         var authors = contributions.Select(c => c.author).Distinct().ToList();
         var data = new List<userComFreqObj>();
@@ -166,12 +166,12 @@ public class RepoCheckRepository {
             var intList = new List<int>();
             var contrList = new List<dateCommits>();
 
-            var dates = contributions.Where(k => k.author.Equals(auth))
+            var dates = contributions.Where(k => k.author!.Equals(auth))
                         .Select(c => c.date).Distinct().ToList();
 
             foreach(var d in dates){
                 var comCount = contributions.Where(k => k.date.Equals(d)
-                && k.author.Equals(auth))
+                && k.author!.Equals(auth))
                 .Select(k => k.commitsCount).Sum();
                 intList.Add(comCount);
             }
@@ -185,7 +185,7 @@ public class RepoCheckRepository {
 
 
             //change auth string to remove <email-stuff>
-            String authNameOnly = auth.Remove(auth.IndexOf("<"));
+            String authNameOnly = auth!.Remove(auth.IndexOf("<"));
             authNameOnly.Trim();
 
             data.Add(new userComFreqObj(authNameOnly, contrList));
@@ -207,7 +207,7 @@ public class RepoCheckRepository {
         var repo = new Repository(folderPath);
 
         var NewestCommitId = repo.Commits.Last().Id;
-        var curStoredCommitId = repoCheckObj.lastCheckedCommit;
+        var curStoredCommitId = repoCheckObj?.lastCheckedCommit;
 
         if(NewestCommitId.Equals(curStoredCommitId)){
             return true;
@@ -225,7 +225,7 @@ public class RepoCheckRepository {
         var newCons = conDTOs.Select(c => 
         ContributionFromContributionDTO(c)).ToList();
 
-        toUpdate.lastCheckedCommit = newestCommitId;
+        toUpdate!.lastCheckedCommit = newestCommitId;
         toUpdate.Contributions = newCons; 
 
 

@@ -7,7 +7,7 @@ using Newtonsoft.Json;
     public class Owner
     {
         [JsonProperty("login")]
-        public string ?login { get; set; }
+        public string login { get; set; }
 
         [JsonProperty("id")]
         public int id { get; set; }
@@ -22,6 +22,7 @@ using Newtonsoft.Json;
         public int id { get; set; }
 
         [JsonProperty("name")]
+        #nullable enable
         public string ?name { get; set; }
 
         [JsonProperty("owner")]
