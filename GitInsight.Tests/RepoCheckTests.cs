@@ -1,8 +1,6 @@
 namespace GitInsight.Tests;
 using GitInsight.Core;
 using LibGit2Sharp;
-using Microsoft.Data.Sqlite;
-using GitInsight.Entities;
 
 public class RepoCheckTests{
     private readonly SqliteConnection _connection;

@@ -1,5 +1,5 @@
 namespace GitInsight.Tests;
-using GitInsight.Entities;
+
 public class GitAnalysisTest{
     Repository _repo;
     public GitAnalysisTest(){
