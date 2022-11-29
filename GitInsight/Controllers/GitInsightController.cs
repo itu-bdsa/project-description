@@ -1,8 +1,6 @@
-using GitInsight.Core;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using LibGit2Sharp;
-using System.Collections;
 
 namespace GitInsight.Entities
 {
@@ -28,7 +26,7 @@ namespace GitInsight.Entities
             
             //Repo name generator so we can create multiple temp-folders
             string folderPath = "../TestGithubStorage/" + repoPath.Replace("%2F", "-");
-
+            string gitPath = repoPath;
             //String manipulation bc / gets replaced with %2F so we have to change it back for the method to work
             repoPath = repoPath.Replace("%2F", "/");
             repoPath = "https://github.com/" + repoPath;
@@ -57,8 +55,13 @@ namespace GitInsight.Entities
                 return Ok(userCommitFreq(folderPath));
             } else if(analyseMode.Equals("PieChart")){
                 return Ok(fileChangeList(folderPath));
-            } else return Ok(null);
-
+            } else if (analyseMode.Equals("ForkMode")){
+                return Ok(repoForkGet(gitPath));
+            } else{
+                return Ok(null);
+            }
+                
+                
         }
 
         //--Helper method to GetAnalysis()-----
@@ -79,6 +82,10 @@ namespace GitInsight.Entities
         private List<GitFileAnalyzer.FileAndNrChanges> fileChangeList(string folderPath){
             var repo = new Repository(folderPath);
             return _analyzer.getFilesAndNrChanges(repo);
+        }
+
+        private List<RepoFork.RepoForkObj> repoForkGet(string folderPath){
+               return RepoFork.getRepoForks(folderPath).GetAwaiter().GetResult().ToList();
         }
 
     }

@@ -66,7 +66,7 @@ public class RepoCheckTests{
         //Assert
         actual.Should().Be(expected);
     }
-
+/*
     [Fact]
     public void FirstCommitCountForUserCommitFreqShouldBe_AnneMarie_2Sep2022_5Commits(){
 
@@ -85,7 +85,7 @@ public class RepoCheckTests{
         actual.author.Should().Be(expected.author);
         Assert.Equal(actual.datesCommits, expected.datesCommits);
     }
-
+*/
     [Fact]
     public void LastCheckedCommit_ShouldBeMostRecent(){
 
