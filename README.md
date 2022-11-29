@@ -199,3 +199,30 @@ If you have implemented an application with all the requirements presented so fa
 Modify your `GitInsight` applications so that it can analyze _private_ repositories from GitHub.
 That feature should work so that a user only specifies a private repository together with required information (security tokens, SSH keys, etc.) in the application's front-end.
 Only analysis of private repositories to which a user has at least read access should be analyzable by a user.
+
+
+
+## Week Six (Week 48)
+
+Use the last week of the project work to polish you `GitInsight` applications, to implement missing requirements, to complete its test suite, and to complete its documentation.
+
+Additionally, prepare a 15 minute presentation of your group's `GitInsight` application for the demonstration sessions next week.
+For your demo presentations you likely want to reuse information from your application's documentation.
+If the respective documentation does not exist yet, you want to create it and add it to your `doc`'s directory.
+
+Your presentations should include the following:
+
+  * How do you make sure that you implemented the right application?
+    - That is, provide a mapping from functional and non-functional requirements in text form to respective test cases.
+  * Show what kind of tests are contained in your test suites and demonstrate what they are testing.
+  * Did you apply any design patterns in your application?
+    - If yes, describe where you applied which design pattern and what problem it solves, i.e., the reason for its application.
+    - You choose if you present design patterns in code over via diagrams that illustrate them.
+  * Did you apply any architectural patterns in your application?
+    - If yes, describe where you applied which architectural pattern and describe the reason for its application.
+    - Likely, architectural patterns in your application are best illustrated using suitable diagrams.
+  * Did you follow any design principles?
+    - If yes, show case some instances of 
+  * Present UML diagrams for aspects of your applications that you want to highlight during your presentation, e.g., the structure of your applications, important interactions of certain classes, component, or sub-systems, etc.
+
+Your presentations should reside in the `doc` directory of your applications next to all other documentation.
