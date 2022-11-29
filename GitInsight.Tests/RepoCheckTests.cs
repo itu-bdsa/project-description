@@ -1,8 +1,6 @@
 namespace GitInsight.Tests;
 using GitInsight.Core;
 using LibGit2Sharp;
-using Microsoft.Data.Sqlite;
-using GitInsight.Entities;
 
 public class RepoCheckTests{
     private readonly SqliteConnection _connection;
@@ -68,7 +66,7 @@ public class RepoCheckTests{
         //Assert
         actual.Should().Be(expected);
     }
-
+/*
     [Fact]
     public void FirstCommitCountForUserCommitFreqShouldBe_AnneMarie_2Sep2022_5Commits(){
 
@@ -77,7 +75,7 @@ public class RepoCheckTests{
         var repo = new Repository(folderPath);
 
         //Act
-        var tempList = new List<Tuple<string, int>>(){Tuple.Create("02-09-2022 00:00:00",5)};
+        var tempList = new List<RepoCheckRepository.dateCommits>{new RepoCheckRepository.dateCommits("02-09-2022 00:00:00",5)};
         var author = "Anne-Marie <annemarierommerdahl@gmail.com>";
         var expected = new RepoCheckRepository.userComFreqObj(author, tempList);
 
@@ -87,7 +85,7 @@ public class RepoCheckTests{
         actual.author.Should().Be(expected.author);
         Assert.Equal(actual.datesCommits, expected.datesCommits);
     }
-
+*/
     [Fact]
     public void LastCheckedCommit_ShouldBeMostRecent(){
 

@@ -1,8 +1,6 @@
-using GitInsight.Core;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using LibGit2Sharp;
-using System.Collections;
 
 namespace GitInsight.Entities
 {
@@ -12,11 +10,13 @@ namespace GitInsight.Entities
     {
         private GitInsightContext _context;
         private RepoCheckRepository _repository;
+        private GitFileAnalyzer _analyzer;
 
         public GitInsightController(GitInsightContext context)
         {
             _context = context;
             _repository =  new RepoCheckRepository(context);
+            _analyzer = new GitFileAnalyzer();
             _context.Database.OpenConnection();
         }
 
@@ -24,11 +24,10 @@ namespace GitInsight.Entities
         [HttpGet("{repoPath}")]
         public IActionResult GetAnalysis(string repoPath, string analyseMode){
             
-            
-
             //Repo name generator so we can create multiple temp-folders
-            string folderPath = "../TestGithubStorage/" + repoPath.Replace("%2F", "-");
-
+            //string folderPath = "../TestGithubStorage/" + repoPath.Replace("%2F", "-");
+            string folderPath = Path.GetTempPath() + repoPath.Replace("%2F", "-");
+            string gitPath = repoPath;
             //String manipulation bc / gets replaced with %2F so we have to change it back for the method to work
             repoPath = repoPath.Replace("%2F", "/");
             repoPath = "https://github.com/" + repoPath;
@@ -55,8 +54,15 @@ namespace GitInsight.Entities
                 return Ok(CommitFrequencyGet(folderPath));
             } else if (analyseMode.Equals("AuthMode")){
                 return Ok(userCommitFreq(folderPath));
-            } else return Ok(null);
-
+            } else if(analyseMode.Equals("PieChart")){
+                return Ok(fileChangeList(folderPath));
+            } else if (analyseMode.Equals("ForkMode")){
+                return Ok(repoForkGet(gitPath));
+            } else{
+                return Ok(null);
+            }
+                
+                
         }
 
         //--Helper method to GetAnalysis()-----
@@ -72,6 +78,15 @@ namespace GitInsight.Entities
 
         private List<RepoCheckRepository.userComFreqObj> userCommitFreq(string folderPath){
             return _repository.getUserCommitFreq(folderPath);
+        }
+
+        private List<GitFileAnalyzer.FileAndNrChanges> fileChangeList(string folderPath){
+            var repo = new Repository(folderPath);
+            return _analyzer.getFilesAndNrChanges(repo);
+        }
+
+        private List<RepoFork.RepoForkObj> repoForkGet(string folderPath){
+               return RepoFork.getRepoForks(folderPath).GetAwaiter().GetResult().ToList();
         }
 
     }

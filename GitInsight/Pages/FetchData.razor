@@ -1,5 +1,7 @@
 ﻿@page "/fetchdata"
 @using GitInsight.Data
+@using System.Threading;
+@using System.Linq;
 @inject GitInsightController Controller
 
 <PageTitle>GitInsight</PageTitle>
@@ -53,9 +55,31 @@ else if (showTable)
             }        
         </div>
     </div>
+    <h4>ForkMode Table</h4>
+    <RadzenDataGrid Data="@Forkresult" TItem="GitInsight.Entities.RepoFork.RepoForkObj" ColumnWidth="300px" AllowColumnResize="true">
+        <Columns>
+        <RadzenDataGridColumn TItem="GitInsight.Entities.RepoFork.RepoForkObj" Property="repoName" Title="Repository Name" FormatString="{0:d}"/>
+        <RadzenDataGridColumn TItem="GitInsight.Entities.RepoFork.RepoForkObj" Property="ownerName" Title="Owner Name"/>
+        <RadzenDataGridColumn TItem="GitInsight.Entities.RepoFork.RepoForkObj" Property="repo_url" Title="URL"/>  
+        </Columns>
+    </RadzenDataGrid>
+
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 col-lg-6 offset-lg-3 my-5">
+        <h4>Distribution of changes to files</h4>
+        <RadzenChart Visible="@showTable">
+            <RadzenPieSeries Data="@FileChanges" Title="Changes" CategoryProperty="fileName" ValueProperty="changes">
+            </RadzenPieSeries>
+        </RadzenChart>
+        </div>
+    </div>
 </div>
 
 }
+
 
 @code {
     bool showTable = false;
@@ -64,13 +88,23 @@ else if (showTable)
 
     private List<GitInsight.Entities.RepoCheckRepository.userComFreqObj> Authresult;
 
+    private List<GitFileAnalyzer.FileAndNrChanges> FileChanges;
+    private List<GitInsight.Entities.RepoFork.RepoForkObj> Forkresult;
+
+
     public void submitInput(){
         //SpaceVikingEik/hewwo
         //bliver graf opdateret hvis analyse kører igen og der er ændringer?
-
+        runForkMode();
         runFQMode();
         runAuthMode();
+        getFileChanges();
         this.showTable = true;
+    }
+
+    private void getFileChanges(){
+        Microsoft.AspNetCore.Mvc.OkObjectResult tempResult = (Microsoft.AspNetCore.Mvc.OkObjectResult) Controller.GetAnalysis(this.gitRepoInput, "PieChart");
+        this.FileChanges = tempResult.Value as List<GitFileAnalyzer.FileAndNrChanges>;
     }
 
     private void runFQMode(){
@@ -81,6 +115,11 @@ else if (showTable)
     private void runAuthMode(){
         Microsoft.AspNetCore.Mvc.OkObjectResult tempResult = (Microsoft.AspNetCore.Mvc.OkObjectResult) Controller.GetAnalysis(this.gitRepoInput, "AuthMode");
         this.Authresult = tempResult.Value as List<GitInsight.Entities.RepoCheckRepository.userComFreqObj>;
+    }
+
+    private void runForkMode(){
+        var tempResult = (Microsoft.AspNetCore.Mvc.OkObjectResult) Controller.GetAnalysis(this.gitRepoInput, "ForkMode");
+        this.Forkresult = tempResult.Value as List<GitInsight.Entities.RepoFork.RepoForkObj>;
     }
 
 }
