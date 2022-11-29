@@ -4,8 +4,9 @@ public class RepoCheck
 {
     [Required, Key] //use as primary key
     public string repoPath { get; set; }
-
-    public string? lastCheckedCommit { get; set; }
+    
+#nullable enable
+    public string ?lastCheckedCommit { get; set; }
 
     //one-to-many relationship w. Contributions
     [Required]

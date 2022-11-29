@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Builder;
 
 public class RepoFork
 {  
-    private GitInsightContext ?_context;
+    private GitInsightContext _context;
 
     public record RepoForkObj(string repoName, string ownerName, string repo_url);
 
