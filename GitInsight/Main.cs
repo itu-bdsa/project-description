@@ -1,12 +1,4 @@
-using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Configuration;
-using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Components.Web;
 using GitInsight;
-using Microsoft.AspNetCore.Mvc.RazorPages;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,15 +13,15 @@ builder.Services.AddScoped<GitInsightContext>();
 //Naviger til GitInsight folder og kør disse to commands i terminal.
 //Husk at udskift database, username og password med dit eget
 
-//$CONNECTION_STRING="Host=localhost;Database=GitDB;Username=postgres;Password=bianca3";
-//til mac for am: //CONNECTION_STRING="Host=localhost;Database=GitDB;Username=annemariemygind";
+//$CONNECTION_STRING="Host=localhost;Database=<DBName>;Username=postgres;Password=<PassWord>";
+//til mac for am: //CONNECTION_STRING="Host=localhost;Database=<DBName>;Username=<userName>";
 //dotnet user-secrets set "ConnectionStrings:GitIn" "$CONNECTION_STRING"
 
 var configuration = new ConfigurationBuilder().AddUserSecrets<GitInsightController>().Build();
 var connectionString = configuration.GetConnectionString("GitIn");
 
 //hvis ovenstående ikke fungerer, brug denne i stedet. Husk at udskifte info og udkommentere ovenstående
-//var connectionString = @"Host=localhost;Database=GitDB;Username=postgres;Password=bianca3";
+//var connectionString = @"Host=localhost;Database=GitDB;Username=postgres;Password=<Password>";
 
 GitInsightContextFactory factory = new GitInsightContextFactory();
         GitInsightContext context = factory.CreateDbContext(args);
@@ -42,7 +34,6 @@ GitInsightContextFactory factory = new GitInsightContextFactory();
 
 builder.Services.AddDbContext<GitInsightContext>(options =>
      options.UseNpgsql(connectionString)); //options.UseSqlServer(connectionString));
-     //lortet funker kun med Npgsql server, dunno why but it works
 
 AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
 

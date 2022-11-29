@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Builder;
 
 public class RepoFork
 {  
-    private GitInsightContext _context;
+    private GitInsightContext ?_context;
 
     public record RepoForkObj(string repoName, string ownerName, string repo_url);
 
@@ -13,7 +13,6 @@ public class RepoFork
         
         var rawData = await Task.WhenAll(ConnectGithubAPI(gitPath)).ConfigureAwait(false);
         var data = rawData.SelectMany(x=>x.Select(y=>new RepoForkObj(y.name!,y.owner!.login!, y.html_url!)));
-        
         
         return data;
     }

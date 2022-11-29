@@ -7,8 +7,6 @@ using Microsoft.Extensions.Configuration;
 dotnet ef migrations add Added_something --verbose -p .\GitInsight.Entities\ -s .\GitInsight
 */
 
-//Denne klasse er kun relevant ift. før-api-projekt
-
 public class GitInsightContextFactory : IDesignTimeDbContextFactory<GitInsightContext> //internal
 {
     public GitInsightContext CreateDbContext(string[] args)

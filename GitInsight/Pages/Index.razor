@@ -1,9 +1,120 @@
 ﻿@page "/"
+@inject GitInsightController Controller
 
-<PageTitle>Index</PageTitle>
+<PageTitle>GitInsight</PageTitle>
 
-<h1>Hello, world!</h1>
+<h1>GitInsight</h1>
 
-Welcome to your new app.
+<p>Please write github repository:</p>
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+<div>
+    Repository:
+    <input type="text" @bind="gitRepoInput">
+</div>
+<br>
+<div>
+    <button class="btn btn-primary" @onclick="submitInput">
+        Run Analysis
+    </button>
+</div>
+
+<br>
+@if (!showTable)
+{
+    <p><em>Waiting for input...</em></p>
+}
+else if (showTable)
+{
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 my-5">
+            <h4>FQMode Barchart</h4>
+            <RadzenChart ColorScheme=ColorScheme.Divergent>
+                <RadzenColumnSeries Data="@FQresult" Title="FQ" CategoryProperty="date" LineType="LineType.Dashed" ValueProperty="commits">
+                    <RadzenSeriesDataLabels Visible="@showTable" />
+                </RadzenColumnSeries>
+                <RadzenColumnOptions Radius="5" />
+                <RadzenValueAxis>
+                    <RadzenGridLines Visible="true" />
+                    <RadzenAxisTitle Text="Commits" />
+                </RadzenValueAxis>
+            </RadzenChart>
+
+            <h4>AuthMode Barchart(s)</h4>
+            @foreach (var auth in Authresult)
+            {
+                <RadzenChart ColorScheme=ColorScheme.Pastel>
+                    <RadzenColumnSeries Data=@auth.datesCommits Title=@auth.author CategoryProperty="date" LineType="LineType.Dashed" ValueProperty="totalCommits">
+                        <RadzenSeriesDataLabels Visible="@showTable" />
+                        <RadzenLegend Position="LegendPosition.Top" />
+                    </RadzenColumnSeries>
+                </RadzenChart> 
+            }        
+        </div>
+    </div>
+    <h4>ForkMode Table</h4>
+    <RadzenDataGrid Data="@Forkresult" TItem="GitInsight.Entities.RepoFork.RepoForkObj" ColumnWidth="300px" AllowColumnResize="true">
+        <Columns>
+        <RadzenDataGridColumn TItem="GitInsight.Entities.RepoFork.RepoForkObj" Property="repoName" Title="Repository Name" FormatString="{0:d}"/>
+        <RadzenDataGridColumn TItem="GitInsight.Entities.RepoFork.RepoForkObj" Property="ownerName" Title="Owner Name"/>
+        <RadzenDataGridColumn TItem="GitInsight.Entities.RepoFork.RepoForkObj" Property="repo_url" Title="URL"/>  
+        </Columns>
+    </RadzenDataGrid>
+
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 col-lg-6 offset-lg-3 my-5">
+        <h4>Distribution of changes to files</h4>
+        <RadzenChart Visible="@showTable">
+            <RadzenPieSeries Data="@FileChanges" Title="Changes" CategoryProperty="fileName" ValueProperty="changes">
+            </RadzenPieSeries>
+        </RadzenChart>
+        </div>
+    </div>
+</div>
+
+}
+
+@code {
+    bool showTable = false;
+    public string gitRepoInput { get; set; }
+    private List<GitInsight.Entities.RepoCheckRepository.comFreqObj> FQresult;
+
+    private List<GitInsight.Entities.RepoCheckRepository.userComFreqObj> Authresult;
+
+    private List<GitFileAnalyzer.FileAndNrChanges> FileChanges;
+    private List<GitInsight.Entities.RepoFork.RepoForkObj> Forkresult;
+
+    public void submitInput(){
+        //SpaceVikingEik/hewwo
+        //bliver graf opdateret hvis analyse kører igen og der er ændringer?
+        runForkMode();
+        runFQMode();
+        runAuthMode();
+        getFileChanges();
+        this.showTable = true;
+    }
+
+    private void getFileChanges(){
+        Microsoft.AspNetCore.Mvc.OkObjectResult tempResult = (Microsoft.AspNetCore.Mvc.OkObjectResult) Controller.GetAnalysis(this.gitRepoInput, "PieChart");
+        this.FileChanges = tempResult.Value as List<GitFileAnalyzer.FileAndNrChanges>;
+    }
+
+    private void runFQMode(){
+        Microsoft.AspNetCore.Mvc.OkObjectResult tempResult = (Microsoft.AspNetCore.Mvc.OkObjectResult) Controller.GetAnalysis(this.gitRepoInput, "FQMode");
+        this.FQresult = tempResult.Value as List<GitInsight.Entities.RepoCheckRepository.comFreqObj>;
+    }
+
+    private void runAuthMode(){
+        Microsoft.AspNetCore.Mvc.OkObjectResult tempResult = (Microsoft.AspNetCore.Mvc.OkObjectResult) Controller.GetAnalysis(this.gitRepoInput, "AuthMode");
+        this.Authresult = tempResult.Value as List<GitInsight.Entities.RepoCheckRepository.userComFreqObj>;
+    }
+
+    private void runForkMode(){
+        var tempResult = (Microsoft.AspNetCore.Mvc.OkObjectResult) Controller.GetAnalysis(this.gitRepoInput, "ForkMode");
+        this.Forkresult = tempResult.Value as List<GitInsight.Entities.RepoFork.RepoForkObj>;
+    }
+
+}
