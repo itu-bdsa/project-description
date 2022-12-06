@@ -17,7 +17,7 @@ Inform us about your group by modifying this file and by sending a pull request 
 |   10 | `The Bear Minimum`                    | `jouj`, `mhsi`, `tuho`, `hcan`, `kbej`            | https://github.com/Tyyrid/BDSA-Project-TheBearMinimum |
 |   11 | `Ape in space enterprise`             | `sibh`, `frgm`, `brml`, `kmey`, `otja`            | https://github.com/frmo24042/GitInsight |
 |   12 | `Grupp1`                              | `unla`, `mesv`, `laku`, `phla`, `raoo`, `bemi`    | https://github.com/bemillant/BDSA-project |
-|   13 | `Bogos`                               | `mreh`, `paab`, `shho`, `oska`, `nsel`, `clwj`    | https://github.com/nselpriv/Bogos_BDSA.git |
+|   13 | `Bogos`                               | `mreh`, `paab`, `shho`, `oska`, `nsel`, `clwj`    | https://github.com/orgs/BogosBDSA/repositories |
 |   14 | `Storskov Inc.`                       | `jklo`, `jakst`, `malsc`, `biha`, `kmsa`, `phimo` | https://github.com/MegetSkuffet/BDSA-project |
 |   15 | `Bad Decisions, Suggestions Accepted` | `clly`, `selb`, `monha`, `pekp`, `okre`           | https://github.com/Clara-Lyngeraa/GitInsight |
 |   16 | `InsertProfessionalGroupname`         | `bath`, `bhag`, `memr`, `nicha`, `olfw`, `adjr`   | https://github.com/Megabd/BDSA-Project |
