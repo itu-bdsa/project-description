@@ -21,7 +21,27 @@ public class RepoCheckTests{
         _GitController = new GitInsightController(_context);
         _repository = new RepoCheckRepository(_context);
 
-        folderPath = @"C:\Users\annem\Desktop\BDSA_PROJECT\TestGithubStorage\VictoriousAnnro-Assignment0.git";
+        var repoPath = "VictoriousAnnro/Assignment0.git";
+        var gitPath = "https://github.com/" + repoPath;
+
+        folderPath = Path.GetTempPath() + repoPath.Replace("/", "-");
+
+        if(!Directory.Exists(folderPath)){
+            var path = Repository.Clone(gitPath, folderPath);
+        }
+
+
+        //----------- slet??-----
+
+        /*var l = Directory.GetParent(Environment.CurrentDirectory)!.ToString();
+        string path = Path.Combine(l, @"TestGithubStorage/VictoriousAnnro-Assignment0.git");
+        if(!Directory.Exists(path)){
+            //Console.WriteLine("DOESNT exist!");
+            var clonePath = Repository.Clone("https://github.com/VictoriousAnnro/Assignment0.git", path);
+        }
+
+        folderPath = path;*/
+        //folderPath = @"C:\Users\annem\Desktop\BDSA_PROJECT\TestGithubStorage\VictoriousAnnro-Assignment0.git";
         //below doesnt work for some goddamn reason and i dont know why. YES i tried using the other backslash
         //"../TestGithubStorage/VictoriousAnnro-Assignment0.git";
     }
@@ -60,13 +80,13 @@ public class RepoCheckTests{
         var repo = new Repository(folderPath);
 
         //Act
-        var expected = new RepoCheckRepository.comFreqObj("02-09-2022 00:00:00", 8);
+        var expected = new RepoCheckRepository.comFreqObj("02-09-2022", 8);
         var actual = _repository.getCommitFreq(folderPath).Last();
 
         //Assert
         actual.Should().Be(expected);
     }
-/*
+
     [Fact]
     public void FirstCommitCountForUserCommitFreqShouldBe_AnneMarie_2Sep2022_5Commits(){
 
@@ -75,8 +95,8 @@ public class RepoCheckTests{
         var repo = new Repository(folderPath);
 
         //Act
-        var tempList = new List<RepoCheckRepository.dateCommits>{new RepoCheckRepository.dateCommits("02-09-2022 00:00:00",5)};
-        var author = "Anne-Marie <annemarierommerdahl@gmail.com>";
+        var tempList = new List<RepoCheckRepository.dateCommits>{new RepoCheckRepository.dateCommits("02-09-2022",5)};
+        var author = "Anne-Marie";
         var expected = new RepoCheckRepository.userComFreqObj(author, tempList);
 
         var actual = _repository.getUserCommitFreq(folderPath).Last();
@@ -85,7 +105,7 @@ public class RepoCheckTests{
         actual.author.Should().Be(expected.author);
         Assert.Equal(actual.datesCommits, expected.datesCommits);
     }
-*/
+
     [Fact]
     public void LastCheckedCommit_ShouldBeMostRecent(){
 
@@ -116,6 +136,7 @@ public class RepoCheckTests{
                     };
 
         _context.RepoChecks.Add(fakeRepoCheck);
+        _context.SaveChanges();
 
         //Act
         _repository.Update(folderPath);

@@ -12,3 +12,17 @@
 /Users/annemariemygind/Desktop/BDSA_PROJECT/GitInsight.Core/obj/Debug/net7.0/GitInsight.Core.pdb
 /Users/annemariemygind/Desktop/BDSA_PROJECT/GitInsight.Core/obj/Debug/net7.0/GitInsight.Core.genruntimeconfig.cache
 /Users/annemariemygind/Desktop/BDSA_PROJECT/GitInsight.Core/obj/Debug/net7.0/ref/GitInsight.Core.dll
+C:\Users\annem\OneDrive\Skrivebord\BDSA_PROJECT\GitInsight.Core\bin\Debug\net7.0\GitInsight.Core.deps.json
+C:\Users\annem\OneDrive\Skrivebord\BDSA_PROJECT\GitInsight.Core\bin\Debug\net7.0\GitInsight.Core.runtimeconfig.json
+C:\Users\annem\OneDrive\Skrivebord\BDSA_PROJECT\GitInsight.Core\bin\Debug\net7.0\GitInsight.Core.dll
+C:\Users\annem\OneDrive\Skrivebord\BDSA_PROJECT\GitInsight.Core\bin\Debug\net7.0\GitInsight.Core.pdb
+C:\Users\annem\OneDrive\Skrivebord\BDSA_PROJECT\GitInsight.Core\obj\Debug\net7.0\GitInsight.Core.csproj.AssemblyReference.cache
+C:\Users\annem\OneDrive\Skrivebord\BDSA_PROJECT\GitInsight.Core\obj\Debug\net7.0\GitInsight.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\annem\OneDrive\Skrivebord\BDSA_PROJECT\GitInsight.Core\obj\Debug\net7.0\GitInsight.Core.AssemblyInfoInputs.cache
+C:\Users\annem\OneDrive\Skrivebord\BDSA_PROJECT\GitInsight.Core\obj\Debug\net7.0\GitInsight.Core.AssemblyInfo.cs
+C:\Users\annem\OneDrive\Skrivebord\BDSA_PROJECT\GitInsight.Core\obj\Debug\net7.0\GitInsight.Core.csproj.CoreCompileInputs.cache
+C:\Users\annem\OneDrive\Skrivebord\BDSA_PROJECT\GitInsight.Core\obj\Debug\net7.0\GitInsight.Core.dll
+C:\Users\annem\OneDrive\Skrivebord\BDSA_PROJECT\GitInsight.Core\obj\Debug\net7.0\refint\GitInsight.Core.dll
+C:\Users\annem\OneDrive\Skrivebord\BDSA_PROJECT\GitInsight.Core\obj\Debug\net7.0\GitInsight.Core.pdb
+C:\Users\annem\OneDrive\Skrivebord\BDSA_PROJECT\GitInsight.Core\obj\Debug\net7.0\GitInsight.Core.genruntimeconfig.cache
+C:\Users\annem\OneDrive\Skrivebord\BDSA_PROJECT\GitInsight.Core\obj\Debug\net7.0\ref\GitInsight.Core.dll

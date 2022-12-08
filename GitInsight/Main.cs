@@ -6,7 +6,6 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
-//builder.Services.AddSingleton<GitInsight.Data.WeatherForecastService>();
 builder.Services.AddScoped<GitInsightController>();
 builder.Services.AddScoped<GitInsightContext>();
 //--------------Real database setup---------------------
@@ -17,19 +16,21 @@ builder.Services.AddScoped<GitInsightContext>();
 //til mac for am: //CONNECTION_STRING="Host=localhost;Database=<DBName>;Username=<userName>";
 //dotnet user-secrets set "ConnectionStrings:GitIn" "$CONNECTION_STRING"
 
-var configuration = new ConfigurationBuilder().AddUserSecrets<GitInsightController>().Build();
-var connectionString = configuration.GetConnectionString("GitIn");
+var configuration = new ConfigurationBuilder().AddUserSecrets<GitInsightContextFactory>().Build();
+var connectionString = configuration.GetConnectionString("GitIn"); //"GitIn"
+
 
 //hvis ovenstående ikke fungerer, brug denne i stedet. Husk at udskifte info og udkommentere ovenstående
-//var connectionString = @"Host=localhost;Database=GitDB;Username=postgres;Password=<Password>";
+//var connectionString = @"Host=localhost;Database=GitDb;Username=postgres;Password=Facebook3";
 
 GitInsightContextFactory factory = new GitInsightContextFactory();
         GitInsightContext context = factory.CreateDbContext(args);
+        Console.WriteLine(context.Database.EnsureCreated());
         //context.Database.EnsureDeleted(); //to delete database for tests
         var repoRep = new GitInsightController(context);
         //Console.WriteLine(context.Database.EnsureDeleted()); //to delete database for tests
         //var repoRep = new RepoCheckRepository(context);
-        Console.WriteLine(context.Database.EnsureCreated());
+        
 
 
 builder.Services.AddDbContext<GitInsightContext>(options =>

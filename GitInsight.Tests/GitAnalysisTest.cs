@@ -6,7 +6,6 @@ public class GitAnalysisTest{
         var l = Directory.GetParent(Environment.CurrentDirectory)!.ToString();
         string path = Path.Combine(l, @"TestGithubStorage/VictoriousAnnro-TestRep.git");
         if(!Directory.Exists(path)){
-            //Console.WriteLine("DOESNT exist!");
             var clonePath = Repository.Clone("https://github.com/VictoriousAnnro/TestRep.git", path);
         }
         _repo = new Repository(path);

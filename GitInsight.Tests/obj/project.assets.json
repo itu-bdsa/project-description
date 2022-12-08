@@ -13191,19 +13191,19 @@
     ]
   },
   "packageFolders": {
-    "/Users/annemariemygind/.nuget/packages/": {}
+    "C:\\Users\\annem\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/annemariemygind/Desktop/BDSA_PROJECT/GitInsight.Tests/GitInsight.Tests.csproj",
+      "projectUniqueName": "C:\\Users\\annem\\OneDrive\\Skrivebord\\BDSA_PROJECT\\GitInsight.Tests\\GitInsight.Tests.csproj",
       "projectName": "GitInsight.Tests",
-      "projectPath": "/Users/annemariemygind/Desktop/BDSA_PROJECT/GitInsight.Tests/GitInsight.Tests.csproj",
-      "packagesPath": "/Users/annemariemygind/.nuget/packages/",
-      "outputPath": "/Users/annemariemygind/Desktop/BDSA_PROJECT/GitInsight.Tests/obj/",
+      "projectPath": "C:\\Users\\annem\\OneDrive\\Skrivebord\\BDSA_PROJECT\\GitInsight.Tests\\GitInsight.Tests.csproj",
+      "packagesPath": "C:\\Users\\annem\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\annem\\OneDrive\\Skrivebord\\BDSA_PROJECT\\GitInsight.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/annemariemygind/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\annem\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
@@ -13215,11 +13215,11 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "/Users/annemariemygind/Desktop/BDSA_PROJECT/GitInsight.Entities/GitInsight.Entities.csproj": {
-              "projectPath": "/Users/annemariemygind/Desktop/BDSA_PROJECT/GitInsight.Entities/GitInsight.Entities.csproj"
+            "C:\\Users\\annem\\OneDrive\\Skrivebord\\BDSA_PROJECT\\GitInsight.Entities\\GitInsight.Entities.csproj": {
+              "projectPath": "C:\\Users\\annem\\OneDrive\\Skrivebord\\BDSA_PROJECT\\GitInsight.Entities\\GitInsight.Entities.csproj"
             },
-            "/Users/annemariemygind/Desktop/BDSA_PROJECT/GitInsight/GitInsight.csproj": {
-              "projectPath": "/Users/annemariemygind/Desktop/BDSA_PROJECT/GitInsight/GitInsight.csproj"
+            "C:\\Users\\annem\\OneDrive\\Skrivebord\\BDSA_PROJECT\\GitInsight\\GitInsight.csproj": {
+              "projectPath": "C:\\Users\\annem\\OneDrive\\Skrivebord\\BDSA_PROJECT\\GitInsight\\GitInsight.csproj"
             }
           }
         }
@@ -13293,16 +13293,8 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.100/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file /Users/annemariemygind/Desktop/BDSA_PROJECT/GitInsight.Tests/obj/project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  }
 }

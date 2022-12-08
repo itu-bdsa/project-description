@@ -34,11 +34,9 @@ namespace GitInsight.Entities
 
             if(Directory.Exists(folderPath)){
 
-                //I cant really fathom why this works, but it does update the folder to the newest version of main
+                //update the folder to the newest version of main
                 Repository repo = new Repository(folderPath);
                 Commands.Pull(repo,new Signature(" d", "d ",new DateTimeOffset()),new PullOptions());
-
-                //addRepoCheckToDB(folderPath); //for testing
 
             } else {
                 var path = Repository.Clone(repoPath, folderPath);

@@ -59,16 +59,11 @@ public class RepoCheckRepository {
         return contributionsList;
     }
 
-    public HashSet<ContributionDTO> AddContributionsDataToSetButRemoveEverythingAlreadyThere(Repository repo, String folderPath){
+    public HashSet<ContributionDTO> AddContributionsDataToSetButRemoveEverythingAlreadyThere(Repository repo, String folderPath, IQueryable<Contribution> contributions){
         //add repo data to hashset
         var commitArray = repo.Commits.ToList();
         var contributionsList = new HashSet<ContributionDTO>();
-        //just for testing remove later
-        Console.WriteLine(commitArray.Count);
-        Console.WriteLine(repo.Info.Path);
-        
-        var repoCheckItem = _context.RepoChecks.Find(folderPath); //check om commit newest, fix
-        var contributions = _context.Contributions.Where(c => c.repoCheckObj!.Equals(repoCheckItem));
+
         var latestCommitDate = contributions.Select(c => c.date).Max();
         var lastCommitList = contributions.Where(c => c.date.Equals(latestCommitDate)).ToList();
 
@@ -78,7 +73,6 @@ public class RepoCheckRepository {
         }
 
         foreach (var c in commitArray){
-            Console.WriteLine(c.Author.When.Date);
             //get number of commits by auhtor on date
             if(c.Author.When.Date >= latestCommitDate){
                 int commitNr = getNrCommitsOnDateByAuthor(c.Author.When.Date, c.Author, repo);
@@ -185,7 +179,7 @@ public class RepoCheckRepository {
 
 
             //change auth string to remove <email-stuff>
-            String authNameOnly = auth!.Remove(auth.IndexOf("<"));
+            String authNameOnly = auth!.Remove(auth.IndexOf(" <"));
             authNameOnly.Trim();
 
             data.Add(new userComFreqObj(authNameOnly, contrList));
@@ -215,12 +209,37 @@ public class RepoCheckRepository {
 
     }
 
-    public void Update(string folderPath){
+    /*public void Update(string folderPath){
         var toUpdate = _context.RepoChecks.Find(folderPath);
         var repo = new Repository(folderPath);
         var newestCommitId = repo.Commits.ToList().First().Id.ToString();
 
         var conDTOs = AddContributionsDataToSetButRemoveEverythingAlreadyThere(repo, folderPath);
+
+        var newCons = conDTOs.Select(c => 
+        ContributionFromContributionDTO(c)).ToList();
+
+        toUpdate!.lastCheckedCommit = newestCommitId;
+        toUpdate.Contributions = newCons; 
+
+
+        _context.SaveChanges();
+    }*/
+
+    public void Update(string folderPath){
+        var toUpdate = _context.RepoChecks.Find(folderPath);
+        var repo = new Repository(folderPath);
+        var newestCommitId = repo.Commits.ToList().First().Id.ToString();
+
+        var repoCheckItem = _context.RepoChecks.Find(folderPath);
+        var contributions = _context.Contributions.Where(c => c.repoCheckObj!.Equals(repoCheckItem));
+
+        var conDTOs = new HashSet<ContributionDTO>();
+        if(contributions.Count() > 0){
+            conDTOs = AddContributionsDataToSetButRemoveEverythingAlreadyThere(repo, folderPath, contributions);
+        } else {
+            conDTOs = AddContributionsDataToSet(repo);
+        }
 
         var newCons = conDTOs.Select(c => 
         ContributionFromContributionDTO(c)).ToList();
