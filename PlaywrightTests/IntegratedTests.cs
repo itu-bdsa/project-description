@@ -53,7 +53,29 @@ public class Tests : PageTest
 
         await Page.GotoAsync("https://localhost:7111");
 
-        //await Page.GetByRole(AriaRole.Link, new() { NameString = "Fetch data" }).ClickAsync();
+        await Page.GetByRole(AriaRole.Textbox).ClickAsync();
+
+        await Page.GetByRole(AriaRole.Textbox).FillAsync("Divik-kid/BDSA00");
+
+        await Page.GetByRole(AriaRole.Button, new() { NameString = "Run Analysis" }).ClickAsync();
+
+        var fq = Page.GetByRole(AriaRole.Heading, new() { NameString = "FQMode Barchart" });
+
+        await Expect(fq).ToBeVisibleAsync();
+
+        await Expect(Page.GetByRole(AriaRole.Heading, new() { NameString = "AuthMode Barchart(s)" })).ToBeVisibleAsync();
+
+        await Expect(Page.GetByRole(AriaRole.Heading, new() { NameString = "ForkMode Table" })).ToBeVisibleAsync();
+
+        await Expect(Page.GetByRole(AriaRole.Heading, new() { NameString = "Distribution of changes to files" })).ToBeVisibleAsync();
+
+    }
+
+    [Test]
+    public async Task IntegrTest()
+    {
+
+        await Page.GotoAsync("https://localhost:7111/");
 
         await Page.GetByRole(AriaRole.Textbox).ClickAsync();
 
@@ -61,36 +83,25 @@ public class Tests : PageTest
 
         await Page.GetByRole(AriaRole.Button, new() { NameString = "Run Analysis" }).ClickAsync();
 
-        var FQLocator = Page.Locator("div").Filter(new() { HasTextString = "FQMode Barchart" });
-        
-        await Expect(FQLocator).ToHaveTitleAsync(new Regex("GitInsight"));
+        await Page.Locator(".rz-column-series > path").First.ClickAsync();
 
+        await Page.GetByText("08-09-2022").First.ClickAsync();
 
-        //-----FQMode expect 13 commits for date 08-09-2022 -------
-        /*await Expect(Page).ToHaveTitleAsync(new Regex("GitInsight"));
-        await page.GetByText("08-09-2022").First.ClickAsync();
+        await Page.GetByRole(AriaRole.Heading, new() { NameString = "AuthMode Barchart(s)" }).ClickAsync();
 
-        await page.GetByText("13").ClickAsync();
+        await Page.GetByText("Chris").ClickAsync();
 
-        //-----ForkMode repo name BDSA00 owner Nooja1012 URL https://github.com/Nooja1012/BDSA00 -------
+        await Page.GetByText("08-09-2022").Nth(1).ClickAsync();
 
-        await page.GetByText("BDSA00").First.ClickAsync();
+        await Page.GetByRole(AriaRole.Heading, new() { NameString = "ForkMode Table" }).ClickAsync();
 
-        await page.GetByText("Nooja1012").First.ClickAsync();
+        await Page.GetByRole(AriaRole.Cell, new() { NameString = "BDSA00" }).First.ClickAsync();
 
-        await page.GetByText("https://github.com/Nooja1012/BDSA00").ClickAsync();
+        await Page.GetByRole(AriaRole.Cell, new() { NameString = "Nooja1012" }).First.ClickAsync();
 
+        await Page.GetByRole(AriaRole.Cell, new() { NameString = "https://github.com/Nooja1012/BDSA00" }).ClickAsync();
 
-        // create a locator
-        //var FQLocator = Page.GetByRole(AriaRole.Heading, new() { NameString = "FQMode Barchart" });
-        var FQLocator = Page.GetByRole(AriaRole.Heading, new() { NameString = "FQMode Barchart" });
-
-        // Expect an attribute "to be strictly equal" to the value.
-        //await Expect(FQLocator).ToHaveAttributeAsync("href", "/docs/intro");
-
-        /*await Page.GetByRole(AriaRole.Heading, new() { NameString = "FQMode Barchart" }).ClickAsync();
-
-        await Page.GetByRole(AriaRole.Heading, new() { NameString = "AuthMode Barchart(s)" }).ClickAsync();*/
+        await Page.Locator("div").Filter(new() { HasTextString = "Distribution of changes to files .github/workflows/Actions.yml solApp/solApp.sln" }).Nth(2).ClickAsync();
 
     }
 
